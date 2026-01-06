@@ -105,74 +105,75 @@ export default function PortfolioPage() {
       ]
     },
     {
-      icon: ShoppingCart,
-      company: 'Global Retail Chain',
-      industry: 'E-commerce & Retail',
-      title: 'AI-Powered Personalization Engine',
-      challenge: 'A major retail chain was struggling with low conversion rates and high cart abandonment. Their generic product recommendations were not resonating with customers, leading to missed revenue opportunities.',
-      solution: 'We developed a sophisticated AI personalization engine that analyzes customer behavior, purchase history, browsing patterns, and demographic data to deliver hyper-personalized product recommendations in real-time.',
+      icon: Sparkles,
+      company: 'Deepiotics',
+      industry: 'AI & Customer Service',
+      title: 'Olivia - AI-Powered Virtual Consultant',
+      challenge: 'Businesses needed 24/7 customer engagement with intelligent, context-aware responses. Traditional chatbots lacked personality and couldn\'t handle complex queries, leading to poor customer experience and high support costs.',
+      solution: 'We developed Olivia - an advanced AI consultant with voice capabilities, natural language understanding, and lead generation features. Olivia provides intelligent responses, collects customer information, integrates with HubSpot, and offers continuous voice conversation mode for seamless interaction.',
       results: [
-        '45% increase in conversion rates',
-        '32% reduction in cart abandonment',
-        '$12M additional annual revenue',
-        '28% improvement in average order value',
-        '65% increase in customer engagement'
+        '24/7 intelligent customer engagement',
+        '85% query resolution without human intervention',
+        'Voice-enabled natural conversations',
+        'Automated lead capture and CRM integration',
+        '4.8/5 user satisfaction rating'
       ],
-      technologies: ['TensorFlow', 'Python', 'AWS', 'Redis', 'PostgreSQL'],
+      technologies: ['React', 'TypeScript', 'Web Speech API', 'HubSpot API', 'Supabase'],
       timeline: '4 months',
-      team: '8 specialists'
+      team: '6 specialists',
+      link: 'https://deepiotics.com'
     },
     {
       icon: Heart,
-      company: 'Regional Healthcare Network',
-      industry: 'Healthcare',
-      title: 'Predictive Patient Care Platform',
-      challenge: 'The healthcare network faced challenges with patient readmission rates, inefficient resource allocation, and difficulty predicting patient deterioration.',
-      solution: 'We built an AI-powered predictive analytics platform that monitors patient data in real-time, identifies high-risk patients, predicts potential complications, and recommends preventive interventions.',
+      company: 'Dentists Community',
+      industry: 'Healthcare & Dental',
+      title: 'Automated Dental X-ray Analysis',
+      challenge: 'Dentists spent significant time manually analyzing X-rays to detect missing teeth, wisdom teeth, and diagnose individual tooth conditions. This time-consuming process reduced productivity and delayed patient diagnosis.',
+      solution: 'We developed an AI-powered dental X-ray analysis system using Detectron2 framework with Mask-RCNN for automatic tooth detection and segmentation. The system detects and classifies 32 tooth classes, identifies missing teeth, wisdom teeth, and diagnoses conditions like cavities, treatments, and healthy teeth, significantly reducing diagnosis time.',
       results: [
-        '37% reduction in patient readmissions',
-        '52% improvement in early detection',
-        '$8M annual cost savings',
-        '25% reduction in average length of stay',
-        '89% clinician satisfaction rate'
+        'Automatic detection of 32 tooth classes',
+        'Missing teeth and wisdom tooth identification',
+        'Individual tooth condition classification',
+        '70% reduction in diagnosis time',
+        'Enhanced diagnostic accuracy for dentists'
       ],
-      technologies: ['PyTorch', 'Python', 'Azure', 'FHIR', 'MongoDB'],
+      technologies: ['Detectron2', 'Mask-RCNN', 'Python', 'Deep Learning', 'Computer Vision'],
       timeline: '6 months',
-      team: '12 specialists'
-    },
-    {
-      icon: Building2,
-      company: 'Manufacturing Enterprise',
-      industry: 'Manufacturing',
-      title: 'Predictive Maintenance System',
-      challenge: 'Unexpected equipment failures were causing production downtime, costing millions in lost productivity. Traditional preventive maintenance was either too early or too late.',
-      solution: 'We implemented an IoT-enabled predictive maintenance solution using machine learning to analyze sensor data from equipment, predict failures before they occur, and optimize maintenance schedules.',
-      results: [
-        '68% reduction in unplanned downtime',
-        '43% decrease in maintenance costs',
-        '$15M annual savings',
-        '35% improvement in equipment lifespan',
-        '92% prediction accuracy'
-      ],
-      technologies: ['Scikit-learn', 'Python', 'Azure IoT', 'Time Series DB', 'Power BI'],
-      timeline: '5 months',
       team: '10 specialists'
     },
     {
-      icon: DollarSign,
-      company: 'Financial Services Firm',
-      industry: 'Finance',
-      title: 'AI Fraud Detection System',
-      challenge: 'The firm was experiencing significant losses due to fraudulent transactions. Their rule-based system had high false positive rates, causing customer frustration.',
-      solution: 'We developed a real-time AI fraud detection system using advanced machine learning algorithms that analyze transaction patterns, user behavior, and contextual data to identify fraudulent activities.',
+      icon: Building2,
+      company: 'Healthcare Providers',
+      industry: 'Healthcare & Radiology',
+      title: 'CovidXTrail - Pneumonia Detection from X-Ray',
+      challenge: 'Healthcare professionals needed rapid, accurate analysis of chest X-rays to detect Covid-19 and Pneumonia. Manual analysis was time-consuming and required significant radiologist expertise, creating bottlenecks in patient diagnosis.',
+      solution: 'We developed CovidXTrail - an AI solution that analyzes chest X-rays in minutes to detect signs of Covid-19 and Pneumonia. The system augments radiologists\' diagnostic ability using AI trained on thousands of verified X-rays, automating time-consuming and low cognitive value tasks while increasing productivity.',
       results: [
-        '84% improvement in fraud detection',
-        '76% reduction in false positives',
-        '$22M prevented fraud losses annually',
-        '3-second average detection time',
-        '94% customer satisfaction improvement'
+        'Chest X-ray analysis in minutes',
+        'High accuracy with radiologist-verified training data',
+        'Automated detection of Covid-19 and Pneumonia',
+        'Increased radiologist productivity',
+        'Faster patient diagnosis and treatment'
       ],
-      technologies: ['XGBoost', 'Python', 'Kafka', 'Cassandra', 'Docker'],
+      technologies: ['Deep Learning', 'Python', 'TensorFlow', 'Medical Imaging', 'Computer Vision'],
+      timeline: '5 months',
+      team: '12 specialists'
+    },
+    {
+      icon: DollarSign,
+      company: 'US E-Commerce Startup',
+      industry: 'E-Commerce & AI',
+      title: 'Consumer Cognitive Profile Generation',
+      challenge: 'E-commerce platforms struggled to provide personalized experiences. Generic recommendations failed to predict individual buying behavior, resulting in poor engagement and lost sales opportunities.',
+      solution: 'We developed an AI-powered system that generates consumer cognitive profiles by analyzing demographic data, online interactions, and dynamic external factors. Our customized Machine Learning algorithm creates user personas based on behavioral, environmental, and demographic data, factoring in external influences and emotions to predict shopping behavior and deliver personalized experiences.',
+      results: [
+        'Personalized user persona generation',
+        'Behavioral and emotional analysis',
+        'Improved buying behavior prediction',
+        'Enhanced customer engagement',
+        'More personalized online shopping experience'
+      ],
+      technologies: ['Machine Learning', 'Python', 'Behavioral Analytics', 'AWS', 'Data Science'],
       timeline: '7 months',
       team: '14 specialists'
     },

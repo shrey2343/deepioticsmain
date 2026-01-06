@@ -1,0 +1,209 @@
+import React, { useState, useEffect } from 'react';
+import { Menu, X, Brain, ChevronDown } from 'lucide-react';
+
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const isHomePage = window.location.pathname === '/';
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16 sm:h-18 md:h-20">
+          {/* Logo */}
+          <div className="flex items-center space-x-3">
+            <a href="/" className="flex items-center space-x-2">
+              <img 
+                src="/LogoDeepiotics.png"
+                alt="Deepiotics Logo" 
+                className="h-10 w-auto transition-none"
+              />
+            </a>
+          </div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-4 xl:space-x-8">
+            <a href="/" className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 text-gray-700">
+              Home
+            </a>
+            <a href="/about" className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 text-gray-700">
+              About Us
+            </a>
+            <div className="relative">
+              <button 
+                onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+                className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 flex items-center space-x-1 text-gray-700"
+              >
+                <span>Services</span>
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {isServicesDropdownOpen && (
+                <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
+                  <a
+                    href="/linkedin-service"
+                    className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                  >
+                    AI LinkedIn Growth
+                  </a>
+                  <a
+                    href="/AI-business-growth"
+                    className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                  >
+                    AI Business Growth Suite
+                  </a>
+                  <a
+                    href="/services"
+                    className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                  >
+                    All Services
+                  </a>
+                  
+                </div>
+              )}
+            </div>
+            <a href="/portfolio" className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 text-gray-700">
+              Portfolio
+            </a>
+            <a href="/blog" className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 text-gray-700">
+              Blog
+            </a>
+            <a href="/careers" className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 text-gray-700">
+              Careers
+            </a>
+            <a href="/contact" className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 text-gray-700">
+              Contact
+            </a>
+          </nav>
+
+          {/* CTA Button */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <a 
+              href="https://tidycal.com/team/deepiotics-team/call"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 xl:px-6 py-2 xl:py-3 rounded-lg font-medium text-sm xl:text-base hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 inline-block whitespace-nowrap"
+            >
+              Get Free AI Strategy Session
+            </a>
+          </div>
+
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="lg:hidden p-2 rounded-lg hover:bg-gray-100/10"
+          >
+            {isMenuOpen ? (
+              <X className="w-6 h-6 text-gray-700" />
+            ) : (
+              <Menu className="w-6 h-6 text-gray-700" />
+            )}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="lg:hidden py-4 border-t border-gray-200/20 bg-white/95 backdrop-blur-md rounded-b-lg shadow-lg">
+            <div className="flex flex-col space-y-3 px-3 sm:px-4">
+              <a
+                href="/"
+                className="font-medium transition-colors hover:text-blue-600 text-gray-700"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Home
+              </a>
+              <a
+                href="/about"
+                className="font-medium transition-colors hover:text-blue-600 text-gray-700"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About Us
+              </a>
+              <div>
+                <button 
+                  onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+                  className="font-medium transition-colors hover:text-blue-600 text-gray-700 flex items-center space-x-1 w-full"
+                >
+                  <span>Services</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {isServicesDropdownOpen && (
+                  <div className="mt-2 ml-4 space-y-2">
+                    <a
+                      href="/linkedin-service"
+                      className="block py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      AI LinkedIn Growth
+                    </a>
+                    <a
+                      href="/AI-business-growth"
+                      className="block py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      AI Business Growth Suite
+                    </a>
+                    <a
+                      href="/services"
+                      className="block py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      All Services
+                    </a>
+                  </div>
+                )}
+              </div>
+              <a
+                href="/portfolio"
+                className="font-medium transition-colors hover:text-blue-600 text-gray-700"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Portfolio
+              </a>
+              <a
+                href="/blog"
+                className="font-medium transition-colors hover:text-blue-600 text-gray-700"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Blog
+              </a>
+              <a
+                href="/careers"
+                className="font-medium transition-colors hover:text-blue-600 text-gray-700"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Careers
+              </a>
+              <a
+                href="/contact"
+                className="font-medium transition-colors hover:text-blue-600 text-gray-700"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </a>
+              <a
+                href="https://tidycal.com/team/deepiotics-team/call"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2.5 rounded-lg font-medium text-sm w-full text-center inline-block"
+              >
+                Get Free AI Strategy Session
+              </a>
+            </div>
+          </div>
+        )}
+      </div>
+    </header>
+  );
+};
+
+export default Header;

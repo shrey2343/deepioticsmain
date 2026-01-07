@@ -79,7 +79,7 @@ function App() {
       </div>
     );
   }
-
+// gh
   if (path === '/contact') {
     return (
       <div className="min-h-screen">

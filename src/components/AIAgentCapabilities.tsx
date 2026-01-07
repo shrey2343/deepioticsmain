@@ -151,33 +151,33 @@ Deepiotics — Custom AI Solutions Deployed in 30 Days with Guaranteed ROI
   };
 
   return (
-    <section className="py-8 sm:py-12 md:py-14 bg-gradient-to-br from-gray-50 to-blue-50 border-t border-yellow-400">
+    <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-blue-50 border-t border-yellow-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
         {/* Header */}
         <div className="text-center mb-8 sm:mb-10 md:mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 px-4">
             Enterprise AI Development Services{" "}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               That Transform Industries
             </span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
             From custom machine learning models to enterprise AI automation...
           </p>
         </div>
 
         {/* Benefits */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5 md:gap-6 mb-8 sm:mb-10 md:mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6 mb-8 sm:mb-10 md:mb-12">
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="text-center bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-white/20"
+              className="text-center bg-white/80 backdrop-blur-sm rounded-xl p-3 sm:p-4 md:p-6 border border-white/20"
             >
-              <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">
                 {benefit.metric}
               </div>
-              <div className="text-xs sm:text-sm text-gray-600">
+              <div className="text-xs sm:text-sm text-gray-600 leading-tight">
                 {benefit.description}
               </div>
             </div>
@@ -185,34 +185,34 @@ Deepiotics — Custom AI Solutions Deployed in 30 Days with Guaranteed ROI
         </div>
 
         {/* Capabilities Grid */}
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 md:gap-8 mb-8 sm:mb-10 md:mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-7 lg:gap-8 mb-8 sm:mb-10 md:mb-12">
           {capabilities.map((capability, index) => (
             <div
               key={index}
-              className="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/20 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              className="group bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 border border-white/20 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
             >
               <div
-                className={`w-16 h-16 bg-gradient-to-r ${capability.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-r ${capability.color} rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-5 md:mb-6 group-hover:scale-110 transition-transform duration-300`}
               >
-                <capability.icon className="w-8 h-8 text-white" />
+                <capability.icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">
                 {capability.title}
               </h3>
 
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-5 md:mb-6 leading-relaxed">
                 {capability.description}
               </p>
 
-              <ul className="space-y-2 mb-6">
+              <ul className="space-y-2 mb-4 sm:mb-5 md:mb-6">
                 {capability.features.map((feature, featureIndex) => (
                   <li
                     key={featureIndex}
-                    className="flex items-center space-x-2 text-sm text-gray-600"
+                    className="flex items-start space-x-2 text-xs sm:text-sm text-gray-600"
                   >
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    <span>{feature}</span>
+                    <CheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                    <span className="leading-tight">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -260,30 +260,30 @@ Deepiotics — Custom AI Solutions Deployed in 30 Days with Guaranteed ROI
 
         {/* Bottom CTA Section (same as your code) */}
 
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 md:p-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+        <div className="text-center mt-12 sm:mt-14 md:mt-16">
+          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12">
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4 px-4 leading-tight">
               Ready to Deploy AI Agents for Your Sales & Marketing?
             </h3>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
               Join 200+ companies that have revolutionized...
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
               <a
                 href="https://tidycal.com/team/deepiotics-team/call"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 inline-block"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 inline-block text-sm sm:text-base active:scale-95"
               >
                 Get Free AI Agent Demo
               </a>
 
               <button
                 onClick={handleDownloadGuide}
-                className="bg-white text-gray-700 px-8 py-4 rounded-lg font-semibold border border-gray-300 hover:bg-gray-50 transition-all duration-300 inline-flex items-center space-x-2"
+                className="bg-white text-gray-700 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold border border-gray-300 hover:bg-gray-50 transition-all duration-300 inline-flex items-center justify-center space-x-2 text-sm sm:text-base active:scale-95"
               >
-                <Download className="w-5 h-5" />
+                <Download className="w-4 h-4 sm:w-5 sm:h-5" />
                 <span>Download AI Capabilities Guide</span>
               </button>
             </div>

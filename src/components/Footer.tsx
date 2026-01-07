@@ -91,51 +91,51 @@ const handleSubscribe = async (e: React.FormEvent) => {
         }
       `}</style>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12">
           {/* Company Info - Larger Column */}
           <div className="lg:col-span-4">
-            <div className="mb-6">
+            <div className="mb-4 sm:mb-5 md:mb-6">
               <img 
                 src="/LogoDeepiotics1.png" 
                 alt="Deepiotics Logo" 
-                className="h-16 w-auto mb-2"
+                className="h-12 sm:h-14 md:h-16 w-auto mb-2"
               />
-              <div className="h-1.5 w-25 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full"></div>
+              <div className="h-1.5 w-20 sm:w-25 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full"></div>
             </div>
-            <p className="text-gray-300 mb-6 leading-relaxed text-sm">
+            <p className="text-gray-300 mb-4 sm:mb-5 md:mb-6 leading-relaxed text-xs sm:text-sm">
               Leading AI development company specializing in custom machine learning solutions, enterprise AI automation, and intelligent business transformation for 100+ companies worldwide.
             </p>
-            <div className="flex items-center space-x-3 mb-6">
+            <div className="flex items-center space-x-2 sm:space-x-3 mb-4 sm:mb-5 md:mb-6">
               <a
                 href="https://www.linkedin.com/company/deepiotics"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/10 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+                className="w-9 h-9 sm:w-10 sm:h-10 bg-white/10 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95"
               >
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
               <a
                 href="https://share.google/T98ArPPYIYaTLTVZ9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/10 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+                className="w-9 h-9 sm:w-10 sm:h-10 bg-white/10 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95"
               >
-                <Facebook className="w-5 h-5" />
+                <Facebook className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
               <a
                 href="https://share.google/SHS9rC3Rumrp9DahO"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/10 hover:bg-pink-600 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+                className="w-9 h-9 sm:w-10 sm:h-10 bg-white/10 hover:bg-pink-600 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95"
               >
-                <Instagram className="w-5 h-5" />
+                <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
             </div>
-            <div className="hidden sm:inline-flex items-center space-x-2 bg-gradient-to-r from-green-500/20 to-blue-500/20 px-4 py-2 rounded-full border border-green-400/30">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <Star className="w-3 h-3 text-yellow-400" />
-              <span className="text-xs text-gray-300">Industry Leading AI Solutions</span>
+            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-500/20 to-blue-500/20 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-green-400/30">
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-400 rounded-full animate-pulse"></div>
+              <Star className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-yellow-400" />
+              <span className="text-xs text-gray-300 leading-tight">Industry Leading AI Solutions</span>
             </div>
           </div>
 
@@ -262,51 +262,51 @@ const handleSubscribe = async (e: React.FormEvent) => {
         </div>
 
         {/* Newsletter Section */}
-        <div className="border-t border-white/10 mt-10 sm:mt-12 pt-10">
-          <div className="bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-pink-600/10 rounded-2xl p-6 border border-white/10 relative overflow-hidden">
-            <div className="relative grid md:grid-cols-2 gap-6 items-center">
+        <div className="border-t border-white/10 mt-8 sm:mt-10 md:mt-12 pt-8 sm:pt-10">
+          <div className="bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-pink-600/10 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border border-white/10 relative overflow-hidden">
+            <div className="relative grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 md:gap-6 items-center">
               <div>
-                <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500/30 to-purple-500/30 px-4 py-2 rounded-full mb-6 border border-white/20">
-                  <Mail className="w-4 h-4 text-blue-400" />
+                <div className="inline-flex items-center space-x-1.5 sm:space-x-2 bg-gradient-to-r from-blue-500/30 to-purple-500/30 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full mb-4 sm:mb-5 md:mb-6 border border-white/20">
+                  <Mail className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
                   <span className="text-xs font-bold text-white tracking-wider">EXCLUSIVE NEWSLETTER</span>
-                  <div className="w-2 h-2 bg-green-400 rounded-full animate-ping"></div>
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-400 rounded-full animate-ping"></div>
                 </div>
-                <h3 className="text-2xl font-bold mb-3 text-white leading-tight">
+                <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-white leading-tight">
                   Get AI Insights That 
                   <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"> Drive Results</span>
                 </h3>
-                <p className="text-gray-300 text-sm mb-3">
+                <p className="text-gray-300 text-xs sm:text-sm mb-2 sm:mb-3">
                   Join 8,500+ industry leaders receiving weekly AI trends, exclusive case studies, and actionable insights.
                 </p>
-                <div className="flex items-center space-x-4 text-xs text-gray-400">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 text-xs text-gray-400">
                   <div className="flex items-center space-x-1">
-                    <CheckCircle className="w-3 h-3 text-green-400" />
+                    <CheckCircle className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-green-400" />
                     <span>Weekly AI Updates</span>
                   </div>
                   <div className="flex items-center space-x-1">
-                    <CheckCircle className="w-3 h-3 text-green-400" />
+                    <CheckCircle className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-green-400" />
                     <span>Exclusive Content</span>
                   </div>
                   <div className="flex items-center space-x-1">
-                    <CheckCircle className="w-3 h-3 text-green-400" />
+                    <CheckCircle className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-green-400" />
                     <span>No Spam</span>
                   </div>
                 </div>
               </div>
-              <div className="space-y-4">
-                <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
+              <div className="space-y-3 sm:space-y-4">
+                <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your professional email"
                     disabled={isSubmitting || isSubmitted}
-                    className="flex-1 px-5 py-3.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400 text-sm disabled:opacity-50 transition-all"
+                    className="flex-1 px-4 py-3 sm:px-5 sm:py-3.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400 text-sm disabled:opacity-50 transition-all"
                   />
                   <button
                     type="submit"
                     disabled={isSubmitting || isSubmitted}
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3.5 rounded-xl font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 whitespace-nowrap text-sm disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                    className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 sm:px-8 sm:py-3.5 rounded-xl font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 whitespace-nowrap text-sm disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 active:scale-95"
                   >
                     {isSubmitted ? (
                       <>
@@ -330,15 +330,15 @@ const handleSubscribe = async (e: React.FormEvent) => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-white/10 mt-8 pt-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+        <div className="border-t border-white/10 mt-6 sm:mt-8 pt-5 sm:pt-6">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 sm:space-y-6 md:space-y-0">
             <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
-              <div className="text-gray-400 text-sm flex items-center space-x-2">
+              <div className="text-gray-400 text-xs sm:text-sm flex items-center space-x-2 text-center">
                 <span className="text-blue font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">© 2025 Deepiotics Pvt. Ltd. All rights reserved</span>
               </div>
             </div>
             
-            <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 text-xs sm:text-sm">
               <a href="#" className="text-gray-400 hover:text-white transition-all duration-300 relative group flex items-center space-x-1">
                 <span>Privacy Policy</span>
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300"></span>

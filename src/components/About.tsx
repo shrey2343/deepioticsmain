@@ -26,7 +26,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-8 sm:py-12 md:py-14 bg-gradient-to-br from-slate-50 via-blue-50/40 to-indigo-100/60 relative overflow-hidden border-t border-yellow-400">
+    <section id="about" className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-slate-50 via-blue-50/40 to-indigo-100/60 relative overflow-hidden border-t border-yellow-400">
       {/* Enhanced Premium Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-600/5 via-transparent to-purple-600/5"></div>
@@ -45,7 +45,7 @@ const About = () => {
         <div className="text-center mb-8 sm:mb-10 md:mb-12 relative z-10">
 
           
-          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-6 sm:mb-7 md:mb-8 leading-tight tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6 lg:mb-8 leading-tight tracking-tight px-4">
             Why 100+ Companies Choose{' '}
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent relative">
               Deepiotics for AI Development
@@ -53,45 +53,45 @@ const About = () => {
             </span>
           </h2>
           
-          <p className="text-xl sm:text-2xl md:text-3xl text-gray-700 max-w-5xl mx-auto px-4 mb-12 leading-relaxed font-light">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-700 max-w-5xl mx-auto px-4 mb-8 sm:mb-10 md:mb-12 leading-relaxed font-light">
             As a leading AI development company, we've helped over 
-            <span className="font-bold text-blue-600 bg-blue-50/50 px-2 py-1 rounded-lg">500 enterprises</span> achieve 
-            <span className="font-bold text-green-600 bg-green-50/50 px-2 py-1 rounded-lg">300% efficiency gains</span> and 
-            <span className="font-bold text-purple-600 bg-purple-50/50 px-2 py-1 rounded-lg">$50M+ in cost savings</span> through custom machine learning solutions and intelligent automation.
+            <span className="font-bold text-blue-600 bg-blue-50/50 px-1 sm:px-2 py-1 rounded-lg">500 enterprises</span> achieve 
+            <span className="font-bold text-green-600 bg-green-50/50 px-1 sm:px-2 py-1 rounded-lg">300% efficiency gains</span> and 
+            <span className="font-bold text-purple-600 bg-purple-50/50 px-1 sm:px-2 py-1 rounded-lg">$50M+ in cost savings</span> through custom machine learning solutions and intelligent automation.
           </p>
           
           {/* Enhanced Trust Indicators */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 max-w-4xl mx-auto">
-            <div className="group bg-white/60 backdrop-blur-sm rounded-2xl p-4 border border-white/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mt-8 sm:mt-10 md:mt-12 max-w-4xl mx-auto px-4">
+            <div className="group bg-white/60 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-white/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
               <div className="flex flex-col items-center space-y-2">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Award className="w-6 h-6 text-white" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Award className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
-                <span className="text-sm font-bold text-gray-800">Industry Leader</span>
+                <span className="text-xs sm:text-sm font-bold text-gray-800 text-center leading-tight">Industry Leader</span>
               </div>
             </div>
-            <div className="group bg-white/60 backdrop-blur-sm rounded-2xl p-4 border border-white/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div className="group bg-white/60 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-white/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
               <div className="flex flex-col items-center space-y-2">
-                <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Target className="w-6 h-6 text-white" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Target className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
-                <span className="text-sm font-bold text-gray-800">Proven Results</span>
+                <span className="text-xs sm:text-sm font-bold text-gray-800 text-center leading-tight">Proven Results</span>
               </div>
             </div>
-            <div className="group bg-white/60 backdrop-blur-sm rounded-2xl p-4 border border-white/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div className="group bg-white/60 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-white/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
               <div className="flex flex-col items-center space-y-2">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Shield className="w-6 h-6 text-white" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
-                <span className="text-sm font-bold text-gray-800">Enterprise Security</span>
+                <span className="text-xs sm:text-sm font-bold text-gray-800 text-center leading-tight">Enterprise Security</span>
               </div>
             </div>
-            <div className="group bg-white/60 backdrop-blur-sm rounded-2xl p-4 border border-white/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div className="group bg-white/60 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-white/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
               <div className="flex flex-col items-center space-y-2">
-                <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Zap className="w-6 h-6 text-white" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
-                <span className="text-sm font-bold text-gray-800">Fast Deployment</span>
+                <span className="text-xs sm:text-sm font-bold text-gray-800 text-center leading-tight">Fast Deployment</span>
               </div>
             </div>
           </div>
@@ -99,47 +99,47 @@ const About = () => {
 
         <div className="mb-8 sm:mb-10 md:mb-12 relative z-10">
           {/* Enhanced Premium Content Section - Now Horizontal */}
-          <div className="bg-white/90 backdrop-blur-md rounded-3xl p-10 lg:p-12 shadow-2xl border border-white/60 hover:shadow-3xl hover:-translate-y-1 transition-all duration-500 relative overflow-hidden mb-12">
+          <div className="bg-white/90 backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-2xl border border-white/60 hover:shadow-3xl hover:-translate-y-1 transition-all duration-500 relative overflow-hidden mb-8 sm:mb-10 md:mb-12">
             {/* Decorative elements */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full filter blur-2xl"></div>
             <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-green-500/10 to-blue-500/10 rounded-full filter blur-xl"></div>
             
             <div className="relative">
-              <div className="flex items-center space-x-4 mb-8">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
-                  <Award className="w-8 h-8 text-white" />
+              <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 mb-6 sm:mb-8">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg flex-shrink-0">
+                  <Award className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
                     Proven AI Development Expertise That Delivers Results
                   </h3>
-                  <div className="w-30 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mt-2"></div>
+                  <div className="w-20 sm:w-30 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mt-2"></div>
                 </div>
               </div>
             
-              <div className="space-y-8">
-                <p className="text-xl text-gray-700 leading-relaxed font-light">
+              <div className="space-y-6 sm:space-y-8">
+                <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed font-light">
                   With over a decade of AI development experience, Deepiotics has become the trusted partner for enterprises seeking transformative artificial intelligence solutions. Our team of 
-                  <span className="font-bold text-blue-600 bg-blue-50/70 px-2 py-1 rounded-lg">50+ AI specialists</span>, data scientists, and ML engineers has delivered over 
-                  <span className="font-bold text-green-600 bg-green-50/70 px-2 py-1 rounded-lg">1,000 successful AI implementations</span> across 
-                  <span className="font-bold text-purple-600 bg-purple-50/70 px-2 py-1 rounded-lg">25+ industries</span>.
+                  <span className="font-bold text-blue-600 bg-blue-50/70 px-1 sm:px-2 py-1 rounded-lg">50+ AI specialists</span>, data scientists, and ML engineers has delivered over 
+                  <span className="font-bold text-green-600 bg-green-50/70 px-1 sm:px-2 py-1 rounded-lg">1,000 successful AI implementations</span> across 
+                  <span className="font-bold text-purple-600 bg-purple-50/70 px-1 sm:px-2 py-1 rounded-lg">25+ industries</span>.
                 </p>
                 
-                <p className="text-xl text-gray-700 leading-relaxed font-light">
-                  From <span className="font-bold text-blue-600 bg-blue-50/70 px-2 py-1 rounded-lg">100+ corporations</span> to innovative startups, we've consistently delivered custom AI solutions that generate 
-                  <span className="font-bold text-green-600 bg-green-50/70 px-2 py-1 rounded-lg">measurable ROI within 6 months</span>. Our proven methodology combines cutting-edge machine learning techniques with deep industry expertise to solve your most complex business challenges.
+                <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed font-light">
+                  From <span className="font-bold text-blue-600 bg-blue-50/70 px-1 sm:px-2 py-1 rounded-lg">100+ corporations</span> to innovative startups, we've consistently delivered custom AI solutions that generate 
+                  <span className="font-bold text-green-600 bg-green-50/70 px-1 sm:px-2 py-1 rounded-lg">measurable ROI within 6 months</span>. Our proven methodology combines cutting-edge machine learning techniques with deep industry expertise to solve your most complex business challenges.
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-6 mt-10">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6 mt-6 sm:mt-8 md:mt-10">
                 {values.map((value, index) => (
-                  <div key={index} className="group flex flex-col items-center text-center p-6 rounded-2xl bg-gradient-to-r from-white/50 to-blue-50/30 border border-white/60 hover:bg-gradient-to-r hover:from-blue-50/60 hover:to-purple-50/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                    <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg mb-4">
-                      <CheckCircle className="w-6 h-6 text-white" />
+                  <div key={index} className="group flex flex-col items-center text-center p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl bg-gradient-to-r from-white/50 to-blue-50/30 border border-white/60 hover:bg-gradient-to-r hover:from-blue-50/60 hover:to-purple-50/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg mb-3 sm:mb-4">
+                      <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">{value.title}</h4>
-                      <p className="text-lg text-gray-700 leading-relaxed">{value.description}</p>
+                      <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-blue-600 transition-colors">{value.title}</h4>
+                      <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">{value.description}</p>
                     </div>
                   </div>
                 ))}
@@ -148,7 +148,7 @@ const About = () => {
           </div>
 
           {/* Stats Section - Now Below */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {stats.map((stat, index) => {
               const colors = [
                 'from-blue-500 to-cyan-500',
@@ -165,18 +165,18 @@ const About = () => {
               return (
                 <div
                   key={index}
-                  className={`group bg-gradient-to-br ${bgColors[index]} backdrop-blur-md rounded-3xl p-8 sm:p-10 text-center border border-white/60 hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 relative overflow-hidden`}
+                  className={`group bg-gradient-to-br ${bgColors[index]} backdrop-blur-md rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 lg:p-10 text-center border border-white/60 hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 relative overflow-hidden`}
                 >
                   {/* Enhanced animated background */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${colors[index]} opacity-0 group-hover:opacity-15 transition-opacity duration-500`}></div>
                   <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
-                  <div className={`relative w-20 h-20 bg-gradient-to-r ${colors[index]} rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-xl`}>
-                    <stat.icon className="w-10 h-10 text-white" />
+                  <div className={`relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-r ${colors[index]} rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto mb-4 sm:mb-6 md:mb-8 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-xl`}>
+                    <stat.icon className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" />
                   </div>
                   
-                  <div className="relative text-4xl sm:text-5xl font-black text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">{stat.value}</div>
-                  <div className="relative text-base sm:text-lg text-gray-700 font-bold">{stat.label}</div>
+                  <div className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 mb-2 sm:mb-3 md:mb-4 group-hover:text-blue-600 transition-colors">{stat.value}</div>
+                  <div className="relative text-xs sm:text-sm md:text-base lg:text-lg text-gray-700 font-bold leading-tight">{stat.label}</div>
                   
                   {/* Enhanced floating elements */}
                   <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -192,7 +192,7 @@ const About = () => {
         </div>
 
         {/* Enhanced Premium Team Section */}
-        <div className="bg-gradient-to-br from-white/95 to-blue-50/60 backdrop-blur-md rounded-3xl p-12 sm:p-16 md:p-20 border border-white/60 shadow-2xl hover:shadow-3xl transition-all duration-500 relative z-10 overflow-hidden">
+        <div className="bg-gradient-to-br from-white/95 to-blue-50/60 backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 xl:p-20 border border-white/60 shadow-2xl hover:shadow-3xl transition-all duration-500 relative z-10 overflow-hidden">
           {/* Enhanced animated background elements */}
           <div className="absolute inset-0">
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-600/3 via-transparent to-purple-600/3"></div>
@@ -201,20 +201,20 @@ const About = () => {
             <div className="absolute top-1/3 left-1/3 w-24 h-24 bg-gradient-to-r from-green-400/6 to-teal-400/6 rounded-full filter blur-xl animate-pulse" style={{animationDelay: '3s'}}></div>
           </div>
           
-          <div className="text-center mb-16 sm:mb-20 relative">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16 lg:mb-20 relative">
 
             
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6 px-4">
               Meet Our AI Development Experts
             </h3>
             
-            <p className="text-xl sm:text-2xl text-gray-700 max-w-5xl mx-auto px-4 leading-relaxed font-light">
-              Led by industry veterans with <span className="font-bold text-blue-600 bg-blue-50/70 px-3 py-1 rounded-lg">15+ years</span> in enterprise AI development, our leadership team has successfully delivered AI solutions for 
-              <span className="font-bold text-green-600 bg-green-50/70 px-3 py-1 rounded-lg">Google, Microsoft</span>, and <span className="font-bold text-purple-600 bg-purple-50/70 px-3 py-1 rounded-lg">100+ global enterprises</span> across UK, US, and European markets.
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 max-w-5xl mx-auto px-4 leading-relaxed font-light">
+              Led by industry veterans with <span className="font-bold text-blue-600 bg-blue-50/70 px-2 py-1 rounded-lg">15+ years</span> in enterprise AI development, our leadership team has successfully delivered AI solutions for 
+              <span className="font-bold text-green-600 bg-green-50/70 px-2 py-1 rounded-lg">Google, Microsoft</span>, and <span className="font-bold text-purple-600 bg-purple-50/70 px-2 py-1 rounded-lg">100+ global enterprises</span> across UK, US, and European markets.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 md:gap-8 lg:gap-10">
             {[
               {
                 name: 'Ayan Nigam',
@@ -252,13 +252,13 @@ const About = () => {
                 linkedin: 'https://www.linkedin.com/in/narendra-pipliwal'
               }
             ].map((member, index) => (
-              <div key={index} className="group bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border-2 border-gray-200/60 hover:border-blue-300/80 relative overflow-hidden">
+              <div key={index} className="group bg-white/95 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border-2 border-gray-200/60 hover:border-blue-300/80 relative overflow-hidden">
                 {/* Premium background effects */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50/40 to-purple-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full filter blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute top-0 right-0 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full filter blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
-                <div className="relative mb-6">
-                  <div className="relative w-28 h-28 mx-auto">
+                <div className="relative mb-4 sm:mb-5 md:mb-6">
+                  <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 mx-auto">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 rounded-full p-1 group-hover:scale-110 transition-transform duration-500 shadow-lg">
                       <img
                         src={member.image}
@@ -266,30 +266,30 @@ const About = () => {
                         className="w-full h-full rounded-full object-cover bg-white"
                       />
                     </div>
-                    <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center shadow-lg">
-                      <CheckCircle className="w-4 h-4 text-white" />
+                    <div className="absolute -bottom-1 -right-1 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center shadow-lg">
+                      <CheckCircle className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-white" />
                     </div>
                   </div>
                 </div>
                 
                 <div className="text-center relative">
-                  <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors leading-tight">{member.name}</h4>
-                  <div className="inline-block bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white px-4 py-2 rounded-full text-sm font-bold mb-4 shadow-md">
-                    {member.role}
+                  <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors leading-tight px-2">{member.name}</h4>
+                  <div className="inline-block bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold mb-3 sm:mb-4 shadow-md">
+                    <span className="leading-tight">{member.role}</span>
                   </div>
-                  <p className="text-base text-gray-700 leading-relaxed mb-6 font-light">{member.description}</p>
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-4 sm:mb-5 md:mb-6 font-light px-2">{member.description}</p>
                   {member.linkedin && (
                     <a
                       href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group/link inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 border border-white/20"
+                      className="group/link inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-5 md:px-6 py-2.5 sm:py-3 rounded-lg sm:rounded-xl font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 border border-white/20 text-xs sm:text-sm active:scale-95"
                     >
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                       </svg>
                       <span>LinkedIn Profile</span>
-                      <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover/link:translate-x-1 transition-transform flex-shrink-0" />
                     </a>
                   )}
                 </div>

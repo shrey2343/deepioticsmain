@@ -3,7 +3,7 @@ import { ArrowRight, Play, Sparkles, Zap, Target, CheckCircle } from 'lucide-rea
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-12 md:pb-14 border-t border-yellow-400">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-8 sm:pb-12 md:pb-16 border-t border-yellow-400">
       {/* Video Background */}
       <div className="absolute inset-0">
         <video
@@ -32,30 +32,26 @@ const Hero = () => {
           {/* Left Column - Content */}
           <div className="text-center lg:text-left">
             
-            <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              <span className="block sm:inline">Your AI-Trusted</span>{' '}
-              <span className="block sm:inline">Partner for</span>{' '}
-              <span className="block sm:inline bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Every Stage of Your
-              </span>{' '}
-              <span className="block sm:inline bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Business Growth
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+              <span className="block">Your AI-Trusted Partner for</span>{' '}
+              <span className="block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Every Stage of Your Business Growth
               </span>
             </h1>
             
-            <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 Empowering your business with end-to-end AI-driven solutions from website creation and app development to lead generation and ad campaigns that deliver real growth.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
               <a 
                 href="https://tidycal.com/team/deepiotics-team/call"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center space-x-2"
+                className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center space-x-2 active:scale-95"
               >
-                <span>Book a Free Consultation</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <span className="text-sm sm:text-base">Book a Free Consultation</span>
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </a>
               
               {/* <button className="group bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-semibold border border-white/20 hover:bg-white/20 hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2">
@@ -65,38 +61,38 @@ const Hero = () => {
             </div>
 
             {/* Key Benefits */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-              <div className="flex items-center space-x-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                <span className="text-white">End-to-End Product Engineering</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6">
+              <div className="flex items-center space-x-2 sm:space-x-3">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 flex-shrink-0" />
+                <span className="text-white text-sm sm:text-base">End-to-End Product Engineering</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                <span className="text-white">Proven Experience With 70+ AI Projects</span>
+              <div className="flex items-center space-x-2 sm:space-x-3">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 flex-shrink-0" />
+                <span className="text-white text-sm sm:text-base">Proven Experience With 70+ AI Projects</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                <span className="text-white">Faster Time-to-Market</span>
+              <div className="flex items-center space-x-2 sm:space-x-3">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 flex-shrink-0" />
+                <span className="text-white text-sm sm:text-base">Faster Time-to-Market</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                <span className="text-white">Cost-Efficient Global Outsourcing</span>
+              <div className="flex items-center space-x-2 sm:space-x-3">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 flex-shrink-0" />
+                <span className="text-white text-sm sm:text-base">Cost-Efficient Global Outsourcing</span>
               </div>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 sm:gap-8 pt-8 mt-8 border-t border-white/20">
+            <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-8 pt-6 sm:pt-8 mt-6 sm:mt-8 border-t border-white/20">
               <div className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-white mb-2">70+</div>
-                <div className="text-xs sm:text-sm text-gray-300">AI Solutions Delivered</div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1 sm:mb-2">70+</div>
+                <div className="text-xs sm:text-sm text-gray-300 leading-tight">AI Solutions Delivered</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-white mb-2">80%</div>
-                <div className="text-xs sm:text-sm text-gray-300">Average Efficiency Gain</div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1 sm:mb-2">80%</div>
+                <div className="text-xs sm:text-sm text-gray-300 leading-tight">Average Efficiency Gain</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-white mb-2">35%</div>
-                <div className="text-xs sm:text-sm text-gray-300">Lower Operational Costs</div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1 sm:mb-2">35%</div>
+                <div className="text-xs sm:text-sm text-gray-300 leading-tight">Lower Operational Costs</div>
               </div>
             </div>
           </div>

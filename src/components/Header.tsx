@@ -17,15 +17,15 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg">
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 sm:h-18 md:h-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <a href="/" className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2">
+            <a href="/" className="flex items-center">
               <img 
                 src="/LogoDeepiotics.png"
                 alt="Deepiotics Logo" 
-                className="h-10 w-auto transition-none"
+                className="h-8 sm:h-10 w-auto transition-none"
               />
             </a>
           </div>
@@ -100,7 +100,8 @@ const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-100/10"
+            className="lg:hidden p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg hover:bg-gray-100 active:bg-gray-200 transition-colors"
+            aria-label="Toggle menu"
           >
             {isMenuOpen ? (
               <X className="w-6 h-6 text-gray-700" />
@@ -112,18 +113,18 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-gray-200/20 bg-white/95 backdrop-blur-md rounded-b-lg shadow-lg">
-            <div className="flex flex-col space-y-3 px-3 sm:px-4">
+          <div className="lg:hidden py-4 border-t border-gray-200 bg-white/95 backdrop-blur-md rounded-b-lg shadow-lg">
+            <div className="flex flex-col space-y-1 px-4">
               <a
                 href="/"
-                className="font-medium transition-colors hover:text-blue-600 text-gray-700"
+                className="font-medium transition-colors hover:text-blue-600 text-gray-700 py-3 px-2 rounded-lg hover:bg-blue-50 active:bg-blue-100"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </a>
               <a
                 href="/about"
-                className="font-medium transition-colors hover:text-blue-600 text-gray-700"
+                className="font-medium transition-colors hover:text-blue-600 text-gray-700 py-3 px-2 rounded-lg hover:bg-blue-50 active:bg-blue-100"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About Us
@@ -131,30 +132,30 @@ const Header = () => {
               <div>
                 <button 
                   onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
-                  className="font-medium transition-colors hover:text-blue-600 text-gray-700 flex items-center space-x-1 w-full"
+                  className="font-medium transition-colors hover:text-blue-600 text-gray-700 flex items-center justify-between w-full py-3 px-2 rounded-lg hover:bg-blue-50 active:bg-blue-100"
                 >
                   <span>Services</span>
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {isServicesDropdownOpen && (
-                  <div className="mt-2 ml-4 space-y-2">
+                  <div className="mt-1 ml-2 space-y-1">
                     <a
                       href="/linkedin-service"
-                      className="block py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                      className="block py-3 px-4 text-gray-700 hover:text-blue-600 transition-colors rounded-lg hover:bg-blue-50 active:bg-blue-100"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       AI LinkedIn Growth
                     </a>
                     <a
                       href="/AI-business-growth"
-                      className="block py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                      className="block py-3 px-4 text-gray-700 hover:text-blue-600 transition-colors rounded-lg hover:bg-blue-50 active:bg-blue-100"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       AI Business Growth Suite
                     </a>
                     <a
                       href="/services"
-                      className="block py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                      className="block py-3 px-4 text-gray-700 hover:text-blue-600 transition-colors rounded-lg hover:bg-blue-50 active:bg-blue-100"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       All Services
@@ -164,28 +165,28 @@ const Header = () => {
               </div>
               <a
                 href="/portfolio"
-                className="font-medium transition-colors hover:text-blue-600 text-gray-700"
+                className="font-medium transition-colors hover:text-blue-600 text-gray-700 py-3 px-2 rounded-lg hover:bg-blue-50 active:bg-blue-100"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Portfolio
               </a>
               <a
                 href="/blog"
-                className="font-medium transition-colors hover:text-blue-600 text-gray-700"
+                className="font-medium transition-colors hover:text-blue-600 text-gray-700 py-3 px-2 rounded-lg hover:bg-blue-50 active:bg-blue-100"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Blog
               </a>
               <a
                 href="/careers"
-                className="font-medium transition-colors hover:text-blue-600 text-gray-700"
+                className="font-medium transition-colors hover:text-blue-600 text-gray-700 py-3 px-2 rounded-lg hover:bg-blue-50 active:bg-blue-100"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Careers
               </a>
               <a
                 href="/contact"
-                className="font-medium transition-colors hover:text-blue-600 text-gray-700"
+                className="font-medium transition-colors hover:text-blue-600 text-gray-700 py-3 px-2 rounded-lg hover:bg-blue-50 active:bg-blue-100"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
@@ -194,7 +195,8 @@ const Header = () => {
                 href="https://tidycal.com/team/deepiotics-team/call"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2.5 rounded-lg font-medium text-sm w-full text-center inline-block"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-3 rounded-lg font-medium text-sm w-full text-center inline-block mt-2 hover:from-blue-700 hover:to-purple-700 active:scale-95 transition-all"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Get Free AI Strategy Session
               </a>

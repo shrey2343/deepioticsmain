@@ -1,6 +1,37 @@
-import { Gamepad2, Sparkles, Users, BarChart, CheckCircle, Award, Target, Zap, Globe, Shield, TrendingUp, Brain, Palette, Camera, Database, Lock, ShoppingCart, Heart, Building2, DollarSign } from 'lucide-react';
+import { Gamepad2, Sparkles, Users, BarChart, CheckCircle, Award, Target, Zap, Globe, Shield, TrendingUp, Brain, Palette, Camera, Database, Lock, ShoppingCart, Heart, Building2, DollarSign, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState } from 'react';
 
 export default function PortfolioPage() {
+  const [vyuhImageIndex, setVyuhImageIndex] = useState(0);
+  const [futureVisionImageIndex, setFutureVisionImageIndex] = useState(0);
+  
+  const vyuhImages = [
+    { src: '/vy7.PNG', alt: 'Vyuh Game Interface 1' },
+    { src: '/vy8.PNG', alt: 'Vyuh Game Interface 2' }
+  ];
+
+  const futureVisionImages = [
+    { src: '/a1.PNG', alt: 'FutureVision App Interface 1' },
+    { src: '/a2.PNG', alt: 'FutureVision App Interface 2' },
+    { src: '/a3.PNG', alt: 'FutureVision App Interface 3' }
+  ];
+
+  const nextVyuhImage = () => {
+    setVyuhImageIndex((prev) => (prev + 1) % vyuhImages.length);
+  };
+
+  const prevVyuhImage = () => {
+    setVyuhImageIndex((prev) => (prev - 1 + vyuhImages.length) % vyuhImages.length);
+  };
+
+  const nextFutureVisionImage = () => {
+    setFutureVisionImageIndex((prev) => (prev + 1) % futureVisionImages.length);
+  };
+
+  const prevFutureVisionImage = () => {
+    setFutureVisionImageIndex((prev) => (prev - 1 + futureVisionImages.length) % futureVisionImages.length);
+  };
+
   const caseStudies = [
     {
       icon: Gamepad2,
@@ -227,10 +258,10 @@ export default function PortfolioPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight">
-            Our <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Portfolio</span>
+            {/* Our <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Portfolio</span> */}
           </h1>
           <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto">
-            Real-world AI solutions delivering measurable results
+            {/* Real-world AI solutions delivering measurable results */}
           </p>
         </div>
 
@@ -241,15 +272,15 @@ export default function PortfolioPage() {
           </div>
           
           <div className="relative z-10">
-            <div className="flex items-center justify-center space-x-2 mb-4">
+            <div className="flex items-center justify-center space-x-2 mb-2">
               <Target className="w-6 h-6 text-blue-400" />
-              <h2 className="text-2xl sm:text-3xl font-bold">Innovation at Scale</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold">Our Portfolio</h2>
               <Zap className="w-6 h-6 text-purple-400" />
             </div>
             <p className="text-base sm:text-lg opacity-90 mb-6 max-w-2xl mx-auto text-center">
-              Cutting-edge projects in AI, gaming, and research platforms
+             Real-world AI solutions delivering measurable results Cutting-edge projects in AI and research platforms.
             </p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
               <div className="group bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-300 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative">
@@ -332,15 +363,199 @@ export default function PortfolioPage() {
                   </div>
                 )}
 
-                {/* Benefits Section - Only for first 2 projects */}
-                {study.benefits && (
+                {/* Benefits Section with Image - Only for Vyuh */}
+                {study.company === 'Vyuh' && study.benefits && (
+                  <div className="mb-6">
+                    <div className="flex items-center space-x-2 mb-4">
+                      <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center shadow-sm">
+                        <Sparkles className="w-4 h-4 text-white" />
+                      </div>
+                      <h3 className="text-lg font-bold text-gray-900">Why Corporates Use Vyuh</h3>
+                    </div>
+                    <div className="grid lg:grid-cols-2 gap-6">
+                      {/* Left: Benefits + Solution */}
+                      <div className="space-y-3">
+                        {study.benefits.map((benefit, idx) => (
+                          <div key={idx} className="bg-gradient-to-br from-purple-50/80 to-pink-50/80 rounded-xl p-3 border border-purple-200/50 hover:border-purple-300/80 hover:shadow-md transition-all duration-300">
+                            <h4 className="text-sm font-bold text-gray-900 mb-1 flex items-start">
+                              <span className="text-purple-600 mr-2">{idx + 1}️⃣</span>
+                              {benefit.title}
+                            </h4>
+                            <p className="text-xs text-gray-700 leading-relaxed">{benefit.desc}</p>
+                          </div>
+                        ))}
+                        {/* Solution */}
+                        <div className="bg-gradient-to-br from-blue-50/50 to-cyan-50/50 rounded-xl p-3 border border-blue-200/40 hover:border-blue-300/60 hover:shadow-md transition-all duration-300">
+                          <div className="flex items-center space-x-2 mb-2">
+                            <div className="w-7 h-7 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center shadow-sm">
+                              <Zap className="w-4 h-4 text-white" />
+                            </div>
+                            <h3 className="text-sm font-bold text-gray-900">Solution</h3>
+                          </div>
+                          <p className="text-xs text-gray-700 leading-relaxed">{study.solution}</p>
+                        </div>
+                      </div>
+                      {/* Right: Image Slider */}
+                      <div className="relative group/img">
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-xl group-hover/img:blur-2xl transition-all duration-300"></div>
+                        <div className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 rounded-2xl p-4 border border-white/10 shadow-2xl overflow-hidden h-full flex flex-col">
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/30 to-purple-500/30 rounded-full blur-3xl"></div>
+                          <div className="relative flex-1 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 group-hover/img:border-white/40 transition-all duration-300">
+                            <a 
+                              href="https://www.vyuh9.in/" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="block w-full h-full cursor-pointer"
+                            >
+                              <img 
+                                src={vyuhImages[vyuhImageIndex].src}
+                                alt={vyuhImages[vyuhImageIndex].alt}
+                                className="w-full h-full object-cover object-center group-hover/img:scale-105 transition-transform duration-500"
+                                loading="lazy"
+                              />
+                            </a>
+                            {/* Navigation Buttons */}
+                            <button
+                              onClick={(e) => { e.preventDefault(); prevVyuhImage(); }}
+                              className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-10"
+                              aria-label="Previous image"
+                            >
+                              <ChevronLeft className="w-5 h-5 text-gray-800" />
+                            </button>
+                            <button
+                              onClick={(e) => { e.preventDefault(); nextVyuhImage(); }}
+                              className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-10"
+                              aria-label="Next image"
+                            >
+                              <ChevronRight className="w-5 h-5 text-gray-800" />
+                            </button>
+                            {/* Image Indicators */}
+                            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                              {vyuhImages.map((_, idx) => (
+                                <button
+                                  key={idx}
+                                  onClick={(e) => { e.preventDefault(); setVyuhImageIndex(idx); }}
+                                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                                    idx === vyuhImageIndex 
+                                      ? 'bg-white w-6' 
+                                      : 'bg-white/50 hover:bg-white/75'
+                                  }`}
+                                  aria-label={`Go to image ${idx + 1}`}
+                                />
+                              ))}
+                            </div>
+                          </div>
+                          <div className="mt-3 flex items-center justify-center gap-2 text-white/80 text-xs relative">
+                            <Gamepad2 className="w-4 h-4" />
+                            <span className="font-semibold">Live Game Interface ({vyuhImageIndex + 1}/{vyuhImages.length})</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Benefits Section with Image - Only for FutureVision */}
+                {study.company === 'FutureVision' && study.benefits && (
+                  <div className="mb-6">
+                    <div className="flex items-center space-x-2 mb-4">
+                      <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center shadow-sm">
+                        <Sparkles className="w-4 h-4 text-white" />
+                      </div>
+                      <h3 className="text-lg font-bold text-gray-900">Why Parents Love This App</h3>
+                    </div>
+                    <div className="grid lg:grid-cols-2 gap-6">
+                      {/* Left: Benefits + Solution */}
+                      <div className="space-y-3">
+                        {study.benefits.map((benefit, idx) => (
+                          <div key={idx} className="bg-gradient-to-br from-purple-50/80 to-pink-50/80 rounded-xl p-3 border border-purple-200/50 hover:border-purple-300/80 hover:shadow-md transition-all duration-300">
+                            <h4 className="text-sm font-bold text-gray-900 mb-1 flex items-start">
+                              <span className="text-purple-600 mr-2">{idx + 1}️⃣</span>
+                              {benefit.title}
+                            </h4>
+                            <p className="text-xs text-gray-700 leading-relaxed">{benefit.desc}</p>
+                          </div>
+                        ))}
+                        {/* Solution */}
+                        <div className="bg-gradient-to-br from-blue-50/50 to-cyan-50/50 rounded-xl p-3 border border-blue-200/40 hover:border-blue-300/60 hover:shadow-md transition-all duration-300">
+                          <div className="flex items-center space-x-2 mb-2">
+                            <div className="w-7 h-7 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center shadow-sm">
+                              <Zap className="w-4 h-4 text-white" />
+                            </div>
+                            <h3 className="text-sm font-bold text-gray-900">Solution</h3>
+                          </div>
+                          <p className="text-xs text-gray-700 leading-relaxed">{study.solution}</p>
+                        </div>
+                      </div>
+                      {/* Right: Image Slider */}
+                      <div className="relative group/img">
+                        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl blur-xl group-hover/img:blur-2xl transition-all duration-300"></div>
+                        <div className="relative bg-gradient-to-br from-purple-900 via-pink-900 to-rose-900 rounded-2xl p-4 border border-white/10 shadow-2xl overflow-hidden h-full flex flex-col">
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-500/30 to-pink-500/30 rounded-full blur-3xl"></div>
+                          <div className="relative flex-1 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 group-hover/img:border-white/40 transition-all duration-300">
+                            <a 
+                              href="https://future-bloom-portraits.lovable.app" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="block w-full h-full cursor-pointer"
+                            >
+                              <img 
+                                src={futureVisionImages[futureVisionImageIndex].src}
+                                alt={futureVisionImages[futureVisionImageIndex].alt}
+                                className="w-full h-full object-cover object-center group-hover/img:scale-105 transition-transform duration-500"
+                                loading="lazy"
+                              />
+                            </a>
+                            {/* Navigation Buttons */}
+                            <button
+                              onClick={(e) => { e.preventDefault(); prevFutureVisionImage(); }}
+                              className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-10"
+                              aria-label="Previous image"
+                            >
+                              <ChevronLeft className="w-5 h-5 text-gray-800" />
+                            </button>
+                            <button
+                              onClick={(e) => { e.preventDefault(); nextFutureVisionImage(); }}
+                              className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-10"
+                              aria-label="Next image"
+                            >
+                              <ChevronRight className="w-5 h-5 text-gray-800" />
+                            </button>
+                            {/* Image Indicators */}
+                            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                              {futureVisionImages.map((_, idx) => (
+                                <button
+                                  key={idx}
+                                  onClick={(e) => { e.preventDefault(); setFutureVisionImageIndex(idx); }}
+                                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                                    idx === futureVisionImageIndex 
+                                      ? 'bg-white w-6' 
+                                      : 'bg-white/50 hover:bg-white/75'
+                                  }`}
+                                  aria-label={`Go to image ${idx + 1}`}
+                                />
+                              ))}
+                            </div>
+                          </div>
+                          <div className="mt-3 flex items-center justify-center gap-2 text-white/80 text-xs relative">
+                            <Camera className="w-4 h-4" />
+                            <span className="font-semibold">AI Portrait Generator ({futureVisionImageIndex + 1}/{futureVisionImages.length})</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Benefits Section - For other projects */}
+                {study.company !== 'Vyuh' && study.company !== 'FutureVision' && study.benefits && (
                   <div className="mb-6">
                     <div className="flex items-center space-x-2 mb-4">
                       <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center shadow-sm">
                         <Sparkles className="w-4 h-4 text-white" />
                       </div>
                       <h3 className="text-lg font-bold text-gray-900">
-                        {study.company === 'Vyuh' ? 'Why Corporates Use Vyuh' : 'Why Parents Love This App'}
+                        Key Benefits
                       </h3>
                     </div>
                     <div className="grid md:grid-cols-2 gap-4">

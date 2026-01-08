@@ -4,6 +4,10 @@ import { useState } from 'react';
 export default function PortfolioPage() {
   const [vyuhImageIndex, setVyuhImageIndex] = useState(0);
   const [futureVisionImageIndex, setFutureVisionImageIndex] = useState(0);
+  const [dentalImageIndex, setDentalImageIndex] = useState(0);
+  const [covidImageIndex, setCovidImageIndex] = useState(0);
+  const [researchImageIndex, setResearchImageIndex] = useState(0);
+  const [oliviaImageIndex, setOliviaImageIndex] = useState(0);
   
   const vyuhImages = [
     { src: '/vy7.PNG', alt: 'Vyuh Game Interface 1' },
@@ -14,6 +18,24 @@ export default function PortfolioPage() {
     { src: '/a1.PNG', alt: 'FutureVision App Interface 1' },
     { src: '/a2.PNG', alt: 'FutureVision App Interface 2' },
     { src: '/a3.PNG', alt: 'FutureVision App Interface 3' }
+  ];
+
+  const dentalImages = [
+    { src: '/xray.png', alt: 'Dental X-ray Analysis Interface' }
+  ];
+
+  const covidImages = [
+    { src: '/Pne.png', alt: 'CovidXTrail Pneumonia Detection Interface' }
+  ];
+
+  const researchImages = [
+    { src: '/Researchers1.png', alt: 'ResearchHub Interface 1' },
+    { src: '/Researchers2.png', alt: 'ResearchHub Interface 2' },
+    { src: '/Researchers3.png', alt: 'ResearchHub Interface 3' }
+  ];
+
+  const oliviaImages = [
+    { src: '/Olivia2.png', alt: 'Olivia AI Consultant Interface' }
   ];
 
   const nextVyuhImage = () => {
@@ -30,6 +52,38 @@ export default function PortfolioPage() {
 
   const prevFutureVisionImage = () => {
     setFutureVisionImageIndex((prev) => (prev - 1 + futureVisionImages.length) % futureVisionImages.length);
+  };
+
+  const nextDentalImage = () => {
+    setDentalImageIndex((prev) => (prev + 1) % dentalImages.length);
+  };
+
+  const prevDentalImage = () => {
+    setDentalImageIndex((prev) => (prev - 1 + dentalImages.length) % dentalImages.length);
+  };
+
+  const nextCovidImage = () => {
+    setCovidImageIndex((prev) => (prev + 1) % covidImages.length);
+  };
+
+  const prevCovidImage = () => {
+    setCovidImageIndex((prev) => (prev - 1 + covidImages.length) % covidImages.length);
+  };
+
+  const nextResearchImage = () => {
+    setResearchImageIndex((prev) => (prev + 1) % researchImages.length);
+  };
+
+  const prevResearchImage = () => {
+    setResearchImageIndex((prev) => (prev - 1 + researchImages.length) % researchImages.length);
+  };
+
+  const nextOliviaImage = () => {
+    setOliviaImageIndex((prev) => (prev + 1) % oliviaImages.length);
+  };
+
+  const prevOliviaImage = () => {
+    setOliviaImageIndex((prev) => (prev - 1 + oliviaImages.length) % oliviaImages.length);
   };
 
   const caseStudies = [
@@ -133,6 +187,12 @@ export default function PortfolioPage() {
         { title: 'Verified Network', desc: '20,000+ verified academic researchers across 200+ domains with credential verification system.' },
         { title: 'Secure Collaboration', desc: 'End-to-end encrypted communication with milestone tracking and secure payment systems.' },
         { title: 'Growth Metrics', desc: 'Platform showing 33% YoY growth in researchers and 87% increase in active projects.' }
+      ],
+      benefits: [
+        { title: 'Verified Network', desc: '20,000+ verified academic researchers across 200+ domains ensuring quality collaborations.' },
+        { title: 'Secure Platform', desc: 'End-to-end encrypted communication and secure payment systems protecting intellectual property.' },
+        { title: 'High Success Rate', desc: '98% project completion rate with milestone tracking and real-time collaboration tools.' },
+        { title: 'Rapid Growth', desc: '33% YoY growth in researchers and 87% increase in active projects demonstrating platform value.' }
       ]
     },
     {
@@ -152,7 +212,13 @@ export default function PortfolioPage() {
       technologies: ['React', 'TypeScript', 'Web Speech API', 'HubSpot API', 'Supabase'],
       timeline: '4 months',
       team: '6 specialists',
-      link: 'https://deepiotics.com'
+      link: 'https://deepiotics.com',
+      benefits: [
+        { title: '24/7 Availability', desc: 'Intelligent customer engagement round the clock without human intervention, reducing support costs.' },
+        { title: 'Voice Interaction', desc: 'Natural voice conversations with Web Speech API for seamless customer experience.' },
+        { title: 'Smart Lead Generation', desc: 'Automated lead capture with HubSpot CRM integration for efficient sales pipeline management.' },
+        { title: 'High Resolution Rate', desc: '85% query resolution without human intervention, improving customer satisfaction to 4.8/5.' }
+      ]
     },
     {
       icon: Heart,
@@ -170,7 +236,13 @@ export default function PortfolioPage() {
       ],
       technologies: ['Detectron2', 'Mask-RCNN', 'Python', 'Deep Learning', 'Computer Vision'],
       timeline: '6 months',
-      team: '10 specialists'
+      team: '10 specialists',
+      benefits: [
+        { title: 'Automated Detection', desc: 'AI-powered system automatically detects and classifies all 32 tooth types with high accuracy.' },
+        { title: 'Time Efficiency', desc: '70% reduction in diagnosis time allows dentists to focus on patient care and treatment planning.' },
+        { title: 'Comprehensive Analysis', desc: 'Identifies missing teeth, wisdom teeth, cavities, treatments, and healthy teeth in single scan.' },
+        { title: 'Enhanced Accuracy', desc: 'Deep learning algorithms provide consistent and reliable diagnostic support for dental professionals.' }
+      ]
     },
     {
       icon: Building2,
@@ -188,7 +260,13 @@ export default function PortfolioPage() {
       ],
       technologies: ['Deep Learning', 'Python', 'TensorFlow', 'Medical Imaging', 'Computer Vision'],
       timeline: '5 months',
-      team: '12 specialists'
+      team: '12 specialists',
+      benefits: [
+        { title: 'Rapid Analysis', desc: 'AI-powered chest X-ray analysis completed in minutes, enabling faster patient diagnosis and treatment decisions.' },
+        { title: 'High Accuracy', desc: 'Trained on thousands of radiologist-verified X-rays ensuring reliable Covid-19 and Pneumonia detection.' },
+        { title: 'Productivity Boost', desc: 'Automates time-consuming tasks allowing radiologists to focus on complex cases and patient care.' },
+        { title: 'Scalable Solution', desc: 'Handles high volume of X-rays efficiently, reducing diagnostic bottlenecks in healthcare facilities.' }
+      ]
     },
     {
       icon: DollarSign,
@@ -265,7 +343,7 @@ export default function PortfolioPage() {
           </p>
         </div>
 
-        <div className="mb-12 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 rounded-2xl shadow-xl p-6 md:p-10 text-white relative overflow-hidden border border-white/10">
+        <div className="mb-8 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 rounded-2xl shadow-xl p-6 md:p-10 text-white relative overflow-hidden border border-white/10">
           <div className="absolute inset-0">
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full filter blur-3xl animate-pulse"></div>
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full filter blur-2xl animate-pulse" style={{animationDelay: '1s'}}></div>
@@ -341,7 +419,7 @@ export default function PortfolioPage() {
               <div className="p-5 sm:p-6 md:p-8 relative">
                 {/* Metrics Cards - Only for first 3 projects */}
                 {study.metrics && (
-                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-5">
                     {study.metrics.map((metric, idx) => (
                       <div key={idx} className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-3 border border-blue-200/50 hover:border-blue-300/80 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
                         <div className="text-2xl font-black bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-1">{metric.value}</div>
@@ -353,7 +431,7 @@ export default function PortfolioPage() {
 
                 {/* Features Grid - Only for first 3 projects */}
                 {study.features && (
-                  <div className="grid md:grid-cols-3 gap-4 mb-6">
+                  <div className="grid md:grid-cols-3 gap-4 mb-5">
                     {study.features.map((feature, idx) => (
                       <div key={idx} className="bg-gradient-to-br from-slate-50 to-blue-50/50 rounded-xl p-4 border border-slate-200/50 hover:border-blue-300/60 hover:shadow-md transition-all duration-300">
                         <h4 className="text-sm font-bold text-gray-900 mb-2">{feature.title}</h4>
@@ -365,14 +443,14 @@ export default function PortfolioPage() {
 
                 {/* Benefits Section with Image - Only for Vyuh */}
                 {study.company === 'Vyuh' && study.benefits && (
-                  <div className="mb-6">
-                    <div className="flex items-center space-x-2 mb-4">
+                  <div className="mb-5">
+                    <div className="flex items-center space-x-2 mb-3">
                       <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center shadow-sm">
                         <Sparkles className="w-4 h-4 text-white" />
                       </div>
                       <h3 className="text-lg font-bold text-gray-900">Why Corporates Use Vyuh</h3>
                     </div>
-                    <div className="grid lg:grid-cols-2 gap-6">
+                    <div className="grid lg:grid-cols-2 gap-5">
                       {/* Left: Benefits + Solution */}
                       <div className="space-y-3">
                         {study.benefits.map((benefit, idx) => (
@@ -457,14 +535,14 @@ export default function PortfolioPage() {
 
                 {/* Benefits Section with Image - Only for FutureVision */}
                 {study.company === 'FutureVision' && study.benefits && (
-                  <div className="mb-6">
-                    <div className="flex items-center space-x-2 mb-4">
+                  <div className="mb-5">
+                    <div className="flex items-center space-x-2 mb-3">
                       <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center shadow-sm">
                         <Sparkles className="w-4 h-4 text-white" />
                       </div>
                       <h3 className="text-lg font-bold text-gray-900">Why Parents Love This App</h3>
                     </div>
-                    <div className="grid lg:grid-cols-2 gap-6">
+                    <div className="grid lg:grid-cols-2 gap-5">
                       {/* Left: Benefits + Solution */}
                       <div className="space-y-3">
                         {study.benefits.map((benefit, idx) => (
@@ -547,10 +625,368 @@ export default function PortfolioPage() {
                   </div>
                 )}
 
+                {/* Benefits Section with Image - For Dental X-ray */}
+                {study.company === 'Dentists Community' && study.benefits && (
+                  <div className="mb-5">
+                    <div className="flex items-center space-x-2 mb-3">
+                      <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center shadow-sm">
+                        <Sparkles className="w-4 h-4 text-white" />
+                      </div>
+                      <h3 className="text-lg font-bold text-gray-900">Key Benefits</h3>
+                    </div>
+                    <div className="grid lg:grid-cols-2 gap-5">
+                      {/* Left: Benefits + Solution */}
+                      <div className="space-y-3">
+                        {study.benefits.map((benefit, idx) => (
+                          <div key={idx} className="bg-gradient-to-br from-purple-50/80 to-pink-50/80 rounded-xl p-3 border border-purple-200/50 hover:border-purple-300/80 hover:shadow-md transition-all duration-300">
+                            <h4 className="text-sm font-bold text-gray-900 mb-1 flex items-start">
+                              <span className="text-purple-600 mr-2">{idx + 1}️⃣</span>
+                              {benefit.title}
+                            </h4>
+                            <p className="text-xs text-gray-700 leading-relaxed">{benefit.desc}</p>
+                          </div>
+                        ))}
+                        {/* Solution */}
+                        <div className="bg-gradient-to-br from-blue-50/50 to-cyan-50/50 rounded-xl p-3 border border-blue-200/40 hover:border-blue-300/60 hover:shadow-md transition-all duration-300">
+                          <div className="flex items-center space-x-2 mb-2">
+                            <div className="w-7 h-7 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center shadow-sm">
+                              <Zap className="w-4 h-4 text-white" />
+                            </div>
+                            <h3 className="text-sm font-bold text-gray-900">Solution</h3>
+                          </div>
+                          <p className="text-xs text-gray-700 leading-relaxed">{study.solution}</p>
+                        </div>
+                      </div>
+                      {/* Right: Image Slider */}
+                      <div className="relative group/img">
+                        <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-pink-500/20 rounded-2xl blur-xl group-hover/img:blur-2xl transition-all duration-300"></div>
+                        <div className="relative bg-gradient-to-br from-red-900 via-pink-900 to-rose-900 rounded-2xl p-4 border border-white/10 shadow-2xl overflow-hidden h-full flex flex-col">
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-red-500/30 to-pink-500/30 rounded-full blur-3xl"></div>
+                          <div className="relative flex-1 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 group-hover/img:border-white/40 transition-all duration-300">
+                            <img 
+                              src={dentalImages[dentalImageIndex].src}
+                              alt={dentalImages[dentalImageIndex].alt}
+                              className="w-full h-full object-cover object-center group-hover/img:scale-105 transition-transform duration-500"
+                              loading="lazy"
+                            />
+                            {dentalImages.length > 1 && (
+                              <>
+                                <button
+                                  onClick={(e) => { e.preventDefault(); prevDentalImage(); }}
+                                  className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-10"
+                                  aria-label="Previous image"
+                                >
+                                  <ChevronLeft className="w-5 h-5 text-gray-800" />
+                                </button>
+                                <button
+                                  onClick={(e) => { e.preventDefault(); nextDentalImage(); }}
+                                  className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-10"
+                                  aria-label="Next image"
+                                >
+                                  <ChevronRight className="w-5 h-5 text-gray-800" />
+                                </button>
+                                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                                  {dentalImages.map((_, idx) => (
+                                    <button
+                                      key={idx}
+                                      onClick={(e) => { e.preventDefault(); setDentalImageIndex(idx); }}
+                                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                                        idx === dentalImageIndex 
+                                          ? 'bg-white w-6' 
+                                          : 'bg-white/50 hover:bg-white/75'
+                                      }`}
+                                      aria-label={`Go to image ${idx + 1}`}
+                                    />
+                                  ))}
+                                </div>
+                              </>
+                            )}
+                          </div>
+                          <div className="mt-3 flex items-center justify-center gap-2 text-white/80 text-xs relative">
+                            <Heart className="w-4 h-4" />
+                            <span className="font-semibold">AI X-ray Analysis {dentalImages.length > 1 ? `(${dentalImageIndex + 1}/${dentalImages.length})` : ''}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Benefits Section with Image - For ResearchHub */}
+                {study.company === 'ResearchHub' && study.benefits && (
+                  <div className="mb-5">
+                    <div className="flex items-center space-x-2 mb-3">
+                      <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center shadow-sm">
+                        <Sparkles className="w-4 h-4 text-white" />
+                      </div>
+                      <h3 className="text-lg font-bold text-gray-900">Platform Highlights</h3>
+                    </div>
+                    <div className="grid lg:grid-cols-2 gap-5">
+                      {/* Left: Benefits + Solution */}
+                      <div className="space-y-3">
+                        {study.benefits.map((benefit, idx) => (
+                          <div key={idx} className="bg-gradient-to-br from-purple-50/80 to-pink-50/80 rounded-xl p-3 border border-purple-200/50 hover:border-purple-300/80 hover:shadow-md transition-all duration-300">
+                            <h4 className="text-sm font-bold text-gray-900 mb-1 flex items-start">
+                              <span className="text-purple-600 mr-2">{idx + 1}️⃣</span>
+                              {benefit.title}
+                            </h4>
+                            <p className="text-xs text-gray-700 leading-relaxed">{benefit.desc}</p>
+                          </div>
+                        ))}
+                        {/* Solution */}
+                        <div className="bg-gradient-to-br from-blue-50/50 to-cyan-50/50 rounded-xl p-3 border border-blue-200/40 hover:border-blue-300/60 hover:shadow-md transition-all duration-300">
+                          <div className="flex items-center space-x-2 mb-2">
+                            <div className="w-7 h-7 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center shadow-sm">
+                              <Zap className="w-4 h-4 text-white" />
+                            </div>
+                            <h3 className="text-sm font-bold text-gray-900">Solution</h3>
+                          </div>
+                          <p className="text-xs text-gray-700 leading-relaxed">{study.solution}</p>
+                        </div>
+                      </div>
+                      {/* Right: Image Slider */}
+                      <div className="relative group/img">
+                        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-2xl blur-xl group-hover/img:blur-2xl transition-all duration-300"></div>
+                        <div className="relative bg-gradient-to-br from-indigo-900 via-purple-900 to-violet-900 rounded-2xl p-4 border border-white/10 shadow-2xl overflow-hidden h-full flex flex-col">
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-indigo-500/30 to-purple-500/30 rounded-full blur-3xl"></div>
+                          <div className="relative flex-1 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 group-hover/img:border-white/40 transition-all duration-300">
+                            <a 
+                              href="https://researchhub-frontend.onrender.com/" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="block w-full h-full cursor-pointer"
+                            >
+                              <img 
+                                src={researchImages[researchImageIndex].src}
+                                alt={researchImages[researchImageIndex].alt}
+                                className="w-full h-full object-cover object-center group-hover/img:scale-105 transition-transform duration-500"
+                                loading="lazy"
+                              />
+                            </a>
+                            <button
+                              onClick={(e) => { e.preventDefault(); prevResearchImage(); }}
+                              className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-10"
+                              aria-label="Previous image"
+                            >
+                              <ChevronLeft className="w-5 h-5 text-gray-800" />
+                            </button>
+                            <button
+                              onClick={(e) => { e.preventDefault(); nextResearchImage(); }}
+                              className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-10"
+                              aria-label="Next image"
+                            >
+                              <ChevronRight className="w-5 h-5 text-gray-800" />
+                            </button>
+                            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                              {researchImages.map((_, idx) => (
+                                <button
+                                  key={idx}
+                                  onClick={(e) => { e.preventDefault(); setResearchImageIndex(idx); }}
+                                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                                    idx === researchImageIndex 
+                                      ? 'bg-white w-6' 
+                                      : 'bg-white/50 hover:bg-white/75'
+                                  }`}
+                                  aria-label={`Go to image ${idx + 1}`}
+                                />
+                              ))}
+                            </div>
+                          </div>
+                          <div className="mt-3 flex items-center justify-center gap-2 text-white/80 text-xs relative">
+                            <Database className="w-4 h-4" />
+                            <span className="font-semibold">Research Platform ({researchImageIndex + 1}/{researchImages.length})</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Benefits Section with Image - For Olivia */}
+                {study.company === 'Deepiotics' && study.benefits && (
+                  <div className="mb-5">
+                    <div className="flex items-center space-x-2 mb-3">
+                      <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center shadow-sm">
+                        <Sparkles className="w-4 h-4 text-white" />
+                      </div>
+                      <h3 className="text-lg font-bold text-gray-900">Key Features</h3>
+                    </div>
+                    <div className="grid lg:grid-cols-2 gap-5">
+                      {/* Left: Benefits + Solution */}
+                      <div className="space-y-3">
+                        {study.benefits.map((benefit, idx) => (
+                          <div key={idx} className="bg-gradient-to-br from-purple-50/80 to-pink-50/80 rounded-xl p-3 border border-purple-200/50 hover:border-purple-300/80 hover:shadow-md transition-all duration-300">
+                            <h4 className="text-sm font-bold text-gray-900 mb-1 flex items-start">
+                              <span className="text-purple-600 mr-2">{idx + 1}️⃣</span>
+                              {benefit.title}
+                            </h4>
+                            <p className="text-xs text-gray-700 leading-relaxed">{benefit.desc}</p>
+                          </div>
+                        ))}
+                        {/* Solution */}
+                        <div className="bg-gradient-to-br from-blue-50/50 to-cyan-50/50 rounded-xl p-3 border border-blue-200/40 hover:border-blue-300/60 hover:shadow-md transition-all duration-300">
+                          <div className="flex items-center space-x-2 mb-2">
+                            <div className="w-7 h-7 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center shadow-sm">
+                              <Zap className="w-4 h-4 text-white" />
+                            </div>
+                            <h3 className="text-sm font-bold text-gray-900">Solution</h3>
+                          </div>
+                          <p className="text-xs text-gray-700 leading-relaxed">{study.solution}</p>
+                        </div>
+                      </div>
+                      {/* Right: Image Slider */}
+                      <div className="relative group/img">
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-2xl blur-xl group-hover/img:blur-2xl transition-all duration-300"></div>
+                        <div className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 rounded-2xl p-4 border border-white/10 shadow-2xl overflow-hidden h-full flex flex-col">
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/30 to-indigo-500/30 rounded-full blur-3xl"></div>
+                          <div className="relative flex-1 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 group-hover/img:border-white/40 transition-all duration-300">
+                            <a 
+                              href="https://deepiotics.com" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="block w-full h-full cursor-pointer"
+                            >
+                              <img 
+                                src={oliviaImages[oliviaImageIndex].src}
+                                alt={oliviaImages[oliviaImageIndex].alt}
+                                className="w-full h-full object-cover object-center group-hover/img:scale-105 transition-transform duration-500"
+                                loading="lazy"
+                              />
+                            </a>
+                            {oliviaImages.length > 1 && (
+                              <>
+                                <button
+                                  onClick={(e) => { e.preventDefault(); prevOliviaImage(); }}
+                                  className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-10"
+                                  aria-label="Previous image"
+                                >
+                                  <ChevronLeft className="w-5 h-5 text-gray-800" />
+                                </button>
+                                <button
+                                  onClick={(e) => { e.preventDefault(); nextOliviaImage(); }}
+                                  className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-10"
+                                  aria-label="Next image"
+                                >
+                                  <ChevronRight className="w-5 h-5 text-gray-800" />
+                                </button>
+                                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                                  {oliviaImages.map((_, idx) => (
+                                    <button
+                                      key={idx}
+                                      onClick={(e) => { e.preventDefault(); setOliviaImageIndex(idx); }}
+                                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                                        idx === oliviaImageIndex 
+                                          ? 'bg-white w-6' 
+                                          : 'bg-white/50 hover:bg-white/75'
+                                      }`}
+                                      aria-label={`Go to image ${idx + 1}`}
+                                    />
+                                  ))}
+                                </div>
+                              </>
+                            )}
+                          </div>
+                          <div className="mt-3 flex items-center justify-center gap-2 text-white/80 text-xs relative">
+                            <Sparkles className="w-4 h-4" />
+                            <span className="font-semibold">AI Consultant {oliviaImages.length > 1 ? `(${oliviaImageIndex + 1}/${oliviaImages.length})` : ''}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Benefits Section with Image - For CovidXTrail */}
+                {study.company === 'Healthcare Providers' && study.benefits && (
+                  <div className="mb-5">
+                    <div className="flex items-center space-x-2 mb-3">
+                      <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center shadow-sm">
+                        <Sparkles className="w-4 h-4 text-white" />
+                      </div>
+                      <h3 className="text-lg font-bold text-gray-900">Key Benefits</h3>
+                    </div>
+                    <div className="grid lg:grid-cols-2 gap-5">
+                      {/* Left: Benefits + Solution */}
+                      <div className="space-y-3">
+                        {study.benefits.map((benefit, idx) => (
+                          <div key={idx} className="bg-gradient-to-br from-purple-50/80 to-pink-50/80 rounded-xl p-3 border border-purple-200/50 hover:border-purple-300/80 hover:shadow-md transition-all duration-300">
+                            <h4 className="text-sm font-bold text-gray-900 mb-1 flex items-start">
+                              <span className="text-purple-600 mr-2">{idx + 1}️⃣</span>
+                              {benefit.title}
+                            </h4>
+                            <p className="text-xs text-gray-700 leading-relaxed">{benefit.desc}</p>
+                          </div>
+                        ))}
+                        {/* Solution */}
+                        <div className="bg-gradient-to-br from-blue-50/50 to-cyan-50/50 rounded-xl p-3 border border-blue-200/40 hover:border-blue-300/60 hover:shadow-md transition-all duration-300">
+                          <div className="flex items-center space-x-2 mb-2">
+                            <div className="w-7 h-7 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center shadow-sm">
+                              <Zap className="w-4 h-4 text-white" />
+                            </div>
+                            <h3 className="text-sm font-bold text-gray-900">Solution</h3>
+                          </div>
+                          <p className="text-xs text-gray-700 leading-relaxed">{study.solution}</p>
+                        </div>
+                      </div>
+                      {/* Right: Image Slider */}
+                      <div className="relative group/img">
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-2xl blur-xl group-hover/img:blur-2xl transition-all duration-300"></div>
+                        <div className="relative bg-gradient-to-br from-blue-900 via-cyan-900 to-teal-900 rounded-2xl p-4 border border-white/10 shadow-2xl overflow-hidden h-full flex flex-col">
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/30 to-cyan-500/30 rounded-full blur-3xl"></div>
+                          <div className="relative flex-1 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 group-hover/img:border-white/40 transition-all duration-300">
+                            <img 
+                              src={covidImages[covidImageIndex].src}
+                              alt={covidImages[covidImageIndex].alt}
+                              className="w-full h-full object-cover object-center group-hover/img:scale-105 transition-transform duration-500"
+                              loading="lazy"
+                            />
+                            {covidImages.length > 1 && (
+                              <>
+                                <button
+                                  onClick={(e) => { e.preventDefault(); prevCovidImage(); }}
+                                  className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-10"
+                                  aria-label="Previous image"
+                                >
+                                  <ChevronLeft className="w-5 h-5 text-gray-800" />
+                                </button>
+                                <button
+                                  onClick={(e) => { e.preventDefault(); nextCovidImage(); }}
+                                  className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-10"
+                                  aria-label="Next image"
+                                >
+                                  <ChevronRight className="w-5 h-5 text-gray-800" />
+                                </button>
+                                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                                  {covidImages.map((_, idx) => (
+                                    <button
+                                      key={idx}
+                                      onClick={(e) => { e.preventDefault(); setCovidImageIndex(idx); }}
+                                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                                        idx === covidImageIndex 
+                                          ? 'bg-white w-6' 
+                                          : 'bg-white/50 hover:bg-white/75'
+                                      }`}
+                                      aria-label={`Go to image ${idx + 1}`}
+                                    />
+                                  ))}
+                                </div>
+                              </>
+                            )}
+                          </div>
+                          <div className="mt-3 flex items-center justify-center gap-2 text-white/80 text-xs relative">
+                            <Building2 className="w-4 h-4" />
+                            <span className="font-semibold">CovidXTrail Analysis {covidImages.length > 1 ? `(${covidImageIndex + 1}/${covidImages.length})` : ''}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 {/* Benefits Section - For other projects */}
-                {study.company !== 'Vyuh' && study.company !== 'FutureVision' && study.benefits && (
-                  <div className="mb-6">
-                    <div className="flex items-center space-x-2 mb-4">
+                {study.company !== 'Vyuh' && study.company !== 'FutureVision' && study.company !== 'Dentists Community' && study.company !== 'Healthcare Providers' && study.company !== 'ResearchHub' && study.company !== 'Deepiotics' && study.benefits && (
+                  <div className="mb-5">
+                    <div className="flex items-center space-x-2 mb-3">
                       <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center shadow-sm">
                         <Sparkles className="w-4 h-4 text-white" />
                       </div>
@@ -558,9 +994,9 @@ export default function PortfolioPage() {
                         Key Benefits
                       </h3>
                     </div>
-                    <div className="grid md:grid-cols-2 gap-4">
+                    <div className="grid md:grid-cols-2 gap-3">
                       {study.benefits.map((benefit, idx) => (
-                        <div key={idx} className="bg-gradient-to-br from-purple-50/80 to-pink-50/80 rounded-xl p-4 border border-purple-200/50 hover:border-purple-300/80 hover:shadow-md transition-all duration-300">
+                        <div key={idx} className="bg-gradient-to-br from-purple-50/80 to-pink-50/80 rounded-xl p-3 border border-purple-200/50 hover:border-purple-300/80 hover:shadow-md transition-all duration-300">
                           <h4 className="text-sm font-bold text-gray-900 mb-2 flex items-start">
                             <span className="text-purple-600 mr-2">{idx + 1}️⃣</span>
                             {benefit.title}
@@ -572,7 +1008,7 @@ export default function PortfolioPage() {
                   </div>
                 )}
 
-                <div className="grid md:grid-cols-2 gap-4 mb-6">
+                <div className="grid md:grid-cols-2 gap-4 mb-5">
                   <div className="group/item bg-gradient-to-br from-red-50/50 to-orange-50/50 rounded-xl p-4 border border-red-200/40 hover:border-red-300/60 hover:shadow-md transition-all duration-300">
                     <div className="flex items-center space-x-2 mb-3">
                       <div className="w-8 h-8 bg-gradient-to-r from-red-500 to-orange-500 rounded-lg flex items-center justify-center shadow-sm">
@@ -582,19 +1018,21 @@ export default function PortfolioPage() {
                     </div>
                     <p className="text-sm text-gray-700 leading-relaxed">{study.challenge}</p>
                   </div>
-                  <div className="group/item bg-gradient-to-br from-blue-50/50 to-cyan-50/50 rounded-xl p-4 border border-blue-200/40 hover:border-blue-300/60 hover:shadow-md transition-all duration-300">
-                    <div className="flex items-center space-x-2 mb-3">
-                      <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center shadow-sm">
-                        <Zap className="w-4 h-4 text-white" />
+                  {!study.benefits && (
+                    <div className="group/item bg-gradient-to-br from-blue-50/50 to-cyan-50/50 rounded-xl p-4 border border-blue-200/40 hover:border-blue-300/60 hover:shadow-md transition-all duration-300">
+                      <div className="flex items-center space-x-2 mb-3">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center shadow-sm">
+                          <Zap className="w-4 h-4 text-white" />
+                        </div>
+                        <h3 className="text-base font-bold text-gray-900">Solution</h3>
                       </div>
-                      <h3 className="text-base font-bold text-gray-900">Solution</h3>
+                      <p className="text-sm text-gray-700 leading-relaxed">{study.solution}</p>
                     </div>
-                    <p className="text-sm text-gray-700 leading-relaxed">{study.solution}</p>
-                  </div>
+                  )}
                 </div>
 
-                <div className="mb-6">
-                  <div className="flex items-center space-x-2 mb-4">
+                <div className="mb-5">
+                  <div className="flex items-center space-x-2 mb-3">
                     <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center shadow-sm">
                       <Award className="w-4 h-4 text-white" />
                     </div>

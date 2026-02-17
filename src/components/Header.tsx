@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X, Brain, ChevronDown, ChevronRight } from 'lucide-react';
 
 const Header = () => {
@@ -9,9 +9,6 @@ const Header = () => {
   const [isAccountingSubmenuOpen, setIsAccountingSubmenuOpen] = useState(false);
   const [isAccountingSubmenuOpenMobile, setIsAccountingSubmenuOpenMobile] = useState(false);
   const isHomePage = window.location.pathname === '/';
-  
-  const servicesRef = useRef<HTMLDivElement>(null);
-  const insightsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,36 +17,6 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  // Close dropdowns when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
-        setIsServicesDropdownOpen(false);
-        setIsAccountingSubmenuOpen(false);
-      }
-      if (insightsRef.current && !insightsRef.current.contains(event.target as Node)) {
-        setIsInsightsDropdownOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
-
-  // Close one dropdown when opening another
-  const handleServicesToggle = () => {
-    setIsServicesDropdownOpen(!isServicesDropdownOpen);
-    setIsInsightsDropdownOpen(false);
-  };
-
-  const handleInsightsToggle = () => {
-    setIsInsightsDropdownOpen(!isInsightsDropdownOpen);
-    setIsServicesDropdownOpen(false);
-    setIsAccountingSubmenuOpen(false);
-  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg">
@@ -74,9 +41,9 @@ const Header = () => {
             <a href="/about" className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 text-gray-700">
               About Us
             </a>
-            <div className="relative" ref={servicesRef}>
+            <div className="relative">
               <button 
-                onClick={handleServicesToggle}
+                onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
                 className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 flex items-center space-x-1 text-gray-700"
               >
                 <span>Services</span>
@@ -141,9 +108,9 @@ const Header = () => {
             <a href="/portfolio" className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 text-gray-700">
               Portfolio
             </a>
-            <div className="relative" ref={insightsRef}>
+            <div className="relative">
               <button 
-                onClick={handleInsightsToggle}
+                onClick={() => setIsInsightsDropdownOpen(!isInsightsDropdownOpen)}
                 className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 flex items-center space-x-1 text-gray-700"
               >
                 <span>Insights</span>
@@ -221,10 +188,7 @@ const Header = () => {
               </a>
               <div>
                 <button 
-                  onClick={() => {
-                    setIsServicesDropdownOpen(!isServicesDropdownOpen);
-                    setIsInsightsDropdownOpen(false);
-                  }}
+                  onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
                   className="font-medium transition-colors hover:text-blue-600 text-gray-700 flex items-center justify-between w-full py-3 px-2 rounded-lg hover:bg-blue-50 active:bg-blue-100"
                 >
                   <span>Services</span>
@@ -293,11 +257,7 @@ const Header = () => {
               </a>
               <div>
                 <button 
-                  onClick={() => {
-                    setIsInsightsDropdownOpen(!isInsightsDropdownOpen);
-                    setIsServicesDropdownOpen(false);
-                    setIsAccountingSubmenuOpenMobile(false);
-                  }}
+                  onClick={() => setIsInsightsDropdownOpen(!isInsightsDropdownOpen)}
                   className="font-medium transition-colors hover:text-blue-600 text-gray-700 flex items-center justify-between w-full py-3 px-2 rounded-lg hover:bg-blue-50 active:bg-blue-100"
                 >
                   <span>Insights</span>

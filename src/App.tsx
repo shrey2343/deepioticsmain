@@ -21,7 +21,7 @@ import BlogDetailPage from './components/BlogDetailPage';
 import LinkedInServicePage from './components/LinkedInServicePage';
 import AIBusinessGrowthPage from './components/AIBusinessGrowthPage';
 import USAccountingPage from './components/USAccountingPage';
-import TruckLogisticsPage from './components/TruckLogisticsPage';
+import TrucksLogisticsPage from './components/TrucksLogisticsPage';
 
 function App() {
   const path = window.location.pathname;
@@ -153,7 +153,7 @@ function App() {
     return (
       <div className="min-h-screen">
         <Header />
-        <TruckLogisticsPage />
+        <TrucksLogisticsPage />
         <Footer />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
       </div>

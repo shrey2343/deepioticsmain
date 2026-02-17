@@ -1,11 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Brain, ChevronDown } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Menu, X, Brain, ChevronDown, ChevronRight } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const [isInsightsDropdownOpen, setIsInsightsDropdownOpen] = useState(false);
+  const [isAccountingSubmenuOpen, setIsAccountingSubmenuOpen] = useState(false);
+  const [isAccountingSubmenuOpenMobile, setIsAccountingSubmenuOpenMobile] = useState(false);
   const isHomePage = window.location.pathname === '/';
+  
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const insightsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +20,36 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
+        setIsServicesDropdownOpen(false);
+        setIsAccountingSubmenuOpen(false);
+      }
+      if (insightsRef.current && !insightsRef.current.contains(event.target as Node)) {
+        setIsInsightsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  // Close one dropdown when opening another
+  const handleServicesToggle = () => {
+    setIsServicesDropdownOpen(!isServicesDropdownOpen);
+    setIsInsightsDropdownOpen(false);
+  };
+
+  const handleInsightsToggle = () => {
+    setIsInsightsDropdownOpen(!isInsightsDropdownOpen);
+    setIsServicesDropdownOpen(false);
+    setIsAccountingSubmenuOpen(false);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg">
@@ -38,9 +74,9 @@ const Header = () => {
             <a href="/about" className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 text-gray-700">
               About Us
             </a>
-            <div className="relative">
+            <div className="relative" ref={servicesRef}>
               <button 
-                onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+                onClick={handleServicesToggle}
                 className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 flex items-center space-x-1 text-gray-700"
               >
                 <span>Services</span>
@@ -68,21 +104,75 @@ const Header = () => {
                     All Services
                   </a>
                   
+                  <div className="relative group">
+                    <div
+                      className="flex items-center justify-between px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors cursor-pointer"
+                      onMouseEnter={() => setIsAccountingSubmenuOpen(true)}
+                      onMouseLeave={() => setIsAccountingSubmenuOpen(false)}
+                    >
+                      <span>Accounting</span>
+                      <ChevronRight className="w-4 h-4" />
+                    </div>
+                    
+                    {isAccountingSubmenuOpen && (
+                      <div 
+                        className="absolute left-full top-0 ml-1 w-56 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50"
+                        onMouseEnter={() => setIsAccountingSubmenuOpen(true)}
+                        onMouseLeave={() => setIsAccountingSubmenuOpen(false)}
+                      >
+                        <a
+                          href="/accounting/us-accounting"
+                          className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                        >
+                          US Accounting
+                        </a>
+                        <a
+                          href="/accounting/truck-logistics"
+                          className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                        >
+                          Truck & Logistics
+                        </a>
+                      </div>
+                    )}
+                  </div>
                 </div>
               )}
             </div>
             <a href="/portfolio" className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 text-gray-700">
               Portfolio
             </a>
-            <a href="/blog" className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 text-gray-700">
-              Blog
-            </a>
-            <a href="/careers" className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 text-gray-700">
-              Careers
-            </a>
-            <a href="/contact" className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 text-gray-700">
-              Contact
-            </a>
+            <div className="relative" ref={insightsRef}>
+              <button 
+                onClick={handleInsightsToggle}
+                className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 flex items-center space-x-1 text-gray-700"
+              >
+                <span>Insights</span>
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isInsightsDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {isInsightsDropdownOpen && (
+                <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
+                  <a
+                    href="/blog"
+                    className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                  >
+                    Blog
+                  </a>
+                  <a
+                    href="/careers"
+                    className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                  >
+                    Careers
+                  </a>
+                  <a
+                    href="/contact"
+                    className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                  >
+                    Contact
+                  </a>
+                </div>
+              )}
+            </div>
           </nav>
 
           {/* CTA Button */}
@@ -131,7 +221,10 @@ const Header = () => {
               </a>
               <div>
                 <button 
-                  onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+                  onClick={() => {
+                    setIsServicesDropdownOpen(!isServicesDropdownOpen);
+                    setIsInsightsDropdownOpen(false);
+                  }}
                   className="font-medium transition-colors hover:text-blue-600 text-gray-700 flex items-center justify-between w-full py-3 px-2 rounded-lg hover:bg-blue-50 active:bg-blue-100"
                 >
                   <span>Services</span>
@@ -160,6 +253,34 @@ const Header = () => {
                     >
                       All Services
                     </a>
+                    
+                    <div>
+                      <button
+                        onClick={() => setIsAccountingSubmenuOpenMobile(!isAccountingSubmenuOpenMobile)}
+                        className="flex items-center justify-between w-full py-3 px-4 text-gray-700 hover:text-blue-600 transition-colors rounded-lg hover:bg-blue-50 active:bg-blue-100"
+                      >
+                        <span>Accounting</span>
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isAccountingSubmenuOpenMobile ? 'rotate-180' : ''}`} />
+                      </button>
+                      {isAccountingSubmenuOpenMobile && (
+                        <div className="mt-1 ml-4 space-y-1">
+                          <a
+                            href="/accounting/us-accounting"
+                            className="block py-3 px-4 text-gray-700 hover:text-blue-600 transition-colors rounded-lg hover:bg-blue-50 active:bg-blue-100"
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            US Accounting
+                          </a>
+                          <a
+                            href="/accounting/truck-logistics"
+                            className="block py-3 px-4 text-gray-700 hover:text-blue-600 transition-colors rounded-lg hover:bg-blue-50 active:bg-blue-100"
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            Truck & Logistics
+                          </a>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 )}
               </div>
@@ -170,27 +291,44 @@ const Header = () => {
               >
                 Portfolio
               </a>
-              <a
-                href="/blog"
-                className="font-medium transition-colors hover:text-blue-600 text-gray-700 py-3 px-2 rounded-lg hover:bg-blue-50 active:bg-blue-100"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Blog
-              </a>
-              <a
-                href="/careers"
-                className="font-medium transition-colors hover:text-blue-600 text-gray-700 py-3 px-2 rounded-lg hover:bg-blue-50 active:bg-blue-100"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Careers
-              </a>
-              <a
-                href="/contact"
-                className="font-medium transition-colors hover:text-blue-600 text-gray-700 py-3 px-2 rounded-lg hover:bg-blue-50 active:bg-blue-100"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact
-              </a>
+              <div>
+                <button 
+                  onClick={() => {
+                    setIsInsightsDropdownOpen(!isInsightsDropdownOpen);
+                    setIsServicesDropdownOpen(false);
+                    setIsAccountingSubmenuOpenMobile(false);
+                  }}
+                  className="font-medium transition-colors hover:text-blue-600 text-gray-700 flex items-center justify-between w-full py-3 px-2 rounded-lg hover:bg-blue-50 active:bg-blue-100"
+                >
+                  <span>Insights</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isInsightsDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {isInsightsDropdownOpen && (
+                  <div className="mt-1 ml-2 space-y-1">
+                    <a
+                      href="/blog"
+                      className="block py-3 px-4 text-gray-700 hover:text-blue-600 transition-colors rounded-lg hover:bg-blue-50 active:bg-blue-100"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Blog
+                    </a>
+                    <a
+                      href="/careers"
+                      className="block py-3 px-4 text-gray-700 hover:text-blue-600 transition-colors rounded-lg hover:bg-blue-50 active:bg-blue-100"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Careers
+                    </a>
+                    <a
+                      href="/contact"
+                      className="block py-3 px-4 text-gray-700 hover:text-blue-600 transition-colors rounded-lg hover:bg-blue-50 active:bg-blue-100"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Contact
+                    </a>
+                  </div>
+                )}
+              </div>
               <a
                 href="https://tidycal.com/team/deepiotics-team/call"
                 target="_blank"

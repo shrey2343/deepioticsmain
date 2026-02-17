@@ -20,6 +20,8 @@ import BlogPage from './components/BlogPage';
 import BlogDetailPage from './components/BlogDetailPage';
 import LinkedInServicePage from './components/LinkedInServicePage';
 import AIBusinessGrowthPage from './components/AIBusinessGrowthPage';
+import USAccountingPage from './components/USAccountingPage';
+import TruckLogisticsPage from './components/TruckLogisticsPage';
 
 function App() {
   const path = window.location.pathname;
@@ -130,6 +132,28 @@ function App() {
       <div className="min-h-screen">
         <Header />
         <AIBusinessGrowthPage />
+        <Footer />
+        <ChatbotWidget customerName="Guest" customerId="99aupairs" />
+      </div>
+    );
+  }
+
+  if (path === '/accounting/us-accounting') {
+    return (
+      <div className="min-h-screen">
+        <Header />
+        <USAccountingPage />
+        <Footer />
+        <ChatbotWidget customerName="Guest" customerId="99aupairs" />
+      </div>
+    );
+  }
+
+  if (path === '/accounting/truck-logistics') {
+    return (
+      <div className="min-h-screen">
+        <Header />
+        <TruckLogisticsPage />
         <Footer />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
       </div>

@@ -18,6 +18,33 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close dropdowns when clicking outside (desktop only)
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      
+      // Check if click is outside Services dropdown
+      if (isServicesDropdownOpen && !target.closest('.services-dropdown-container')) {
+        setIsServicesDropdownOpen(false);
+        setIsAccountingSubmenuOpen(false);
+      }
+      
+      // Check if click is outside Insights dropdown
+      if (isInsightsDropdownOpen && !target.closest('.insights-dropdown-container')) {
+        setIsInsightsDropdownOpen(false);
+      }
+    };
+
+    // Only add listener on desktop
+    if (window.innerWidth >= 1024) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isServicesDropdownOpen, isInsightsDropdownOpen]);
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,10 +68,9 @@ const Header = () => {
             <a href="/about" className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 text-gray-700">
               About Us
             </a>
-            <div className="relative" onMouseLeave={() => setIsServicesDropdownOpen(false)}>
+            <div className="relative services-dropdown-container">
               <button 
                 onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
-                onMouseEnter={() => setIsServicesDropdownOpen(true)}
                 className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 flex items-center space-x-1 text-gray-700"
               >
                 <span>Services</span>
@@ -109,10 +135,9 @@ const Header = () => {
             <a href="/portfolio" className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 text-gray-700">
               Portfolio
             </a>
-            <div className="relative" onMouseLeave={() => setIsInsightsDropdownOpen(false)}>
+            <div className="relative insights-dropdown-container">
               <button 
                 onClick={() => setIsInsightsDropdownOpen(!isInsightsDropdownOpen)}
-                onMouseEnter={() => setIsInsightsDropdownOpen(true)}
                 className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 flex items-center space-x-1 text-gray-700"
               >
                 <span>Insights</span>

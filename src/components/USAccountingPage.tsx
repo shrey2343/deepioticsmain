@@ -173,7 +173,7 @@ const USAccounting = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* HERO */}
-      <section className="relative overflow-hidden py-6 sm:py-8 md:py-12 lg:py-16">
+      <section className="relative overflow-hidden pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-6 sm:pb-8 md:pb-12 lg:pb-16">
         {/* Video Background */}
         <div className="absolute inset-0 overflow-hidden">
           <video

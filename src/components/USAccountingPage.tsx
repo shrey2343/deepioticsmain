@@ -1016,12 +1016,7 @@ const USAccounting = () => {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="border-t py-6 sm:py-8 bg-gray-50">
-        <div className="mx-auto max-w-7xl px-3 sm:px-4 md:px-6 lg:px-8 text-center text-xs sm:text-sm text-muted-foreground">
-          © {new Date().getFullYear()} ClearBooks Accounting. All rights reserved.
-        </div>
-      </footer>
+    
     </div>
   );
 };

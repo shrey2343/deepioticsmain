@@ -41,9 +41,10 @@ const Header = () => {
             <a href="/about" className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 text-gray-700">
               About Us
             </a>
-            <div className="relative">
+            <div className="relative" onMouseLeave={() => setIsServicesDropdownOpen(false)}>
               <button 
                 onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+                onMouseEnter={() => setIsServicesDropdownOpen(true)}
                 className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 flex items-center space-x-1 text-gray-700"
               >
                 <span>Services</span>
@@ -75,7 +76,7 @@ const Header = () => {
                     <div
                       className="flex items-center justify-between px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors cursor-pointer"
                       onMouseEnter={() => setIsAccountingSubmenuOpen(true)}
-                      onMouseLeave={() => setIsAccountingSubmenuOpen(false)}
+                      onMouseLeave={() => setIsAccountingSubmenuOpen(true)}
                     >
                       <span>Accounting</span>
                       <ChevronRight className="w-4 h-4" />
@@ -108,9 +109,10 @@ const Header = () => {
             <a href="/portfolio" className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 text-gray-700">
               Portfolio
             </a>
-            <div className="relative">
+            <div className="relative" onMouseLeave={() => setIsInsightsDropdownOpen(false)}>
               <button 
                 onClick={() => setIsInsightsDropdownOpen(!isInsightsDropdownOpen)}
+                onMouseEnter={() => setIsInsightsDropdownOpen(true)}
                 className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 flex items-center space-x-1 text-gray-700"
               >
                 <span>Insights</span>

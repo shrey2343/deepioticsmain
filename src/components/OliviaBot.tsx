@@ -262,7 +262,7 @@ const OliviaBot = () => {
   // 🎤 Toggle Voice Input
   const toggleVoiceInput = async () => {
     if (!recognitionRef.current) {
-      setVoiceError('Voice recognition not supported. Please use Chrome or Edge.');
+      setVoiceError('Voice recognition not supported. Please use Chrome, Edge, or Safari.');
       return;
     }
 
@@ -272,14 +272,22 @@ const OliviaBot = () => {
       return;
     }
 
+    // Check if we're on HTTPS (required for production)
+    if (window.location.protocol !== 'https:' && window.location.hostname !== 'localhost') {
+      setVoiceError('🔒 Voice input requires HTTPS. Please use the secure version of this site.');
+      return;
+    }
+
     // Check if getUserMedia is available
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-      setVoiceError('Microphone access not available. Please use HTTPS and a modern browser.');
+      setVoiceError('Microphone access not available. Please use a modern browser with HTTPS.');
       return;
     }
 
     try {
       console.log('Requesting microphone permission...');
+      console.log('Protocol:', window.location.protocol);
+      console.log('Hostname:', window.location.hostname);
       
       // Request microphone permission explicitly with detailed constraints
       const stream = await navigator.mediaDevices.getUserMedia({ 
@@ -292,6 +300,7 @@ const OliviaBot = () => {
       });
       
       console.log('Microphone permission granted');
+      console.log('Audio tracks:', stream.getAudioTracks().length);
       
       // Stop the stream immediately (we just needed permission)
       stream.getTracks().forEach(track => {
@@ -319,19 +328,23 @@ const OliviaBot = () => {
       }, 200);
     } catch (error: any) {
       console.error('Microphone access error:', error);
+      console.error('Error name:', error.name);
+      console.error('Error message:', error.message);
       setIsListening(false);
       
       if (error.name === 'NotAllowedError' || error.name === 'PermissionDeniedError') {
-        setVoiceError('🎤 Microphone blocked! Click lock icon 🔒 → Site Settings → Allow Microphone');
+        setVoiceError('🎤 Microphone blocked! Click the lock icon 🔒 in your browser address bar → Site Settings → Allow Microphone');
         setMicPermission('denied');
       } else if (error.name === 'NotFoundError') {
         setVoiceError('No microphone detected. Please connect a microphone and try again.');
       } else if (error.name === 'NotReadableError') {
-        setVoiceError('Microphone is being used by another app. Please close other apps.');
+        setVoiceError('Microphone is being used by another app. Please close other apps and try again.');
       } else if (error.name === 'SecurityError') {
-        setVoiceError('Security error. Please ensure you\'re using HTTPS and refresh the page.');
+        setVoiceError('🔒 Security error. This site must use HTTPS for microphone access. Please contact support.');
+      } else if (error.name === 'NotSupportedError') {
+        setVoiceError('Microphone not supported on this device or browser. Please try Chrome or Edge.');
       } else {
-        setVoiceError(`Microphone error: ${error.message || 'Unknown error'}. Please refresh and try again.`);
+        setVoiceError(`Microphone error: ${error.message || 'Unknown error'}. Please ensure HTTPS and refresh.`);
       }
     }
   };

@@ -58,6 +58,9 @@ const Header = () => {
             <a href="/about" className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 text-gray-700">
               About Us
             </a>
+            <a href="/accounting/us-accounting" className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 text-gray-700">
+              Accounting Services
+            </a>
             <div className="relative services-dropdown-container">
               <button 
                 onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
@@ -202,6 +205,13 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 About Us
+              </a>
+              <a
+                href="/accounting/us-accounting"
+                className="font-medium transition-colors hover:text-blue-600 text-gray-700 py-3 px-2 rounded-lg hover:bg-blue-50 active:bg-blue-100"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Accounting Services
               </a>
               <div>
                 <button 

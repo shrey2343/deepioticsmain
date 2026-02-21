@@ -1,22 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Brain, ChevronDown, ChevronRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [isInsightsDropdownOpen, setIsInsightsDropdownOpen] = useState(false);
   const [isAccountingSubmenuOpen, setIsAccountingSubmenuOpen] = useState(false);
   const [isAccountingSubmenuOpenMobile, setIsAccountingSubmenuOpenMobile] = useState(false);
-  const isHomePage = window.location.pathname === '/';
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Close dropdowns when clicking outside (desktop only)
   useEffect(() => {

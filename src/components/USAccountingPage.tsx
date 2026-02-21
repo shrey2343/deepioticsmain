@@ -112,52 +112,51 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 )
 Input.displayName = "Input";
 
-const BOOKING_URL = "https://your-booking-link.com";
+const BOOKING_URL = "https://calendly.com/deepiotics/consultation"; // Replace with your actual booking URL
 
 const painPoints = [
-  { text: "📊 You don't fully understand your reports" },
-  { text: "💸 You're unsure where profit is leaking" },
-  { text: "⚠️ Cash flow surprises keep happening" },
-  { text: "⏰ You don't have time to manage books" },
-  { text: "📉 Your numbers don't help you make decisions" },
-  { text: "🧾 You wish someone could just explain it simply" },
+  { text: "You don't fully understand your financial reports." },
+  { text: "You're not sure where your profit is leaking." },
+  { text: "Cash flow surprises keep catching you off guard." },
+  { text: "You don't have time to manage the day‑to‑day books." },
+  { text: "Your numbers don't help you make better decisions." },
+  { text: "You wish someone would just explain it simply." },
 ];
 
 const steps = [
-  { num: "01", icon: Calendar, title: "Fill Form & Book Call", desc: "Submit your details and instantly schedule a consultation call with our team so we can understand your business needs." },
-  { num: "02", icon: FileCheck, title: "Consultation + Free Month Begins", desc: "We review your requirements, set up your accounting process, and start your free 30-day service." },
-  { num: "03", icon: BarChart3, title: "Get Dashboard & Insights", desc: "Receive clear reports, your financial dashboard, and simple explanations that help you make smarter decisions." },
+  { num: "01", icon: Calendar, title: "Share Your Details & Book a Call", desc: "Fill out a short form and book a quick call. We'll learn about your business, your current setup, and what kind of support you need." },
+  { num: "02", icon: FileCheck, title: "Consultation & 30‑Day Free Trial", desc: "On the call, we'll map out your process and access, then we'll start your 30‑day free trial so you can experience how we work with your real numbers." },
+  { num: "03", icon: BarChart3, title: "Receive Your Dashboard & Simple Reports", desc: "We organize your books, set up your reports and dashboard, and walk you through everything in clear, simple language." },
 ];
 
 const services = [
-  { title: "💳 Accounts Receivable Management", desc: "Invoicing, collections, aging reports, and credit control to keep your cash flow strong." },
-  { title: "📑 Accounts Payable Management", desc: "Vendor invoice processing, payment scheduling, and reconciliation so nothing is missed." },
-  { title: "📊 Full-Service Accounting", desc: "Monthly books, reconciliations, profit & loss, and balance sheets — done for you." },
-  { title: "📈 Financial Reporting", desc: "Customized US-standard reports tailored to your business and decision-making needs." },
-  { title: "⭐ Smart Insights Dashboard", desc: "A simple visual dashboard that shows your financial health, trends, risks, and performance at a glance.", },
+  { title: "Bookkeeping & Day‑to‑Day Accounting", desc: "We handle daily and monthly bookkeeping so your records stay organized and up to date (invoicing, expenses, bank and card reconciliations)." },
+  { title: "Month‑End Close & Reports", desc: "We prepare your monthly profit and loss, balance sheet, and key financial reports so you always have a clear view of your business." },
+  { title: "Cleanup & Catch‑Up Work", desc: "Behind on your books? We clean up messy accounts and bring everything up to date so you can move forward with confidence." },
+  { title: "Smart Insights Dashboard", desc: "See your financial health at a glance with a simple dashboard that highlights trends, cash flow, and potential risks in your business." },
+  { title: "Cash Flow & Planning Support", desc: "Understand where your money is coming from and where it's going so you can plan ahead and avoid unpleasant surprises." },
+  { title: "Project & One‑Time Support", desc: "Need help with a one‑time project like historical cleanup, system migration, or process organization? We can step in and get it done." },
 ];
 
 const trustPoints = [
-  { title: "🔐 Secure & Confidential", desc: "Your financial data is protected with strict security practices and controlled access." },
-  { title: "✅ Multi-Level Accuracy Checks", desc: "Every report is reviewed carefully to ensure correctness and reliability." },
-  { title: "👥 Dedicated Accounting Team", desc: "You work with a consistent team that understands your business." },
-  { title: "📘 US Accounting Standards Ready", desc: "We prepare reports aligned with US accounting practices and requirements." },
-  { title: "⚡ Fast Response Support", desc: "Quick communication and timely updates whenever you need assistance." },
-  { title: "📊 Clear, Understandable Reports", desc: "We don't send confusing spreadsheets — we explain what your numbers mean." },
+  { title: "Multi‑Level Checks for Accuracy", desc: "We use standard checklists and review steps so your numbers stay accurate and consistent over time." },
+  { title: "Clear Communication", desc: "You get regular updates in simple language, so you always know what's done, what's pending, and what needs your attention." },
+  { title: "Organised and On Time", desc: "Your reports are delivered on a regular schedule, and your records stay neatly organized for easy review." },
+  { title: "Smooth Transitions", desc: "Switching from another setup? We handle the heavy lifting so you don't lose continuity or historical information." },
 ];
 
 const faqs = [
-  { q: "How quickly can you take over my accounting?", a: "48-72 hours for complete onboarding. First clean reports in 7 days." },
-  { q: "What if my books are a mess?", a: "We specialize in cleanup. We'll audit your history, fix errors, and get you current." },
-  { q: "Do I need to be on a specific software?", a: "We work with QuickBooks, Xero, and most platforms. We'll recommend what's best." },
-  { q: "How much does it cost?", a: "Plans start based on transaction volume. Contact us for exact pricing tailored to your needs." },
-  { q: "What if it doesn't work out?", a: "Cancel anytime, no questions asked. Most clients stay 3+ years because it just works." },
+  { q: "How quickly can you take over my accounting?", a: "In most cases, we can get started within a few days of our initial call. The full setup and cleanup (if needed) usually happens during your 30‑day free trial." },
+  { q: "What if my books are a mess?", a: "That's okay. Many clients come to us with behind‑on or disorganised books. We'll assess your situation and include cleanup as part of the onboarding plan." },
+  { q: "Do I need to use specific software?", a: "We work with common accounting tools and can usually work within your existing setup. If a change would help, we'll recommend options but the choice is yours." },
+  { q: "How much does it cost?", a: "Pricing depends on the size and complexity of your business. On our call, we'll understand your needs and share a clear, tailored quote after your free trial." },
+  { q: "What if it doesn't work out?", a: "You're not locked in. If you feel we're not the right fit after the trial and initial period, you can walk away with no long‑term commitment." },
 ];
 
 const testimonials = [
-  { quote: "Finally, an accounting team that actually gets back to me.", author: "Sarah M.", role: "E-commerce Business Owner" },
-  { quote: "Switched from a Big 4 firm. Better service, 60% lower cost.", author: "James K.", role: "Tech Startup Founder" },
-  { quote: "They caught a $12K error my previous accountant missed for 2 years.", author: "Michelle R.", role: "Consulting Firm" },
+  { quote: "Finally, an accounting team that actually explains what's going on in our numbers.", author: "Sarah M.", role: "E‑commerce Business Owner" },
+  { quote: "We get better service and clarity at a fraction of what we used to pay.", author: "James K.", role: "Tech Company Founder" },
+  { quote: "They caught issues we hadn't seen for years and helped us get back on track.", author: "Michelle R.", role: "Consulting Firm Owner" },
 ];
 
 const USAccounting = () => {
@@ -205,12 +204,12 @@ const USAccounting = () => {
               </div>
 
               <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight animate-slide-up" style={{ animationDelay: '0.1s' }}>
-                Outsourced Accounting Services That Actually{" "}
-                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent" style={{ textShadow: 'none', WebkitTextStroke: '0.5px rgba(59, 130, 246, 0.3)' }}>Explain Your Business</span>
+                Outsourced Accounting That Makes Your Numbers{" "}
+                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent" style={{ textShadow: 'none', WebkitTextStroke: '0.5px rgba(59, 130, 246, 0.3)' }}>Easy to Understand</span>
               </h1>
 
               <p className="mx-auto lg:mx-0 mt-4 sm:mt-5 md:mt-7 max-w-2xl text-lg sm:text-lg md:text-xl text-gray-800 animate-slide-up leading-relaxed font-semibold" style={{ animationDelay: '0.2s' }}>
-                We handle your books, reports, and numbers — and explain them in simple language so you always know what's happening in your business.
+                We manage your books and reports and explain them in simple language so you always know what's happening in your business.
               </p>
 
               <div className="mt-5 sm:mt-7 md:mt-9 flex flex-row flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 md:gap-4 text-xs sm:text-sm animate-slide-up" style={{ animationDelay: '0.3s' }}>
@@ -233,8 +232,8 @@ const USAccounting = () => {
             <div className="animate-scale-in order-2 lg:order-2" style={{ animationDelay: '0.4s' }}>
               <div className="p-4 sm:p-5 md:p-6">
 
-                <h3 className="text-xl sm:text-2xl font-bold text-foreground">Start Your Free Month</h3>
-                <p className="text-xs sm:text-sm text-foreground/80 mt-1 mb-6">No credit card required • Setup in 48 hours</p>
+                <h3 className="text-xl sm:text-2xl font-bold text-foreground">Start Your Free 30-Day Trial</h3>
+                <p className="text-xs sm:text-sm text-foreground/80 mt-1 mb-6">No credit card required</p>
                 <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
                   <div className="space-y-1.5 sm:space-y-2">
                     <label htmlFor="name" className="text-xs sm:text-sm font-medium text-foreground">Full Name</label>
@@ -272,10 +271,10 @@ const USAccounting = () => {
                     />
                   </div>
                   <Button type="submit" className="w-full rounded-full text-sm sm:text-base py-5 sm:py-6 shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] animate-pulse-glow backdrop-blur-sm">
-                    Get My Free Accounting Month <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                    Start Free 30-Day Trial <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                   </Button>
                   <p className="text-[10px] sm:text-xs text-center text-foreground/70">
-                    🔒 Your information is secure and will never be shared
+                    Your information is secure and will never be shared.
                   </p>
                 </form>
               </div>
@@ -296,10 +295,10 @@ const USAccounting = () => {
           <div className="text-center mb-8 sm:mb-10 md:mb-12">
 
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-              Does Your Accounting Feel <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Confusing or Out of Control?</span>
+              Does Your Accounting Feel <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Out of Control?</span>
             </h2>
             <p className="mx-auto mt-4 sm:mt-5 max-w-2xl text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
-              Many business owners struggle with their finances — not because they're bad at business, but because they don't have clear financial visibility.
+              Many business owners receive reports every month but still don't feel confident about what their numbers actually mean.
             </p>
           </div>
 
@@ -336,7 +335,7 @@ const USAccounting = () => {
 
                   <div className="text-center sm:text-left flex-1">
                     <p className="text-sm sm:text-base lg:text-lg  text-white mb-1">
-                      You just need someone who explains your numbers clearly.
+                      You don't need more reports, you need clear explanations and usable insights.
                     </p>
 
                   </div>
@@ -356,7 +355,7 @@ const USAccounting = () => {
               Most Accounting Firms Send Reports. <span className="gradient-text">We Send Clarity.</span>
             </h2>
             <p className="mx-auto mt-3 sm:mt-4 max-w-2xl text-sm sm:text-base md:text-lg text-muted-foreground">
-              We don't just manage your books — we help you understand what your numbers actually mean for your business.
+              We manage your books and show you what your numbers actually mean, in plain language.
             </p>
           </div>
 
@@ -376,10 +375,10 @@ const USAccounting = () => {
 
                 <ul className="space-y-3">
                   {[
-                    "Send complex reports",
-                    "Use technical language",
-                    "Focus only on data",
-                    "Leave interpretation to you"
+                    "Send complex reports full of jargon.",
+                    "Use technical language that's hard to follow.",
+                    "Focus only on the data, not decisions.",
+                    "Leave interpretation entirely up to you."
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-2.5">
                       <div className="h-1.5 w-1.5 rounded-full bg-gray-400 shrink-0"></div>
@@ -412,10 +411,10 @@ const USAccounting = () => {
 
                 <ul className="space-y-3">
                   {[
-                    "Simple, clear explanations",
-                    "Plain English insights",
-                    "Actionable guidance",
-                    "Numbers that help you decide"
+                    "Simple explanations in plain English.",
+                    "Clear insights about what's working and what isn't.",
+                    "Actionable guidance, not just spreadsheets.",
+                    "Numbers that support your daily decisions."
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-2.5">
                       <div className="h-5 w-5 rounded-lg bg-teal-500 flex items-center justify-center shrink-0">
@@ -438,10 +437,10 @@ const USAccounting = () => {
 
               <div className="grid gap-5 sm:gap-6 grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
                 {[
-                  { text: "💰 Where your money is going", gradient: "from-cyan-400 to-blue-500" },
-                  { text: "📈 What's working best", gradient: "from-blue-400 to-cyan-500" },
-                  { text: "🔧 What needs fixing", gradient: "from-purple-400 to-blue-500" },
-                  { text: "🧭 What decisions to make next", gradient: "from-purple-500 to-cyan-500" }
+                  { text: "Where your money is going", gradient: "from-cyan-400 to-blue-500" },
+                  { text: "What's working best", gradient: "from-blue-400 to-cyan-500" },
+                  { text: "What needs fixing", gradient: "from-purple-400 to-blue-500" },
+                  { text: "What decisions to make next", gradient: "from-purple-500 to-cyan-500" }
                 ].map((item, i) => (
                   <div key={i} className="flex flex-col items-center gap-3 group/item">
 
@@ -452,7 +451,7 @@ const USAccounting = () => {
 
               <div className="mt-6 sm:mt-8 text-center ">
                 <p className="text-base sm:text-lg font-bold text-white">
-                  We turn your financial data into simple business advice.
+                  Clear numbers. Confident decisions. Better growth.
                 </p>
               </div>
             </CardContent>
@@ -472,10 +471,10 @@ const USAccounting = () => {
           <div className="text-center mb-8 sm:mb-10 md:mb-12">
 
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-              Advanced Financial Insights <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Most Accounting Firms Don't Offer</span>
+              Everything You Need to <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Stay on Top of Your Numbers</span>
             </h2>
             <p className="mx-auto mt-4 sm:mt-5 max-w-2xl text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
-              Traditional accountants send reports. We go further — giving you visibility, clarity, and decision-ready insights.
+              Clear books. Clear insights. Zero stress.
             </p>
           </div>
 
@@ -526,10 +525,10 @@ const USAccounting = () => {
                   </div>
                   <div className="text-center sm:text-left flex-1">
                     <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-1">
-                      Clear numbers. Confident decisions. Better growth.
+                      Clear books. Clear insights. Zero stress.
                     </p>
                     <p className="text-xs sm:text-sm text-gray-600">
-                      Everything you need to understand and grow your business.
+                      Everything you need to stay on top of your numbers.
                     </p>
                   </div>
                 </div>
@@ -550,7 +549,7 @@ const USAccounting = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600">3 Simple Steps</span>
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
-              Simple onboarding. No confusion. No complicated setup.
+              Simple onboarding. No confusion. No complicated technical setup.
             </p>
           </div>
 
@@ -627,7 +626,7 @@ const USAccounting = () => {
                         <div className="relative w-full h-full bg-white rounded-[2.5rem] overflow-hidden">
                           {/* Status Bar */}
                           <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 flex items-center justify-between px-6 text-white text-xs z-10">
-                            <span className="font-semibold">9:41</span>
+                            <span className="font-semibold">{new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: false })}</span>
                             <div className="flex gap-1">
                               <div className="w-1 h-3 bg-white rounded"></div>
                               <div className="w-1 h-3 bg-white rounded"></div>
@@ -688,12 +687,12 @@ const USAccounting = () => {
                     <CheckCircle className="h-6 w-6 sm:h-7 sm:w-7 text-white stroke-[2]" />
                   </div>
                   <div className="text-center sm:text-left flex-1">
-                    <p className="text-xs sm:text-sm font-medium text-gray-600 mb-1">That's it. No long onboarding. No technical setup.</p>
-                    <p className="text-sm sm:text-base lg:text-lg font-bold text-gray-900">We handle everything — setup, migration, and organization.</p>
+                    <p className="text-xs sm:text-sm font-medium text-gray-600 mb-1">That's it — no long onboarding or complicated technical setup.</p>
+                    <p className="text-sm sm:text-base lg:text-lg font-bold text-gray-900">We handle account setup, migration, and organization so you can focus on running your business.</p>
                   </div>
                   <Button asChild className="w-full sm:w-auto rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 shrink-0 bg-gradient-to-r from-cyan-500 to-blue-600 text-sm sm:text-base px-6 sm:px-8">
                     <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-                      Start Free Month <ArrowRight className="ml-2 h-4 w-4" />
+                      Start Free 30-Day Trial <ArrowRight className="ml-2 h-4 w-4" />
                     </a>
                   </Button>
                 </div>
@@ -718,7 +717,7 @@ const USAccounting = () => {
               Why Businesses Trust Us <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">With Their Accounting</span>
             </h2>
             <p className="mx-auto mt-4 sm:mt-5 max-w-2xl text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
-              Your finances are sensitive. We treat them with accuracy, security, and complete professionalism.
+              Your financial data is sensitive, and you need a team you can rely on every single month.
             </p>
           </div>
 
@@ -760,10 +759,10 @@ const USAccounting = () => {
 
                   <div className="text-center sm:text-left flex-1">
                     <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent mb-1">
-                      Accurate books. Clear insights. Zero stress.
+                      Accurate books. Clear insights. Less stress for you and your team.
                     </p>
                     <p className="text-xs sm:text-sm text-gray-600">
-                      Switching accountants? We handle everything — data transfer, setup, and onboarding.
+                      Switching from another setup? We handle the heavy lifting so you don't lose continuity or historical information.
                     </p>
                   </div>
                 </div>
@@ -842,10 +841,10 @@ const USAccounting = () => {
           <div className="text-center mb-8 sm:mb-10 md:mb-12">
 
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-              Common Questions <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Before You Get Started</span>
+              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Frequently Asked Questions</span>
             </h2>
             <p className="mx-auto mt-4 sm:mt-5 max-w-2xl text-sm sm:text-base text-gray-600">
-              Everything you need to know about our accounting services.
+              Everything you need to know before getting started.
             </p>
           </div>
 
@@ -912,12 +911,12 @@ const USAccounting = () => {
                 <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5">
 
                   <div className="text-center sm:text-left flex-1">
-                    <p className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-1">❓ Still have questions?</p>
+                    <p className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-1">Still have questions?</p>
                     <p className="text-xs sm:text-sm text-gray-600">Our team is here to help you get started.</p>
                   </div>
                   <Button asChild className="w-full sm:w-auto rounded-full shrink-0 bg-gradient-to-r from-purple-500 to-cyan-600 shadow-lg hover:shadow-xl transition-all hover:scale-105 text-sm sm:text-base px-6 sm:px-8">
                     <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-                      Contact Us <ArrowRight className="ml-2 h-4 w-4" />
+                      Book a Quick Call <ArrowRight className="ml-2 h-4 w-4" />
                     </a>
                   </Button>
                 </div>
@@ -945,28 +944,28 @@ const USAccounting = () => {
             </div>
             <div className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30">
               <Shield className="h-4 w-4 text-white" />
-              <span className="text-white text-xs sm:text-sm font-semibold">No Credit Card</span>
+              <span className="text-white text-xs sm:text-sm font-semibold">No Credit Card Required</span>
             </div>
             <div className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30">
               <Zap className="h-4 w-4 text-white" />
-              <span className="text-white text-xs sm:text-sm font-semibold">Setup in 48 Hours</span>
+              <span className="text-white text-xs sm:text-sm font-semibold">Simple Setup</span>
             </div>
           </div>
 
           {/* Main Heading */}
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4 sm:mb-6">
-            Ready to Get <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-white">Clear on Your Numbers?</span>
+            Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-white">Get Clear on Your Numbers?</span>
           </h2>
 
           <p className="mx-auto max-w-2xl text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mb-8 sm:mb-10">
-            Start your free 30-day trial today. No credit card required. No complicated setup. Just clear, simple accounting that helps you grow.
+            Start your free 30-day trial today. No credit card required. No complicated setup. Just clear, simple accounting that helps you run and grow your business with confidence.
           </p>
 
           {/* CTA Button */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 sm:mb-10 px-4 sm:px-0">
             <Button asChild size="lg" className="w-full sm:w-auto rounded-full px-6 sm:px-8 md:px-10 lg:px-12 text-sm sm:text-base md:text-lg py-5 sm:py-6 md:py-7 bg-white text-purple-600 hover:bg-gray-100 shadow-2xl hover:shadow-3xl transition-all hover:scale-105 font-bold">
               <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-                Get My Free Accounting Month <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                Start Free 30-Day Trial <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </a>
             </Button>
           </div>

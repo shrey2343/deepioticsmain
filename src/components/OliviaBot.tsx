@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Send, Mic, MicOff, X, Minimize2, Maximize2, Volume2, VolumeX } from 'lucide-react';
 
 interface Message {

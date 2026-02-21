@@ -560,16 +560,7 @@ const TruckLogistics = () => {
 
                         {/* Screen */}
                         <div className="relative w-full h-full bg-white rounded-[2.5rem] overflow-hidden">
-                          {/* Status Bar */}
-                          <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 flex items-center justify-between px-6 text-white text-xs z-10">
-                            <span className="font-semibold">9:41</span>
-                            <div className="flex gap-1">
-                              <div className="w-1 h-3 bg-white rounded"></div>
-                              <div className="w-1 h-3 bg-white rounded"></div>
-                              <div className="w-1 h-3 bg-white rounded"></div>
-                              <div className="w-1 h-3 bg-white/50 rounded"></div>
-                            </div>
-                          </div>
+                         
 
                           {/* Content */}
                           <div className="pt-16 px-6 pb-6 h-full overflow-hidden">

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
@@ -112,7 +112,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 )
 Input.displayName = "Input";
 
-const BOOKING_URL = "https://calendly.com/deepiotics/consultation"; // Replace with your actual booking URL
+const BOOKING_URL = "https://calendly.com/deepiotics/consultation"; // 
 
 const painPoints = [
   { text: "You don't fully understand your financial reports." },
@@ -162,6 +162,16 @@ const testimonials = [
 const USAccounting = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
+
+  // Set document title
+  useEffect(() => {
+    document.title = "Outsourced Accounting Services | Deepiotics";
+    
+    // Cleanup function to reset title when component unmounts
+    return () => {
+      document.title = "Deepiotics";
+    };
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -219,7 +229,7 @@ const USAccounting = () => {
                 </div>
                 <div className="flex items-center gap-1.5 px-2.5 sm:px-3 py-2 sm:py-2 rounded-lg bg-blue-100/90 backdrop-blur-sm border border-blue-300/50 justify-center shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5">
                   <BarChart3 className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600 shrink-0" />
-                  <span className="font-medium text-blue-800 text-xs sm:text-sm whitespace-nowrap">Smart Dashboard</span>
+                  <span className="font-medium text-blue-800 text-xs sm:text-sm whitespace-nowrap">Smart Financial Dashboard</span>
                 </div>
                 <div className="flex items-center gap-1.5 px-2.5 sm:px-3 py-2 sm:py-2 rounded-lg bg-purple-100/90 backdrop-blur-sm border border-purple-300/50 justify-center shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5">
                   <Users className="h-4 w-4 sm:h-5 sm:w-5 text-purple-600 shrink-0" />
@@ -274,7 +284,7 @@ const USAccounting = () => {
                     Start Free 30-Day Trial <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                   </Button>
                   <p className="text-[10px] sm:text-xs text-center text-foreground/70">
-                    Your information is secure and will never be shared.
+                   🔒 Your information is secure and will never be shared.
                   </p>
                 </form>
               </div>

@@ -22,6 +22,8 @@ import LinkedInServicePage from './components/LinkedInServicePage';
 import AIBusinessGrowthPage from './components/AIBusinessGrowthPage';
 import USAccountingPage from './components/USAccountingPage';
 import TrucksLogisticsPage from './components/TrucksLogisticsPage';
+import MediaPage from './components/MediaPage';
+import PublicationPage from './components/PublicationPage';
 
 function App() {
   const path = window.location.pathname;
@@ -104,6 +106,28 @@ function App() {
     );
   }
 
+  if (path === '/media') {
+    return (
+      <div className="min-h-screen">
+        <Header />
+        <MediaPage />
+        <Footer />
+        <ChatbotWidget customerName="Guest" customerId="99aupairs" />
+      </div>
+    );
+  }
+
+  if (path === '/publication') {
+    return (
+      <div className="min-h-screen">
+        <Header />
+        <PublicationPage />
+        <Footer />
+        <ChatbotWidget customerName="Guest" customerId="99aupairs" />
+      </div>
+    );
+  }
+
   if (path.startsWith('/blog/')) {
     const slug = path.replace('/blog/', '');
     return (
@@ -141,7 +165,6 @@ function App() {
   if (path === '/accounting/us-accounting') {
     return (
       <div className="min-h-screen">
-        <Header />
         <USAccountingPage />
         <Footer />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />

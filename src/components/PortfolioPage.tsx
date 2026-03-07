@@ -1,4 +1,4 @@
-import { Gamepad2, Sparkles, Users, BarChart, CheckCircle, Award, Target, Zap, Globe, Shield, TrendingUp, Brain, Palette, Camera, Database, Lock, ShoppingCart, Heart, Building2, DollarSign, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Gamepad2, Sparkles, Users, BarChart, CheckCircle, Award, Target, Zap, Globe, Shield, TrendingUp, Brain, Palette, Camera, Database, Lock, ShoppingCart, Heart, Building2, DollarSign, ChevronLeft, ChevronRight, Mic, Activity } from 'lucide-react';
 import { useState } from 'react';
 
 export default function PortfolioPage() {
@@ -8,6 +8,8 @@ export default function PortfolioPage() {
   const [covidImageIndex, setCovidImageIndex] = useState(0);
   const [researchImageIndex, setResearchImageIndex] = useState(0);
   const [oliviaImageIndex, setOliviaImageIndex] = useState(0);
+  const [voiceUIImageIndex, setVoiceUIImageIndex] = useState(0);
+  const [noxEmissionImageIndex, setNoxEmissionImageIndex] = useState(0);
   
   const vyuhImages = [
     { src: '/vy7.PNG', alt: 'Vyuh Game Interface 1' },
@@ -36,6 +38,14 @@ export default function PortfolioPage() {
 
   const oliviaImages = [
     { src: '/Olivia2.png', alt: 'Olivia AI Consultant Interface' }
+  ];
+
+  const voiceUIImages = [
+    { src: 'https://elements-resized.envatousercontent.com/envato-dam-assets-production/EVA/TRX/ec/95/b1/6e/0b/v1_E10/E10APTQX.jpg?w=1400&cf_fit=scale-down&q=85&format=auto&s=c835375884e8ac00302dec2f971b05b0d18fb5bcdc922e70801517de1e367d9b', alt: 'Voice UI Assessment System Interface' }
+  ];
+
+  const noxEmissionImages = [
+    { src: 'https://elements-resized.envatousercontent.com/envato-dam-assets-production/cb47cb6e-0fe7-4e58-9605-76b75b4a9d19/9c3bbd01-789b-4603-90f4-e0bc522d60c2.jpg?w=1400&cf_fit=scale-down&q=85&format=auto&s=6560560c7ab6b4d30f186a32238c9dfcf169e02b8353caa1b865e8650ae60714', alt: 'Nox Emission Prediction Interface' }
   ];
 
   const nextVyuhImage = () => {
@@ -86,7 +96,119 @@ export default function PortfolioPage() {
     setOliviaImageIndex((prev) => (prev - 1 + oliviaImages.length) % oliviaImages.length);
   };
 
+  const nextVoiceUIImage = () => {
+    setVoiceUIImageIndex((prev) => (prev + 1) % voiceUIImages.length);
+  };
+
+  const prevVoiceUIImage = () => {
+    setVoiceUIImageIndex((prev) => (prev - 1 + voiceUIImages.length) % voiceUIImages.length);
+  };
+
+  const nextNoxEmissionImage = () => {
+    setNoxEmissionImageIndex((prev) => (prev + 1) % noxEmissionImages.length);
+  };
+
+  const prevNoxEmissionImage = () => {
+    setNoxEmissionImageIndex((prev) => (prev - 1 + noxEmissionImages.length) % noxEmissionImages.length);
+  };
+
   const caseStudies = [
+    {
+      icon: Building2,
+      company: 'Healthcare Providers',
+      industry: 'Healthcare & Radiology',
+      title: 'CovidXTrail - Pneumonia Detection from X-Ray',
+      challenge: 'Healthcare professionals needed rapid, accurate analysis of chest X-rays to detect Covid-19 and Pneumonia. Manual analysis was time-consuming and required significant radiologist expertise, creating bottlenecks in patient diagnosis.',
+      solution: 'We developed CovidXTrail - an AI solution that analyzes chest X-rays in minutes to detect signs of Covid-19 and Pneumonia. The system augments radiologists\' diagnostic ability using AI trained on thousands of verified X-rays, automating time-consuming and low cognitive value tasks while increasing productivity.',
+      results: [
+        'Chest X-ray analysis in minutes',
+        'High accuracy with radiologist-verified training data',
+        'Automated detection of Covid-19 and Pneumonia',
+        'Increased radiologist productivity',
+        'Faster patient diagnosis and treatment'
+      ],
+      technologies: ['Deep Learning', 'Python', 'TensorFlow', 'Medical Imaging', 'Computer Vision'],
+      timeline: '5 months',
+      team: '12 specialists',
+      benefits: [
+        { title: 'Rapid Analysis', desc: 'AI-powered chest X-ray analysis completed in minutes, enabling faster patient diagnosis and treatment decisions.' },
+        { title: 'High Accuracy', desc: 'Trained on thousands of radiologist-verified X-rays ensuring reliable Covid-19 and Pneumonia detection.' },
+        { title: 'Productivity Boost', desc: 'Automates time-consuming tasks allowing radiologists to focus on complex cases and patient care.' },
+        { title: 'Scalable Solution', desc: 'Handles high volume of X-rays efficiently, reducing diagnostic bottlenecks in healthcare facilities.' }
+      ]
+    },
+    {
+      icon: Heart,
+      company: 'Dentists Community',
+      industry: 'Healthcare & Dental',
+      title: 'Automated Dental X-ray Analysis',
+      challenge: 'Dentists spent significant time manually analyzing X-rays to detect missing teeth, wisdom teeth, and diagnose individual tooth conditions. This time-consuming process reduced productivity and delayed patient diagnosis.',
+      solution: 'We developed an AI-powered dental X-ray analysis system using Detectron2 framework with Mask-RCNN for automatic tooth detection and segmentation. The system detects and classifies 32 tooth classes, identifies missing teeth, wisdom teeth, and diagnoses conditions like cavities, treatments, and healthy teeth, significantly reducing diagnosis time.',
+      results: [
+        'Automatic detection of 32 tooth classes',
+        'Missing teeth and wisdom tooth identification',
+        'Individual tooth condition classification',
+        '70% reduction in diagnosis time',
+        'Enhanced diagnostic accuracy for dentists'
+      ],
+      technologies: ['Detectron2', 'Mask-RCNN', 'Python', 'Deep Learning', 'Computer Vision'],
+      timeline: '6 months',
+      team: '10 specialists',
+      benefits: [
+        { title: 'Automated Detection', desc: 'AI-powered system automatically detects and classifies all 32 tooth types with high accuracy.' },
+        { title: 'Time Efficiency', desc: '70% reduction in diagnosis time allows dentists to focus on patient care and treatment planning.' },
+        { title: 'Comprehensive Analysis', desc: 'Identifies missing teeth, wisdom teeth, cavities, treatments, and healthy teeth in single scan.' },
+        { title: 'Enhanced Accuracy', desc: 'Deep learning algorithms provide consistent and reliable diagnostic support for dental professionals.' }
+      ]
+    },
+    {
+      icon: Mic,
+      company: 'Psychological Assessment',
+      industry: 'Healthcare & Psychology',
+      title: 'Voice UI Assessment System',
+      challenge: 'To develop voice UI for Psychological Assessment System.',
+      solution: 'Developed Voice UI Assessment test mobile application. This app provide various feature like:\n• Accept the answer based on the intent\n• Dialogue Flow Control (selection of questions depending on previous question)\n• Voice Accent (American, Indian etc.)\n• Language Support\n• Soft Voice Tone',
+      results: [
+        'Voice-based psychological assessment interface',
+        'Intent-based answer recognition',
+        'Dynamic question flow control',
+        'Multi-accent voice support (American, Indian)',
+        'Multi-language support with soft voice tone'
+      ],
+      technologies: ['React Native', 'Node.js', 'MongoDB', 'AWS'],
+      timeline: '4 months',
+      team: '8 specialists',
+      benefits: [
+        { title: 'Voice Interface', desc: 'Natural voice interaction for psychological assessments with intent-based answer recognition.' },
+        { title: 'Adaptive Flow', desc: 'Dynamic question selection based on previous responses for personalized assessment experience.' },
+        { title: 'Multi-Language Support', desc: 'Supports multiple languages and accents (American, Indian) with soft voice tone for comfort.' },
+        { title: 'Enhanced Accessibility', desc: 'Voice-based interface makes psychological assessments more accessible and user-friendly.' }
+      ]
+    },
+    {
+      icon: Activity,
+      company: 'Environmental Monitoring',
+      industry: 'IoT & Environmental',
+      title: 'Nox Emission Prediction from IOT Sensors Data',
+      challenge: 'To develop Machine Learning Model for predicting Nox emission with 75+ accuracy.',
+      solution: 'Developed Deep Neural Network to get accuracy.\n• Performed EDA\n• Noise Removal\n• Correlation Analysis\n• Hyperparameter Tuning\n• 81% accuracy achieved.',
+      results: [
+        'Deep Neural Network implementation',
+        'Comprehensive EDA and noise removal',
+        'Advanced correlation analysis',
+        'Optimized hyperparameter tuning',
+        '81% accuracy achieved (exceeding 75% target)'
+      ],
+      technologies: ['AWS', 'Python', 'Keras'],
+      timeline: '3 months',
+      team: '6 specialists',
+      benefits: [
+        { title: 'High Accuracy', desc: 'Achieved 81% accuracy in NOx emission prediction, exceeding the target of 75% accuracy.' },
+        { title: 'Data Processing', desc: 'Comprehensive EDA, noise removal, and correlation analysis for optimal model performance.' },
+        { title: 'IoT Integration', desc: 'Seamless integration with IoT sensors for real-time environmental monitoring and prediction.' },
+        { title: 'Environmental Impact', desc: 'Enables proactive environmental monitoring and emission control for better air quality management.' }
+      ]
+    },
     {
       icon: Gamepad2,
       company: 'Vyuh',
@@ -983,8 +1105,182 @@ export default function PortfolioPage() {
                   </div>
                 )}
 
+                {/* Benefits Section with Image - For Voice UI Assessment System */}
+                {study.company === 'Psychological Assessment' && study.benefits && (
+                  <div className="mb-5">
+                    <div className="flex items-center space-x-2 mb-3">
+                      <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center shadow-sm">
+                        <Sparkles className="w-4 h-4 text-white" />
+                      </div>
+                      <h3 className="text-lg font-bold text-gray-900">Key Benefits</h3>
+                    </div>
+                    <div className="grid lg:grid-cols-2 gap-5">
+                      {/* Left: Benefits + Solution */}
+                      <div className="space-y-3">
+                        {study.benefits.map((benefit, idx) => (
+                          <div key={idx} className="bg-gradient-to-br from-purple-50/80 to-pink-50/80 rounded-xl p-3 border border-purple-200/50 hover:border-purple-300/80 hover:shadow-md transition-all duration-300">
+                            <h4 className="text-sm font-bold text-gray-900 mb-1 flex items-start">
+                              <span className="text-purple-600 mr-2">{idx + 1}️⃣</span>
+                              {benefit.title}
+                            </h4>
+                            <p className="text-xs text-gray-700 leading-relaxed">{benefit.desc}</p>
+                          </div>
+                        ))}
+                        {/* Solution */}
+                        <div className="bg-gradient-to-br from-blue-50/50 to-cyan-50/50 rounded-xl p-3 border border-blue-200/40 hover:border-blue-300/60 hover:shadow-md transition-all duration-300">
+                          <div className="flex items-center space-x-2 mb-2">
+                            <div className="w-7 h-7 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center shadow-sm">
+                              <Zap className="w-4 h-4 text-white" />
+                            </div>
+                            <h3 className="text-sm font-bold text-gray-900">Solution</h3>
+                          </div>
+                          <p className="text-xs text-gray-700 leading-relaxed whitespace-pre-line">{study.solution}</p>
+                        </div>
+                      </div>
+                      {/* Right: Image Slider */}
+                      <div className="relative group/img">
+                        <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-teal-500/20 rounded-2xl blur-xl group-hover/img:blur-2xl transition-all duration-300"></div>
+                        <div className="relative bg-gradient-to-br from-green-900 via-teal-900 to-emerald-900 rounded-2xl p-4 border border-white/10 shadow-2xl overflow-hidden h-full flex flex-col">
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-500/30 to-teal-500/30 rounded-full blur-3xl"></div>
+                          <div className="relative flex-1 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 group-hover/img:border-white/40 transition-all duration-300">
+                            <img 
+                              src={voiceUIImages[voiceUIImageIndex].src}
+                              alt={voiceUIImages[voiceUIImageIndex].alt}
+                              className="w-full h-full object-cover object-center group-hover/img:scale-105 transition-transform duration-500"
+                              loading="lazy"
+                            />
+                            {voiceUIImages.length > 1 && (
+                              <>
+                                <button
+                                  onClick={(e) => { e.preventDefault(); prevVoiceUIImage(); }}
+                                  className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-10"
+                                  aria-label="Previous image"
+                                >
+                                  <ChevronLeft className="w-5 h-5 text-gray-800" />
+                                </button>
+                                <button
+                                  onClick={(e) => { e.preventDefault(); nextVoiceUIImage(); }}
+                                  className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-10"
+                                  aria-label="Next image"
+                                >
+                                  <ChevronRight className="w-5 h-5 text-gray-800" />
+                                </button>
+                                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                                  {voiceUIImages.map((_, idx) => (
+                                    <button
+                                      key={idx}
+                                      onClick={(e) => { e.preventDefault(); setVoiceUIImageIndex(idx); }}
+                                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                                        idx === voiceUIImageIndex 
+                                          ? 'bg-white w-6' 
+                                          : 'bg-white/50 hover:bg-white/75'
+                                      }`}
+                                      aria-label={`Go to image ${idx + 1}`}
+                                    />
+                                  ))}
+                                </div>
+                              </>
+                            )}
+                          </div>
+                          <div className="mt-3 flex items-center justify-center gap-2 text-white/80 text-xs relative">
+                            <Mic className="w-4 h-4" />
+                            <span className="font-semibold">Voice UI Assessment {voiceUIImages.length > 1 ? `(${voiceUIImageIndex + 1}/${voiceUIImages.length})` : ''}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Benefits Section with Image - For Nox Emission Prediction */}
+                {study.company === 'Environmental Monitoring' && study.benefits && (
+                  <div className="mb-5">
+                    <div className="flex items-center space-x-2 mb-3">
+                      <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center shadow-sm">
+                        <Sparkles className="w-4 h-4 text-white" />
+                      </div>
+                      <h3 className="text-lg font-bold text-gray-900">Key Benefits</h3>
+                    </div>
+                    <div className="grid lg:grid-cols-2 gap-5">
+                      {/* Left: Benefits + Solution */}
+                      <div className="space-y-3">
+                        {study.benefits.map((benefit, idx) => (
+                          <div key={idx} className="bg-gradient-to-br from-purple-50/80 to-pink-50/80 rounded-xl p-3 border border-purple-200/50 hover:border-purple-300/80 hover:shadow-md transition-all duration-300">
+                            <h4 className="text-sm font-bold text-gray-900 mb-1 flex items-start">
+                              <span className="text-purple-600 mr-2">{idx + 1}️⃣</span>
+                              {benefit.title}
+                            </h4>
+                            <p className="text-xs text-gray-700 leading-relaxed">{benefit.desc}</p>
+                          </div>
+                        ))}
+                        {/* Solution */}
+                        <div className="bg-gradient-to-br from-blue-50/50 to-cyan-50/50 rounded-xl p-3 border border-blue-200/40 hover:border-blue-300/60 hover:shadow-md transition-all duration-300">
+                          <div className="flex items-center space-x-2 mb-2">
+                            <div className="w-7 h-7 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center shadow-sm">
+                              <Zap className="w-4 h-4 text-white" />
+                            </div>
+                            <h3 className="text-sm font-bold text-gray-900">Solution</h3>
+                          </div>
+                          <p className="text-xs text-gray-700 leading-relaxed whitespace-pre-line">{study.solution}</p>
+                        </div>
+                      </div>
+                      {/* Right: Image Slider */}
+                      <div className="relative group/img">
+                        <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-2xl blur-xl group-hover/img:blur-2xl transition-all duration-300"></div>
+                        <div className="relative bg-gradient-to-br from-orange-900 via-red-900 to-pink-900 rounded-2xl p-4 border border-white/10 shadow-2xl overflow-hidden h-full flex flex-col">
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-500/30 to-red-500/30 rounded-full blur-3xl"></div>
+                          <div className="relative flex-1 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 group-hover/img:border-white/40 transition-all duration-300">
+                            <img 
+                              src={noxEmissionImages[noxEmissionImageIndex].src}
+                              alt={noxEmissionImages[noxEmissionImageIndex].alt}
+                              className="w-full h-full object-cover object-center group-hover/img:scale-105 transition-transform duration-500"
+                              loading="lazy"
+                            />
+                            {noxEmissionImages.length > 1 && (
+                              <>
+                                <button
+                                  onClick={(e) => { e.preventDefault(); prevNoxEmissionImage(); }}
+                                  className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-10"
+                                  aria-label="Previous image"
+                                >
+                                  <ChevronLeft className="w-5 h-5 text-gray-800" />
+                                </button>
+                                <button
+                                  onClick={(e) => { e.preventDefault(); nextNoxEmissionImage(); }}
+                                  className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-10"
+                                  aria-label="Next image"
+                                >
+                                  <ChevronRight className="w-5 h-5 text-gray-800" />
+                                </button>
+                                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                                  {noxEmissionImages.map((_, idx) => (
+                                    <button
+                                      key={idx}
+                                      onClick={(e) => { e.preventDefault(); setNoxEmissionImageIndex(idx); }}
+                                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                                        idx === noxEmissionImageIndex 
+                                          ? 'bg-white w-6' 
+                                          : 'bg-white/50 hover:bg-white/75'
+                                      }`}
+                                      aria-label={`Go to image ${idx + 1}`}
+                                    />
+                                  ))}
+                                </div>
+                              </>
+                            )}
+                          </div>
+                          <div className="mt-3 flex items-center justify-center gap-2 text-white/80 text-xs relative">
+                            <Activity className="w-4 h-4" />
+                            <span className="font-semibold">NOx Emission Prediction {noxEmissionImages.length > 1 ? `(${noxEmissionImageIndex + 1}/${noxEmissionImages.length})` : ''}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 {/* Benefits Section - For other projects */}
-                {study.company !== 'Vyuh' && study.company !== 'FutureVision' && study.company !== 'Dentists Community' && study.company !== 'Healthcare Providers' && study.company !== 'ResearchHub' && study.company !== 'Deepiotics' && study.benefits && (
+                {study.company !== 'Vyuh' && study.company !== 'FutureVision' && study.company !== 'Dentists Community' && study.company !== 'Healthcare Providers' && study.company !== 'ResearchHub' && study.company !== 'Deepiotics' && study.company !== 'Psychological Assessment' && study.company !== 'Environmental Monitoring' && study.benefits && (
                   <div className="mb-5">
                     <div className="flex items-center space-x-2 mb-3">
                       <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center shadow-sm">

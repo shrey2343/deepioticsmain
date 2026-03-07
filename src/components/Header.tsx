@@ -58,9 +58,9 @@ const Header = () => {
             <a href="/about" className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 text-gray-700">
               About Us
             </a>
-            <a href="/accounting/us-accounting" className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 text-gray-700">
+            {/* <a href="/accounting/us-accounting" className="font-medium text-sm xl:text-base transition-colors hover:text-blue-600 text-gray-700">
               Accounting Services
-            </a>
+            </a> */}
             <div className="relative services-dropdown-container">
               <button 
                 onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
@@ -107,12 +107,12 @@ const Header = () => {
                         onMouseEnter={() => setIsAccountingSubmenuOpen(true)}
                         onMouseLeave={() => setIsAccountingSubmenuOpen(false)}
                       >
-                        <a
+                        {/* <a
                           href="/accounting/us-accounting"
                           className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
                         >
                           US Accounting
-                        </a>
+                        </a> */}
                         <a
                           href="/accounting/truck-logistics"
                           className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
@@ -144,6 +144,18 @@ const Header = () => {
                     className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
                   >
                     Blog
+                  </a>
+                  <a
+                    href="/media"
+                    className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                  >
+                    Media
+                  </a>
+                  <a
+                    href="/publication"
+                    className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                  >
+                    Publication
                   </a>
                   <a
                     href="/careers"
@@ -298,6 +310,20 @@ const Header = () => {
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Blog
+                    </a>
+                    <a
+                      href="/media"
+                      className="block py-3 px-4 text-gray-700 hover:text-blue-600 transition-colors rounded-lg hover:bg-blue-50 active:bg-blue-100"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Media
+                    </a>
+                    <a
+                      href="/publication"
+                      className="block py-3 px-4 text-gray-700 hover:text-blue-600 transition-colors rounded-lg hover:bg-blue-50 active:bg-blue-100"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Publication
                     </a>
                     <a
                       href="/careers"

@@ -112,7 +112,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 )
 Input.displayName = "Input";
 
-const BOOKING_URL = "https://calendly.com/deepiotics/consultation"; // 
+const BOOKING_URL = "https://tidycal.com/team/deepiotics-team/call"; // 
 
 const painPoints = [
   { text: "You don't fully understand your financial reports." },
@@ -181,6 +181,36 @@ const USAccounting = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Sticky Header with Logo and CTA */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16 md:h-20">
+            {/* Logo */}
+            <div className="flex items-center">
+              <a href="/" className="flex items-center">
+                <img 
+                  src="/LogoDeepiotics.png"
+                  alt="Deepiotics Logo" 
+                  className="h-12 sm:h-16 w-auto transition-none"
+                />
+              </a>
+            </div>
+
+            {/* CTA Button */}
+            <div className="flex items-center">
+              <a 
+                href="https://tidycal.com/team/deepiotics-team/call"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium text-sm sm:text-base hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 inline-block whitespace-nowrap"
+              >
+                Start Free 30-Day Trial
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
       {/* HERO */}
       <section className="relative overflow-hidden pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-6 sm:pb-8 md:pb-12 lg:pb-16">
         {/* Video Background */}
@@ -205,88 +235,33 @@ const USAccounting = () => {
         </div>
 
         <div className="relative mx-auto max-w-7xl px-3 sm:px-4 md:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
-            {/* Left Content */}
-            <div className="text-center lg:text-left order-1 lg:order-1">
-              <div className="inline-flex items-center gap-2 px-4 sm:px-4 py-2 sm:py-2 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/30 mb-5 sm:mb-6 animate-slide-up text-sm sm:text-sm bg-blue-100">
-                <Sparkles className="h-4 w-4 sm:h-4 sm:w-4 text-primary" />
-                <span className="font-medium text-primary">Trusted by 500+ Businesses</span>
-              </div>
-
-              <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight animate-slide-up" style={{ animationDelay: '0.1s' }}>
-                Outsourced Accounting That Makes Your Numbers{" "}
-                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent" style={{ textShadow: 'none', WebkitTextStroke: '0.5px rgba(59, 130, 246, 0.3)' }}>Easy to Understand</span>
-              </h1>
-
-              <p className="mx-auto lg:mx-0 mt-4 sm:mt-5 md:mt-7 max-w-2xl text-lg sm:text-lg md:text-xl text-gray-800 animate-slide-up leading-relaxed font-semibold" style={{ animationDelay: '0.2s' }}>
-                We manage your books and reports and explain them in simple language so you always know what's happening in your business.
-              </p>
-
-              <div className="mt-5 sm:mt-7 md:mt-9 flex flex-row flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 md:gap-4 text-xs sm:text-sm animate-slide-up" style={{ animationDelay: '0.3s' }}>
-                <div className="flex items-center gap-1.5 px-2.5 sm:px-3 py-2 sm:py-2 rounded-lg bg-cyan-100/90 backdrop-blur-sm border border-cyan-300/50 justify-center shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5">
-                  <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-cyan-600 shrink-0" />
-                  <span className="font-medium text-cyan-800 text-xs sm:text-sm whitespace-nowrap">Free 30-Day Trial</span>
-                </div>
-                <div className="flex items-center gap-1.5 px-2.5 sm:px-3 py-2 sm:py-2 rounded-lg bg-blue-100/90 backdrop-blur-sm border border-blue-300/50 justify-center shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5">
-                  <BarChart3 className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600 shrink-0" />
-                  <span className="font-medium text-blue-800 text-xs sm:text-sm whitespace-nowrap">Smart Financial Dashboard</span>
-                </div>
-                <div className="flex items-center gap-1.5 px-2.5 sm:px-3 py-2 sm:py-2 rounded-lg bg-purple-100/90 backdrop-blur-sm border border-purple-300/50 justify-center shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5">
-                  <Users className="h-4 w-4 sm:h-5 sm:w-5 text-purple-600 shrink-0" />
-                  <span className="font-medium text-purple-800 text-xs sm:text-sm whitespace-nowrap">Dedicated Team</span>
-                </div>
-              </div>
+          <div className="text-center">
+            <div className="inline-flex items-center gap-2 px-4 sm:px-4 py-2 sm:py-2 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/30 mb-5 sm:mb-6 animate-slide-up text-sm sm:text-sm bg-blue-100">
+              <Sparkles className="h-4 w-4 sm:h-4 sm:w-4 text-primary" />
+              <span className="font-medium text-primary">Trusted by 500+ Businesses</span>
             </div>
 
-            {/* Right Form */}
-            <div className="animate-scale-in order-2 lg:order-2" style={{ animationDelay: '0.4s' }}>
-              <div className="p-4 sm:p-5 md:p-6">
+            <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight animate-slide-up" style={{ animationDelay: '0.1s' }}>
+              Outsourced Accounting That Makes Your Numbers{" "}
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent" style={{ textShadow: 'none', WebkitTextStroke: '0.5px rgba(59, 130, 246, 0.3)' }}>Easy to Understand</span>
+            </h1>
 
-                <h3 className="text-xl sm:text-2xl font-bold text-foreground">Start Your Free 30-Day Trial</h3>
-                <p className="text-xs sm:text-sm text-foreground/80 mt-1 mb-6">No credit card required</p>
-                <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
-                  <div className="space-y-1.5 sm:space-y-2">
-                    <label htmlFor="name" className="text-xs sm:text-sm font-medium text-foreground">Full Name</label>
-                    <Input
-                      id="name"
-                      placeholder="John Doe"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="transition-all focus:scale-[1.02] h-9 sm:h-10 text-sm bg-white/90 hover:bg-white border-gray-200 focus:border-primary shadow-sm backdrop-blur-sm"
-                      required
-                    />
-                  </div>
-                  <div className="space-y-1.5 sm:space-y-2">
-                    <label htmlFor="email" className="text-xs sm:text-sm font-medium text-foreground">Business Email</label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="john@company.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="transition-all focus:scale-[1.02] h-9 sm:h-10 text-sm bg-white/90 hover:bg-white border-gray-200 focus:border-primary shadow-sm backdrop-blur-sm"
-                      required
-                    />
-                  </div>
-                  <div className="space-y-1.5 sm:space-y-2">
-                    <label htmlFor="phone" className="text-xs sm:text-sm font-medium text-foreground">Phone Number</label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      placeholder="+1 (555) 000-0000"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="transition-all focus:scale-[1.02] h-9 sm:h-10 text-sm bg-white/90 hover:bg-white border-gray-200 focus:border-primary shadow-sm backdrop-blur-sm"
-                      required
-                    />
-                  </div>
-                  <Button type="submit" className="w-full rounded-full text-sm sm:text-base py-5 sm:py-6 shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] animate-pulse-glow backdrop-blur-sm">
-                    Start Free 30-Day Trial <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-                  </Button>
-                  <p className="text-[10px] sm:text-xs text-center text-foreground/70">
-                   🔒 Your information is secure and will never be shared.
-                  </p>
-                </form>
+            <p className="mx-auto mt-4 sm:mt-5 md:mt-7 max-w-2xl text-lg sm:text-lg md:text-xl text-gray-800 animate-slide-up leading-relaxed font-semibold" style={{ animationDelay: '0.2s' }}>
+              We manage your books and reports and explain them in simple language so you always know what's happening in your business.
+            </p>
+
+            <div className="mt-5 sm:mt-7 md:mt-9 flex flex-row flex-wrap items-center justify-center gap-2 sm:gap-3 md:gap-4 text-xs sm:text-sm animate-slide-up" style={{ animationDelay: '0.3s' }}>
+              <div className="flex items-center gap-1.5 px-2.5 sm:px-3 py-2 sm:py-2 rounded-lg bg-cyan-100/90 backdrop-blur-sm border border-cyan-300/50 justify-center shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5">
+                <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-cyan-600 shrink-0" />
+                <span className="font-medium text-cyan-800 text-xs sm:text-sm whitespace-nowrap">Free 30-Day Trial</span>
+              </div>
+              <div className="flex items-center gap-1.5 px-2.5 sm:px-3 py-2 sm:py-2 rounded-lg bg-blue-100/90 backdrop-blur-sm border border-blue-300/50 justify-center shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5">
+                <BarChart3 className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600 shrink-0" />
+                <span className="font-medium text-blue-800 text-xs sm:text-sm whitespace-nowrap">Smart Financial Dashboard</span>
+              </div>
+              <div className="flex items-center gap-1.5 px-2.5 sm:px-3 py-2 sm:py-2 rounded-lg bg-purple-100/90 backdrop-blur-sm border border-purple-300/50 justify-center shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5">
+                <Users className="h-4 w-4 sm:h-5 sm:w-5 text-purple-600 shrink-0" />
+                <span className="font-medium text-purple-800 text-xs sm:text-sm whitespace-nowrap">Dedicated Team</span>
               </div>
             </div>
           </div>
@@ -701,7 +676,7 @@ const USAccounting = () => {
                     <p className="text-sm sm:text-base lg:text-lg font-bold text-gray-900">We handle account setup, migration, and organization so you can focus on running your business.</p>
                   </div>
                   <Button asChild className="w-full sm:w-auto rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 shrink-0 bg-gradient-to-r from-cyan-500 to-blue-600 text-sm sm:text-base px-6 sm:px-8">
-                    <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+                    <a href="https://tidycal.com/team/deepiotics-team/call" target="_blank" rel="noopener noreferrer">
                       Start Free 30-Day Trial <ArrowRight className="ml-2 h-4 w-4" />
                     </a>
                   </Button>
@@ -925,8 +900,8 @@ const USAccounting = () => {
                     <p className="text-xs sm:text-sm text-gray-600">Our team is here to help you get started.</p>
                   </div>
                   <Button asChild className="w-full sm:w-auto rounded-full shrink-0 bg-gradient-to-r from-purple-500 to-cyan-600 shadow-lg hover:shadow-xl transition-all hover:scale-105 text-sm sm:text-base px-6 sm:px-8">
-                    <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-                      Book a Quick Call <ArrowRight className="ml-2 h-4 w-4" />
+                    <a href="https://tidycal.com/team/deepiotics-team/call" target="_blank" rel="noopener noreferrer">
+                      Start Free 30-Day Trial <ArrowRight className="ml-2 h-4 w-4" />
                     </a>
                   </Button>
                 </div>
@@ -974,7 +949,7 @@ const USAccounting = () => {
           {/* CTA Button */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 sm:mb-10 px-4 sm:px-0">
             <Button asChild size="lg" className="w-full sm:w-auto rounded-full px-6 sm:px-8 md:px-10 lg:px-12 text-sm sm:text-base md:text-lg py-5 sm:py-6 md:py-7 bg-white text-purple-600 hover:bg-gray-100 shadow-2xl hover:shadow-3xl transition-all hover:scale-105 font-bold">
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+              <a href="https://tidycal.com/team/deepiotics-team/call" target="_blank" rel="noopener noreferrer">
                 Start Free 30-Day Trial <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </a>
             </Button>

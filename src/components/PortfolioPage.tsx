@@ -342,54 +342,7 @@ export default function PortfolioPage() {
         { title: 'High Resolution Rate', desc: '85% query resolution without human intervention, improving customer satisfaction to 4.8/5.' }
       ]
     },
-    {
-      icon: Heart,
-      company: 'Dentists Community',
-      industry: 'Healthcare & Dental',
-      title: 'Automated Dental X-ray Analysis',
-      challenge: 'Dentists spent significant time manually analyzing X-rays to detect missing teeth, wisdom teeth, and diagnose individual tooth conditions. This time-consuming process reduced productivity and delayed patient diagnosis.',
-      solution: 'We developed an AI-powered dental X-ray analysis system using Detectron2 framework with Mask-RCNN for automatic tooth detection and segmentation. The system detects and classifies 32 tooth classes, identifies missing teeth, wisdom teeth, and diagnoses conditions like cavities, treatments, and healthy teeth, significantly reducing diagnosis time.',
-      results: [
-        'Automatic detection of 32 tooth classes',
-        'Missing teeth and wisdom tooth identification',
-        'Individual tooth condition classification',
-        '70% reduction in diagnosis time',
-        'Enhanced diagnostic accuracy for dentists'
-      ],
-      technologies: ['Detectron2', 'Mask-RCNN', 'Python', 'Deep Learning', 'Computer Vision'],
-      timeline: '6 months',
-      team: '10 specialists',
-      benefits: [
-        { title: 'Automated Detection', desc: 'AI-powered system automatically detects and classifies all 32 tooth types with high accuracy.' },
-        { title: 'Time Efficiency', desc: '70% reduction in diagnosis time allows dentists to focus on patient care and treatment planning.' },
-        { title: 'Comprehensive Analysis', desc: 'Identifies missing teeth, wisdom teeth, cavities, treatments, and healthy teeth in single scan.' },
-        { title: 'Enhanced Accuracy', desc: 'Deep learning algorithms provide consistent and reliable diagnostic support for dental professionals.' }
-      ]
-    },
-    {
-      icon: Building2,
-      company: 'Healthcare Providers',
-      industry: 'Healthcare & Radiology',
-      title: 'CovidXTrail - Pneumonia Detection from X-Ray',
-      challenge: 'Healthcare professionals needed rapid, accurate analysis of chest X-rays to detect Covid-19 and Pneumonia. Manual analysis was time-consuming and required significant radiologist expertise, creating bottlenecks in patient diagnosis.',
-      solution: 'We developed CovidXTrail - an AI solution that analyzes chest X-rays in minutes to detect signs of Covid-19 and Pneumonia. The system augments radiologists\' diagnostic ability using AI trained on thousands of verified X-rays, automating time-consuming and low cognitive value tasks while increasing productivity.',
-      results: [
-        'Chest X-ray analysis in minutes',
-        'High accuracy with radiologist-verified training data',
-        'Automated detection of Covid-19 and Pneumonia',
-        'Increased radiologist productivity',
-        'Faster patient diagnosis and treatment'
-      ],
-      technologies: ['Deep Learning', 'Python', 'TensorFlow', 'Medical Imaging', 'Computer Vision'],
-      timeline: '5 months',
-      team: '12 specialists',
-      benefits: [
-        { title: 'Rapid Analysis', desc: 'AI-powered chest X-ray analysis completed in minutes, enabling faster patient diagnosis and treatment decisions.' },
-        { title: 'High Accuracy', desc: 'Trained on thousands of radiologist-verified X-rays ensuring reliable Covid-19 and Pneumonia detection.' },
-        { title: 'Productivity Boost', desc: 'Automates time-consuming tasks allowing radiologists to focus on complex cases and patient care.' },
-        { title: 'Scalable Solution', desc: 'Handles high volume of X-rays efficiently, reducing diagnostic bottlenecks in healthcare facilities.' }
-      ]
-    },
+    
     {
       icon: DollarSign,
       company: 'US E-Commerce Startup',

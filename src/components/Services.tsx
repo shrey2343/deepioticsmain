@@ -1,0 +1,149 @@
+import React, { useState } from 'react';
+import { Brain, Database, Cog, BarChart3, Zap, Shield, ArrowRight, Bot, Network, LucideIcon, CheckCircle } from 'lucide-react';
+import ServiceModal from './ServiceModal';
+
+interface Service {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  features: string[];
+  color: string;
+}
+
+const Services = () => {
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleGetConsultation = (service: Service) => {
+    setSelectedService(service);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setTimeout(() => setSelectedService(null), 300);
+  };
+  const services = [
+    {
+      icon: Brain,
+      title: 'Scattered Teams Create Confusion',
+      description: 'Multiple vendors cause misalignment, delays, and endless rework.',
+      features: ['Custom Machine Learning Models', 'AI-Powered Chatbots & Virtual Assistants', 'Intelligent Document Processing', ' Predictive Business Analytics'],
+      color: 'from-blue-500 to-cyan-500'
+    },
+    {
+      icon: Bot,
+      title: 'Poor Planning Derails AI Projects',
+      description: 'Lack of clear requirements leads to failed or stalled builds.',
+      features: ['Autonomous Task Execution', 'Multi-Channel Customer Engagement', 'Intelligent Decision Making', 'Seamless System Integration'],
+      color: 'from-purple-500 to-pink-500'
+    },
+    {
+      icon: Network,
+      title: 'Slow Releases Kill Momentum',
+      description: 'Inefficient workflows make delivery unpredictable and costly.',
+      features: ['Multi-Agent Orchestration', 'Collaborative AI Networks', 'Adaptive Learning Systems', 'Enterprise-Scale Deployment'],
+      color: 'from-green-500 to-teal-500'
+    },
+    {
+      icon: BarChart3,
+      title: 'Bad Architecture Breaks at Scale',
+      description: 'Weak foundations cause instability as your product grows.',
+      features: ['Advanced Business Intelligence', 'Real-Time Data Processing', 'Predictive Market Analysis', 'Custom Analytics Dashboards'],
+      color: 'from-indigo-500 to-blue-500'
+    },
+    {
+      icon: Zap,
+      title: 'High Costs Burn Your Budget',
+      description: 'Unnecessary complexity leads to overspending and slow ROI.',
+      features: ['Custom API Development', 'Legacy System Integration', 'Cloud & On-Premise Deployment', 'Scalable AI Architecture'],
+      color: 'from-orange-500 to-red-500'
+    },
+    {
+      icon: Brain,
+      title: 'Weak Communication Causes Chaos',
+      description: 'Unclear updates and shifting expectations disrupt your roadmap.',
+      features: ['Real-time Collaboration Tools', 'Automated Documentation', 'Predictive Analytics for Project', 'Cross-platform Compatibility'],
+      color: 'from-yellow-500 to-blue-500'
+    }
+  ];
+
+  return (
+    <section id="services" className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 relative overflow-hidden border-t border-yellow-400">
+      {/* Premium Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-20 w-96 h-96 bg-blue-400/8 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple-400/8 rounded-full filter blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 leading-tight px-4">
+            Remove the Roadblocks Slowing {' '}
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Your Product
+            </span>
+          </h2>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 max-w-4xl mx-auto px-4 leading-relaxed">
+            We eliminate the common failures that delay AI, web, and app builds so you can launch without chaos.
+          </p>
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-7 lg:gap-8 mb-8 sm:mb-10 md:mb-12">
+          {services.map((service, index) => (
+            <div key={index} className="group bg-white/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white/50 hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 relative overflow-hidden">
+              {/* Animated background */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+
+              {/* Icon */}
+              <div className={`relative w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r ${service.color} rounded-2xl sm:rounded-3xl flex items-center justify-center mb-6 sm:mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg`}>
+                <service.icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+              </div>
+
+              {/* Content */}
+              <div className="relative">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-blue-600 transition-colors leading-tight">{service.title}</h3>
+                <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8 leading-relaxed">{service.description}</p>
+              </div>
+
+              {/* Features */}
+              <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 relative">
+                {service.features.map((feature, featureIndex) => (
+                  <li key={featureIndex} className="group/item flex items-center space-x-2 sm:space-x-3 text-sm sm:text-base text-gray-700 p-2 rounded-lg hover:bg-blue-50/50 transition-all duration-300">
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-transform">
+                      <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
+                    </div>
+                    <span className="font-medium leading-tight">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* CTA */}
+              <button
+                onClick={() => handleGetConsultation(service)}
+                className={`group/btn relative w-full bg-gradient-to-r ${service.color} text-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 transition-all duration-500 flex items-center justify-center space-x-2 sm:space-x-3 overflow-hidden active:scale-95`}
+              >
+                <div className="absolute inset-0 bg-black/10 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative flex items-center space-x-2 sm:space-x-3">
+                  <span className="text-sm sm:text-base">Get Free Consultation</span>
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover/btn:translate-x-1 transition-transform" />
+                </div>
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Service Modal */}
+      <ServiceModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        service={selectedService}
+      />
+    </section>
+  );
+};
+
+export default Services;

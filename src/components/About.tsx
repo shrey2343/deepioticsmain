@@ -182,13 +182,13 @@ const About = () => {
                 image: 'https://res.cloudinary.com/dq5v1ewpq/image/upload/v1754281036/ayan_g3mkvg.jpg',
                 linkedin: 'https://www.linkedin.com/in/ayannigam/'
               },
-              {
-                name: 'Dr. Bhawna Nigam',
-                role: 'Co-Founder & Chief AI Officer',
-                description: 'Ph.D. in Artificial Intelligence with 50+ published research papers and 70+ successful enterprise AI implementations across global markets.',
-                image: '/bhawna.png',
-                linkedin: 'https://www.linkedin.com/in/dr-bhawna-nigam/'
-              },
+              // {
+              //   name: 'Dr. Bhawna Nigam',
+              //   role: 'Co-Founder & Chief AI Officer',
+              //   description: 'Ph.D. in Artificial Intelligence with 50+ published research papers and 70+ successful enterprise AI implementations across global markets.',
+              //   image: '/bhawna.png',
+              //   linkedin: 'https://www.linkedin.com/in/dr-bhawna-nigam/'
+              // },
               {
                 name: 'Dr. Madhu Jain',
                 role: 'Head of Research & Data Science',

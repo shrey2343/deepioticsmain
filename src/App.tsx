@@ -1,13 +1,4 @@
 import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import AIAgentCapabilities from './components/AIAgentCapabilities';
-import About from './components/About';
-// import CaseStudies from './components/CaseStudies';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import ChatbotWidget from './components/ChatbotWidget';
 import AdminLogin from './components/AdminLogin';
 import AdminDashboard from './components/AdminDashboard';
 import AdminCareer from './components/AdminCareer';
@@ -24,6 +15,11 @@ import USAccountingPage from './components/USAccountingPage';
 import TrucksLogisticsPage from './components/TrucksLogisticsPage';
 import MediaPage from './components/MediaPage';
 import PublicationPage from './components/PublicationPage';
+import NewLanding from './components/NewLanding';
+import ThemeWrapper from './components/ThemeWrapper';
+import ThemedNavigation from './components/ThemedNavigation';
+import ThemedFooter from './components/ThemedFooter';
+import ChatbotWidget from './components/ChatbotWidget';
 
 function App() {
   const path = window.location.pathname;
@@ -42,160 +38,176 @@ function App() {
 
   if (path === '/careers') {
     return (
-      <div className="min-h-screen">
-        <Header />
-        <Careers />
-        <Footer />
+      <ThemeWrapper>
+        <ThemedNavigation />
+        <div className="min-h-screen" style={{ paddingTop: '80px' }}>
+          <Careers />
+        </div>
+        <ThemedFooter />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
-      </div>
+      </ThemeWrapper>
     );
   }
 
   if (path === '/about') {
     return (
-      <div className="min-h-screen">
-        <Header />
-        <AboutPage />
-        <Footer />
+      <ThemeWrapper>
+        <ThemedNavigation />
+        <div className="min-h-screen" style={{ paddingTop: '80px' }}>
+          <AboutPage />
+        </div>
+        <ThemedFooter />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
-      </div>
+      </ThemeWrapper>
     );
   }
 
   if (path === '/services') {
     return (
-      <div className="min-h-screen">
-        <Header />
-        <ServicesPage />
-        <Footer />
+      <ThemeWrapper>
+        <ThemedNavigation />
+        <div className="min-h-screen" style={{ paddingTop: '80px' }}>
+          <ServicesPage />
+        </div>
+        <ThemedFooter />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
-      </div>
+      </ThemeWrapper>
     );
   }
 
   if (path === '/portfolio') {
     return (
-      <div className="min-h-screen">
-        <Header />
-        <PortfolioPage />
-        <Footer />
+      <ThemeWrapper>
+        <ThemedNavigation />
+        <div className="min-h-screen" style={{ paddingTop: '80px' }}>
+          <PortfolioPage />
+        </div>
+        <ThemedFooter />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
-      </div>
+      </ThemeWrapper>
     );
   }
 // ghghgh
   if (path === '/contact') {
     return (
-      <div className="min-h-screen">
-        <Header />
-        <ContactPage />
-        <Footer />
+      <ThemeWrapper>
+        <ThemedNavigation />
+        <div className="min-h-screen" style={{ paddingTop: '80px' }}>
+          <ContactPage />
+        </div>
+        <ThemedFooter />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
-      </div>
+      </ThemeWrapper>
     );
   }
 
   if (path === '/blog') {
     return (
-      <div className="min-h-screen">
-        <Header />
-        <BlogPage />
-        <Footer />
+      <ThemeWrapper>
+        <ThemedNavigation />
+        <div className="min-h-screen" style={{ paddingTop: '80px' }}>
+          <BlogPage />
+        </div>
+        <ThemedFooter />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
-      </div>
+      </ThemeWrapper>
     );
   }
 
   if (path === '/media') {
     return (
-      <div className="min-h-screen">
-        <Header />
-        <MediaPage />
-        <Footer />
+      <ThemeWrapper>
+        <ThemedNavigation />
+        <div className="min-h-screen" style={{ paddingTop: '80px' }}>
+          <MediaPage />
+        </div>
+        <ThemedFooter />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
-      </div>
+      </ThemeWrapper>
     );
   }
 
   if (path === '/publication') {
     return (
-      <div className="min-h-screen">
-        <Header />
-        <PublicationPage />
-        <Footer />
+      <ThemeWrapper>
+        <ThemedNavigation />
+        <div className="min-h-screen" style={{ paddingTop: '80px' }}>
+          <PublicationPage />
+        </div>
+        <ThemedFooter />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
-      </div>
+      </ThemeWrapper>
     );
   }
 
   if (path.startsWith('/blog/')) {
     const slug = path.replace('/blog/', '');
     return (
-      <div className="min-h-screen">
-        <Header />
-        <BlogDetailPage slug={slug} />
-        <Footer />
+      <ThemeWrapper>
+        <ThemedNavigation />
+        <div className="min-h-screen" style={{ paddingTop: '80px' }}>
+          <BlogDetailPage slug={slug} />
+        </div>
+        <ThemedFooter />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
-      </div>
+      </ThemeWrapper>
     );
   }
 
   if (path === '/linkedin-service') {
     return (
-      <div className="min-h-screen">
-        <Header />
-        <LinkedInServicePage />
-        <Footer />
+      <ThemeWrapper>
+        <ThemedNavigation />
+        <div className="min-h-screen" style={{ paddingTop: '80px' }}>
+          <LinkedInServicePage />
+        </div>
+        <ThemedFooter />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
-      </div>
+      </ThemeWrapper>
     );
   }
 
   if (path === '/AI-business-growth') {
     return (
-      <div className="min-h-screen">
-        <Header />
-        <AIBusinessGrowthPage />
-        <Footer />
+      <ThemeWrapper>
+        <ThemedNavigation />
+        <div className="min-h-screen" style={{ paddingTop: '80px' }}>
+          <AIBusinessGrowthPage />
+        </div>
+        <ThemedFooter />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
-      </div>
+      </ThemeWrapper>
     );
   }
 
   if (path === '/accounting/us-accounting') {
     return (
-      <div className="min-h-screen">
-        <USAccountingPage />
-        <Footer />
+      <ThemeWrapper>
+        <ThemedNavigation />
+        <div className="min-h-screen" style={{ paddingTop: '80px' }}>
+          <USAccountingPage />
+        </div>
+        <ThemedFooter />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
-      </div>
+      </ThemeWrapper>
     );
   }
 
   if (path === '/accounting/truck-logistics') {
     return (
-      <div className="min-h-screen">
-        <Header />
-        <TrucksLogisticsPage />
-        <Footer />
+      <ThemeWrapper>
+        <ThemedNavigation />
+        <div className="min-h-screen" style={{ paddingTop: '80px' }}>
+          <TrucksLogisticsPage />
+        </div>
+        <ThemedFooter />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
-      </div>
+      </ThemeWrapper>
     );
   }
 
-  return (
-    <div className="min-h-screen">
-      <Header />
-      <Hero />
-      <Services />
-      <AIAgentCapabilities />
-      <About />
-      {/* <CaseStudies /> */}
-      <Contact />
-      <Footer />
-      <ChatbotWidget customerName="Guest" customerId="99aupairs" />
-    </div>
-  );
+  // Default: New Landing Page
+  return <NewLanding />;
 }
 
 export default App;

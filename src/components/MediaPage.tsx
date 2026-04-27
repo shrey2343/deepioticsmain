@@ -99,7 +99,8 @@ const MediaPage = () => {
     : mediaHighlights.filter(m => m.category === activeFilter);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50">
+    <div className="min-h-screen bg-[rgba(2,13,42,1)]">
+    <div className="relative">
 
       {/* Hero Section */}
       <div className="relative overflow-hidden pt-20 pb-8 sm:pt-24 sm:pb-10">
@@ -111,14 +112,14 @@ const MediaPage = () => {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
             Our{' '}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Media Journey
             </span>
           </h1>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-6">
-            Celebrating milestones of innovation, recognition, and impact — as featured across leading media platforms and prestigious award ceremonies.
+          <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed mb-6">
+            Celebrating milestones of innovation, recognition, and impact - as featured across leading media platforms and prestigious award ceremonies.
           </p>
 
           {/* Stats Row */}
@@ -271,6 +272,7 @@ const MediaPage = () => {
         </div>
       </div>
 
+    </div>
     </div>
   );
 };

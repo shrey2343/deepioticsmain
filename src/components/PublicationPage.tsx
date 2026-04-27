@@ -198,7 +198,8 @@ const categoryColors: Record<string, string> = {
 
 const PublicationPage = () => {
   return (
-    <div className="pt-20 sm:pt-28 md:pt-32 lg:pt-24 pb-16 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 relative overflow-hidden min-h-screen">
+    <div className="min-h-screen bg-[rgba(2,13,42,1)] py-20">
+    <div className="relative">
       {/* Background blobs */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-20 w-96 h-96 bg-blue-400/8 rounded-full filter blur-3xl animate-pulse" />
@@ -209,13 +210,13 @@ const PublicationPage = () => {
 
         {/* Page Header */}
         <div className="text-center mb-14">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
             Our Research{' '}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Publications
             </span>
           </h1>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto">
             Explore our latest research papers, technical reports, and publications advancing the field of artificial intelligence
           </p>
         </div>
@@ -338,6 +339,7 @@ const PublicationPage = () => {
         </div>
 
       </div>
+    </div>
     </div>
   );
 };

@@ -1,284 +1,364 @@
-import { Target, Users, Award, TrendingUp, Globe, Lightbulb, Heart, Shield, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
+import { ChevronDown, Linkedin, Mail, MapPin } from 'lucide-react';
 
 export default function AboutPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
+  const stats = [
+    { number: '2018', label: 'Founded' },
+    { number: '70+', label: 'AI Solutions Delivered' },
+    { number: '500+', label: 'Clients Served' },
+    { number: '24/7', label: 'Support Available' }
+  ];
+
+  const services = [
+    {
+      title: 'AI Business Growth Suite',
+      description: 'Done-for-you AI for small and medium businesses. AI marketing agents, AI sales agents, chatbots, ad automation, and analytics - implemented, connected, and running without you managing any of it.',
+      link: '/ai-business-growth'
+    },
+    {
+      title: 'Web & App Development',
+      description: 'High-performance web and mobile applications built for scale - from fast MVPs to complex enterprise platforms. Clean architecture, intelligent features, delivered on time.',
+      link: '/services'
+    },
+    {
+      title: 'AI Solutions',
+      description: 'Enterprise AI built for production. AI QA and software testing, AI agents, machine learning, business intelligence, process automation, healthcare AI, and data engineering - tailored to your business, proven in the real world.',
+      link: '/ai-solutions'
+    },
+    {
+      title: 'Bioscience & Genomics AI',
+      description: 'End-to-end NGS data analysis for genomics labs, hospitals, IVF centers, and diagnostic institutions. WGS, WES, RNA-Seq, oncology genomics, and reproductive genomics - white-label reports in 24-48 hours, zero infrastructure required.',
+      link: '/services'
+    },
+    {
+      title: 'BioAI Lab',
+      description: "India's first AI-powered, no-code bioinformatics career program. An 8-week curriculum for Life Science graduates who want to master NGS pipelines, build a real GitHub portfolio, and land roles at Biocon, Syngene, and top research institutions - without writing a single line of code.",
+      link: '/services'
+    }
+  ];
+
+  const industries = [
+    'Healthcare', 'Financial Services', 'Automotive', 'Retail & E-commerce',
+    'Manufacturing', 'Technology', 'Education', 'Logistics',
+    'Genomics & Life Sciences', 'Pharma & Biotech', 'Research Institutions'
+  ];
+
+  const whyChoose = [
+    {
+      title: 'Transparent Collaboration',
+      description: 'No black boxes. No surprise scope changes. No updates that come three weeks too late. Every Deepiotics engagement comes with regular check-ins, clear milestones, and complete visibility into where things stand - at every stage.'
+    },
+    {
+      title: 'Proven Expertise Since 2018',
+      description: "Over 1,000 AI implementations across healthcare, fintech, bioscience, automotive, and more. Our team doesn't just know the theory - they've shipped production AI across dozens of industries and know where things go wrong before they do."
+    },
+    {
+      title: 'Custom by Design, Not by Default',
+      description: "We don't have a product to sell you. Every solution we build starts from scratch with your specific challenge. That means no bloated features you'll never use, and no shortcuts that cause problems six months later."
+    },
+    {
+      title: 'Value Without Compromise',
+      description: 'Professional AI at a price point that makes sense for your business. Our global delivery model lets us offer enterprise-grade quality without the enterprise price tag - so you get a solution that works and an ROI that justifies it.'
+    }
+  ];
+
+  const team = [
+    {
+      name: 'Ayan Nigam',
+      title: 'Founder & Chief Executive Officer',
+      bio: 'Ayan founded Deepiotics in 2018 with a vision to make enterprise-grade AI accessible to businesses of every size. With 20+ years of experience across AI strategy, product development, and enterprise transformation, he leads the company\'s direction and its work with Fortune 500 clients worldwide.',
+      linkedin: '#'
+    },
+    {
+      name: 'Dr. Madhu Jain',
+      title: 'Head of Research & Data Science',
+      bio: "Ph.D. in Data Science, Dr. Jain leads Deepiotics' research function - the engine behind every model, algorithm, and pipeline the company ships. Her work ensures that what we build isn't just technically sound, but genuinely advances the state of the art for each client's use case.",
+      linkedin: '#'
+    },
+    {
+      name: 'Rajshri Nigam',
+      title: 'Director of Business Development',
+      bio: "Rajshri builds and manages Deepiotics' client partnerships across UK, US, and European markets. Her approach is straightforward: understand the business problem first, then find the right solution - not the other way around. Her relationships with clients are built on outcomes, not engagements.",
+      linkedin: '#'
+    },
+    {
+      name: 'Narendra Pipliwal',
+      title: 'Delivery Head',
+      bio: 'Narendra owns the delivery lifecycle at Deepiotics - from project kickoff through production launch and beyond. With an obsessive focus on timeline integrity and quality assurance, he ensures every solution ships exactly as designed, on time, and performs under real-world conditions from day one.',
+      linkedin: '#'
+    },
+    {
+      name: 'Amol Upadhyay',
+      title: 'Head, Genomics & AI Bioinformatics',
+      bio: "Amol leads Deepiotics' bioscience division - overseeing end-to-end NGS data analysis, AI-powered genomics pipelines, and bioinformatics solutions for labs, hospitals, and research institutions. His work bridges the gap between computational biology and clinical application, delivering results that are both scientifically rigorous and immediately actionable.",
+      linkedin: '#'
+    },
+    {
+      name: 'Manish Manon',
+      title: 'Chief Financial Officer',
+      bio: "Manish oversees Deepiotics' financial strategy, planning, and operations - ensuring the company scales sustainably while delivering maximum value at every price point. His financial discipline is what allows Deepiotics to offer enterprise-quality AI without the enterprise price tag.",
+      linkedin: '#'
+    }
+  ];
+
   const faqs = [
     {
       question: "What services does Deepiotics offer?",
-      answer: "Deepiotics provides comprehensive AI and machine learning solutions including AI strategy development, custom machine learning applications, computer vision systems, data analytics, predictive analytics, intelligent automation, web and mobile application development with AI integration, and ongoing AI consulting and optimization services. We tailor each solution to meet your specific business needs."
+      answer: "Deepiotics covers five main areas: the AI Business Growth Suite (done-for-you AI marketing, sales agents, chatbots, and automation for SMBs), Web & App Development, AI Solutions (AI QA and software testing, ML, automation, analytics, healthcare AI, and data engineering), Bioscience & Genomics AI (end-to-end NGS data analysis for labs and hospitals), and BioAI Lab (our no-code bioinformatics career program for life science graduates). Every service is delivered end-to-end - from strategy through deployment."
     },
     {
       question: "How can AI benefit my business?",
-      answer: "AI can transform your business by automating repetitive tasks, providing data-driven insights for better decision-making, improving customer experience through personalization, reducing operational costs, predicting market trends and customer behavior, enhancing product quality through computer vision and quality control, and enabling you to scale operations efficiently. The specific benefits depend on your industry and business goals."
+      answer: "Depends on your business - which is why we don't give a generic answer. In our experience, AI creates the most immediate impact in three areas: reducing the time your team spends on repetitive, rule-based tasks; improving the speed and accuracy of decisions that currently rely on manual data review; and generating and qualifying leads around the clock without adding headcount. In a free strategy session, we can identify the highest-ROI AI opportunities specific to your business in under 45 minutes."
     },
     {
       question: "What is Deepiotics' approach to project engagement?",
-      answer: "Our engagement process begins with a thorough consultation to understand your business challenges and objectives. We then develop a customized AI strategy and roadmap, followed by proof-of-concept development to validate the approach. After approval, we move to full-scale implementation with regular progress updates and transparent communication. Post-deployment, we provide comprehensive support, maintenance, and ongoing optimization to ensure sustained value."
+      answer: "Every engagement starts with a discovery phase - we map your business, understand your goals, and identify the right approach before any development begins. From there, we work in structured sprints with clear milestones and regular client check-ins. We don't disappear for three months and resurface with something you didn't ask for. You have full visibility at every stage, and we adjust based on what we learn as we build."
     },
     {
       question: "How is pricing determined for AI projects?",
-      answer: "Pricing is determined based on project scope, complexity, technology requirements, timeline, and resources needed. We offer flexible engagement models including fixed-price projects for well-defined scopes, time and material contracts for evolving requirements, and retainer-based models for ongoing support. We provide detailed proposals with transparent cost breakdowns and work with you to find cost-effective solutions that fit your budget while delivering maximum value."
+      answer: "Pricing depends on scope, complexity, and timeline - not on a standard rate card. After an initial consultation, we provide a detailed proposal with clear cost breakdown and timeline. We don't do vague estimates or hidden fees. If a project's scope changes, we flag it early and agree on the path forward before any additional cost is incurred. Our goal is to maximize your ROI, not bill hours."
     },
     {
       question: "Which industries does Deepiotics serve?",
-      answer: "We serve clients across diverse industries including healthcare (diagnostic systems, patient care optimization), financial services (fraud detection, risk assessment, algorithmic trading), automotive (autonomous systems, predictive maintenance), retail and e-commerce (recommendation engines, demand forecasting), manufacturing (quality control, supply chain optimization), and many others. Our solutions are adaptable to startups, mid-size companies, and large enterprises across any sector seeking AI transformation."
+      answer: "Our AI solutions are in production across healthcare, financial services, automotive, retail and e-commerce, manufacturing, technology, education, logistics, genomics and life sciences, pharma and biotech, and research institutions. If you're in an industry not on this list, the answer is probably still yes - the underlying AI challenges tend to be similar across sectors, and our team has the breadth to adapt."
     },
     {
       question: "What kind of support and maintenance do you provide?",
-      answer: "We offer comprehensive post-deployment support including system monitoring and performance optimization, regular updates and improvements, bug fixes and technical troubleshooting, model retraining and fine-tuning as data evolves, scalability enhancements as your business grows, and dedicated support channels with SLA-based response times. Our goal is to ensure your AI solutions continue delivering value long after initial deployment."
+      answer: "Post-launch, we provide 24/7 monitoring and support for production systems. Our maintenance packages include model performance tracking, drift detection, bug fixes, and continuous optimization. AI systems don't stay static - the world changes, your data changes, and your models need to keep up. We make sure they do."
     },
     {
       question: "How do I get started with a project at Deepiotics?",
-      answer: "Getting started is simple. First, schedule a free consultation through our website or contact form to discuss your needs. We'll then conduct a discovery session to understand your business challenges and goals. Our team will prepare a customized proposal outlining the solution approach, timeline, and investment required. Once approved, we'll kick off the project with a detailed planning session and begin development. Throughout the process, you'll have full transparency and regular communication with our team."
+      answer: "Book a free strategy session. It takes 45 minutes. We'll review your challenge, ask the right questions, and give you an honest assessment of what AI can realistically do for your business and in what timeframe. No sales pitch. If we're a good fit, we'll propose a clear engagement plan. If we're not the right partner for your specific need, we'll tell you that too."
     },
     {
       question: "What makes Deepiotics different from other AI development companies?",
-      answer: "Deepiotics stands out through our transparent project delivery with regular updates and clear communication, deep technical expertise in AI, ML, and computer vision, cost-effective solutions without compromising quality, client-centric approach tailored to your specific needs, proven track record since 2018 serving startups to enterprises, end-to-end service from strategy to deployment and maintenance, and our commitment to building long-term partnerships focused on your sustained success rather than just one-time projects."
+      answer: "Three things. First, we start with your problem - not our product. Most AI companies sell a tool and then find a use case for it. We reverse that. Second, we build for production. Our solutions are tested, monitored, and maintained in real environments - not demos. Third, we're one of the few AI companies operating across both enterprise technology and bioscience - giving us a cross-disciplinary perspective that most pure-play AI shops simply don't have."
     }
   ];
 
   return (
-    <div className="py-24 bg-gradient-to-b from-white via-blue-50/30 to-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6 animate-slide-up">
-            About Deepiotics
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-slide-up" style={{animationDelay: '0.1s'}}>
-            Transforming businesses through intelligent AI solutions since 2018
-          </p>
+    <div className="min-h-screen bg-[rgba(2,13,42,1)]">
+      {/* Hero Section */}
+      <div className="relative overflow-hidden pt-32 pb-20">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-20 w-96 h-96 bg-blue-400/8 rounded-full filter blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple-400/8 rounded-full filter blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
         </div>
 
-        <div className="mb-20 animate-slide-up" style={{animationDelay: '0.2s'}}>
-          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100 hover:shadow-2xl hover:border-blue-200 transition-all duration-500 hover:scale-[1.02]">
-            <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6">Who We Are</h2>
-            <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
-              <p className="mb-4">
-                Founded in 2018 and headquartered in Indore, India, Deepiotics is a leading technology company specializing in Artificial Intelligence and Machine Learning solutions that drive measurable business growth. We partner with organizations ranging from innovative startups to established enterprises, delivering custom AI solutions that transform operations and unlock new opportunities.
-              </p>
-              <p className="mb-4">
-                Our expertise spans the full spectrum of AI technologies—including Machine Learning, Computer Vision, Data Analytics, and intelligent automation—enabling us to craft solutions precisely tailored to your unique business challenges. Whether you're looking to optimize operations, enhance customer experiences, or gain competitive advantages through data-driven insights, we have the technical depth and industry experience to deliver results.
-              </p>
-              <p>
-                What sets us apart is our commitment to transparent collaboration and cost-effective innovation. We don't just build technology; we build partnerships. Our team works closely with yours to understand your goals, develop strategic roadmaps, and implement solutions that deliver tangible ROI while ensuring you have the support and knowledge to maximize long-term value.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8 mb-20">
-          <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl shadow-xl p-8 md:p-12 text-white border-2 border-blue-400/30 hover:shadow-2xl hover:scale-105 transition-all duration-500 animate-slide-up" style={{animationDelay: '0.3s'}}>
-            <Target className="w-16 h-16 mb-6 animate-bounce-slow" />
-            <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
-            <p className="text-lg opacity-95 leading-relaxed">
-              To empower businesses of all sizes with intelligent, custom AI solutions that drive operational efficiency, fuel innovation, and deliver measurable business growth—making advanced technology accessible, practical, and profitable for organizations across every industry.
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              We Build AI That Works<br />
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                In the Real World.
+              </span>
+            </h1>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
+              Not in labs. Not in demos. In your business - shipped, running, and generating measurable results.
             </p>
-          </div>
-
-          <div className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl shadow-xl p-8 md:p-12 text-white border-2 border-purple-400/30 hover:shadow-2xl hover:scale-105 transition-all duration-500 animate-slide-up" style={{animationDelay: '0.4s'}}>
-            <Lightbulb className="w-16 h-16 mb-6 animate-pulse-slow" />
-            <h2 className="text-3xl font-bold mb-4">Our Vision</h2>
-            <p className="text-lg opacity-95 leading-relaxed">
-              To be recognized globally as the most trusted partner for AI transformation, known for our technical excellence, transparent collaboration, and commitment to delivering solutions that create lasting competitive advantages and sustainable business value.
+            <p className="text-lg text-white/60">
+              Founded 2018 · Headquartered in Indore, India · Serving clients globally
             </p>
           </div>
         </div>
+      </div>
 
-        <div className="mb-20">
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent text-center mb-4 animate-slide-up" style={{animationDelay: '0.5s'}}>Our Core Services</h2>
-          <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-            Comprehensive AI solutions tailored to your business needs
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-transparent hover:border-blue-300 hover:shadow-2xl hover:scale-105 transition-all duration-500 animate-slide-up" style={{animationDelay: '0.6s'}}>
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg flex items-center justify-center mb-4">
-                <Lightbulb className="w-6 h-6 text-blue-600" />
+      {/* Stats Bar */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {stats.map((stat, index) => (
+            <div key={index} className="text-center">
+              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">
+                {stat.number}
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">AI Strategy & Consulting</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Strategic AI roadmaps, feasibility analysis, and expert guidance to align technology with your business objectives.
-              </p>
+              <div className="text-white/70 text-sm md:text-base">{stat.label}</div>
             </div>
-
-            <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-transparent hover:border-purple-300 hover:shadow-2xl hover:scale-105 transition-all duration-500 animate-slide-up" style={{animationDelay: '0.7s'}}>
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-100 to-purple-200 rounded-lg flex items-center justify-center mb-4">
-                <TrendingUp className="w-6 h-6 text-purple-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Machine Learning Solutions</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Custom ML models, predictive analytics, and intelligent automation systems tailored to your specific use cases.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-transparent hover:border-green-300 hover:shadow-2xl hover:scale-105 transition-all duration-500 animate-slide-up" style={{animationDelay: '0.8s'}}>
-              <div className="w-12 h-12 bg-gradient-to-br from-green-100 to-green-200 rounded-lg flex items-center justify-center mb-4">
-                <Globe className="w-6 h-6 text-green-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Computer Vision</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Advanced image recognition, object detection, quality control systems, and visual intelligence applications.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-transparent hover:border-red-300 hover:shadow-2xl hover:scale-105 transition-all duration-500 animate-slide-up" style={{animationDelay: '0.9s'}}>
-              <div className="w-12 h-12 bg-gradient-to-br from-red-100 to-red-200 rounded-lg flex items-center justify-center mb-4">
-                <Award className="w-6 h-6 text-red-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Data Analytics</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Transform raw data into actionable insights with advanced analytics, visualization, and business intelligence.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-transparent hover:border-indigo-300 hover:shadow-2xl hover:scale-105 transition-all duration-500 animate-slide-up" style={{animationDelay: '1s'}}>
-              <div className="w-12 h-12 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-lg flex items-center justify-center mb-4">
-                <Users className="w-6 h-6 text-indigo-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Web & Mobile Development</h3>
-              <p className="text-gray-600 leading-relaxed">
-                AI-powered web and mobile applications with intelligent features that enhance user experience and functionality.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-transparent hover:border-pink-300 hover:shadow-2xl hover:scale-105 transition-all duration-500 animate-slide-up" style={{animationDelay: '1.1s'}}>
-              <div className="w-12 h-12 bg-gradient-to-br from-pink-100 to-pink-200 rounded-lg flex items-center justify-center mb-4">
-                <Shield className="w-6 h-6 text-pink-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Automation & Integration</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Intelligent process automation, workflow optimization, and seamless integration with your existing systems.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
+      </div>
 
-        <div className="mb-20">
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent text-center mb-4 animate-slide-up" style={{animationDelay: '0.5s'}}>Industries We Serve</h2>
-          <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-            Delivering AI solutions across diverse sectors
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {['Healthcare', 'Financial Services', 'Automotive', 'Retail & E-commerce', 'Manufacturing', 'Technology', 'Education', 'Logistics'].map((industry, index) => (
-              <div key={industry} className="bg-white rounded-xl shadow-md p-6 border border-gray-100 hover:border-blue-300 hover:shadow-xl transition-all duration-300 text-center animate-slide-up" style={{animationDelay: `${0.6 + index * 0.1}s`}}>
-                <h3 className="text-lg font-bold text-gray-900">{industry}</h3>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-20 border-2 border-gray-100 hover:border-purple-200 hover:shadow-2xl transition-all duration-500 animate-slide-up" style={{animationDelay: '1s'}}>
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent text-center mb-4">Why Choose Deepiotics</h2>
-          <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-            Our commitment to excellence and your success
-          </p>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-6">
-              <div className="p-6 rounded-xl bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-100 hover:shadow-lg transition-all duration-300">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">🎯 Transparent Collaboration</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Regular updates, clear communication, and full visibility into project progress. We believe in building trust through transparency at every stage.
-                </p>
-              </div>
-              <div className="p-6 rounded-xl bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-100 hover:shadow-lg transition-all duration-300">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">💎 Proven Expertise</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Since 2018, we've delivered AI solutions across healthcare, fintech, automotive, and more—bringing deep technical knowledge and industry experience to every project.
-                </p>
-              </div>
-            </div>
-            <div className="space-y-6">
-              <div className="p-6 rounded-xl bg-gradient-to-br from-green-50 to-blue-50 border border-green-100 hover:shadow-lg transition-all duration-300">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">🤝 Client-Centric Approach</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  We don't believe in one-size-fits-all. Every solution is custom-designed to address your unique challenges and align with your business goals.
-                </p>
-              </div>
-              <div className="p-6 rounded-xl bg-gradient-to-br from-pink-50 to-purple-50 border border-pink-100 hover:shadow-lg transition-all duration-300">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">💰 Cost-Effective Solutions</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Professional AI development without the enterprise price tag. We optimize for value, delivering high-quality solutions that fit your budget.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* FAQ Section */}
-        <div className="mb-20 animate-slide-up" style={{animationDelay: '1.2s'}}>
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Find answers to common questions about our services, approach, and how we can help your business
+      {/* Who We Are */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/10">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Who We Are</h2>
+          <div className="space-y-4 text-white/80 text-lg leading-relaxed">
+            <p>
+              Deepiotics was founded in 2018 with one belief: that AI shouldn't be a privilege reserved for companies with seven-figure technology budgets. Every business - from a 10-person startup to a global enterprise - deserves intelligent technology that actually moves the needle.
+            </p>
+            <p>
+              We're headquartered in Indore, India, and we work with clients across the UK, US, and European markets. What started as a custom AI development company has grown into something broader: a full-service AI partner covering enterprise automation, business growth, bioscience analytics, and now an education program that's training the next generation of bioinformatics professionals.
+            </p>
+            <p>
+              Our team brings together computational biologists, data scientists, ML engineers, full-stack developers, and business strategists under one roof. That breadth isn't accidental - complex AI problems rarely sit neatly inside a single discipline, and neither do we.
+            </p>
+            <p>
+              What hasn't changed since 2018 is how we work. We start with your business problem, not our product catalogue. We build for production, not for presentations. And we measure our success by the results you see - not the technology we deploy.
             </p>
           </div>
-          
-          <div className="max-w-4xl mx-auto space-y-4">
-            {faqs.map((faq, index) => (
-              <div 
-                key={index}
-                className="bg-white rounded-xl shadow-md border-2 border-gray-100 hover:border-blue-200 transition-all duration-300 overflow-hidden"
+        </div>
+      </div>
+
+      {/* Mission & Vision */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="bg-gradient-to-br from-blue-900/40 to-blue-800/20 backdrop-blur-sm rounded-2xl p-8 border border-blue-400/20">
+            <h2 className="text-3xl font-bold text-white mb-4">Our Mission</h2>
+            <p className="text-white/80 text-lg leading-relaxed mb-4">
+              To make advanced AI accessible, practical, and profitable - for businesses of every size, in every industry.
+            </p>
+            <p className="text-white/70 leading-relaxed">
+              We do this by building custom AI solutions that solve real problems, delivering them on time, and standing behind them long after launch. Not with promises - with results.
+            </p>
+          </div>
+          <div className="bg-gradient-to-br from-purple-900/40 to-purple-800/20 backdrop-blur-sm rounded-2xl p-8 border border-purple-400/20">
+            <h2 className="text-3xl font-bold text-white mb-4">Our Vision</h2>
+            <p className="text-white/80 text-lg leading-relaxed mb-4">
+              To be the most trusted AI partner in the world - not the biggest, but the most reliable.
+            </p>
+            <p className="text-white/70 leading-relaxed">
+              Trust is built through transparency, technical depth, and a genuine commitment to the outcome. That's what we're building toward - one client, one solution, one result at a time.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* What We Do */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-white mb-4">What We Do</h2>
+          <p className="text-xl text-white/70">Five areas. One team. Every engagement built around your specific challenge.</p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service, index) => (
+            <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-blue-400/30 transition-all">
+              <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
+              <p className="text-white/70 mb-4 leading-relaxed">{service.description}</p>
+              <a href={service.link} className="text-blue-400 hover:text-blue-300 text-sm font-semibold">
+                Explore {service.title} →
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Industries */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-white mb-4">Industries We Serve</h2>
+          <p className="text-xl text-white/70">Our solutions are in production across every major sector - and growing.</p>
+        </div>
+        <div className="flex flex-wrap justify-center gap-4">
+          {industries.map((industry, index) => (
+            <span key={index} className="px-6 py-3 bg-white/5 backdrop-blur-sm rounded-full text-white/80 border border-white/10">
+              {industry}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Why Choose Deepiotics */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-white mb-4">Why Choose Deepiotics</h2>
+          <p className="text-xl text-white/70">Four things our clients tell us matter most - and why we've built the company around them.</p>
+        </div>
+        <div className="grid md:grid-cols-2 gap-8">
+          {whyChoose.map((item, index) => (
+            <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10">
+              <h3 className="text-2xl font-bold text-white mb-4">{item.title}</h3>
+              <p className="text-white/70 leading-relaxed">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Team */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-white mb-4">The Team Behind Deepiotics</h2>
+          <p className="text-xl text-white/70">Six leaders. Dozens of disciplines. One common standard: AI that works in production, not just in pitches.</p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {team.map((member, index) => (
+            <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-blue-400/30 transition-all">
+              <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
+              <p className="text-blue-400 text-sm mb-4">{member.title}</p>
+              <p className="text-white/70 text-sm leading-relaxed mb-4">{member.bio}</p>
+              <a href={member.linkedin} className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm">
+                <Linkedin className="w-4 h-4" />
+                LinkedIn
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* FAQ */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-white mb-4">Frequently Asked Questions</h2>
+          <p className="text-xl text-white/70">The questions we get asked most - answered honestly.</p>
+        </div>
+        <div className="space-y-4">
+          {faqs.map((faq, index) => (
+            <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 overflow-hidden">
+              <button
+                onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white/5 transition-all"
               >
-                <button
-                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-blue-50 transition-colors duration-200"
-                >
-                  <h3 className="text-lg font-bold text-gray-900 pr-4">
-                    {faq.question}
-                  </h3>
-                  <ChevronDown 
-                    className={`w-6 h-6 text-blue-600 flex-shrink-0 transition-transform duration-300 ${
-                      openFaq === index ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-                <div 
-                  className={`transition-all duration-300 ease-in-out ${
-                    openFaq === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                  } overflow-hidden`}
-                >
-                  <div className="px-6 pb-5 pt-2">
-                    <p className="text-gray-600 leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </div>
+                <h3 className="text-lg font-semibold text-white pr-4">{faq.question}</h3>
+                <ChevronDown 
+                  className={`w-5 h-5 text-blue-400 flex-shrink-0 transition-transform ${
+                    openFaq === index ? 'rotate-180' : ''
+                  }`}
+                />
+              </button>
+              <div 
+                className={`overflow-hidden transition-all duration-300 ${
+                  openFaq === index ? 'max-h-96' : 'max-h-0'
+                }`}
+              >
+                <div className="px-6 pb-4">
+                  <p className="text-white/70 leading-relaxed">{faq.answer}</p>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
+      </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-20">
-          <div className="text-center p-8 bg-white rounded-2xl shadow-lg border-2 border-blue-100 hover:shadow-2xl hover:scale-105 transition-all duration-500 animate-slide-up" style={{animationDelay: '1.4s'}}>
-            <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent mb-2">2018</div>
-            <div className="text-xl text-gray-600 font-semibold">Founded</div>
-          </div>
-          <div className="text-center p-8 bg-white rounded-2xl shadow-lg border-2 border-purple-100 hover:shadow-2xl hover:scale-105 transition-all duration-500 animate-slide-up" style={{animationDelay: '1.5s'}}>
-            <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent mb-2">Global</div>
-            <div className="text-xl text-gray-600 font-semibold">Client Reach</div>
-          </div>
-          <div className="text-center p-8 bg-white rounded-2xl shadow-lg border-2 border-pink-100 hover:shadow-2xl hover:scale-105 transition-all duration-500 animate-slide-up" style={{animationDelay: '1.6s'}}>
-            <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-pink-600 to-pink-400 bg-clip-text text-transparent mb-2">24/7</div>
-            <div className="text-xl text-gray-600 font-semibold">Support Available</div>
-          </div>
-        </div>
-
-        <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-2xl shadow-2xl p-8 md:p-12 text-white text-center border-2 border-white/20 hover:shadow-3xl transition-all duration-500 animate-slide-up" style={{animationDelay: '1.7s'}}>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-pulse-slow">Ready to Transform Your Business with AI?</h2>
-          <p className="text-xl mb-8 opacity-95 leading-relaxed">
-            Let's discuss how Deepiotics can help you achieve your business goals with custom AI solutions
+      {/* Final CTA */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="bg-gradient-to-br from-blue-900/40 to-purple-900/40 backdrop-blur-sm rounded-2xl p-12 border border-white/10 text-center">
+          <h2 className="text-4xl font-bold text-white mb-4">
+            Ready to See What AI<br />Can Do for Your Business?
+          </h2>
+          <p className="text-xl text-white/80 mb-8">
+            One conversation is all it takes. Tell us your challenge - we'll tell you exactly how we'd approach it.
           </p>
           <a
             href="https://tidycal.com/team/deepiotics-team/call"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-110 transition-all duration-300 border-2 border-blue-200 hover:border-blue-400"
+            className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-lg font-semibold rounded-xl hover:shadow-2xl hover:shadow-blue-500/50 transition-all"
           >
             Schedule Your Free Consultation
           </a>
+          <p className="text-white/60 mt-6 text-sm">
+            No commitment. Straight answers. A recommendation you can act on immediately.
+          </p>
+          <div className="mt-8 pt-8 border-t border-white/10 space-y-2">
+            <div className="flex items-center justify-center gap-2 text-white/70">
+              <Mail className="w-4 h-4" />
+              <a href="mailto:contact@deepiotics.com" className="hover:text-blue-400">contact@deepiotics.com</a>
+            </div>
+            <div className="flex items-center justify-center gap-2 text-white/70">
+              <MapPin className="w-4 h-4" />
+              <span>204, Atulya IT Park, Indore, MP 452016, India</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import { Gamepad2, Sparkles, Users, BarChart, CheckCircle, Award, Target, Zap, Globe, Shield, TrendingUp, Brain, Palette, Camera, Database, Lock, ShoppingCart, Heart, Building2, DollarSign, ChevronLeft, ChevronRight, Mic, Activity } from 'lucide-react';
 import { useState } from 'react';
+import PageLayout from './PageLayout';
 
 export default function PortfolioPage() {
   const [vyuhImageIndex, setVyuhImageIndex] = useState(0);
@@ -440,8 +441,12 @@ export default function PortfolioPage() {
   ];
 
   return (
-    <div className="pt-20 sm:pt-28 md:pt-32 lg:pt-24 pb-16 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 relative overflow-hidden">
-      {/* Premium Background Elements */}
+    <PageLayout 
+      title="Our Portfolio" 
+      subtitle="Innovative AI solutions transforming businesses across industries"
+    >
+    <div className="relative">
+      {/* Premium Background Elements - keeping original animations */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-96 h-96 bg-blue-400/8 rounded-full filter blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple-400/8 rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
@@ -1484,5 +1489,6 @@ export default function PortfolioPage() {
         </div>
       </div>
     </div>
+    </PageLayout>
   );
 }

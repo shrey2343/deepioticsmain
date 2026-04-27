@@ -1,50 +1,46 @@
 import React, { useState } from 'react';
-import { TrendingUp, Target, Zap, Users, MessageSquare, BarChart3, Globe, Smartphone, Linkedin, Phone, LineChart, FileText, CheckCircle, ArrowRight, AlertCircle, Sparkles, Rocket, Award, X } from 'lucide-react';
+import { TrendingUp, Target, Zap, Users, MessageSquare, BarChart3, Globe, Smartphone, Linkedin, Phone, LineChart, FileText, CheckCircle, ArrowRight, Sparkles, Award, Mail, MapPin, Bot, Megaphone } from 'lucide-react';
 
 const AIBusinessGrowthPage = () => {
   const [activeModule, setActiveModule] = useState<number | null>(null);
-  const [selectedModule, setSelectedModule] = useState<any>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleLearnMore = (module: any) => {
-    setSelectedModule(module);
-    setIsModalOpen(true);
-  };
+  const stats = [
+    { number: '3x', label: 'More qualified leads for clients who go AI-first' },
+    { number: '41%', label: 'Lower cost per lead on average' },
+    { number: '60%', label: 'Faster response times with AI agents' },
+    { number: '100+', label: 'Businesses transformed with the Growth Suite' }
+  ];
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setTimeout(() => setSelectedModule(null), 300);
-  };
-
-  const struggles = [
-    { icon: AlertCircle, text: "You're juggling 10+ marketing tools   and none talk to each other." },
-    { icon: AlertCircle, text: "Your website isn't converting." },
-    { icon: AlertCircle, text: "Social media feels like a full-time job." },
-    { icon: AlertCircle, text: "Ads are eating your budget." },
-    { icon: AlertCircle, text: "You're losing leads while you sleep." },
-    { icon: AlertCircle, text: "You don't have clear data." }
+  const problems = [
+    "You're managing 10+ marketing tools that don't talk to each other.",
+    "Your website looks fine - but it isn't doing anything.",
+    "Social media feels like a full-time job nobody hired you for.",
+    "Your ad budget disappears and you can't tell if it worked.",
+    "Leads come in and go cold before anyone follows up.",
+    "You're making decisions without clear data.",
+    "Competitors who started after you are somehow ahead of you."
   ];
 
   const steps = [
     {
-      number: '1',
+      number: '01',
       title: 'Strategy & Roadmap',
-      description: 'We start with your goals. In a one-time AI Brand Strategy Session, we identify your biggest growth opportunities, choose the right AI tools, and design your custom "growth stack."',
+      description: "We start with a one-on-one AI Brand Strategy Session. Your goals, your gaps, your market. We identify exactly where AI can move the needle fastest - and build your custom growth stack around that.",
       icon: Target,
       color: 'from-blue-500 to-cyan-500'
     },
     {
-      number: '2',
+      number: '02',
       title: 'Build & Automate',
-      description: 'From an AI-powered website revamp to chatbots, analytics, and ad automation, we implement the exact tools your business needs to scale without adding extra workload.',
+      description: "We implement your chosen tools. AI-powered website. Chatbots. Ads. Agents. Analytics. Everything is set up, connected, and tested - with no technical work on your part.",
       icon: Zap,
       color: 'from-purple-500 to-pink-500'
     },
     {
-      number: '3',
+      number: '03',
       title: 'Launch, Learn & Scale',
-      description: 'Once your system is live, we monitor performance, fine-tune campaigns, and scale what\'s working   powered by smart data and automation.',
-      icon: Rocket,
+      description: "Once live, we monitor performance and fine-tune continuously. What's working gets scaled. What isn't gets fixed. Your system gets smarter the longer it runs.",
+      icon: TrendingUp,
       color: 'from-green-500 to-teal-500'
     }
   ];
@@ -53,349 +49,292 @@ const AIBusinessGrowthPage = () => {
     {
       icon: Target,
       title: 'AI Brand Strategy Consulting',
-      description: 'Map your business goals, identify the right AI tools, and design your custom growth stack in one focused session.',
-      color: 'from-blue-500 to-cyan-500',
-      details: {
-        overview: 'Our AI Brand Strategy Consulting helps you create a comprehensive roadmap for AI-powered business growth.',
-        features: [
-          'Complete business analysis and goal mapping',
-          'AI tool selection and integration planning',
-          'Custom growth stack design',
-          'ROI projections and timeline planning',
-          'Competitive analysis and positioning'
-        ],
-        benefits: [
-          'Clear direction for AI implementation',
-          'Reduced risk of technology misalignment',
-          'Faster time to market',
-          'Optimized budget allocation'
-        ],
-        timeline: '1-2 weeks'
-      }
+      description: "Before you spend a pound on tools or ads, you need a plan that actually fits your business. This is it.",
+      features: [
+        'One focused session to map your growth gaps',
+        'Custom AI tool selection for your business type',
+        'Your complete growth roadmap to execute immediately'
+      ],
+      color: 'from-blue-500 to-cyan-500'
     },
     {
       icon: Globe,
       title: 'AI-Powered Website Revamp',
-      description: 'Turn your old site into a stunning, mobile-friendly, and SEO-optimized platform built to convert.',
-      color: 'from-purple-500 to-pink-500',
-      details: {
-        overview: 'Transform your website into a high-converting, AI-enhanced platform that works 24/7 to grow your business.',
-        features: [
-          'AI-optimized design and user experience',
-          'Mobile-first responsive development',
-          'Advanced SEO implementation',
-          'Conversion rate optimization',
-          'Performance monitoring and analytics'
-        ],
-        benefits: [
-          'Up to 300% increase in conversion rates',
-          'Improved search engine rankings',
-          'Better user engagement',
-          'Reduced bounce rates'
-        ],
-        timeline: '3-4 weeks'
-      }
+      description: "Your website is either your best salesperson or your biggest liability. We turn it into the former.",
+      features: [
+        'Mobile-first, fast-loading, conversion-optimised design',
+        'SEO-structured copy that ranks and reads',
+        'Built to capture leads, not just look good'
+      ],
+      color: 'from-purple-500 to-pink-500'
     },
     {
       icon: MessageSquare,
       title: 'AI Chatbot for Lead Capture',
-      description: 'Engage visitors 24/7 with an intelligent chatbot that answers FAQs, collects leads, and books calls automatically.',
-      color: 'from-green-500 to-teal-500',
-      details: {
-        overview: 'Deploy intelligent AI chatbots that never sleep, capturing leads and qualifying prospects around the clock.',
-        features: [
-          '24/7 automated customer engagement',
-          'Intelligent lead qualification',
-          'Automatic appointment scheduling',
-          'Multi-language support',
-          'CRM integration and data sync'
-        ],
-        benefits: [
-          '85% reduction in response time',
-          '200% increase in lead capture',
-          'Improved customer satisfaction',
-          'Lower operational costs'
-        ],
-        timeline: '2-3 weeks'
-      }
+      description: "Your website gets visitors at 2am. Without a chatbot, those visitors leave. With one, they become leads.",
+      features: [
+        'Answers FAQs, qualifies leads, books calls - automatically',
+        'Runs 24/7 without supervision',
+        'Integrated with your CRM and calendar'
+      ],
+      color: 'from-green-500 to-teal-500'
     },
     {
       icon: Smartphone,
       title: 'Social Media Management',
-      description: 'Stay consistent and relevant with weekly AI-generated content   posts, videos, and engagement handled for you.',
-      color: 'from-orange-500 to-red-500',
-      details: {
-        overview: 'Let AI handle your social media presence with consistent, engaging content that builds your brand and drives growth.',
-        features: [
-          'AI-generated content creation',
-          'Multi-platform posting automation',
-          'Engagement monitoring and response',
-          'Performance analytics and optimization',
-          'Brand voice consistency'
-        ],
-        benefits: [
-          'Consistent brand presence',
-          '150% increase in engagement',
-          'Time savings of 20+ hours per week',
-          'Better audience targeting'
-        ],
-        timeline: 'Ongoing monthly service'
-      }
+      description: "Stop staring at a blank screen wondering what to post. Your AI content system handles it.",
+      features: [
+        'Weekly content - posts, videos, reels - generated and scheduled',
+        'Consistent brand voice across every platform',
+        'Engagement monitored and responded to for you'
+      ],
+      color: 'from-orange-500 to-red-500'
     },
     {
       icon: Users,
       title: 'Meta Ads (Facebook + Instagram)',
-      description: 'Launch AI-optimized ad campaigns that find your ideal audience and turn clicks into customers.',
-      color: 'from-pink-500 to-rose-500',
-      details: {
-        overview: 'Leverage AI-powered advertising to reach your ideal customers on Facebook and Instagram with precision targeting.',
-        features: [
-          'AI-driven audience targeting',
-          'Dynamic ad creative optimization',
-          'Automated bid management',
-          'Real-time performance monitoring',
-          'A/B testing and optimization'
-        ],
-        benefits: [
-          '60% lower cost per acquisition',
-          '250% increase in ROAS',
-          'Better audience insights',
-          'Scalable campaign management'
-        ],
-        timeline: '1-2 weeks setup + ongoing'
-      }
+      description: "Stop guessing with your ad budget. AI finds the audience that converts and optimises every pound.",
+      features: [
+        'AI-crafted creatives and copy tested for performance',
+        'Audience targeting refined by real-time data',
+        'Continuous optimisation - campaigns that improve over time'
+      ],
+      color: 'from-pink-500 to-rose-500'
     },
     {
       icon: Target,
       title: 'Google Ads Setup',
-      description: 'Capture high-intent traffic with AI-crafted copy and keyword targeting.',
-      color: 'from-indigo-500 to-purple-500',
-      details: {
-        overview: 'Dominate Google search results with AI-optimized campaigns that capture high-intent customers at the perfect moment.',
-        features: [
-          'AI-powered keyword research',
-          'Smart bidding strategies',
-          'Dynamic ad copy generation',
-          'Landing page optimization',
-          'Conversion tracking setup'
-        ],
-        benefits: [
-          '40% improvement in Quality Score',
-          '180% increase in click-through rates',
-          'Lower cost per click',
-          'Higher conversion rates'
-        ],
-        timeline: '1-2 weeks'
-      }
+      description: "Capture people who are already looking for exactly what you offer - at the moment they're ready to buy.",
+      features: [
+        'High-intent keyword targeting built by AI',
+        'Ad copy written and tested for your specific market',
+        'Budget managed for maximum return, minimum waste'
+      ],
+      color: 'from-indigo-500 to-purple-500'
     },
     {
       icon: Linkedin,
       title: 'LinkedIn AI Lead Generation',
-      description: 'Transform your LinkedIn into a lead magnet   optimized profile, AI content strategy, and smart outreach.',
+      description: "LinkedIn is where B2B decisions get made. We turn your profile into the first thing decision-makers see.",
+      features: [
+        'Profile optimised to attract the right clients',
+        'AI content strategy that builds authority in your niche',
+        'Smart outreach that opens conversations without being pushy'
+      ],
       color: 'from-blue-600 to-cyan-600',
-      link: '/linkedin-service',
-      details: {
-        overview: 'Turn LinkedIn into your most powerful lead generation machine with AI-driven content and outreach strategies.',
-        features: [
-          'Profile optimization for maximum visibility',
-          'AI-generated content strategy',
-          'Automated connection requests',
-          'Personalized outreach campaigns',
-          'Lead tracking and management'
-        ],
-        benefits: [
-          '300% increase in profile views',
-          '250% more qualified leads',
-          'Enhanced professional credibility',
-          'Automated relationship building'
-        ],
-        timeline: '2-3 weeks'
-      }
+      link: '/linkedin-service'
     },
     {
       icon: Phone,
       title: 'AI Voice Agent',
-      description: 'Add a voice-based AI sales assistant that answers calls, qualifies leads, and schedules appointments.',
-      color: 'from-violet-500 to-purple-500',
-      details: {
-        overview: 'Deploy AI voice agents that handle calls professionally, qualify leads, and book appointments while you focus on closing deals.',
-        features: [
-          'Natural language conversation',
-          'Intelligent call routing',
-          'Automatic lead qualification',
-          'Calendar integration',
-          'Call recording and analysis'
-        ],
-        benefits: [
-          'Never miss a lead again',
-          '70% reduction in response time',
-          'Improved lead qualification',
-          '24/7 availability'
-        ],
-        timeline: '3-4 weeks'
-      }
+      description: "Every call you miss is a lead your competitor answers. Your AI Voice Agent picks up every time.",
+      features: [
+        'Answers calls, qualifies leads, books appointments - 24/7',
+        'Sounds natural - not robotic',
+        'Fully integrated with your calendar and CRM'
+      ],
+      color: 'from-violet-500 to-purple-500'
     },
     {
       icon: BarChart3,
       title: 'AI Analytics & Tracking Setup',
-      description: 'Get full visibility into what\'s driving your sales with Microsoft Clarity, Hotjar, and Google Analytics 4.',
-      color: 'from-emerald-500 to-teal-500',
-      details: {
-        overview: 'Gain complete visibility into your business performance with comprehensive AI-powered analytics and tracking systems.',
-        features: [
-          'Advanced analytics implementation',
-          'Custom dashboard creation',
-          'Conversion tracking setup',
-          'User behavior analysis',
-          'Automated reporting'
-        ],
-        benefits: [
-          'Data-driven decision making',
-          'Improved ROI tracking',
-          'Better customer insights',
-          'Optimized marketing spend'
-        ],
-        timeline: '1-2 weeks'
-      }
+      description: "You can't grow what you can't measure. We give you a dashboard that actually tells you what's working.",
+      features: [
+        'Microsoft Clarity, Hotjar, and Google Analytics 4 - configured properly',
+        'Conversion tracking from ad click to closed deal',
+        'Weekly reports in plain English - no jargon, just insight'
+      ],
+      color: 'from-emerald-500 to-teal-500'
     },
     {
       icon: FileText,
       title: 'Lead Magnet Creation',
-      description: 'Design irresistible downloads (eBooks, checklists, PDFs) that grow your email list and nurture leads automatically.',
-      color: 'from-amber-500 to-orange-500',
-      details: {
-        overview: 'Create compelling lead magnets that attract your ideal customers and build a valuable email list for long-term growth.',
-        features: [
-          'AI-generated content creation',
-          'Professional design and layout',
-          'Landing page development',
-          'Email automation setup',
-          'Performance tracking'
-        ],
-        benefits: [
-          '400% increase in email signups',
-          'Higher quality leads',
-          'Improved nurturing sequences',
-          'Better conversion rates'
-        ],
-        timeline: '2-3 weeks'
-      }
+      description: "The right free resource turns strangers into subscribers and subscribers into clients.",
+      features: [
+        'Strategy + design + copywriting for your lead magnet',
+        'eBooks, checklists, templates - built to attract your ideal client',
+        'Automated delivery and nurture sequence set up for you'
+      ],
+      color: 'from-amber-500 to-orange-500'
+    },
+    {
+      icon: Megaphone,
+      title: 'AI Marketing Agent',
+      description: "Imagine having a marketing manager who never sleeps, never takes a day off, and gets smarter every week. That's your AI Marketing Agent.",
+      features: [
+        'Autonomous content creation across social, email, and web',
+        'Campaign management - launch, test, and optimise without manual input',
+        'Real-time performance analysis with automatic strategy adjustment',
+        'Integrated with your existing tools and platforms',
+        'Weekly performance summaries - in plain English'
+      ],
+      color: 'from-cyan-500 to-blue-500',
+      isNew: true
+    },
+    {
+      icon: Bot,
+      title: 'AI Sales Agent',
+      description: "Your best salesperson follows up every lead within minutes, never forgets a prospect, and works 24/7 without commission. We build that for your business.",
+      features: [
+        'Instant lead qualification - responds to enquiries in under 60 seconds',
+        'Automated multi-touch follow-up via email, SMS, and WhatsApp',
+        'Objection handling trained on your specific product or service',
+        'Meeting booking directly into your calendar - no back-and-forth',
+        'Full pipeline reporting - know exactly where every lead stands'
+      ],
+      color: 'from-purple-500 to-fuchsia-500',
+      isNew: true
     }
   ];
 
   const caseStudies = [
     {
-      title: 'Tech Startup   From Invisible to In-Demand',
-      result: 'AI-powered LinkedIn optimization + content automation → 3× profile visits, 2.5× more qualified leads.',
+      title: 'Tech Startup - From Invisible to In-Demand',
+      result: 'LinkedIn optimisation + AI content automation → 3x profile visits. 2.5x more qualified leads. In under 60 days.',
+      quote: "We went from posting twice a week and getting nothing to having decision-makers reach out to us.",
       icon: TrendingUp,
       color: 'from-blue-500 to-cyan-500'
     },
     {
-      title: 'eCommerce Brand   Website Conversion Makeover',
-      result: 'AI website revamp + chatbot → Bounce rate dropped by 38%, inquiries doubled.',
+      title: 'eCommerce Brand - Website That Finally Converts',
+      result: 'AI website revamp + chatbot deployment → 38% drop in bounce rate. Enquiries doubled. Revenue up within the first month.',
+      quote: "The chatbot alone paid for the whole project in the first two weeks.",
       icon: Globe,
       color: 'from-purple-500 to-pink-500'
     },
     {
-      title: 'Consulting Firm   24/7 Lead Qualification',
-      result: 'AI Voice Agent + Analytics → 60% faster responses, 30% higher conversion.',
+      title: 'Consulting Firm - Never Miss a Lead Again',
+      result: 'AI Voice Agent + analytics setup → 60% faster response times. 30% higher conversion rate on inbound enquiries.',
+      quote: "I used to lose leads to voicemail. Now every call gets answered and qualified before I've even seen it.",
       icon: Phone,
       color: 'from-green-500 to-teal-500'
     },
     {
-      title: 'Local Service Business   Smart Ads Automation',
-      result: 'AI Meta Ads + GA4 → 41% lower CPL, 2× ROI in 60 days.',
+      title: 'Local Service Business - Ads That Work',
+      result: 'Meta Ads + GA4 setup → 41% lower cost per lead. 2x return on ad spend. Achieved in 60 days.',
+      quote: "For the first time, I actually know which ad is bringing in customers.",
       icon: Target,
       color: 'from-orange-500 to-red-500'
     }
   ];
 
   const trustReasons = [
-    { icon: Target, text: 'Strategy-First, Tools-Second   You get clarity, not complexity.' },
-    { icon: Sparkles, text: 'Modular System   Start small, expand fast.' },
-    { icon: CheckCircle, text: 'Done-For-You Implementation   We handle the tech; you focus on growth.' },
-    { icon: Users, text: 'SMB-Focused Expertise   AI solutions designed for small businesses.' },
-    { icon: LineChart, text: 'Transparent Reporting   Know exactly what\'s working.' }
+    {
+      title: 'Strategy before software.',
+      description: "Every engagement starts with understanding your business - not upselling you on tools you don't need. You get clarity first, then the tech that delivers on it."
+    },
+    {
+      title: 'Modular. Start small. Expand fast.',
+      description: "You don't have to do everything at once. Start with one module. See the results. Then layer in more. No lock-in, no bloated packages."
+    },
+    {
+      title: 'Done for you - completely.',
+      description: "We don't send you tutorials and wish you luck. We build it, connect it, test it, and hand you something that works. Your job is to review the results."
+    },
+    {
+      title: 'Built for businesses like yours.',
+      description: "We're not an enterprise software company that also has an SMB tier. Our entire Growth Suite was designed for businesses with fewer than 50 people who want enterprise-level marketing without enterprise-level cost."
+    },
+    {
+      title: 'You always know what\'s working.',
+      description: "No vanity metrics. No confusing dashboards. Every week you get a plain-English summary of what the AI is doing, what it's generating, and where we're heading next."
+    }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50">
+    <div className="min-h-screen bg-[rgba(2,13,42,1)]">
       {/* Hero Section */}
-      <section className="pt-24 pb-8 sm:pb-12 md:pb-14 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center animate-fade-in">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-              Grow Your Business Smarter with{' '}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                AI That Works for You
+      <section className="relative overflow-hidden pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-20 w-96 h-96 bg-blue-400/8 rounded-full filter blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple-400/8 rounded-full filter blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+        </div>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              You Didn't Start Your Business to Spend<br />
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                4 Hours a Day on Marketing.
               </span>
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-10 leading-relaxed">
-              From strategy to execution, our AI Business Growth Suite helps small and medium businesses automate marketing, capture more leads, and scale faster without the tech overwhelm.
+            <p className="text-xl sm:text-2xl text-white/80 max-w-4xl mx-auto mb-6 leading-relaxed">
+              But here you are - juggling ads, social media, lead follow-ups, and content - while your actual business waits.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a
-                href="https://tidycal.com/team/deepiotics-team/call"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 flex items-center space-x-2"
-              >
-                <span>Book Your Free AI Growth Call</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-              {/* <a
-                href="#how-it-works"
-                className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-xl border-2 border-gray-200 transform hover:-translate-y-1 transition-all duration-300"
-              >
-                See How It Works
-              </a> */}
-            </div>
+            <p className="text-lg sm:text-xl text-white/70 max-w-4xl mx-auto mb-10 leading-relaxed">
+              There's a better way. Deepiotics' AI Business Growth Suite replaces the overwhelm with a done-for-you system that markets, captures, and converts - while you focus on what you do best.
+            </p>
+            <a
+              href="https://tidycal.com/team/deepiotics-team/call"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-blue-500/50 transform hover:-translate-y-1 transition-all duration-300"
+            >
+              <span>Book Your Free AI Growth Call</span>
+              <ArrowRight className="w-5 h-5" />
+            </a>
+            <p className="text-white/60 mt-4 text-sm">No commitment. 45 minutes. Walk away with a clear growth plan.</p>
           </div>
         </div>
       </section>
 
-      {/* The Struggle Section */}
-      <section className="py-8 sm:py-12 md:py-14 px-4 sm:px-6 lg:px-8 bg-white/50 backdrop-blur-sm border-t border-yellow-400">
+      {/* Social Proof Bar */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              😣 The Struggle Why Growth Feels{' '}
-              <span className="bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
-                So Hard Right Now
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">
+                  {stat.number}
+                </div>
+                <div className="text-white/70 text-sm">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* The Problem Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+              If Any of This Sounds Familiar,<br />
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                You're in the Right Place.
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              If You're a Small or Medium Business Owner, This Might Sound Familiar...
+            <p className="text-xl text-white/80 mb-8">
+              You're working harder than you ever have - but growth still feels stuck.
             </p>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              You're working harder than ever but growth isn't getting easier. Between marketing, content, and customer acquisition, it can feel impossible to keep up with everything… especially in today's AI-driven world.
+            <p className="text-lg text-white/70 leading-relaxed mb-8">
+              You've got a website that doesn't convert. Social media that eats your evenings. Ads that cost more than they return. Leads that go cold because nobody followed up in time.
+            </p>
+            <p className="text-lg text-white/70 leading-relaxed">
+              You've tried the tools. You've bought the courses. And somewhere between the dashboards and the automations and the content calendars, you lost track of why you started this business in the first place.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {struggles.map((struggle, index) => (
+          <div className="space-y-4 mb-12">
+            {problems.map((problem, index) => (
               <div
                 key={index}
-                className="group bg-white rounded-2xl p-6 border-2 border-red-100 hover:border-red-300 hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300"
+                className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-blue-400/30 transition-all"
               >
-                <div className="flex items-start space-x-4">
-                  <AlertCircle className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
-                  <p className="text-gray-700 font-medium">{struggle.text}</p>
-                </div>
+                <p className="text-white/80 text-lg">{problem}</p>
               </div>
             ))}
           </div>
 
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-8 sm:p-12 text-center text-white shadow-2xl">
-            <h3 className="text-2xl sm:text-3xl font-bold mb-4">
-              What if you could fix all of that   without hiring extra staff, learning complex tools, or spending hours managing it all?
-            </h3>
-            <p className="text-lg sm:text-xl mb-6 opacity-90">
-              That's exactly why we built the AI Business Growth Suite so small and medium businesses can automate, grow, and scale smarter.
+          <div className="text-center">
+            <p className="text-xl text-white/80 mb-6">
+              None of that is your fault. You built a great business. You just need the right system behind it.
+            </p>
+            <p className="text-2xl font-bold text-white mb-8">
+              That's exactly what the AI Business Growth Suite is.
             </p>
             <a
-              href="#modules"
-              className="inline-flex items-center space-x-2 bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+              href="#how-it-works"
+              className="inline-flex items-center space-x-2 text-blue-400 hover:text-blue-300 font-semibold text-lg"
             >
               <span>See How It Works</span>
               <ArrowRight className="w-5 h-5" />
@@ -405,36 +344,33 @@ const AIBusinessGrowthPage = () => {
       </section>
 
       {/* How It Works Section */}
-      <section id="how-it-works" className="py-8 sm:py-12 md:py-14 px-4 sm:px-6 lg:px-8 border-t border-yellow-400">
+      <section id="how-it-works" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              🧭 How It Works  {' '}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Your AI Powered Growth Journey
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+              Three Steps to a Business That<br />
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Grows on Autopilot
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We make AI driven business growth simple. In just three steps, we map your goals, build your tools, and launch your automation engine.
-            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {steps.map((step, index) => (
               <div
                 key={index}
-                className="group relative bg-white rounded-3xl p-8 border-2 border-gray-200 hover:border-transparent hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500"
+                className="group relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:border-white/20 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500"
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500`}></div>
                 <div className="relative">
                   <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${step.color} text-white rounded-2xl mb-6 shadow-lg`}>
                     <step.icon className="w-8 h-8" />
                   </div>
-                  <div className="text-5xl font-bold text-gray-200 mb-4">
-                    Step {step.number}
+                  <div className="text-5xl font-bold text-white/10 mb-4">
+                    {step.number}
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{step.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{step.description}</p>
+                  <h3 className="text-2xl font-bold text-white mb-4">{step.title}</h3>
+                  <p className="text-white/70 leading-relaxed">{step.description}</p>
                 </div>
               </div>
             ))}
@@ -445,7 +381,7 @@ const AIBusinessGrowthPage = () => {
               href="https://tidycal.com/team/deepiotics-team/call"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
+              className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-blue-500/50 transform hover:-translate-y-1 transition-all duration-300"
             >
               <span>Book Your Free AI Growth Consultation</span>
               <ArrowRight className="w-5 h-5" />
@@ -454,21 +390,18 @@ const AIBusinessGrowthPage = () => {
         </div>
       </section>
 
-      {/* Modules Section */}
-      <section id="modules" className="py-8 sm:py-12 md:py-14 px-4 sm:px-6 lg:px-8 bg-white/50 backdrop-blur-sm border-t border-yellow-400">
+      {/* Service Modules Section */}
+      <section id="modules" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              🧩 Choose Your{' '}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                AI Growth Modules
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+              Build Your{' '}
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                AI-Powered Growth Stack
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
-              Build Your AI-Powered Growth Stack
-            </p>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-              Pick the modules that match your business goals   or let us design your perfect AI growth system. Every service is plug-and-play, results-driven, and built for small and medium businesses.
+            <p className="text-xl text-white/80 max-w-4xl mx-auto">
+              Pick the modules that match your goals - or let us design your complete system. Every service is plug-and-play, done-for-you, and built around results.
             </p>
           </div>
 
@@ -478,51 +411,61 @@ const AIBusinessGrowthPage = () => {
                 key={index}
                 onMouseEnter={() => setActiveModule(index)}
                 onMouseLeave={() => setActiveModule(null)}
-                className="group relative bg-white rounded-2xl p-6 border-2 border-gray-200 hover:border-transparent hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 cursor-pointer"
+                className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-blue-400/30 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500"
               >
+                {module.isNew && (
+                  <div className="absolute top-4 right-4 bg-gradient-to-r from-green-500 to-teal-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                    NEW
+                  </div>
+                )}
                 <div className={`absolute inset-0 bg-gradient-to-br ${module.color} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-500`}></div>
                 <div className="relative">
                   <div className={`inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br ${module.color} text-white rounded-xl mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                     <module.icon className="w-7 h-7" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{module.title}</h3>
-                  <p className="text-gray-600 leading-relaxed mb-4">{module.description}</p>
+                  <h3 className="text-xl font-bold text-white mb-3">{module.title}</h3>
+                  <p className="text-white/70 leading-relaxed mb-4">{module.description}</p>
+                  <ul className="space-y-2 mb-4">
+                    {module.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start space-x-2 text-white/60 text-sm">
+                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
                   {module.link ? (
                     <a
                       href={module.link}
-                      className="flex items-center text-blue-600 font-semibold group-hover:translate-x-2 transition-transform duration-300"
+                      className="flex items-center text-blue-400 font-semibold group-hover:translate-x-2 transition-transform duration-300"
                     >
                       <span>Learn More</span>
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </a>
                   ) : (
-                    <button
-                      onClick={() => handleLearnMore(module)}
-                      className="flex items-center text-blue-600 font-semibold group-hover:translate-x-2 transition-transform duration-300 cursor-pointer"
-                    >
+                    <div className="flex items-center text-blue-400 font-semibold">
                       <span>Learn More</span>
                       <ArrowRight className="w-4 h-4 ml-2" />
-                    </button>
+                    </div>
                   )}
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl p-8 sm:p-12 text-center text-white shadow-2xl">
-            <h3 className="text-2xl sm:text-3xl font-bold mb-4">
-              💡 Don't know where to start?
+          <div className="bg-gradient-to-r from-purple-900/40 to-pink-900/40 backdrop-blur-sm rounded-3xl p-8 sm:p-12 text-center border border-white/10">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+              Don't Know Where to Start?
             </h3>
-            <p className="text-lg sm:text-xl mb-6 opacity-90">
-              Book Your Free AI Growth Call and we'll design your perfect stack together.
+            <p className="text-lg text-white/80 mb-6 max-w-3xl mx-auto">
+              Most businesses do better with a curated stack than by trying everything at once. Book a free growth call and we'll tell you exactly which three modules will move the needle fastest for your business - in the next 90 days.
             </p>
             <a
               href="https://tidycal.com/team/deepiotics-team/call"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 bg-white text-purple-600 px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+              className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-purple-500/50 transform hover:-translate-y-1 transition-all duration-300"
             >
-              <span>Get Started Now</span>
+              <span>Book Your Free AI Growth Call</span>
               <ArrowRight className="w-5 h-5" />
             </a>
           </div>
@@ -530,193 +473,129 @@ const AIBusinessGrowthPage = () => {
       </section>
 
       {/* Case Studies Section */}
-      <section className="py-8 sm:py-12 md:py-14 px-4 sm:px-6 lg:px-8 border-t border-yellow-400">
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              🚀 Real Results.{' '}
-              <span className="bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">
-                Real Growth.
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+              What Happens When<br />
+              <span className="bg-gradient-to-r from-green-400 to-teal-400 bg-clip-text text-transparent">
+                Businesses Go AI-First
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See What Happens When Businesses Go AI-First. Our clients don't just use AI   they grow with it.
-            </p>
+            <p className="text-xl text-white/80">These aren't projections. These are clients.</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
             {caseStudies.map((study, index) => (
               <div
                 key={index}
-                className="group relative bg-white rounded-3xl p-8 border-2 border-gray-200 hover:border-transparent hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500"
+                className="group relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:border-white/20 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500"
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${study.color} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500`}></div>
                 <div className="relative">
                   <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${study.color} text-white rounded-2xl mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                     <study.icon className="w-8 h-8" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{study.title}</h3>
-                  <p className="text-lg text-gray-700 leading-relaxed mb-4">{study.result}</p>
-                  <div className="flex items-center text-blue-600 font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                    
-                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4">{study.title}</h3>
+                  <p className="text-lg text-white/80 leading-relaxed mb-6">{study.result}</p>
+                  <blockquote className="border-l-4 border-blue-400 pl-4 italic text-white/70">
+                    "{study.quote}"
+                  </blockquote>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center">
             <a
               href="https://tidycal.com/team/deepiotics-team/call"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-600 to-teal-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
+              className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-600 to-teal-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-green-500/50 transform hover:-translate-y-1 transition-all duration-300"
             >
-              <span>📞 Ready to see your own AI success story? Book Your Free AI Growth Strategy Call</span>
+              <span>Book Your Free AI Growth Strategy Call</span>
               <ArrowRight className="w-5 h-5" />
             </a>
+            <p className="text-white/60 mt-4">See your own results within 60 days - or we work until you do.</p>
           </div>
         </div>
       </section>
 
-      {/* Why Trust Us Section */}
-      <section className="py-8 sm:py-12 md:py-14 px-4 sm:px-6 lg:px-8 bg-white/50 backdrop-blur-sm border-t border-yellow-400">
+      {/* Why Deepiotics Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              💎 Why Businesses Trust{' '}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Our AI Growth Suite
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+              Why Businesses Trust the<br />
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                AI Business Growth Suite
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We don't just add AI to your business   we build AI systems around your goals. That's why our clients see faster growth, leaner operations, and higher ROI within weeks.
+            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+              We could list 20 features. Instead, here's what actually matters to our clients.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {trustReasons.map((reason, index) => (
               <div
                 key={index}
-                className="group bg-white rounded-2xl p-6 border-2 border-blue-100 hover:border-blue-300 hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300"
+                className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10 hover:border-blue-400/30 transition-all"
               >
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                      <reason.icon className="w-6 h-6 text-white" />
-                    </div>
-                  </div>
-                  <p className="text-gray-700 font-medium leading-relaxed">{reason.text}</p>
-                </div>
+                <h3 className="text-xl font-bold text-white mb-4">{reason.title}</h3>
+                <p className="text-white/70 leading-relaxed">{reason.description}</p>
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-3xl p-8 sm:p-12 text-center text-white shadow-2xl">
-            <Award className="w-16 h-16 mx-auto mb-6" />
-            <h3 className="text-3xl sm:text-4xl font-bold mb-6">
-              Let's Build Your AI Growth Stack
-            </h3>
-            <p className="text-lg sm:text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              Transform your business with AI-powered automation, smarter marketing, and data-driven growth strategies designed specifically for UK businesses.
+      {/* Final CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-gradient-to-br from-blue-900/40 to-purple-900/40 backdrop-blur-sm rounded-3xl p-12 border border-white/10 text-center">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+              Your Competitors Are Already Using AI.<br />
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                The Question Is - Are You?
+              </span>
+            </h2>
+            <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">
+              Every month you wait is a month of leads lost, budget wasted, and ground given to businesses that automated what you're still doing manually.
+            </p>
+            <p className="text-lg text-white/70 mb-8">
+              One free call. No sales pitch. Just a clear, honest conversation about what AI can realistically do for your business in the next 90 days.
             </p>
             <a
               href="https://tidycal.com/team/deepiotics-team/call"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 bg-white text-blue-600 px-10 py-5 rounded-xl font-bold text-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
+              className="inline-block px-10 py-5 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xl font-bold rounded-xl hover:shadow-2xl hover:shadow-blue-500/50 transform hover:-translate-y-1 transition-all duration-300 mb-6"
             >
-              <span>Book a Free AI Strategy Call Now</span>
-              <ArrowRight className="w-6 h-6" />
+              Build Your AI Growth Stack - Free Call
             </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Module Details Modal */}
-      {isModalOpen && selectedModule && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="p-8">
-              {/* Header */}
-              <div className="flex items-start justify-between mb-6">
-                <div className="flex items-center space-x-4">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${selectedModule.color} rounded-2xl flex items-center justify-center`}>
-                    <selectedModule.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900">{selectedModule.title}</h3>
-                    <p className="text-gray-600">{selectedModule.description}</p>
-                  </div>
-                </div>
-                <button
-                  onClick={handleCloseModal}
-                  className="p-2 hover:bg-gray-100 rounded-full transition-colors"
-                >
-                  <X className="w-6 h-6 text-gray-500" />
-                </button>
+            <div className="flex flex-wrap justify-center gap-6 text-white/60 text-sm">
+              <span>500+ businesses served</span>
+              <span>·</span>
+              <span>Results within 60 days</span>
+              <span>·</span>
+              <span>No tech knowledge required</span>
+              <span>·</span>
+              <span>Designed for UK businesses</span>
+            </div>
+            <div className="mt-8 pt-8 border-t border-white/10 space-y-2">
+              <div className="flex items-center justify-center gap-2 text-white/70">
+                <Mail className="w-4 h-4" />
+                <a href="mailto:contact@deepiotics.com" className="hover:text-blue-400">contact@deepiotics.com</a>
               </div>
-
-              {/* Content */}
-              <div className="grid md:grid-cols-2 gap-8">
-                {/* Left Column */}
-                <div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-4">Overview</h4>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{selectedModule.details.overview}</p>
-
-                  <h4 className="text-xl font-bold text-gray-900 mb-4">Key Features</h4>
-                  <ul className="space-y-3 mb-6">
-                    {selectedModule.details.features.map((feature: string, index: number) => (
-                      <li key={index} className="flex items-start space-x-3">
-                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-700">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Right Column */}
-                <div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-4">Benefits</h4>
-                  <ul className="space-y-3 mb-6">
-                    {selectedModule.details.benefits.map((benefit: string, index: number) => (
-                      <li key={index} className="flex items-start space-x-3">
-                        <Sparkles className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-700">{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="bg-gray-50 rounded-2xl p-6">
-                    <div>
-                      <h5 className="font-semibold text-gray-900 mb-2">Timeline</h5>
-                      <p className="text-gray-600">{selectedModule.details.timeline}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* CTA */}
-              <div className="mt-8 pt-6 border-t border-gray-200 flex flex-col sm:flex-row gap-4">
-                <a
-                  href="https://tidycal.com/team/deepiotics-team/call"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`flex-1 bg-gradient-to-r ${selectedModule.color} text-white px-6 py-3 rounded-xl font-semibold text-center hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300`}
-                >
-                  Get Started with {selectedModule.title}
-                </a>
-                <button
-                  onClick={handleCloseModal}
-                  className="px-6 py-3 border border-gray-300 text-gray-700 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
-                >
-                  Close
-                </button>
+              <div className="flex items-center justify-center gap-2 text-white/70">
+                <MapPin className="w-4 h-4" />
+                <span>204, Atulya IT Park, Indore, MP 452016, India</span>
               </div>
             </div>
           </div>
         </div>
-      )}
+      </section>
     </div>
   );
 };

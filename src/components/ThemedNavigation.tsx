@@ -104,7 +104,7 @@ const ThemedNavigation: React.FC = () => {
                 AI Business Growth Suite
               </a>
               <a
-                href="/services"
+                href="/ai-solutions"
                 style={{
                   display: 'block',
                   padding: '12px 16px',
@@ -276,7 +276,7 @@ const ThemedNavigation: React.FC = () => {
                     AI Business Growth Suite
                   </a>
                   <a
-                    href="/services"
+                    href="/ai-solutions"
                     style={{
                       padding: '12px 16px',
                       color: 'var(--text-light)',

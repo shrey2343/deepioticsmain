@@ -4,13 +4,13 @@ import AdminDashboard from './components/AdminDashboard';
 import AdminCareer from './components/AdminCareer';
 import Careers from './components/Careers';
 import AboutPage from './components/AboutPage';
-import ServicesPage from './components/ServicesPage';
 import PortfolioPage from './components/PortfolioPage';
 import ContactPage from './components/ContactPage';
 import BlogPage from './components/BlogPage';
 import BlogDetailPage from './components/BlogDetailPage';
 import LinkedInServicePage from './components/LinkedInServicePage';
 import AIBusinessGrowthPage from './components/AIBusinessGrowthPage';
+import AISolutionsPage from './components/AISolutionsPage';
 import USAccountingPage from './components/USAccountingPage';
 import TrucksLogisticsPage from './components/TrucksLogisticsPage';
 import MediaPage from './components/MediaPage';
@@ -55,19 +55,6 @@ function App() {
         <ThemedNavigation />
         <div className="min-h-screen" style={{ paddingTop: '80px' }}>
           <AboutPage />
-        </div>
-        <ThemedFooter />
-        <ChatbotWidget customerName="Guest" customerId="99aupairs" />
-      </ThemeWrapper>
-    );
-  }
-
-  if (path === '/services') {
-    return (
-      <ThemeWrapper>
-        <ThemedNavigation />
-        <div className="min-h-screen" style={{ paddingTop: '80px' }}>
-          <ServicesPage />
         </div>
         <ThemedFooter />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
@@ -173,6 +160,19 @@ function App() {
         <ThemedNavigation />
         <div className="min-h-screen" style={{ paddingTop: '80px' }}>
           <AIBusinessGrowthPage />
+        </div>
+        <ThemedFooter />
+        <ChatbotWidget customerName="Guest" customerId="99aupairs" />
+      </ThemeWrapper>
+    );
+  }
+
+  if (path === '/ai-solutions') {
+    return (
+      <ThemeWrapper>
+        <ThemedNavigation />
+        <div className="min-h-screen" style={{ paddingTop: '80px' }}>
+          <AISolutionsPage />
         </div>
         <ThemedFooter />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />

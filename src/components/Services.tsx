@@ -17,6 +17,7 @@ const Services = () => {
   const handleGetConsultation = (service: Service) => {
     setSelectedService(service);
     setIsModalOpen(true);
+    
   };
 
   const handleCloseModal = () => {

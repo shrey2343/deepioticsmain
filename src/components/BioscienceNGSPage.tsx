@@ -188,7 +188,7 @@ const BioscienceNGSPage = () => {
           <h2 className="sec-title">Our Service Portfolio</h2>
           <p className="sec-sub">Four pillars of precision genomics — covering every stage of your NGS workflow.</p>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px', marginTop: '56px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px', marginTop: '56px', maxWidth: '1200px', margin: '56px auto 0' }}>
             {[
               { icon: '🧬', title: 'NGS Data Analysis', desc: 'WGS, WES, Targeted Panels, Variant Calling, CNV & SV Detection — from raw FASTQ to ACMG-classified clinical reports, handled end-to-end with validated pipelines.' },
               { icon: '🔬', title: 'RNA Sequencing', desc: 'Bulk RNA-seq, differential expression, pathway analysis (KEGG, GO, Reactome), isoform quantification, and fusion detection — precision transcriptomics with publication-ready outputs.' },
@@ -196,8 +196,10 @@ const BioscienceNGSPage = () => {
               { icon: '🤖', title: 'Advanced Bioinformatics', desc: 'Single-cell analysis, AI-driven insights, custom bioinformatics pipelines, and publication-quality statistical visualisations — for research and clinical programs that need to go further.' }
             ].map((item, idx) => (
               <div key={idx} className="svc-card" style={{ opacity: 1, transform: 'none' }}>
-                <div className="svc-icon">{item.icon}</div>
-                <h3 className="svc-title">{item.title}</h3>
+                <div className="svc-header">
+                  <div className="svc-icon">{item.icon}</div>
+                  <h3 className="svc-title">{item.title}</h3>
+                </div>
                 <p className="svc-desc">{item.desc}</p>
               </div>
             ))}
@@ -211,7 +213,7 @@ const BioscienceNGSPage = () => {
           <span className="eyebrow">Our Process</span>
           <h2 className="sec-title">Our Analysis Pipeline</h2>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginTop: '56px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginTop: '56px', maxWidth: '1200px', margin: '56px auto 0' }}>
             {[
               { num: '1', title: 'Raw FASTQ', desc: 'Your sequencing files received via secure encrypted transfer.' },
               { num: '2', title: 'QC & Trim', desc: 'FastQC quality assessment, adapter trimming, contamination checks.' },
@@ -221,8 +223,10 @@ const BioscienceNGSPage = () => {
               { num: '6', title: 'Report', desc: 'Structured, white-labeled clinical report delivered under your brand.' }
             ].map((item) => (
               <div key={item.num} className="pain-card" style={{ opacity: 1, transform: 'none' }}>
-                <div className="pain-num">{item.num}</div>
-                <h3 className="pain-title">{item.title}</h3>
+                <div className="pain-header-row">
+                  <div className="pain-num">{item.num}</div>
+                  <h3 className="pain-title">{item.title}</h3>
+                </div>
                 <p className="pain-body">{item.desc}</p>
               </div>
             ))}
@@ -247,8 +251,10 @@ const BioscienceNGSPage = () => {
               { title: 'Implantation Support', desc: 'Endometrial receptivity and implantation potential bioinformatics assessment.' }
             ].map((item, idx) => (
               <div key={idx} className="svc-card" style={{ opacity: 1, transform: 'none' }}>
-                <div className="svc-icon">🧪</div>
-                <h3 className="svc-title">{item.title}</h3>
+                <div className="svc-header">
+                  <div className="svc-icon">🧪</div>
+                  <h3 className="svc-title">{item.title}</h3>
+                </div>
                 <p className="svc-desc">{item.desc}</p>
               </div>
             ))}
@@ -278,8 +284,10 @@ const BioscienceNGSPage = () => {
               { title: 'RNA-Seq Transcriptomics', desc: 'Expression profiling, fusion detection, and pathway analysis for cancer biology.' }
             ].map((item, idx) => (
               <div key={idx} className="svc-card" style={{ opacity: 1, transform: 'none' }}>
-                <div className="svc-icon">🎗️</div>
-                <h3 className="svc-title">{item.title}</h3>
+                <div className="svc-header">
+                  <div className="svc-icon">🎗️</div>
+                  <h3 className="svc-title">{item.title}</h3>
+                </div>
                 <p className="svc-desc">{item.desc}</p>
               </div>
             ))}
@@ -298,7 +306,7 @@ const BioscienceNGSPage = () => {
           <h2 className="sec-title">Who We Work With</h2>
           <p className="sec-sub">Trusted by research institutions, clinical labs, and industry leaders across the genomics ecosystem.</p>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px', marginTop: '56px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginTop: '56px', maxWidth: '1200px', margin: '56px auto 0' }}>
             {[
               'Research Labs',
               'Hospitals & Clinics',
@@ -340,8 +348,10 @@ const BioscienceNGSPage = () => {
               { icon: '💰', title: 'Transparent Pricing', desc: 'Affordable, clear pricing with no hidden infrastructure costs. You know what you\'re paying before you commit.' }
             ].map((item, idx) => (
               <div key={idx} className="svc-card" style={{ opacity: 1, transform: 'none' }}>
-                <div className="svc-icon">{item.icon}</div>
-                <h3 className="svc-title">{item.title}</h3>
+                <div className="svc-header">
+                  <div className="svc-icon">{item.icon}</div>
+                  <h3 className="svc-title">{item.title}</h3>
+                </div>
                 <p className="svc-desc">{item.desc}</p>
               </div>
             ))}
@@ -364,8 +374,10 @@ const BioscienceNGSPage = () => {
               { num: '04', title: 'Report Delivered', desc: 'White-labeled, structured report ready under your brand — on time.' }
             ].map((item) => (
               <div key={item.num} className="pain-card" style={{ opacity: 1, transform: 'none', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
-                <div className="pain-num" style={{ color: 'rgba(96,165,250,0.3)' }}>{item.num}</div>
-                <h3 className="pain-title" style={{ color: '#fff' }}>{item.title}</h3>
+                <div className="pain-header-row">
+                  <div className="pain-num" style={{ color: 'rgba(96,165,250,0.3)' }}>{item.num}</div>
+                  <h3 className="pain-title" style={{ color: '#fff' }}>{item.title}</h3>
+                </div>
                 <p className="pain-body" style={{ color: 'rgba(255,255,255,0.7)' }}>{item.desc}</p>
               </div>
             ))}

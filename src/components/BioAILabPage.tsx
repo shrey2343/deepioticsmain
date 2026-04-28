@@ -200,24 +200,30 @@ const BioAILabPage = () => {
           
           <div className="services-grid" style={{ marginTop: '56px' }}>
             <div className="svc-card" style={{ opacity: 1, transform: 'none' }}>
-              <div className="svc-icon">📚</div>
-              <h3 className="svc-title">8-Week Structured Curriculum</h3>
+              <div className="svc-header">
+                <div className="svc-icon">📚</div>
+                <h3 className="svc-title">8-Week Structured Curriculum</h3>
+              </div>
               <p className="svc-desc">
                 AI tools, NGS pipelines, real Indian datasets, GitHub portfolio, and a complete interview preparation system — built week by week. Every module is designed around what bioinformatics employers actually look for.
               </p>
             </div>
 
             <div className="svc-card" style={{ opacity: 1, transform: 'none' }}>
-              <div className="svc-icon">🤖</div>
-              <h3 className="svc-title">No-Code, AI-Powered Tools</h3>
+              <div className="svc-header">
+                <div className="svc-icon">🤖</div>
+                <h3 className="svc-title">No-Code, AI-Powered Tools</h3>
+              </div>
               <p className="svc-desc">
                 Run full NGS pipelines using Galaxy, ChatGPT, and Claude. No Python. No terminal. No coding required — ever. If you can use a browser, you can do bioinformatics.
               </p>
             </div>
 
             <div className="svc-card" style={{ opacity: 1, transform: 'none' }}>
-              <div className="svc-icon">💼</div>
-              <h3 className="svc-title">Job-Ready in 90 Days</h3>
+              <div className="svc-header">
+                <div className="svc-icon">💼</div>
+                <h3 className="svc-title">Job-Ready in 90 Days</h3>
+              </div>
               <p className="svc-desc">
                 A real GitHub portfolio, a LinkedIn profile optimised for biotech recruiters, and a complete interview preparation system — all built during the program, not after it.
               </p>
@@ -240,8 +246,10 @@ const BioAILabPage = () => {
               { num: '04', title: 'Career Switchers', desc: 'Lab technicians and research assistants ready to transition into higher-paying bioinformatics analyst roles — on their own timeline.' }
             ].map((item) => (
               <div key={item.num} className="pain-card" style={{ opacity: 1, transform: 'none' }}>
-                <div className="pain-num">{item.num}</div>
-                <h3 className="pain-title">{item.title}</h3>
+                <div className="pain-header-row">
+                  <div className="pain-num">{item.num}</div>
+                  <h3 className="pain-title">{item.title}</h3>
+                </div>
                 <p className="pain-body">{item.desc}</p>
               </div>
             ))}
@@ -343,8 +351,10 @@ const BioAILabPage = () => {
               { num: '05', title: 'Real Indian Genomics Dataset Pack', desc: 'Curated NCBI/SRA datasets from Indian population genomics studies covering diabetes, cardiac, and oncology contexts — the exact disease areas top Indian biotech firms ask about in interviews.' }
             ].map((item) => (
               <div key={item.num} className="svc-card" style={{ opacity: 1, transform: 'none' }}>
-                <div className="svc-new-badge">{item.num}</div>
-                <h3 className="svc-title">{item.title}</h3>
+                <div className="svc-header">
+                  <div className="svc-new-badge">{item.num}</div>
+                  <h3 className="svc-title">{item.title}</h3>
+                </div>
                 <p className="svc-desc">{item.desc}</p>
               </div>
             ))}
@@ -365,8 +375,10 @@ const BioAILabPage = () => {
               { icon: '💬', title: 'Community & Support', desc: 'Private WhatsApp group with peers, mentors, and the Deepiotics team — for questions, help, and project feedback throughout the program.' }
             ].map((item, idx) => (
               <div key={idx} className="svc-card" style={{ opacity: 1, transform: 'none' }}>
-                <div className="svc-icon">{item.icon}</div>
-                <h3 className="svc-title">{item.title}</h3>
+                <div className="svc-header">
+                  <div className="svc-icon">{item.icon}</div>
+                  <h3 className="svc-title">{item.title}</h3>
+                </div>
                 <p className="svc-desc">{item.desc}</p>
               </div>
             ))}

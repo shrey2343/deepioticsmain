@@ -102,21 +102,21 @@ const ExpertiseSection: React.FC = () => {
             <ul className="feat-list">
               <li className="feat-item">
                 <div className="feat-icon" style={{ background: 'rgba(29,78,216,0.1)', borderColor: 'rgba(29,78,216,0.2)' }}>✓</div>
-                <div>
+                <div className="feat-content">
                   <div className="feat-title" style={{ color: 'var(--text-dark)' }}>Guaranteed ROI</div>
                   <div className="feat-desc" style={{ color: 'var(--text-muted)' }}>Measurable results in 6 months or your money back.</div>
                 </div>
               </li>
               <li className="feat-item" style={{ borderColor: 'rgba(29,78,216,0.08)' }}>
                 <div className="feat-icon" style={{ background: 'rgba(29,78,216,0.1)', borderColor: 'rgba(29,78,216,0.2)' }}>🔒</div>
-                <div>
+                <div className="feat-content">
                   <div className="feat-title" style={{ color: 'var(--text-dark)' }}>Enterprise-Grade Security</div>
                   <div className="feat-desc" style={{ color: 'var(--text-muted)' }}>GDPR-compliant, bank-level security, production-tested.</div>
                 </div>
               </li>
               <li className="feat-item" style={{ borderColor: 'rgba(29,78,216,0.08)' }}>
                 <div className="feat-icon" style={{ background: 'rgba(29,78,216,0.1)', borderColor: 'rgba(29,78,216,0.2)' }}>⚡</div>
-                <div>
+                <div className="feat-content">
                   <div className="feat-title" style={{ color: 'var(--text-dark)' }}>End-to-End Ownership</div>
                   <div className="feat-desc" style={{ color: 'var(--text-muted)' }}>We own the outcome — strategy, build, deployment, and beyond.</div>
                 </div>

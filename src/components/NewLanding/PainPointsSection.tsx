@@ -87,12 +87,12 @@ const PainPointsSection: React.FC = () => {
   ];
 
   return (
-    <section id="pain" className="s-white">
+    <section id="pain" className="s-navy">
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <span className="eyebrow">Most AI Projects Fail. Ours Don't.</span>
         <div className="pain-header">
           <h2 className="sec-title">
-            Six Problems That Kill AI Builds — And How Deepiotics Solves Each One
+            Six Problems That Kill AI Builds —<br />And How Deepiotics Solves Each One
           </h2>
         </div>
         <div className="pain-grid">

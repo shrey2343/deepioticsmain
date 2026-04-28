@@ -18,7 +18,8 @@ const AIBusinessGrowthPage = () => {
     "Your ad budget disappears and you can't tell if it worked.",
     "Leads come in and go cold before anyone follows up.",
     "You're making decisions without clear data.",
-    "Competitors who started after you are somehow ahead of you."
+    "Competitors who started after you are somehow ahead of you.",
+    "Your team is overwhelmed trying to keep up with everything manually."
   ];
 
   const steps = [
@@ -251,7 +252,7 @@ const AIBusinessGrowthPage = () => {
         </div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               You Didn't Start Your Business to Spend<br />
               <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 4 Hours a Day on Marketing.
@@ -278,15 +279,15 @@ const AIBusinessGrowthPage = () => {
       </section>
 
       {/* Social Proof Bar */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">
+                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
                   {stat.number}
                 </div>
-                <div className="text-white/70 text-sm">{stat.label}</div>
+                <div className="text-gray-600 text-sm">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -297,7 +298,7 @@ const AIBusinessGrowthPage = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               If Any of This Sounds Familiar,<br />
               <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 You're in the Right Place.
@@ -314,13 +315,18 @@ const AIBusinessGrowthPage = () => {
             </p>
           </div>
 
-          <div className="space-y-4 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {problems.map((problem, index) => (
               <div
                 key={index}
-                className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-blue-400/30 transition-all"
+                className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-blue-400/30 transition-all hover:shadow-lg hover:shadow-blue-500/10 transform hover:-translate-y-1"
               >
-                <p className="text-white/80 text-lg">{problem}</p>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-400 flex items-center justify-center text-white font-bold text-sm">
+                    {index + 1}
+                  </div>
+                  <p className="text-white/80 text-base leading-relaxed">{problem}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -329,7 +335,7 @@ const AIBusinessGrowthPage = () => {
             <p className="text-xl text-white/80 mb-6">
               None of that is your fault. You built a great business. You just need the right system behind it.
             </p>
-            <p className="text-2xl font-bold text-white mb-8">
+            <p className="text-2xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               That's exactly what the AI Business Growth Suite is.
             </p>
             <a
@@ -344,12 +350,12 @@ const AIBusinessGrowthPage = () => {
       </section>
 
       {/* How It Works Section */}
-      <section id="how-it-works" className="py-20 px-4 sm:px-6 lg:px-8">
+      <section id="how-it-works" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Three Steps to a Business That<br />
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Grows on Autopilot
               </span>
             </h2>
@@ -359,18 +365,17 @@ const AIBusinessGrowthPage = () => {
             {steps.map((step, index) => (
               <div
                 key={index}
-                className="group relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:border-white/20 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500"
+                className="group relative bg-gray-50 rounded-3xl p-8 border border-gray-200 hover:border-blue-300 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500"
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500`}></div>
                 <div className="relative">
-                  <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${step.color} text-white rounded-2xl mb-6 shadow-lg`}>
-                    <step.icon className="w-8 h-8" />
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-400 text-white rounded-2xl shadow-lg flex-shrink-0">
+                      <step.icon className="w-8 h-8" />
+                    </div>
+                    <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">{step.title}</h3>
                   </div>
-                  <div className="text-5xl font-bold text-white/10 mb-4">
-                    {step.number}
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{step.title}</h3>
-                  <p className="text-white/70 leading-relaxed">{step.description}</p>
+                  <p className="text-gray-600 leading-relaxed">{step.description}</p>
                 </div>
               </div>
             ))}
@@ -420,10 +425,12 @@ const AIBusinessGrowthPage = () => {
                 )}
                 <div className={`absolute inset-0 bg-gradient-to-br ${module.color} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-500`}></div>
                 <div className="relative">
-                  <div className={`inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br ${module.color} text-white rounded-xl mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    <module.icon className="w-7 h-7" />
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="inline-flex items-center justify-center w-14 h-14 bg-blue-400 text-white rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                      <module.icon className="w-7 h-7" />
+                    </div>
+                    <h3 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">{module.title}</h3>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{module.title}</h3>
                   <p className="text-white/70 leading-relaxed mb-4">{module.description}</p>
                   <ul className="space-y-2 mb-4">
                     {module.features.map((feature, idx) => (
@@ -453,7 +460,7 @@ const AIBusinessGrowthPage = () => {
           </div>
 
           <div className="bg-gradient-to-r from-purple-900/40 to-pink-900/40 backdrop-blur-sm rounded-3xl p-8 sm:p-12 text-center border border-white/10">
-            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+            <h3 className="text-2xl sm:text-3xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Don't Know Where to Start?
             </h3>
             <p className="text-lg text-white/80 mb-6 max-w-3xl mx-auto">
@@ -473,32 +480,32 @@ const AIBusinessGrowthPage = () => {
       </section>
 
       {/* Case Studies Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               What Happens When<br />
-              <span className="bg-gradient-to-r from-green-400 to-teal-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">
                 Businesses Go AI-First
               </span>
             </h2>
-            <p className="text-xl text-white/80">These aren't projections. These are clients.</p>
+            <p className="text-xl text-gray-700">These aren't projections. These are clients.</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {caseStudies.map((study, index) => (
               <div
                 key={index}
-                className="group relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:border-white/20 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500"
+                className="group relative bg-gray-50 rounded-3xl p-8 border border-gray-200 hover:border-blue-300 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500"
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${study.color} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500`}></div>
                 <div className="relative">
-                  <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${study.color} text-white rounded-2xl mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-400 text-white rounded-2xl mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <study.icon className="w-8 h-8" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{study.title}</h3>
-                  <p className="text-lg text-white/80 leading-relaxed mb-6">{study.result}</p>
-                  <blockquote className="border-l-4 border-blue-400 pl-4 italic text-white/70">
+                  <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">{study.title}</h3>
+                  <p className="text-lg text-gray-700 leading-relaxed mb-6">{study.result}</p>
+                  <blockquote className="border-l-4 border-blue-500 pl-4 italic text-gray-600">
                     "{study.quote}"
                   </blockquote>
                 </div>
@@ -511,12 +518,12 @@ const AIBusinessGrowthPage = () => {
               href="https://tidycal.com/team/deepiotics-team/call"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-600 to-teal-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-green-500/50 transform hover:-translate-y-1 transition-all duration-300"
+              className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-blue-500/50 transform hover:-translate-y-1 transition-all duration-300"
             >
               <span>Book Your Free AI Growth Strategy Call</span>
               <ArrowRight className="w-5 h-5" />
             </a>
-            <p className="text-white/60 mt-4">See your own results within 60 days - or we work until you do.</p>
+            <p className="text-gray-600 mt-4">See your own results within 60 days - or we work until you do.</p>
           </div>
         </div>
       </section>
@@ -525,7 +532,7 @@ const AIBusinessGrowthPage = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Why Businesses Trust the<br />
               <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 AI Business Growth Suite
@@ -542,7 +549,7 @@ const AIBusinessGrowthPage = () => {
                 key={index}
                 className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10 hover:border-blue-400/30 transition-all"
               >
-                <h3 className="text-xl font-bold text-white mb-4">{reason.title}</h3>
+                <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">{reason.title}</h3>
                 <p className="text-white/70 leading-relaxed">{reason.description}</p>
               </div>
             ))}
@@ -551,19 +558,19 @@ const AIBusinessGrowthPage = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-blue-900/40 to-purple-900/40 backdrop-blur-sm rounded-3xl p-12 border border-white/10 text-center">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+          <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-12 border border-blue-200 text-center">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Your Competitors Are Already Using AI.<br />
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 The Question Is - Are You?
               </span>
             </h2>
-            <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
               Every month you wait is a month of leads lost, budget wasted, and ground given to businesses that automated what you're still doing manually.
             </p>
-            <p className="text-lg text-white/70 mb-8">
+            <p className="text-lg text-gray-600 mb-8">
               One free call. No sales pitch. Just a clear, honest conversation about what AI can realistically do for your business in the next 90 days.
             </p>
             <a
@@ -574,7 +581,7 @@ const AIBusinessGrowthPage = () => {
             >
               Build Your AI Growth Stack - Free Call
             </a>
-            <div className="flex flex-wrap justify-center gap-6 text-white/60 text-sm">
+            <div className="flex flex-wrap justify-center gap-6 text-gray-600 text-sm">
               <span>500+ businesses served</span>
               <span>·</span>
               <span>Results within 60 days</span>
@@ -583,12 +590,12 @@ const AIBusinessGrowthPage = () => {
               <span>·</span>
               <span>Designed for UK businesses</span>
             </div>
-            <div className="mt-8 pt-8 border-t border-white/10 space-y-2">
-              <div className="flex items-center justify-center gap-2 text-white/70">
+            <div className="mt-8 pt-8 border-t border-gray-300 space-y-2">
+              <div className="flex items-center justify-center gap-2 text-gray-600">
                 <Mail className="w-4 h-4" />
-                <a href="mailto:contact@deepiotics.com" className="hover:text-blue-400">contact@deepiotics.com</a>
+                <a href="mailto:contact@deepiotics.com" className="hover:text-blue-600">contact@deepiotics.com</a>
               </div>
-              <div className="flex items-center justify-center gap-2 text-white/70">
+              <div className="flex items-center justify-center gap-2 text-gray-600">
                 <MapPin className="w-4 h-4" />
                 <span>204, Atulya IT Park, Indore, MP 452016, India</span>
               </div>

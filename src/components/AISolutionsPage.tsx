@@ -205,13 +205,13 @@ const AISolutionsPage = () => {
               alignItems: 'center',
               gap: '12px',
               padding: '16px 32px',
-              background: 'linear-gradient(135deg, #1d4ed8, #0f2560)',
+              background: 'linear-gradient(to right, #2563eb, #9333ea)',
               color: '#fff',
               fontSize: '16px',
               fontWeight: 600,
               borderRadius: '12px',
               textDecoration: 'none',
-              boxShadow: '0 0 32px rgba(29,78,216,0.4)',
+              boxShadow: '0 0 32px rgba(37,99,235,0.5)',
               transition: 'all 0.3s',
               border: 'none',
               cursor: 'pointer'
@@ -652,13 +652,13 @@ const AISolutionsPage = () => {
               alignItems: 'center',
               gap: '12px',
               padding: '16px 32px',
-              background: 'linear-gradient(135deg, #1d4ed8, #0f2560)',
+              background: 'linear-gradient(to right, #2563eb, #9333ea)',
               color: '#fff',
               fontSize: '16px',
               fontWeight: 600,
               borderRadius: '12px',
               textDecoration: 'none',
-              boxShadow: '0 0 32px rgba(29,78,216,0.4)',
+              boxShadow: '0 0 32px rgba(37,99,235,0.5)',
               transition: 'all 0.3s',
               border: 'none',
               cursor: 'pointer',
@@ -666,7 +666,7 @@ const AISolutionsPage = () => {
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = 'translateY(-2px)';
-              e.currentTarget.style.boxShadow = '0 0 48px rgba(29,78,216,0.6)';
+              e.currentTarget.style.boxShadow = '0 0 48px rgba(37,99,235,0.6)';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = 'translateY(0)';

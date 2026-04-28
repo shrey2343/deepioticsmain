@@ -1,14 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const ExpertiseSection: React.FC = () => {
-  const neuralCanvasRef = useRef<HTMLCanvasElement>(null);
-
   useEffect(() => {
-    gsap.to('.expertise-left', {
+    gsap.to('#expertise-content', {
       opacity: 1,
-      x: 0,
+      y: 0,
       duration: 0.85,
       ease: 'power2.out',
       scrollTrigger: {
@@ -16,116 +13,134 @@ const ExpertiseSection: React.FC = () => {
         start: 'top 72%'
       }
     });
-
-    gsap.to('.expertise-right', {
-      opacity: 1,
-      x: 0,
-      duration: 0.85,
-      delay: 0.2,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '#expertise',
-        start: 'top 72%'
-      }
-    });
-
-    // Neural canvas animation
-    const nc = neuralCanvasRef.current;
-    if (nc) {
-      const nx = nc.getContext('2d');
-      if (nx) {
-        const nodes = Array.from({ length: 22 }, () => ({
-          x: Math.random() * 460 + 10,
-          y: Math.random() * 460 + 10,
-          vx: (Math.random() - 0.5) * 0.9,
-          vy: (Math.random() - 0.5) * 0.9,
-          r: Math.random() * 3.5 + 2
-        }));
-
-        const drawNeural = () => {
-          nx.clearRect(0, 0, 480, 480);
-          nx.fillStyle = 'rgba(240,244,255,0.3)';
-          nx.fillRect(0, 0, 480, 480);
-
-          nodes.forEach(n => {
-            n.x += n.vx;
-            n.y += n.vy;
-            if (n.x < 8 || n.x > 472) n.vx *= -1;
-            if (n.y < 8 || n.y > 472) n.vy *= -1;
-          });
-
-          nodes.forEach((a, i) => {
-            nodes.slice(i + 1).forEach(b => {
-              const d = Math.hypot(a.x - b.x, a.y - b.y);
-              if (d < 160) {
-                nx.beginPath();
-                nx.moveTo(a.x, a.y);
-                nx.lineTo(b.x, b.y);
-                nx.strokeStyle = `rgba(29,78,216,${0.35 * (1 - d / 160)})`;
-                nx.lineWidth = 1;
-                nx.stroke();
-              }
-            });
-          });
-
-          nodes.forEach(n => {
-            nx.beginPath();
-            nx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-            nx.fillStyle = 'rgba(29,78,216,0.85)';
-            nx.fill();
-            nx.beginPath();
-            nx.arc(n.x, n.y, n.r + 5, 0, Math.PI * 2);
-            nx.fillStyle = 'rgba(29,78,216,0.12)';
-            nx.fill();
-          });
-
-          requestAnimationFrame(drawNeural);
-        };
-        drawNeural();
-      }
-    }
   }, []);
 
   return (
-    <section id="expertise" className="s-offwhite">
-      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        <div className="expertise-grid">
-          <div className="expertise-left">
-            <span className="eyebrow">A Decade of AI</span>
-            <h2 className="sec-title">A Track Record<br />That Shows It</h2>
-            <p className="expertise-para" style={{ color: 'var(--text-muted)' }}>
-              Over 1,000 AI implementations. 25+ industries. Clients from early-stage startups to Fortune 500 corporations. Our team of 50+ AI specialists, data scientists, and engineers has spent more than a decade solving real business problems with real AI — not demos, not pilots.
-            </p>
-            <p className="expertise-para" style={{ color: 'var(--text-muted)' }}>
-              Average client ROI: 300%+, achieved within 6 months. That's the standard we hold ourselves to.
-            </p>
-            <ul className="feat-list">
-              <li className="feat-item">
-                <div className="feat-icon" style={{ background: 'rgba(29,78,216,0.1)', borderColor: 'rgba(29,78,216,0.2)' }}>✓</div>
-                <div className="feat-content">
-                  <div className="feat-title" style={{ color: 'var(--text-dark)' }}>Guaranteed ROI</div>
-                  <div className="feat-desc" style={{ color: 'var(--text-muted)' }}>Measurable results in 6 months or your money back.</div>
-                </div>
-              </li>
-              <li className="feat-item" style={{ borderColor: 'rgba(29,78,216,0.08)' }}>
-                <div className="feat-icon" style={{ background: 'rgba(29,78,216,0.1)', borderColor: 'rgba(29,78,216,0.2)' }}>🔒</div>
-                <div className="feat-content">
-                  <div className="feat-title" style={{ color: 'var(--text-dark)' }}>Enterprise-Grade Security</div>
-                  <div className="feat-desc" style={{ color: 'var(--text-muted)' }}>GDPR-compliant, bank-level security, production-tested.</div>
-                </div>
-              </li>
-              <li className="feat-item" style={{ borderColor: 'rgba(29,78,216,0.08)' }}>
-                <div className="feat-icon" style={{ background: 'rgba(29,78,216,0.1)', borderColor: 'rgba(29,78,216,0.2)' }}>⚡</div>
-                <div className="feat-content">
-                  <div className="feat-title" style={{ color: 'var(--text-dark)' }}>End-to-End Ownership</div>
-                  <div className="feat-desc" style={{ color: 'var(--text-muted)' }}>We own the outcome — strategy, build, deployment, and beyond.</div>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div className="expertise-right">
-            <div className="neural-wrap" style={{ background: '#f0f4ff', border: '1px solid rgba(29,78,216,0.15)' }}>
-              <canvas ref={neuralCanvasRef} width="480" height="480"></canvas>
+    <section id="expertise" className="s-navy" style={{ padding: '120px 56px' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
+        <div id="expertise-content" style={{ opacity: 1 }}>
+          <span className="eyebrow" style={{ color: '#60a5fa' }}>A Decade of AI</span>
+          
+          <h2 style={{
+            fontFamily: 'Plus Jakarta Sans, sans-serif',
+            fontSize: 'clamp(28px, 4vw, 48px)',
+            fontWeight: 600,
+            lineHeight: 1.3,
+            marginBottom: '32px',
+            marginTop: '24px',
+            background: 'linear-gradient(to right, #60a5fa, #c084fc)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text'
+          }}>
+            A Track Record That Shows It
+          </h2>
+
+          <p style={{
+            fontSize: '17px',
+            color: 'rgba(255,255,255,0.8)',
+            maxWidth: '900px',
+            margin: '0 auto 60px',
+            lineHeight: 1.7
+          }}>
+            Over 1,000 AI implementations. 25+ industries. Clients from early-stage startups to Fortune 500 corporations. Our team of 50+ AI specialists, data scientists, and engineers has spent more than a decade solving real business problems with real AI — not demos, not pilots.
+          </p>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '40px',
+            maxWidth: '1200px',
+            margin: '0 auto'
+          }}>
+            <div style={{
+              textAlign: 'center',
+              padding: '32px 24px',
+              background: 'rgba(255,255,255,0.05)',
+              borderRadius: '12px',
+              border: '1px solid rgba(255,255,255,0.1)'
+            }}>
+              <div style={{
+                fontSize: '48px',
+                marginBottom: '16px'
+              }}>
+                ✓
+              </div>
+              <h3 style={{
+                fontSize: '20px',
+                fontWeight: 600,
+                color: '#fff',
+                marginBottom: '12px'
+              }}>
+                Guaranteed ROI
+              </h3>
+              <p style={{
+                fontSize: '15px',
+                color: 'rgba(255,255,255,0.7)',
+                lineHeight: 1.6
+              }}>
+                Measurable results in 6 months or your money back.
+              </p>
+            </div>
+
+            <div style={{
+              textAlign: 'center',
+              padding: '32px 24px',
+              background: 'rgba(255,255,255,0.05)',
+              borderRadius: '12px',
+              border: '1px solid rgba(255,255,255,0.1)'
+            }}>
+              <div style={{
+                fontSize: '48px',
+                marginBottom: '16px'
+              }}>
+                🔒
+              </div>
+              <h3 style={{
+                fontSize: '20px',
+                fontWeight: 600,
+                color: '#fff',
+                marginBottom: '12px'
+              }}>
+                Enterprise-Grade Security
+              </h3>
+              <p style={{
+                fontSize: '15px',
+                color: 'rgba(255,255,255,0.7)',
+                lineHeight: 1.6
+              }}>
+                GDPR-compliant, bank-level security, production-tested.
+              </p>
+            </div>
+
+            <div style={{
+              textAlign: 'center',
+              padding: '32px 24px',
+              background: 'rgba(255,255,255,0.05)',
+              borderRadius: '12px',
+              border: '1px solid rgba(255,255,255,0.1)'
+            }}>
+              <div style={{
+                fontSize: '48px',
+                marginBottom: '16px'
+              }}>
+                ⚡
+              </div>
+              <h3 style={{
+                fontSize: '20px',
+                fontWeight: 600,
+                color: '#fff',
+                marginBottom: '12px'
+              }}>
+                End-to-End Ownership
+              </h3>
+              <p style={{
+                fontSize: '15px',
+                color: 'rgba(255,255,255,0.7)',
+                lineHeight: 1.6
+              }}>
+                We own the outcome — strategy, build, deployment, and beyond.
+              </p>
             </div>
           </div>
         </div>

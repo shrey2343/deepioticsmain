@@ -23,8 +23,8 @@ const ServicesSection: React.FC = () => {
       title: 'AI Business Growth Suite',
       desc: 'Most small and mid-sized businesses know AI can help — they just don\'t know where to start, or have a team to run it. Our AI Business Growth Suite handles everything: done-for-you websites, AI marketing agents, AI sales agents, chatbots, lead capture, and ad automation. You focus on running the business. The AI handles the growth.',
       bullets: [
-        'AI Marketing Agent — autonomous content creation, campaign management, and optimisation',
-        'AI Sales Agent — instant lead qualification, follow-up, and meeting booking 24/7',
+        'AI Marketing Agent',
+        'AI Sales Agent ',
         'Done-for-you AI Website & Ads Setup',
         '24/7 AI Chatbots & Voice Agents',
         'Data-Driven Analytics & Tracking'
@@ -49,13 +49,13 @@ const ServicesSection: React.FC = () => {
       title: 'AI Solutions',
       desc: 'We build AI that works in production — not just in demos. From AI agents and machine learning to QA testing and healthcare analytics, every solution is tailored to your business and built to perform at scale.',
       bullets: [
-        'AI QA & Software Testing — for AI-built and traditionally built products',
-        'AI Agent Development — autonomous task execution, 24/7',
-        'Machine Learning Solutions — custom models trained on your data',
-        'Business Intelligence & Analytics — live insights, not stale reports',
-        'Process Automation — up to 80% reduction in processing time',
-        'AI for Healthcare — HIPAA-compliant, built for clinical environments',
-        'Data Engineering — the reliable infrastructure everything else runs on'
+        'AI QA & Software Testing ',
+        'AI Agent Development ',
+        'Machine Learning Solutions',
+        'Business Intelligence & Analytics',
+        'Process Automation ',
+        'AI for Healthcare ',
+        'Data Engineering '
       ],
       isNew: false
     },
@@ -64,7 +64,7 @@ const ServicesSection: React.FC = () => {
       title: 'Bioscience & Genomics AI',
       desc: 'We bring the same AI rigour we apply to enterprise software to the world of genomics. Deepiotics delivers end-to-end NGS data analysis — WGS, WES, RNA-Seq, oncology genomics, and reproductive genomics — for labs, hospitals, and diagnostic centers. White-label reports in 24–48 hours. No infrastructure required on your end.',
       bullets: [
-        'NGS Data Analysis — WGS, WES, Targeted Panels, CNV & SV Detection',
+        'NGS Data Analysis ',
         'Oncology Genomics & Cancer Panel Analysis',
         'IVF & Reproductive Genomics — PGT-A, PGT-M, PGT-SR',
         'RNA-Seq, Metagenomics & Advanced Bioinformatics',
@@ -88,7 +88,7 @@ const ServicesSection: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="s-lightblue">
+    <section id="services" className="s-white">
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <span className="eyebrow">What We Build</span>
         <h2 className="sec-title">End-to-End AI Solutions</h2>

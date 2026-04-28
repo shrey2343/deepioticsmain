@@ -356,7 +356,7 @@ const TruckLogistics = () => {
             <Card className="border border-gray-200 hover:shadow-xl transition-all duration-300 h-full bg-white">
               <CardContent className="p-5 sm:p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-5 sm:mb-6">
-                  <div className="h-14 w-14 sm:h-16 sm:w-16 rounded-3xl bg-gradient-to-br from-gray-400 to-gray-500 flex items-center justify-center shadow-lg">
+                  <div className="h-14 w-14 sm:h-16 sm:w-16 rounded-3xl bg-blue-400 flex items-center justify-center shadow-lg">
                     <FileText className="h-7 w-7 sm:h-8 sm:w-8 text-white stroke-[2]" />
                   </div>
                   <div>
@@ -392,7 +392,7 @@ const TruckLogistics = () => {
 
               <CardContent className="p-5 sm:p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-5 sm:mb-6">
-                  <div className="h-14 w-14 sm:h-16 sm:w-16 rounded-3xl bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+                  <div className="h-14 w-14 sm:h-16 sm:w-16 rounded-3xl bg-blue-400 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
                     <Sparkles className="h-7 w-7 sm:h-8 sm:w-8 text-white stroke-[2]" />
                   </div>
                   <div>
@@ -565,7 +565,7 @@ const TruckLogistics = () => {
                           {/* Content */}
                           <div className="pt-16 px-6 pb-6 h-full overflow-hidden">
                             {/* Icon */}
-                            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center mb-4 shadow-lg">
+                            <div className="w-16 h-16 rounded-2xl bg-blue-400 flex items-center justify-center mb-4 shadow-lg">
                               <step.icon className="w-8 h-8 text-white" />
                             </div>
 
@@ -610,7 +610,7 @@ const TruckLogistics = () => {
             <Card className="inline-block w-full max-w-3xl border-2 border-cyan-200 bg-gradient-to-r from-cyan-50 via-blue-50 to-purple-50 shadow-xl hover:shadow-2xl transition-all duration-300">
               <CardContent className="p-4 sm:p-5 md:p-6 lg:p-8">
                 <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 lg:gap-6">
-                  <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shrink-0">
+                  <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-2xl bg-blue-400 flex items-center justify-center shadow-lg shrink-0">
                     <CheckCircle className="h-6 w-6 sm:h-7 sm:w-7 text-white stroke-[2]" />
                   </div>
                   <div className="text-center sm:text-left flex-1">
@@ -820,7 +820,7 @@ const TruckLogistics = () => {
             <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-2">
               <div className="flex -space-x-2">
                 {[1, 2, 3, 4, 5].map((i) => (
-                  <div key={i} className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 border-2 border-white flex items-center justify-center text-white font-bold text-xs sm:text-sm">
+                  <div key={i} className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-blue-400 border-2 border-white flex items-center justify-center text-white font-bold text-xs sm:text-sm">
                     {String.fromCharCode(64 + i)}
                   </div>
                 ))}

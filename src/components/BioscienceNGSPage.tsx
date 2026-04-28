@@ -3,51 +3,10 @@ import ThemedNavigation from './ThemedNavigation';
 import FooterSection from './NewLanding/FooterSection';
 
 const BioscienceNGSPage = () => {
-  const cursorRef = useRef<HTMLDivElement>(null);
-  const cursorRingRef = useRef<HTMLDivElement>(null);
   const bgCanvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     document.body.classList.add('new-landing-active');
-
-    // Cursor animation
-    let mx = 0, my = 0, rx = 0, ry = 0;
-    
-    const handleMouseMove = (e: MouseEvent) => {
-      mx = e.clientX;
-      my = e.clientY;
-      if (cursorRef.current) {
-        cursorRef.current.style.left = mx + 'px';
-        cursorRef.current.style.top = my + 'px';
-      }
-    };
-
-    document.addEventListener('mousemove', handleMouseMove);
-
-    const cursorInterval = setInterval(() => {
-      rx += (mx - rx) * 0.14;
-      ry += (my - ry) * 0.14;
-      if (cursorRingRef.current) {
-        cursorRingRef.current.style.left = rx + 'px';
-        cursorRingRef.current.style.top = ry + 'px';
-      }
-    }, 16);
-
-    // Cursor hover effects
-    const handleMouseEnter = () => {
-      if (cursorRef.current) cursorRef.current.style.transform = 'translate(-50%,-50%) scale(2.5)';
-      if (cursorRingRef.current) cursorRingRef.current.style.transform = 'translate(-50%,-50%) scale(0.4)';
-    };
-
-    const handleMouseLeave = () => {
-      if (cursorRef.current) cursorRef.current.style.transform = 'translate(-50%,-50%) scale(1)';
-      if (cursorRingRef.current) cursorRingRef.current.style.transform = 'translate(-50%,-50%) scale(1)';
-    };
-
-    document.querySelectorAll('a, button').forEach(el => {
-      el.addEventListener('mouseenter', handleMouseEnter);
-      el.addEventListener('mouseleave', handleMouseLeave);
-    });
 
     // Background canvas animation
     const bgCanvas = bgCanvasRef.current;
@@ -93,17 +52,11 @@ const BioscienceNGSPage = () => {
 
     return () => {
       document.body.classList.remove('new-landing-active');
-      document.removeEventListener('mousemove', handleMouseMove);
-      clearInterval(cursorInterval);
     };
   }, []);
 
   return (
     <div style={{ background: 'rgba(2,13,42,1)', minHeight: '100vh' }}>
-      {/* Custom Cursor */}
-      <div id="cursor" ref={cursorRef}></div>
-      <div id="cursor-ring" ref={cursorRingRef}></div>
-      
       {/* Background Canvas */}
       <canvas id="bg-canvas" ref={bgCanvasRef}></canvas>
       
@@ -124,7 +77,10 @@ const BioscienceNGSPage = () => {
             lineHeight: 1.1,
             fontStyle: 'italic',
             marginBottom: '20px',
-            color: '#fff'
+            background: 'linear-gradient(to right, #60a5fa, #c084fc)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text'
           }}>
             Transform Your Sequencing Data Into Discoveries
           </h1>

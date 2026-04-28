@@ -5,11 +5,11 @@ import '../../styles/newLanding.css';
 import Navigation from './Navigation';
 import HeroSection from './HeroSection';
 import MarqueeSection from './MarqueeSection';
-import StatsSection from './StatsSection';
+// import StatsSection from './StatsSection';
 import MetricsSection from './MetricsSection';
 import PainPointsSection from './PainPointsSection';
 import ServicesSection from './ServicesSection';
-import SocialProofSection from './SocialProofSection';
+// import SocialProofSection from './SocialProofSection';
 import ExpertiseSection from './ExpertiseSection';
 import TeamSection from './TeamSection';
 import CTASection from './CTASection';
@@ -171,11 +171,11 @@ const NewLanding: React.FC = () => {
       <Navigation />
       <HeroSection />
       <MarqueeSection />
-      <StatsSection />
+      {/* <StatsSection /> */}
       <MetricsSection />
       <PainPointsSection />
       <ServicesSection />
-      <SocialProofSection />
+      {/* <SocialProofSection /> */}
       <ExpertiseSection />
       <TeamSection />
       <CTASection />

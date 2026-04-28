@@ -18,7 +18,7 @@ const MetricsSection: React.FC = () => {
   }, []);
 
   return (
-    <section id="metrics" className="s-navy">
+    <section id="metrics" className="s-white">
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: 0 }}>
         <span className="eyebrow">Real Results. Measured Daily.</span>
         <h2 className="sec-title">
@@ -29,24 +29,24 @@ const MetricsSection: React.FC = () => {
         </p>
         <div className="metrics-row">
           <div className="metric-cell">
-            <span className="metric-val up">+247%</span>
             <span className="metric-lbl">Revenue Impact</span>
+            <span className="metric-val up">+247%</span>
           </div>
           <div className="metric-cell">
-            <span className="metric-val up">+312%</span>
             <span className="metric-lbl">Automation Success</span>
+            <span className="metric-val up">+312%</span>
           </div>
           <div className="metric-cell">
-            <span className="metric-val down">-52%</span>
             <span className="metric-lbl">Operational Savings</span>
+            <span className="metric-val down">-52%</span>
           </div>
           <div className="metric-cell">
-            <span className="metric-val">99.7%</span>
             <span className="metric-lbl">AI Accuracy</span>
+            <span className="metric-val">99.7%</span>
           </div>
           <div className="metric-cell">
-            <span className="metric-val up">$5.2M</span>
             <span className="metric-lbl">Client Savings</span>
+            <span className="metric-val up">$5.2M</span>
           </div>
         </div>
       </div>

@@ -50,17 +50,19 @@ const Navigation: React.FC = () => {
             className="flex items-center gap-1"
             style={{ 
               fontFamily: 'Plus Jakarta Sans, sans-serif',
-              color: 'var(--text-light)',
+              color: '#fff',
               fontSize: '13px',
               textDecoration: 'none',
               letterSpacing: '0.04em',
               fontWeight: 500,
               transition: 'color 0.25s',
               position: 'relative',
-              paddingBottom: '4px',
+              paddingBottom: '0px',
               background: 'none',
               border: 'none',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center'
             }}
           >
             <span>Services</span>
@@ -86,7 +88,7 @@ const Navigation: React.FC = () => {
                 style={{
                   display: 'block',
                   padding: '12px 16px',
-                  color: 'var(--text-light)',
+                  color: '#fff',
                   fontSize: '13px',
                   textDecoration: 'none',
                   transition: 'all 0.2s'
@@ -97,7 +99,7 @@ const Navigation: React.FC = () => {
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background = 'transparent';
-                  e.currentTarget.style.color = 'var(--text-light)';
+                  e.currentTarget.style.color = '#fff';
                 }}
                 onClick={() => setIsServicesDropdownOpen(false)}
               >
@@ -108,7 +110,7 @@ const Navigation: React.FC = () => {
                 style={{
                   display: 'block',
                   padding: '12px 16px',
-                  color: 'var(--text-light)',
+                  color: '#fff',
                   fontSize: '13px',
                   textDecoration: 'none',
                   transition: 'all 0.2s'
@@ -119,7 +121,7 @@ const Navigation: React.FC = () => {
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background = 'transparent';
-                  e.currentTarget.style.color = 'var(--text-light)';
+                  e.currentTarget.style.color = '#fff';
                 }}
                 onClick={() => setIsServicesDropdownOpen(false)}
               >
@@ -130,7 +132,7 @@ const Navigation: React.FC = () => {
                 style={{
                   display: 'block',
                   padding: '12px 16px',
-                  color: 'var(--text-light)',
+                  color: '#fff',
                   fontSize: '13px',
                   textDecoration: 'none',
                   transition: 'all 0.2s'
@@ -141,7 +143,7 @@ const Navigation: React.FC = () => {
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background = 'transparent';
-                  e.currentTarget.style.color = 'var(--text-light)';
+                  e.currentTarget.style.color = '#fff';
                 }}
                 onClick={() => setIsServicesDropdownOpen(false)}
               >
@@ -152,7 +154,7 @@ const Navigation: React.FC = () => {
                 style={{
                   display: 'block',
                   padding: '12px 16px',
-                  color: 'var(--text-light)',
+                  color: '#fff',
                   fontSize: '13px',
                   textDecoration: 'none',
                   transition: 'all 0.2s'
@@ -163,7 +165,7 @@ const Navigation: React.FC = () => {
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background = 'transparent';
-                  e.currentTarget.style.color = 'var(--text-light)';
+                  e.currentTarget.style.color = '#fff';
                 }}
                 onClick={() => setIsServicesDropdownOpen(false)}
               >
@@ -182,11 +184,33 @@ const Navigation: React.FC = () => {
         target="_blank"
         rel="noopener noreferrer"
         className="nav-cta hidden lg:block"
+        style={{
+          background: 'linear-gradient(to right, #2563eb, #9333ea)',
+          color: '#fff',
+          padding: '10px 26px',
+          borderRadius: '5px',
+          fontSize: '12px',
+          fontWeight: 600,
+          textDecoration: 'none',
+          letterSpacing: '0.09em',
+          textTransform: 'uppercase',
+          boxShadow: '0 0 24px rgba(37,99,235,0.5)',
+          transition: 'all 0.3s',
+          display: 'inline-block'
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.boxShadow = '0 25px 50px -12px rgba(37,99,235,0.5)';
+          e.currentTarget.style.transform = 'translateY(-1px)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.boxShadow = '0 0 24px rgba(37,99,235,0.5)';
+          e.currentTarget.style.transform = 'translateY(0)';
+        }}
       >
         Get Free AI Strategy Session
       </a>
 
-      {/* Mobile menu button */}
+      {/* Mobile menu button - only show on mobile */}
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         className="lg:hidden"
@@ -207,9 +231,9 @@ const Navigation: React.FC = () => {
         onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
       >
         {isMenuOpen ? (
-          <X className="w-6 h-6" style={{ color: 'var(--text-light)' }} />
+          <X className="w-6 h-6" style={{ color: '#fff' }} />
         ) : (
-          <Menu className="w-6 h-6" style={{ color: 'var(--text-light)' }} />
+          <Menu className="w-6 h-6" style={{ color: '#fff' }} />
         )}
       </button>
 
@@ -231,7 +255,7 @@ const Navigation: React.FC = () => {
               href="/"
               style={{
                 padding: '12px 8px',
-                color: 'var(--text-light)',
+                color: '#fff',
                 fontSize: '14px',
                 textDecoration: 'none',
                 borderRadius: '8px',
@@ -245,7 +269,7 @@ const Navigation: React.FC = () => {
               href="/about"
               style={{
                 padding: '12px 8px',
-                color: 'var(--text-light)',
+                color: '#fff',
                 fontSize: '14px',
                 textDecoration: 'none',
                 borderRadius: '8px',
@@ -262,7 +286,7 @@ const Navigation: React.FC = () => {
                 style={{
                   width: '100%',
                   padding: '12px 8px',
-                  color: 'var(--text-light)',
+                  color: '#fff',
                   fontSize: '14px',
                   textDecoration: 'none',
                   borderRadius: '8px',
@@ -285,7 +309,7 @@ const Navigation: React.FC = () => {
                     href="/AI-business-growth"
                     style={{
                       padding: '12px 16px',
-                      color: 'var(--text-light)',
+                      color: '#fff',
                       fontSize: '14px',
                       textDecoration: 'none',
                       borderRadius: '8px',
@@ -299,7 +323,7 @@ const Navigation: React.FC = () => {
                     href="/ai-solutions"
                     style={{
                       padding: '12px 16px',
-                      color: 'var(--text-light)',
+                      color: '#fff',
                       fontSize: '14px',
                       textDecoration: 'none',
                       borderRadius: '8px',
@@ -313,7 +337,7 @@ const Navigation: React.FC = () => {
                     href="/bioai-lab"
                     style={{
                       padding: '12px 16px',
-                      color: 'var(--text-light)',
+                      color: '#fff',
                       fontSize: '14px',
                       textDecoration: 'none',
                       borderRadius: '8px',
@@ -327,7 +351,7 @@ const Navigation: React.FC = () => {
                     href="/bioscience-ngs"
                     style={{
                       padding: '12px 16px',
-                      color: 'var(--text-light)',
+                      color: '#fff',
                       fontSize: '14px',
                       textDecoration: 'none',
                       borderRadius: '8px',
@@ -345,7 +369,7 @@ const Navigation: React.FC = () => {
               href="/portfolio"
               style={{
                 padding: '12px 8px',
-                color: 'var(--text-light)',
+                color: '#fff',
                 fontSize: '14px',
                 textDecoration: 'none',
                 borderRadius: '8px',
@@ -359,7 +383,7 @@ const Navigation: React.FC = () => {
               href="/media"
               style={{
                 padding: '12px 8px',
-                color: 'var(--text-light)',
+                color: '#fff',
                 fontSize: '14px',
                 textDecoration: 'none',
                 borderRadius: '8px',
@@ -373,7 +397,7 @@ const Navigation: React.FC = () => {
               href="/publication"
               style={{
                 padding: '12px 8px',
-                color: 'var(--text-light)',
+                color: '#fff',
                 fontSize: '14px',
                 textDecoration: 'none',
                 borderRadius: '8px',
@@ -390,14 +414,14 @@ const Navigation: React.FC = () => {
               style={{
                 marginTop: '8px',
                 padding: '12px 16px',
-                background: 'linear-gradient(135deg, #1d4ed8, #0f2560)',
+                background: 'linear-gradient(to right, #2563eb, #9333ea)',
                 color: '#fff',
                 fontSize: '14px',
                 fontWeight: 600,
                 textDecoration: 'none',
                 borderRadius: '8px',
                 textAlign: 'center',
-                boxShadow: '0 0 24px rgba(29,78,216,0.35)',
+                boxShadow: '0 0 24px rgba(37,99,235,0.5)',
                 transition: 'all 0.3s'
               }}
               onClick={() => setIsMenuOpen(false)}

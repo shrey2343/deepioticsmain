@@ -47,7 +47,8 @@ const HeroSection: React.FC = () => {
         </h1>
 
         <p className="hero-sub" id="hero-sub">
-          We design, build, and deploy intelligent AI systems — so your business can move faster, work smarter, and outgrow the competition.
+          We design, build, and deploy intelligent AI systems —<br />
+          so your business can move faster, work smarter, and outgrow the competition.
         </p>
 
         <div className="hero-ctas" id="hero-ctas">

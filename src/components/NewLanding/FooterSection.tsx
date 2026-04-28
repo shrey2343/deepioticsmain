@@ -215,19 +215,17 @@ const FooterSection = () => {
                 borderRadius: '9999px',
                 marginRight: '12px'
               }} />
-              AI Development Services
+              Services
             </h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {[
-                'Custom AI Development',
-                'Machine Learning Services',
-                'AI-Powered Data Analytics',
-                'AI Security & Compliance',
-                'AI Process Automation',
-                'Enterprise AI Integration'
+                { label: 'AI Business Growth', href: '/ai-business-growth' },
+                { label: 'AI Solutions', href: '/ai-solutions' },
+                { label: 'BioAI Lab', href: '/bioai-lab' },
+                { label: 'Bioscience NGS', href: '/bioscience-ngs' }
               ].map((service) => (
-                <li key={service}>
-                  <a href="/services" style={{
+                <li key={service.href}>
+                  <a href={service.href} style={{
                     color: '#9ca3af',
                     fontSize: '14px',
                     textDecoration: 'none',
@@ -253,7 +251,7 @@ const FooterSection = () => {
                       marginRight: '8px',
                       transition: 'width 0.3s'
                     }} />
-                    {service}
+                    {service.label}
                   </a>
                 </li>
               ))}
@@ -284,8 +282,8 @@ const FooterSection = () => {
                 { label: 'Services', href: '/services' },
                 { label: 'About Us', href: '/about' },
                 { label: 'Portfolio', href: '/portfolio' },
-                { label: 'Blog', href: '/blog' },
-                { label: 'Careers', href: '/careers' },
+                // { label: 'Blog', href: '/blog' },
+                // { label: 'Careers', href: '/careers' },
                 { label: 'Contact', href: '/contact' }
               ].map((link) => (
                 <li key={link.href}>

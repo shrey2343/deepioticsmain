@@ -99,7 +99,7 @@ const Services = () => {
               <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
 
               {/* Icon */}
-              <div className={`relative w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r ${service.color} rounded-2xl sm:rounded-3xl flex items-center justify-center mb-6 sm:mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg`}>
+              <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-blue-400 rounded-2xl sm:rounded-3xl flex items-center justify-center mb-6 sm:mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
                 <service.icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
               </div>
 

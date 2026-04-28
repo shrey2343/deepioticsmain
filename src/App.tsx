@@ -15,10 +15,12 @@ import USAccountingPage from './components/USAccountingPage';
 import TrucksLogisticsPage from './components/TrucksLogisticsPage';
 import MediaPage from './components/MediaPage';
 import PublicationPage from './components/PublicationPage';
+import BioAILabPage from './components/BioAILabPage';
+import BioscienceNGSPage from './components/BioscienceNGSPage';
 import NewLanding from './components/NewLanding';
 import ThemeWrapper from './components/ThemeWrapper';
 import ThemedNavigation from './components/ThemedNavigation';
-import ThemedFooter from './components/ThemedFooter';
+import FooterSection from './components/NewLanding/FooterSection';
 import ChatbotWidget from './components/ChatbotWidget';
 
 function App() {
@@ -43,7 +45,7 @@ function App() {
         <div className="min-h-screen" style={{ paddingTop: '80px' }}>
           <Careers />
         </div>
-        <ThemedFooter />
+        <FooterSection />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
       </ThemeWrapper>
     );
@@ -56,7 +58,7 @@ function App() {
         <div className="min-h-screen" style={{ paddingTop: '80px' }}>
           <AboutPage />
         </div>
-        <ThemedFooter />
+        <FooterSection />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
       </ThemeWrapper>
     );
@@ -69,7 +71,7 @@ function App() {
         <div className="min-h-screen" style={{ paddingTop: '80px' }}>
           <PortfolioPage />
         </div>
-        <ThemedFooter />
+        <FooterSection />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
       </ThemeWrapper>
     );
@@ -82,7 +84,7 @@ function App() {
         <div className="min-h-screen" style={{ paddingTop: '80px' }}>
           <ContactPage />
         </div>
-        <ThemedFooter />
+        <FooterSection />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
       </ThemeWrapper>
     );
@@ -95,7 +97,7 @@ function App() {
         <div className="min-h-screen" style={{ paddingTop: '80px' }}>
           <BlogPage />
         </div>
-        <ThemedFooter />
+        <FooterSection />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
       </ThemeWrapper>
     );
@@ -108,7 +110,7 @@ function App() {
         <div className="min-h-screen" style={{ paddingTop: '80px' }}>
           <MediaPage />
         </div>
-        <ThemedFooter />
+        <FooterSection />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
       </ThemeWrapper>
     );
@@ -121,7 +123,7 @@ function App() {
         <div className="min-h-screen" style={{ paddingTop: '80px' }}>
           <PublicationPage />
         </div>
-        <ThemedFooter />
+        <FooterSection />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
       </ThemeWrapper>
     );
@@ -135,7 +137,7 @@ function App() {
         <div className="min-h-screen" style={{ paddingTop: '80px' }}>
           <BlogDetailPage slug={slug} />
         </div>
-        <ThemedFooter />
+        <FooterSection />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
       </ThemeWrapper>
     );
@@ -148,7 +150,7 @@ function App() {
         <div className="min-h-screen" style={{ paddingTop: '80px' }}>
           <LinkedInServicePage />
         </div>
-        <ThemedFooter />
+        <FooterSection />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
       </ThemeWrapper>
     );
@@ -161,7 +163,7 @@ function App() {
         <div className="min-h-screen" style={{ paddingTop: '80px' }}>
           <AIBusinessGrowthPage />
         </div>
-        <ThemedFooter />
+        <FooterSection />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
       </ThemeWrapper>
     );
@@ -174,10 +176,18 @@ function App() {
         <div className="min-h-screen" style={{ paddingTop: '80px' }}>
           <AISolutionsPage />
         </div>
-        <ThemedFooter />
+        <FooterSection />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
       </ThemeWrapper>
     );
+  }
+
+  if (path === '/bioai-lab') {
+    return <BioAILabPage />;
+  }
+
+  if (path === '/bioscience-ngs') {
+    return <BioscienceNGSPage />;
   }
 
   if (path === '/accounting/us-accounting') {
@@ -187,7 +197,7 @@ function App() {
         <div className="min-h-screen" style={{ paddingTop: '80px' }}>
           <USAccountingPage />
         </div>
-        <ThemedFooter />
+        <FooterSection />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
       </ThemeWrapper>
     );
@@ -200,7 +210,7 @@ function App() {
         <div className="min-h-screen" style={{ paddingTop: '80px' }}>
           <TrucksLogisticsPage />
         </div>
-        <ThemedFooter />
+        <FooterSection />
         <ChatbotWidget customerName="Guest" customerId="99aupairs" />
       </ThemeWrapper>
     );

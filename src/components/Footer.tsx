@@ -34,9 +34,9 @@ const Footer = () => {
       `}</style>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12">
-          {/* Company Info - Larger Column */}
-          <div className="lg:col-span-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
+          {/* Company Info */}
+          <div>
             <div className="mb-4 sm:mb-5 md:mb-6">
               <img 
                 src="/LogoDeepiotics1.png" 
@@ -77,7 +77,7 @@ const Footer = () => {
           </div>
 
           {/* Services */}
-          <div className="lg:col-span-3">
+          <div>
             <h3 className="text-white font-bold mb-6 text-lg flex items-center">
               <span className="w-1 h-6 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full mr-3"></span>
               AI Development Services
@@ -122,8 +122,8 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Company */}
-          <div className="lg:col-span-2">
+          {/* Quick Links */}
+          <div>
             <h3 className="text-white font-bold mb-6 text-lg flex items-center">
               <span className="w-1 h-6 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full mr-3"></span>
               Quick Links
@@ -169,7 +169,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="lg:col-span-3">
+          <div>
             <h3 className="text-white font-bold mb-6 text-lg flex items-center">
               <span className="w-1 h-6 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full mr-3"></span>
               Contact Our AI Experts
@@ -202,11 +202,9 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="border-t border-white/10 mt-6 sm:mt-8 pt-5 sm:pt-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 sm:space-y-6 md:space-y-0">
-            <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
-              <div className="text-gray-400 text-xs sm:text-sm flex items-center space-x-2 text-center">
-                <span className="text-blue font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">© 2025 Deepiotics Pvt. Ltd. All rights reserved</span>
-              </div>
+          <div className="flex flex-row justify-center items-center space-x-4 sm:space-x-6 md:space-x-8 flex-wrap gap-y-4">
+            <div className="text-gray-400 text-xs sm:text-sm flex items-center justify-center text-center">
+              <span className="text-blue font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">© 2025 Deepiotics Pvt. Ltd. All rights reserved</span>
             </div>
             
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 text-xs sm:text-sm">
@@ -222,12 +220,6 @@ const Footer = () => {
                 <span>Cookie Policy</span>
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300"></span>
               </a>
-              <div className="hidden md:block w-px h-4 bg-white/20"></div>
-              <button 
-                className="flex items-center space-x-1 text-xs text-gray-500 hover:text-white transition-colors cursor-pointer"
-              >
-                <span>🚀</span>
-              </button>
             </div>
           </div>
         </div>

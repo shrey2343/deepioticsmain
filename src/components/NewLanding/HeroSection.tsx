@@ -13,30 +13,6 @@ const HeroSection: React.FC = () => {
       .to('#hero-proof', { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.2')
       .to('#scroll-hint', { opacity: 1, duration: 0.4 }, '-=0.1');
 
-    // Counter animation
-    const counter = (el: HTMLElement | null, target: number, pre = '', suf = '') => {
-      if (!el) return;
-      let v = 0;
-      const step = target / 80;
-      const t = setInterval(() => {
-        v = Math.min(v + step, target);
-        el.innerHTML = pre + Math.floor(v) + '<em>' + suf + '</em>';
-        if (v >= target) clearInterval(t);
-      }, 18);
-    };
-
-    ScrollTrigger.create({
-      trigger: '#hero-proof',
-      start: 'top 85%',
-      once: true,
-      onEnter: () => {
-        counter(document.getElementById('pc1'), 500, '', '+');
-        setTimeout(() => counter(document.getElementById('pc2'), 70, '', '+'), 150);
-        setTimeout(() => counter(document.getElementById('pc3'), 35, '', '%'), 300);
-        setTimeout(() => counter(document.getElementById('pc4'), 35, '', '%'), 450);
-      }
-    });
-
     // Mouse parallax
     const handleMouseMove = (e: MouseEvent) => {
       gsap.to('#hero-h1', {
@@ -81,20 +57,16 @@ const HeroSection: React.FC = () => {
 
         <div className="hero-proof" id="hero-proof">
           <div>
-            <div className="proof-val" id="pc1">0<em>+</em></div>
             <div className="proof-lbl">End-to-End Delivery</div>
           </div>
           <div>
-            <div className="proof-val" id="pc2">0<em>+</em></div>
-            <div className="proof-lbl">Projects Shipped</div>
+            <div className="proof-lbl">70+ Projects Shipped</div>
           </div>
           <div>
-            <div className="proof-val" id="pc3">0<em>%</em></div>
             <div className="proof-lbl">Faster Time-to-Market</div>
           </div>
           <div>
-            <div className="proof-val" id="pc4">0<em>%</em></div>
-            <div className="proof-lbl">Cost-Efficient Outsourcing</div>
+            <div className="proof-lbl">Cost-Efficient Global Outsourcing</div>
           </div>
         </div>
       </div>

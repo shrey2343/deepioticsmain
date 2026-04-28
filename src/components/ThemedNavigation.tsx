@@ -125,6 +125,50 @@ const ThemedNavigation: React.FC = () => {
               >
                 AI Solutions
               </a>
+              <a
+                href="/bioai-lab"
+                style={{
+                  display: 'block',
+                  padding: '12px 16px',
+                  color: 'var(--text-light)',
+                  fontSize: '13px',
+                  textDecoration: 'none',
+                  transition: 'all 0.2s'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'rgba(29,78,216,0.1)';
+                  e.currentTarget.style.color = '#60a5fa';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'transparent';
+                  e.currentTarget.style.color = 'var(--text-light)';
+                }}
+                onClick={() => setIsServicesDropdownOpen(false)}
+              >
+                BioAI Lab
+              </a>
+              <a
+                href="/bioscience-ngs"
+                style={{
+                  display: 'block',
+                  padding: '12px 16px',
+                  color: 'var(--text-light)',
+                  fontSize: '13px',
+                  textDecoration: 'none',
+                  transition: 'all 0.2s'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'rgba(29,78,216,0.1)';
+                  e.currentTarget.style.color = '#60a5fa';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'transparent';
+                  e.currentTarget.style.color = 'var(--text-light)';
+                }}
+                onClick={() => setIsServicesDropdownOpen(false)}
+              >
+                Bioscience & NGS Partnership
+              </a>
             </div>
           )}
         </li>
@@ -296,6 +340,50 @@ const ThemedNavigation: React.FC = () => {
                     onClick={() => setIsMenuOpen(false)}
                   >
                     AI Solutions
+                  </a>
+                  <a
+                    href="/bioai-lab"
+                    style={{
+                      padding: '12px 16px',
+                      color: 'var(--text-light)',
+                      fontSize: '14px',
+                      textDecoration: 'none',
+                      borderRadius: '8px',
+                      transition: 'all 0.2s'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = 'rgba(29,78,216,0.1)';
+                      e.currentTarget.style.color = '#60a5fa';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = 'transparent';
+                      e.currentTarget.style.color = 'var(--text-light)';
+                    }}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    BioAI Lab
+                  </a>
+                  <a
+                    href="/bioscience-ngs"
+                    style={{
+                      padding: '12px 16px',
+                      color: 'var(--text-light)',
+                      fontSize: '14px',
+                      textDecoration: 'none',
+                      borderRadius: '8px',
+                      transition: 'all 0.2s'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = 'rgba(29,78,216,0.1)';
+                      e.currentTarget.style.color = '#60a5fa';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = 'transparent';
+                      e.currentTarget.style.color = 'var(--text-light)';
+                    }}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Bioscience & NGS Partnership
                   </a>
                 </div>
               )}

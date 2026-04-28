@@ -99,8 +99,10 @@ const ServicesSection: React.FC = () => {
           {services.map((service, index) => (
             <div key={index} className="svc-card">
               {service.isNew && <div className="svc-new-badge">✦ NEW</div>}
-              <div className="svc-icon">{service.icon}</div>
-              <h3 className="svc-title">{service.title}</h3>
+              <div className="svc-header">
+                <div className="svc-icon">{service.icon}</div>
+                <h3 className="svc-title">{service.title}</h3>
+              </div>
               <p className="svc-desc">{service.desc}</p>
               <ul className="svc-bullets">
                 {service.bullets.map((bullet, i) => (

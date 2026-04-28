@@ -76,14 +76,15 @@ const FooterSection = () => {
         margin: '0 auto',
         padding: '40px 16px 48px'
       }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(1, 1fr)',
-          gap: '24px'
-        }}
-        className="sm:grid-cols-2 lg:grid-cols-12 sm:gap-32 lg:gap-48">
-          {/* Company Info - Larger Column */}
-          <div style={{ gridColumn: 'span 1' }} className="lg:col-span-4">
+        <div 
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            gap: '48px'
+          }}
+        >
+          {/* Company Info */}
+          <div>
             <div style={{ marginBottom: '24px' }}>
               <img 
                 src="/LogoDeepiotics1.png" 
@@ -198,7 +199,7 @@ const FooterSection = () => {
           </div>
 
           {/* Services */}
-          <div style={{ gridColumn: 'span 1' }} className="lg:col-span-3">
+          <div>
             <h3 style={{
               color: '#fff',
               fontWeight: 'bold',
@@ -260,7 +261,7 @@ const FooterSection = () => {
           </div>
 
           {/* Quick Links */}
-          <div style={{ gridColumn: 'span 1' }} className="lg:col-span-2">
+          <div>
             <h3 style={{
               color: '#fff',
               fontWeight: 'bold',
@@ -322,7 +323,7 @@ const FooterSection = () => {
           </div>
 
           {/* Contact Info */}
-          <div style={{ gridColumn: 'span 1' }} className="lg:col-span-3">
+          <div>
             <h3 style={{
               color: '#fff',
               fontWeight: 'bold',

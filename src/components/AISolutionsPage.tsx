@@ -1,9 +1,52 @@
 import { useEffect } from 'react';
 import { ArrowRight, CheckCircle } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const AISolutionsPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    // Animate approach cards
+    gsap.to('.approach-card', {
+      opacity: 1,
+      y: 0,
+      stagger: 0.07,
+      duration: 0.55,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.approach-grid',
+        start: 'top 72%'
+      }
+    });
+
+    // Animate service cards
+    gsap.to('.ai-service-card', {
+      opacity: 1,
+      y: 0,
+      stagger: 0.07,
+      duration: 0.55,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.services-container',
+        start: 'top 72%'
+      }
+    });
+
+    // Animate trust point cards
+    gsap.to('.trust-point-card', {
+      opacity: 1,
+      y: 0,
+      stagger: 0.07,
+      duration: 0.55,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.trust-points-grid',
+        start: 'top 72%'
+      }
+    });
   }, []);
 
   const services = [
@@ -262,7 +305,7 @@ const AISolutionsPage = () => {
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '60px',
             textAlign: 'center',
-            maxWidth: '900px',
+            maxWidth: '1100px',
             margin: '0 auto 60px',
             lineHeight: 1.6
           }}>
@@ -273,7 +316,7 @@ const AISolutionsPage = () => {
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
             gap: '32px'
-          }}>
+          }} className="approach-grid">
             {[
               {
                 title: 'Discovery & Strategy',
@@ -293,8 +336,11 @@ const AISolutionsPage = () => {
                 background: 'rgba(255,255,255,0.03)',
                 borderRadius: '16px',
                 border: '1px solid rgba(255,255,255,0.08)',
-                transition: 'all 0.3s'
+                transition: 'all 0.3s',
+                opacity: 0,
+                transform: 'translateY(28px)'
               }}
+              className="approach-card"
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
                 e.currentTarget.style.borderColor = 'rgba(29,78,216,0.3)';
@@ -359,26 +405,27 @@ const AISolutionsPage = () => {
             display: 'flex',
             flexDirection: 'column',
             gap: '32px'
-          }}>
+          }} className="services-container">
             {services.map((service) => (
               <div
                 key={service.id}
+                className="ai-service-card"
                 style={{
                   padding: '40px',
-                  background: service.featured 
-                    ? 'linear-gradient(135deg, rgba(29,78,216,0.1), rgba(147,51,234,0.05))' 
-                    : 'rgba(255,255,255,0.03)',
+                  background: '#fff',
                   borderRadius: '16px',
                   border: service.featured 
                     ? '2px solid rgba(29,78,216,0.3)' 
-                    : '1px solid rgba(255,255,255,0.08)',
+                    : '1px solid rgba(226,232,240,0.5)',
                   transition: 'all 0.3s',
                   position: 'relative',
-                  overflow: 'hidden'
+                  overflow: 'hidden',
+                  opacity: 0,
+                  transform: 'translateY(28px)'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-4px)';
-                  e.currentTarget.style.boxShadow = '0 12px 48px rgba(0,0,0,0.3)';
+                  e.currentTarget.style.boxShadow = '0 12px 48px rgba(0,0,0,0.15)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)';
@@ -406,7 +453,7 @@ const AISolutionsPage = () => {
                 <h3 style={{
                   fontSize: '28px',
                   fontWeight: 700,
-                  color: '#fff',
+                  color: '#1e293b',
                   marginBottom: '16px',
                   fontFamily: 'Plus Jakarta Sans, sans-serif'
                 }}>
@@ -415,7 +462,7 @@ const AISolutionsPage = () => {
 
                 <p style={{
                   fontSize: '18px',
-                  color: 'rgba(255,255,255,0.9)',
+                  color: '#334155',
                   marginBottom: '16px',
                   fontWeight: 500,
                   lineHeight: 1.5
@@ -425,7 +472,7 @@ const AISolutionsPage = () => {
 
                 <p style={{
                   fontSize: '16px',
-                  color: 'rgba(255,255,255,0.7)',
+                  color: '#64748b',
                   marginBottom: '32px',
                   lineHeight: 1.7
                 }}>
@@ -436,7 +483,7 @@ const AISolutionsPage = () => {
                   <h4 style={{
                     fontSize: '16px',
                     fontWeight: 600,
-                    color: '#fff',
+                    color: '#1e293b',
                     marginBottom: '16px',
                     fontFamily: 'Plus Jakarta Sans, sans-serif'
                   }}>
@@ -456,7 +503,7 @@ const AISolutionsPage = () => {
                         alignItems: 'flex-start',
                         gap: '12px',
                         fontSize: '15px',
-                        color: 'rgba(255,255,255,0.8)',
+                        color: '#475569',
                         lineHeight: 1.6
                       }}>
                         <CheckCircle style={{
@@ -474,13 +521,13 @@ const AISolutionsPage = () => {
 
                 <div style={{
                   padding: '20px',
-                  background: 'rgba(6,182,212,0.1)',
+                  background: 'rgba(6,182,212,0.08)',
                   borderLeft: '4px solid #06b6d4',
                   borderRadius: '8px'
                 }}>
                   <p style={{
                     fontSize: '16px',
-                    color: '#fff',
+                    color: '#0f172a',
                     fontWeight: 500,
                     margin: 0,
                     lineHeight: 1.6
@@ -554,15 +601,18 @@ const AISolutionsPage = () => {
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
             gap: '32px'
-          }}>
+          }} className="trust-points-grid">
             {trustPoints.map((point, index) => (
               <div key={index} style={{
                 padding: '32px',
                 background: 'rgba(255,255,255,0.03)',
                 borderRadius: '16px',
                 border: '1px solid rgba(255,255,255,0.08)',
-                transition: 'all 0.3s'
+                transition: 'all 0.3s',
+                opacity: 0,
+                transform: 'translateY(28px)'
               }}
+              className="trust-point-card"
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
                 e.currentTarget.style.borderColor = 'rgba(29,78,216,0.3)';

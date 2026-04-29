@@ -389,6 +389,10 @@ h1.hero-h1 {
   display: inline-block;
   transform: translateY(0);
   overflow: visible;
+  background: linear-gradient(to right, #60a5fa, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero-h1 .line {
@@ -398,7 +402,10 @@ h1.hero-h1 {
 }
 
 .hero-accent {
-  color: #60a5fa;
+  background: linear-gradient(to right, #60a5fa, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-style: italic;
 }
 
@@ -862,6 +869,11 @@ h1.hero-h1 {
   margin-right: auto;
 }
 
+.service-tab-card {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -881,7 +893,7 @@ h1.hero-h1 {
   transform: translateY(36px);
   position: relative;
   overflow: hidden;
-  cursor: none;
+  cursor: pointer;
   transition: border-color 0.35s, box-shadow 0.35s, transform 0.3s;
   display: flex;
   flex-direction: column;
@@ -1227,7 +1239,7 @@ h1.hero-h1 {
   opacity: 0;
   transform: translateY(28px);
   transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
-  cursor: none;
+  cursor: pointer;
 }
 
 .team-card:hover {
@@ -1378,7 +1390,7 @@ h1.hero-h1 {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
-  cursor: none;
+  cursor: pointer;
   box-shadow: 0 0 60px rgba(29,78,216,0.5);
   transition: all 0.3s;
   opacity: 0;

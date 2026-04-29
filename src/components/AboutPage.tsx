@@ -1,8 +1,66 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronDown, Mail, MapPin } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  useEffect(() => {
+    // Animate service cards
+    gsap.to('.about-service-card', {
+      opacity: 1,
+      y: 0,
+      stagger: 0.07,
+      duration: 0.55,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.about-services-section',
+        start: 'top 72%'
+      }
+    });
+
+    // Animate team cards
+    gsap.to('.about-team-card', {
+      opacity: 1,
+      y: 0,
+      stagger: 0.07,
+      duration: 0.55,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.about-team-section',
+        start: 'top 72%'
+      }
+    });
+
+    // Animate why choose cards
+    gsap.to('.about-why-card', {
+      opacity: 1,
+      y: 0,
+      stagger: 0.07,
+      duration: 0.55,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.about-why-section',
+        start: 'top 72%'
+      }
+    });
+
+    // Animate FAQ cards
+    gsap.to('.about-faq-card', {
+      opacity: 1,
+      y: 0,
+      stagger: 0.07,
+      duration: 0.55,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.about-faq-section',
+        start: 'top 72%'
+      }
+    });
+  }, []);
 
   const stats = [
     { number: '2018', label: 'Founded' },
@@ -270,7 +328,7 @@ export default function AboutPage() {
       </div>
 
       {/* What We Do - Navy */}
-      <div className="py-20" style={{ background: 'rgba(2,13,42,1)' }}>
+      <div className="py-20 about-services-section" style={{ background: 'rgba(2,13,42,1)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">What We Do</h2>
@@ -278,7 +336,7 @@ export default function AboutPage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
-              <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-blue-400/30 transition-all">
+              <div key={index} className="about-service-card bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-blue-400/30 transition-all" style={{ opacity: 0, transform: 'translateY(28px)' }}>
                 <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
                 <p className="text-white/70 mb-4 leading-relaxed">{service.description}</p>
                 <a href={service.link} className="text-blue-400 hover:text-blue-300 text-sm font-semibold">
@@ -313,7 +371,7 @@ export default function AboutPage() {
       </div>
 
       {/* Why Choose Deepiotics - Navy */}
-      <div className="py-20" style={{ background: 'rgba(2,13,42,1)' }}>
+      <div className="py-20 about-why-section" style={{ background: 'rgba(2,13,42,1)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">Why Choose Deepiotics</h2>
@@ -321,7 +379,23 @@ export default function AboutPage() {
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             {whyChoose.map((item, index) => (
-              <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10">
+              <div 
+                key={index} 
+                className="about-why-card bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10 transition-all duration-300 cursor-pointer" 
+                style={{ opacity: 0, transform: 'translateY(28px)' }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px)';
+                  e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
+                  e.currentTarget.style.borderColor = 'rgba(96,165,250,0.3)';
+                  e.currentTarget.style.boxShadow = '0 12px 48px rgba(96,165,250,0.2)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+              >
                 <h3 className="text-2xl font-bold text-white mb-4">{item.title}</h3>
                 <p className="text-white/70 leading-relaxed">{item.description}</p>
               </div>
@@ -331,7 +405,7 @@ export default function AboutPage() {
       </div>
 
       {/* Team - White */}
-      <div className="py-20" style={{ background: '#ffffff' }}>
+      <div className="py-20 about-team-section" style={{ background: '#ffffff' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4" style={{
@@ -344,7 +418,7 @@ export default function AboutPage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {team.map((member, index) => (
-              <div key={index} className="bg-blue-50 rounded-xl p-6 border border-blue-200 hover:border-blue-400 transition-all">
+              <div key={index} className="about-team-card bg-blue-50 rounded-xl p-6 border border-blue-200 hover:border-blue-400 transition-all" style={{ opacity: 0, transform: 'translateY(28px)' }}>
                 <div className="flex flex-col items-center mb-4">
                   {member.image ? (
                     <div className="relative w-32 h-32 mb-4">
@@ -381,7 +455,7 @@ export default function AboutPage() {
       </div>
 
       {/* FAQ - Navy */}
-      <div className="py-20" style={{ background: 'rgba(2,13,42,1)' }}>
+      <div className="py-20 about-faq-section" style={{ background: 'rgba(2,13,42,1)' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">Frequently Asked Questions</h2>
@@ -389,7 +463,7 @@ export default function AboutPage() {
           </div>
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 overflow-hidden">
+              <div key={index} className="about-faq-card bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 overflow-hidden" style={{ opacity: 0, transform: 'translateY(28px)' }}>
                 <button
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
                   className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white/5 transition-all"

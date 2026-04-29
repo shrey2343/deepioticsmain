@@ -1,12 +1,77 @@
 import { useEffect, useRef } from 'react';
 import ThemedNavigation from './ThemedNavigation';
 import FooterSection from './NewLanding/FooterSection';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const BioAILabPage = () => {
   const bgCanvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     document.body.classList.add('new-landing-active');
+
+    // GSAP card animations
+    gsap.to('.bioai-svc-card', {
+      opacity: 1,
+      y: 0,
+      stagger: 0.07,
+      duration: 0.55,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.bioai-services-section',
+        start: 'top 72%'
+      }
+    });
+
+    gsap.to('.bioai-who-card', {
+      opacity: 1,
+      y: 0,
+      stagger: 0.07,
+      duration: 0.55,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.bioai-who-section',
+        start: 'top 72%'
+      }
+    });
+
+    gsap.to('.bioai-curriculum-card', {
+      opacity: 1,
+      y: 0,
+      stagger: 0.07,
+      duration: 0.55,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.bioai-curriculum-section',
+        start: 'top 72%'
+      }
+    });
+
+    gsap.to('.bioai-bonus-card', {
+      opacity: 1,
+      y: 0,
+      stagger: 0.07,
+      duration: 0.55,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.bioai-bonus-section',
+        start: 'top 72%'
+      }
+    });
+
+    gsap.to('.bioai-support-card', {
+      opacity: 1,
+      y: 0,
+      stagger: 0.07,
+      duration: 0.55,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.bioai-support-section',
+        start: 'top 72%'
+      }
+    });
 
     // Background canvas animation
     const bgCanvas = bgCanvasRef.current;
@@ -154,8 +219,12 @@ const BioAILabPage = () => {
           <span className="eyebrow">Program at a Glance</span>
           <h2 className="sec-title">What You Get</h2>
           
-          <div className="services-grid" style={{ marginTop: '56px' }}>
-            <div className="svc-card" style={{ opacity: 1, transform: 'none' }}>
+          <div className="services-grid bioai-services-section" style={{ marginTop: '56px' }}>
+            <div className="svc-card bioai-svc-card" style={{ 
+              opacity: 0, 
+              transform: 'translateY(28px)',
+              background: 'linear-gradient(135deg, #dbeafe, #bfdbfe)'
+            }}>
               <div className="svc-header">
                 <div className="svc-icon">📚</div>
                 <h3 className="svc-title">8-Week Structured Curriculum</h3>
@@ -165,7 +234,11 @@ const BioAILabPage = () => {
               </p>
             </div>
 
-            <div className="svc-card" style={{ opacity: 1, transform: 'none' }}>
+            <div className="svc-card" style={{ 
+              opacity: 1, 
+              transform: 'none',
+              background: 'linear-gradient(135deg, #dbeafe, #bfdbfe)'
+            }}>
               <div className="svc-header">
                 <div className="svc-icon">🤖</div>
                 <h3 className="svc-title">No-Code, AI-Powered Tools</h3>
@@ -175,7 +248,11 @@ const BioAILabPage = () => {
               </p>
             </div>
 
-            <div className="svc-card" style={{ opacity: 1, transform: 'none' }}>
+            <div className="svc-card" style={{ 
+              opacity: 1, 
+              transform: 'none',
+              background: 'linear-gradient(135deg, #dbeafe, #bfdbfe)'
+            }}>
               <div className="svc-header">
                 <div className="svc-icon">💼</div>
                 <h3 className="svc-title">Job-Ready in 90 Days</h3>
@@ -191,22 +268,32 @@ const BioAILabPage = () => {
       {/* Who Is This For */}
       <section id="audience" className="s-white" style={{ padding: '80px 56px' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', textAlign: 'center' }}>
-          <span className="eyebrow">Target Audience</span>
-          <h2 className="sec-title">Who Is This Program For?</h2>
+          <span className="eyebrow" style={{ color: '#2563eb' }}>Target Audience</span>
+          <h2 className="sec-title" style={{
+            background: 'linear-gradient(to right, #2563eb, #7c3aed)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text'
+          }}>Who Is This Program For?</h2>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginTop: '56px' }}>
+          <div className="pain-grid bioai-who-section" style={{ marginTop: '56px' }}>
             {[
-              { num: '01', title: 'BSc / MSc Graduates', desc: 'Biotechnology, Life Sciences, Microbiology, Genetics, Biochemistry, or related fields — who want to enter bioinformatics without a coding background.' },
-              { num: '02', title: 'Job Seekers', desc: 'Graduates who haven\'t landed a job yet and want the exact NGS portfolio and skills that top biotech recruiters look for — at Biocon, Syngene, and beyond.' },
-              { num: '03', title: 'Thesis Students', desc: 'Students working on genomics or molecular biology research who need to analyse real NGS data — without writing a single line of code.' },
+              { num: '01', title: 'Life Science & Biotech Graduates', desc: 'You have the biology. You understand the science. You just need the bioinformatics skills that labs are hiring for — and a portfolio that proves you can do the work.' },
+              { num: '02', title: 'MSc Students Entering the Job Market', desc: 'Your degree got you the interview. BioAI Lab gets you the job — with a GitHub portfolio, real NGS experience, and answers to the exact questions Biocon and Syngene ask.' },
+              { num: '03', title: 'Researchers Without Coding Background', desc: 'You do not need Python. You do not need the terminal. Galaxy + AI tools handle the pipelines. You handle the biology. That is the job.' },
               { num: '04', title: 'Career Switchers', desc: 'Lab technicians and research assistants ready to transition into higher-paying bioinformatics analyst roles — on their own timeline.' }
             ].map((item) => (
-              <div key={item.num} className="pain-card" style={{ opacity: 1, transform: 'none' }}>
+              <div key={item.num} className="pain-card bioai-who-card" style={{ 
+                opacity: 0, 
+                transform: 'translateY(28px)',
+                background: 'linear-gradient(135deg, #dbeafe, #bfdbfe)',
+                border: '1px solid rgba(37,99,235,0.2)'
+              }}>
                 <div className="pain-header-row">
-                  <div className="pain-num">{item.num}</div>
-                  <h3 className="pain-title">{item.title}</h3>
+                  <div className="pain-num" style={{ color: 'rgba(37,99,235,0.4)' }}>{item.num}</div>
+                  <h3 className="pain-title" style={{ color: '#1e293b' }}>{item.title}</h3>
                 </div>
-                <p className="pain-body">{item.desc}</p>
+                <p className="pain-body" style={{ color: '#475569' }}>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -231,22 +318,28 @@ const BioAILabPage = () => {
               { week: 'Week 7', title: 'GitHub Portfolio & LinkedIn', desc: 'Why GitHub is the most powerful bioinformatics job tool · Profile setup: README — AI writes your first draft · Project 1: NGS pipeline repo with full documentation · Project 2: Indian genomics variant analysis repo · LinkedIn headline and skills — AI-optimised for recruiters' },
               { week: 'Week 8', title: 'Interview Preparation & Placement', desc: '90 Biocon/Syngene questions with model answers · Technical: NGS pipeline, variant interpretation, tools · AI mock interview: 30-minute simulation with feedback · Salary negotiation: word-for-word scripts tested · Cold outreach: LinkedIn and email (34% HR response rate)' }
             ].map((item, idx) => (
-              <div key={idx} className="svc-card" style={{ opacity: 1, transform: 'none', textAlign: 'left' }}>
+              <div key={idx} className="svc-card" style={{ 
+                opacity: 1, 
+                transform: 'none', 
+                textAlign: 'left',
+                background: 'rgba(255,255,255,0.05)',
+                border: '1px solid rgba(255,255,255,0.1)'
+              }}>
                 <div style={{ 
                   display: 'inline-block',
                   padding: '4px 12px',
-                  background: 'linear-gradient(135deg, rgba(29,78,216,0.12), rgba(59,130,246,0.08))',
-                  color: 'var(--blue)',
+                  background: 'linear-gradient(135deg, rgba(96,165,250,0.2), rgba(147,51,234,0.15))',
+                  color: '#60a5fa',
                   fontSize: '10px',
                   fontWeight: 700,
                   letterSpacing: '0.14em',
                   textTransform: 'uppercase',
                   borderRadius: '3px',
-                  border: '1px solid rgba(29,78,216,0.2)',
+                  border: '1px solid rgba(96,165,250,0.3)',
                   marginBottom: '18px'
                 }}>{item.week}</div>
-                <h3 className="svc-title">{item.title}</h3>
-                <p className="svc-desc">{item.desc}</p>
+                <h3 className="svc-title" style={{ color: '#fff' }}>{item.title}</h3>
+                <p className="svc-desc" style={{ color: 'rgba(255,255,255,0.7)' }}>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -268,7 +361,7 @@ const BioAILabPage = () => {
             ].map((item, idx) => (
               <div key={idx} style={{
                 padding: '32px 24px',
-                background: '#f8faff',
+                background: 'linear-gradient(135deg, #dbeafe, #bfdbfe)',
                 borderRadius: '8px',
                 border: '1px solid rgba(29,78,216,0.1)'
               }}>
@@ -285,7 +378,7 @@ const BioAILabPage = () => {
                   marginBottom: '20px',
                   margin: '0 auto 20px'
                 }}>✓</div>
-                <p style={{ fontSize: '14px', color: '#64748b', lineHeight: 1.6 }}>{item}</p>
+                <p style={{ fontSize: '14px', color: '#475569', lineHeight: 1.6 }}>{item}</p>
               </div>
             ))}
           </div>
@@ -306,7 +399,11 @@ const BioAILabPage = () => {
               { num: '04', title: 'Cold Recruiter Playbook', desc: 'Word-for-word LinkedIn messages, email, and WhatsApp templates for HR managers at Biocon, Syngene, and 50+ biotech companies — with a verified 34% response rate.' },
               { num: '05', title: 'Real Indian Genomics Dataset Pack', desc: 'Curated NCBI/SRA datasets from Indian population genomics studies covering diabetes, cardiac, and oncology contexts — the exact disease areas top Indian biotech firms ask about in interviews.' }
             ].map((item) => (
-              <div key={item.num} className="svc-card" style={{ opacity: 1, transform: 'none' }}>
+              <div key={item.num} className="svc-card" style={{ 
+                opacity: 1, 
+                transform: 'none',
+                background: 'linear-gradient(135deg, #dbeafe, #bfdbfe)'
+              }}>
                 <div className="svc-header">
                   <div className="svc-new-badge">{item.num}</div>
                   <h3 className="svc-title">{item.title}</h3>
@@ -330,7 +427,11 @@ const BioAILabPage = () => {
               { icon: '📹', title: 'Self-Paced Recordings', desc: 'Every session is recorded. Rewatch at your own pace as many times as needed. Lifetime access included.' },
               { icon: '💬', title: 'Community & Support', desc: 'Private WhatsApp group with peers, mentors, and the Deepiotics team — for questions, help, and project feedback throughout the program.' }
             ].map((item, idx) => (
-              <div key={idx} className="svc-card" style={{ opacity: 1, transform: 'none' }}>
+              <div key={idx} className="svc-card" style={{ 
+                opacity: 1, 
+                transform: 'none',
+                background: 'linear-gradient(135deg, #dbeafe, #bfdbfe)'
+              }}>
                 <div className="svc-header">
                   <div className="svc-icon">{item.icon}</div>
                   <h3 className="svc-title">{item.title}</h3>

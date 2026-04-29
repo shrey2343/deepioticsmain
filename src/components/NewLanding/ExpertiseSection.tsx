@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ExpertiseSection: React.FC = () => {
   useEffect(() => {
@@ -46,19 +49,33 @@ const ExpertiseSection: React.FC = () => {
             Over 1,000 AI implementations. 25+ industries. Clients from early-stage startups to Fortune 500 corporations. Our team of 50+ AI specialists, data scientists, and engineers has spent more than a decade solving real business problems with real AI — not demos, not pilots.
           </p>
 
-          <div style={{
+          <div className="track-record-grid" style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',
             gap: '40px',
             maxWidth: '1200px',
             margin: '0 auto'
           }}>
-            <div style={{
+            <div className="track-record-card" style={{
               textAlign: 'center',
               padding: '32px 24px',
               background: 'rgba(255,255,255,0.05)',
               borderRadius: '12px',
-              border: '1px solid rgba(255,255,255,0.1)'
+              border: '1px solid rgba(255,255,255,0.1)',
+              transition: 'all 0.3s ease',
+              cursor: 'pointer'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-8px)';
+              e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
+              e.currentTarget.style.borderColor = 'rgba(96,165,250,0.3)';
+              e.currentTarget.style.boxShadow = '0 12px 48px rgba(96,165,250,0.2)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
+              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
+              e.currentTarget.style.boxShadow = 'none';
             }}>
               <div style={{
                 fontSize: '48px',
@@ -83,12 +100,26 @@ const ExpertiseSection: React.FC = () => {
               </p>
             </div>
 
-            <div style={{
+            <div className="track-record-card" style={{
               textAlign: 'center',
               padding: '32px 24px',
               background: 'rgba(255,255,255,0.05)',
               borderRadius: '12px',
-              border: '1px solid rgba(255,255,255,0.1)'
+              border: '1px solid rgba(255,255,255,0.1)',
+              transition: 'all 0.3s ease',
+              cursor: 'pointer'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-8px)';
+              e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
+              e.currentTarget.style.borderColor = 'rgba(96,165,250,0.3)';
+              e.currentTarget.style.boxShadow = '0 12px 48px rgba(96,165,250,0.2)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
+              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
+              e.currentTarget.style.boxShadow = 'none';
             }}>
               <div style={{
                 fontSize: '48px',
@@ -113,12 +144,26 @@ const ExpertiseSection: React.FC = () => {
               </p>
             </div>
 
-            <div style={{
+            <div className="track-record-card" style={{
               textAlign: 'center',
               padding: '32px 24px',
               background: 'rgba(255,255,255,0.05)',
               borderRadius: '12px',
-              border: '1px solid rgba(255,255,255,0.1)'
+              border: '1px solid rgba(255,255,255,0.1)',
+              transition: 'all 0.3s ease',
+              cursor: 'pointer'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-8px)';
+              e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
+              e.currentTarget.style.borderColor = 'rgba(96,165,250,0.3)';
+              e.currentTarget.style.boxShadow = '0 12px 48px rgba(96,165,250,0.2)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
+              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
+              e.currentTarget.style.boxShadow = 'none';
             }}>
               <div style={{
                 fontSize: '48px',

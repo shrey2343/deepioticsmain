@@ -183,20 +183,21 @@ const ThemedNavigation: React.FC = () => {
         href="https://tidycal.com/team/deepiotics-team/call"
         target="_blank"
         rel="noopener noreferrer"
-        className="nav-cta hidden lg:block"
+        className="nav-cta"
         style={{
           background: 'linear-gradient(to right, #2563eb, #9333ea)',
           color: '#fff',
-          padding: '10px 26px',
+          padding: '10px 20px',
           borderRadius: '5px',
-          fontSize: '12px',
+          fontSize: '11px',
           fontWeight: 600,
           textDecoration: 'none',
-          letterSpacing: '0.09em',
+          letterSpacing: '0.07em',
           textTransform: 'uppercase',
           boxShadow: '0 0 24px rgba(37,99,235,0.5)',
           transition: 'all 0.3s',
-          display: 'inline-block'
+          display: 'inline-block',
+          whiteSpace: 'nowrap'
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.boxShadow = '0 25px 50px -12px rgba(37,99,235,0.5)';
@@ -236,6 +237,14 @@ const ThemedNavigation: React.FC = () => {
           <Menu className="w-6 h-6" style={{ color: '#fff' }} />
         )}
       </button>
+
+      <style>{`
+        @media (min-width: 1024px) {
+          .lg\\:hidden {
+            display: none !important;
+          }
+        }
+      `}</style>
 
       {/* Mobile Navigation */}
       {isMenuOpen && (

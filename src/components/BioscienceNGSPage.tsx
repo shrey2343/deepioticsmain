@@ -151,7 +151,11 @@ const BioscienceNGSPage = () => {
               { icon: '🦠', title: 'Microbial & Metagenomics', desc: '16S rRNA profiling, shotgun metagenomics, taxonomic classification, and AMR gene detection — full-spectrum microbial genomics analysis on demand.' },
               { icon: '🤖', title: 'Advanced Bioinformatics', desc: 'Single-cell analysis, AI-driven insights, custom bioinformatics pipelines, and publication-quality statistical visualisations — for research and clinical programs that need to go further.' }
             ].map((item, idx) => (
-              <div key={idx} className="svc-card" style={{ opacity: 1, transform: 'none' }}>
+              <div key={idx} className="svc-card" style={{ 
+                opacity: 1, 
+                transform: 'none',
+                background: 'linear-gradient(135deg, rgba(59,130,246,0.08), rgba(147,51,234,0.05))'
+              }}>
                 <div className="svc-header">
                   <div className="svc-icon">{item.icon}</div>
                   <h3 className="svc-title">{item.title}</h3>
@@ -166,8 +170,13 @@ const BioscienceNGSPage = () => {
       {/* Analysis Pipeline */}
       <section id="pipeline" className="s-white" style={{ padding: '80px 56px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
-          <span className="eyebrow">Our Process</span>
-          <h2 className="sec-title">Our Analysis Pipeline</h2>
+          <span className="eyebrow" style={{ color: '#2563eb' }}>Our Process</span>
+          <h2 className="sec-title" style={{
+            background: 'linear-gradient(to right, #2563eb, #7c3aed)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text'
+          }}>Our Analysis Pipeline</h2>
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginTop: '56px', maxWidth: '1200px', margin: '56px auto 0' }}>
             {[
@@ -178,12 +187,17 @@ const BioscienceNGSPage = () => {
               { num: '5', title: 'Annotation', desc: 'Multi-database annotation with ACMG/AMP classification and clinical context.' },
               { num: '6', title: 'Report', desc: 'Structured, white-labeled clinical report delivered under your brand.' }
             ].map((item) => (
-              <div key={item.num} className="pain-card" style={{ opacity: 1, transform: 'none' }}>
+              <div key={item.num} className="pain-card" style={{ 
+                opacity: 1, 
+                transform: 'none',
+                background: 'linear-gradient(135deg, #dbeafe, #bfdbfe)',
+                border: '1px solid rgba(37,99,235,0.2)'
+              }}>
                 <div className="pain-header-row">
-                  <div className="pain-num">{item.num}</div>
-                  <h3 className="pain-title">{item.title}</h3>
+                  <div className="pain-num" style={{ color: 'rgba(37,99,235,0.4)' }}>{item.num}</div>
+                  <h3 className="pain-title" style={{ color: '#1e293b' }}>{item.title}</h3>
                 </div>
-                <p className="pain-body">{item.desc}</p>
+                <p className="pain-body" style={{ color: '#475569' }}>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -206,7 +220,11 @@ const BioscienceNGSPage = () => {
               { title: 'IVF Failure Review', desc: 'Dry-lab RIF analysis — uncovering genomic factors behind implantation failure.' },
               { title: 'Implantation Support', desc: 'Endometrial receptivity and implantation potential bioinformatics assessment.' }
             ].map((item, idx) => (
-              <div key={idx} className="svc-card" style={{ opacity: 1, transform: 'none' }}>
+              <div key={idx} className="svc-card" style={{ 
+                opacity: 1, 
+                transform: 'none',
+                background: 'linear-gradient(135deg, rgba(59,130,246,0.08), rgba(147,51,234,0.05))'
+              }}>
                 <div className="svc-header">
                   <div className="svc-icon">🧪</div>
                   <h3 className="svc-title">{item.title}</h3>
@@ -239,7 +257,11 @@ const BioscienceNGSPage = () => {
               { title: 'CNV & Fusion Detection', desc: 'Copy number variation and gene fusion identification via bioinformatics analysis.' },
               { title: 'RNA-Seq Transcriptomics', desc: 'Expression profiling, fusion detection, and pathway analysis for cancer biology.' }
             ].map((item, idx) => (
-              <div key={idx} className="svc-card" style={{ opacity: 1, transform: 'none' }}>
+              <div key={idx} className="svc-card" style={{ 
+                opacity: 1, 
+                transform: 'none',
+                background: 'linear-gradient(135deg, #dbeafe, #bfdbfe)'
+              }}>
                 <div className="svc-header">
                   <div className="svc-icon">🎗️</div>
                   <h3 className="svc-title">{item.title}</h3>
@@ -273,7 +295,7 @@ const BioscienceNGSPage = () => {
             ].map((item, idx) => (
               <div key={idx} style={{
                 padding: '32px 24px',
-                background: 'rgba(255,255,255,0.05)',
+                background: 'linear-gradient(135deg, rgba(59,130,246,0.08), rgba(147,51,234,0.05))',
                 borderRadius: '8px',
                 border: '1px solid rgba(255,255,255,0.1)',
                 fontSize: '16px',
@@ -303,7 +325,11 @@ const BioscienceNGSPage = () => {
               { icon: '💬', title: '24×7 Expert Support', desc: 'Email, WhatsApp & call support from our genomics team — any time you need us.' },
               { icon: '💰', title: 'Transparent Pricing', desc: 'Affordable, clear pricing with no hidden infrastructure costs. You know what you\'re paying before you commit.' }
             ].map((item, idx) => (
-              <div key={idx} className="svc-card" style={{ opacity: 1, transform: 'none' }}>
+              <div key={idx} className="svc-card" style={{ 
+                opacity: 1, 
+                transform: 'none',
+                background: 'linear-gradient(135deg, #dbeafe, #bfdbfe)'
+              }}>
                 <div className="svc-header">
                   <div className="svc-icon">{item.icon}</div>
                   <h3 className="svc-title">{item.title}</h3>
@@ -329,7 +355,12 @@ const BioscienceNGSPage = () => {
               { num: '03', title: 'QC & Validation', desc: 'Rigorous quality checks applied at every bioinformatics step.' },
               { num: '04', title: 'Report Delivered', desc: 'White-labeled, structured report ready under your brand — on time.' }
             ].map((item) => (
-              <div key={item.num} className="pain-card" style={{ opacity: 1, transform: 'none', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+              <div key={item.num} className="pain-card" style={{ 
+                opacity: 1, 
+                transform: 'none', 
+                background: 'linear-gradient(135deg, rgba(59,130,246,0.08), rgba(147,51,234,0.05))', 
+                border: '1px solid rgba(255,255,255,0.1)' 
+              }}>
                 <div className="pain-header-row">
                   <div className="pain-num" style={{ color: 'rgba(96,165,250,0.3)' }}>{item.num}</div>
                   <h3 className="pain-title" style={{ color: '#fff' }}>{item.title}</h3>
@@ -371,7 +402,12 @@ const BioscienceNGSPage = () => {
               'Unbiased Reporting',
               'Regulatory Awareness'
             ].map((item, idx) => (
-              <div key={idx} className="badge-pill" style={{ opacity: 1, background: 'rgba(29,78,216,0.1)', border: '1px solid rgba(29,78,216,0.2)', color: '#1d4ed8' }}>
+              <div key={idx} className="badge-pill" style={{ 
+                opacity: 1, 
+                background: 'linear-gradient(135deg, rgba(59,130,246,0.08), rgba(147,51,234,0.05))', 
+                border: '1px solid rgba(29,78,216,0.2)', 
+                color: '#1d4ed8' 
+              }}>
                 {item}
               </div>
             ))}

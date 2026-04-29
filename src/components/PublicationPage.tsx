@@ -1,4 +1,9 @@
 import { FileText, ArrowRight, ExternalLink, Tag } from 'lucide-react';
+import { useEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const publications = [
   // 2024
@@ -184,6 +189,20 @@ const categoryColors: Record<string, string> = {
 };
 
 const PublicationPage = () => {
+  useEffect(() => {
+    gsap.to('.publication-card', {
+      opacity: 1,
+      y: 0,
+      stagger: 0.07,
+      duration: 0.55,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.publications-grid',
+        start: 'top 72%'
+      }
+    });
+  }, []);
+
   return (
     <div className="min-h-screen bg-[rgba(2,13,42,1)] py-20">
     <div className="relative">
@@ -209,11 +228,12 @@ const PublicationPage = () => {
         </div>
 
         {/* Publications Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 publications-grid">
           {publications.map((pub) => (
             <div
               key={pub.id}
-              className="group bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+              className="publication-card group bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+              style={{ opacity: 0, transform: 'translateY(28px)' }}
             >
               {/* Title Panel with Sky Blue Background */}
               <div className="relative h-56 overflow-hidden flex items-center justify-center bg-sky-400 flex-shrink-0">

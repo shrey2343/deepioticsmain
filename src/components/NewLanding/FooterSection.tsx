@@ -430,7 +430,7 @@ const FooterSection = () => {
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text'
                 }}>
-                  © 2025 Deepiotics Pvt. Ltd. All rights reserved
+                  © 2026 Deepiotics Pvt. Ltd. All rights reserved
                 </span>
               </div>
             </div>

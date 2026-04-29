@@ -62,12 +62,30 @@ const CTASection: React.FC = () => {
 
   return (
     <section id="cta" className="s-navy">
-      <div style={{ position: 'relative', zIndex: 2, maxWidth: '800px', margin: '0 auto' }}>
+      <div style={{ position: 'relative', zIndex: 2, maxWidth: '1000px', margin: '0 auto' }}>
         <span className="eyebrow" style={{ color: '#60a5fa' }}>Free Strategy Session</span>
-        <h2 className="cta-h2">
-          Let's Talk About What <em>AI</em><br />Can Do for Your Business
+        <h2 className="cta-h2" style={{ 
+          fontSize: 'clamp(32px, 4vw, 48px)',
+          lineHeight: '1.2',
+          background: 'linear-gradient(to right, #60a5fa, #c084fc)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text'
+        }}>
+          Let's Talk About What <em style={{
+            background: 'linear-gradient(to right, #60a5fa, #c084fc)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            fontStyle: 'italic'
+          }}>AI</em> Can Do for Your Business
         </h2>
-        <p className="cta-sub">
+        <p className="cta-sub" style={{ 
+          display: '-webkit-box',
+          WebkitLineClamp: 2,
+          WebkitBoxOrient: 'vertical',
+          overflow: 'hidden'
+        }}>
           A 45-minute strategy session. No sales pitch. Just a clear, honest look at where AI fits into your business and what results you can realistically expect.
         </p>
         <a href="mailto:contact@deepiotics.com" className="cta-btn">

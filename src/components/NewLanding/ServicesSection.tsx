@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Check } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 interface Category {
   id: string;
@@ -11,6 +13,20 @@ interface Category {
 }
 
 const ServicesSection: React.FC = () => {
+  useEffect(() => {
+    gsap.to('.service-tab-card', {
+      opacity: 1,
+      y: 0,
+      stagger: 0.07,
+      duration: 0.55,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '#services',
+        start: 'top 72%'
+      }
+    });
+  }, []);
+
   const categories: Category[] = [
     {
       id: 'ai-growth',
@@ -118,7 +134,7 @@ const ServicesSection: React.FC = () => {
                   <motion.button
                     key={category.id}
                     onClick={() => setActiveCategory(category)}
-                    className="relative w-full text-left group"
+                    className="relative w-full text-left group service-tab-card"
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}

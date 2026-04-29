@@ -1,8 +1,79 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TrendingUp, Target, Zap, Users, MessageSquare, BarChart3, Globe, Smartphone, Linkedin, Phone, LineChart, FileText, CheckCircle, ArrowRight, Sparkles, Award, Mail, MapPin, Bot, Megaphone } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const AIBusinessGrowthPage = () => {
   const [activeModule, setActiveModule] = useState<number | null>(null);
+
+  useEffect(() => {
+    // Animate problem cards
+    gsap.to('.problem-card', {
+      opacity: 1,
+      y: 0,
+      stagger: 0.07,
+      duration: 0.55,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.problems-grid',
+        start: 'top 72%'
+      }
+    });
+
+    // Animate step cards
+    gsap.to('.step-card', {
+      opacity: 1,
+      y: 0,
+      stagger: 0.07,
+      duration: 0.55,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.steps-grid',
+        start: 'top 72%'
+      }
+    });
+
+    // Animate module cards
+    gsap.to('.module-card', {
+      opacity: 1,
+      y: 0,
+      stagger: 0.07,
+      duration: 0.55,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.modules-grid',
+        start: 'top 72%'
+      }
+    });
+
+    // Animate case study cards
+    gsap.to('.case-study-card', {
+      opacity: 1,
+      y: 0,
+      stagger: 0.07,
+      duration: 0.55,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.case-studies-grid',
+        start: 'top 72%'
+      }
+    });
+
+    // Animate trust cards
+    gsap.to('.trust-card', {
+      opacity: 1,
+      y: 0,
+      stagger: 0.07,
+      duration: 0.55,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.trust-grid',
+        start: 'top 72%'
+      }
+    });
+  }, []);
 
   const stats = [
     { number: '3x', label: 'More qualified leads for clients who go AI-first' },
@@ -252,11 +323,8 @@ const AIBusinessGrowthPage = () => {
         </div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              You Didn't Start Your Business to Spend<br />
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                4 Hours a Day on Marketing.
-              </span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent" style={{ maxWidth: '1100px', margin: '0 auto 24px', lineHeight: '1.3', paddingBottom: '8px' }}>
+              You Didn't Start Your Business to Spend 4 Hours a Day on Marketing.
             </h1>
             <p className="text-xl sm:text-2xl text-white/80 max-w-4xl mx-auto mb-6 leading-relaxed">
               But here you are - juggling ads, social media, lead follow-ups, and content - while your actual business waits.
@@ -315,11 +383,12 @@ const AIBusinessGrowthPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 problems-grid">
             {problems.map((problem, index) => (
               <div
                 key={index}
-                className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-blue-400/30 transition-all hover:shadow-lg hover:shadow-blue-500/10 transform hover:-translate-y-1"
+                className="problem-card bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-blue-400/30 transition-all hover:shadow-lg hover:shadow-blue-500/10 transform hover:-translate-y-1"
+                style={{ opacity: 0, transform: 'translateY(28px)' }}
               >
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-400 flex items-center justify-center text-white font-bold text-sm">
@@ -361,11 +430,12 @@ const AIBusinessGrowthPage = () => {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 steps-grid">
             {steps.map((step, index) => (
               <div
                 key={index}
-                className="group relative bg-gray-50 rounded-3xl p-8 border border-gray-200 hover:border-blue-300 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500"
+                className="step-card group relative bg-gray-50 rounded-3xl p-8 border border-gray-200 hover:border-blue-300 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500"
+                style={{ opacity: 0, transform: 'translateY(28px)' }}
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500`}></div>
                 <div className="relative">
@@ -410,13 +480,14 @@ const AIBusinessGrowthPage = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 modules-grid">
             {modules.map((module, index) => (
               <div
                 key={index}
                 onMouseEnter={() => setActiveModule(index)}
                 onMouseLeave={() => setActiveModule(null)}
-                className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-blue-400/30 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500"
+                className="module-card group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-blue-400/30 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500"
+                style={{ opacity: 0, transform: 'translateY(28px)' }}
               >
                 {module.isNew && (
                   <div className="absolute top-4 right-4 bg-gradient-to-r from-green-500 to-teal-500 text-white text-xs font-bold px-3 py-1 rounded-full">
@@ -483,20 +554,24 @@ const AIBusinessGrowthPage = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6" style={{
+              background: 'linear-gradient(to right, #2563eb, #7c3aed)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>
               What Happens When<br />
-              <span className="bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">
-                Businesses Go AI-First
-              </span>
+              Businesses Go AI-First
             </h2>
             <p className="text-xl text-gray-700">These aren't projections. These are clients.</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 gap-8 mb-12 case-studies-grid">
             {caseStudies.map((study, index) => (
               <div
                 key={index}
-                className="group relative bg-gray-50 rounded-3xl p-8 border border-gray-200 hover:border-blue-300 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500"
+                className="case-study-card group relative bg-gray-50 rounded-3xl p-8 border border-gray-200 hover:border-blue-300 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500"
+                style={{ opacity: 0, transform: 'translateY(28px)' }}
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${study.color} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500`}></div>
                 <div className="relative">
@@ -543,11 +618,12 @@ const AIBusinessGrowthPage = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 trust-grid">
             {trustReasons.map((reason, index) => (
               <div
                 key={index}
-                className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10 hover:border-blue-400/30 transition-all"
+                className="trust-card bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10 hover:border-blue-400/30 transition-all"
+                style={{ opacity: 0, transform: 'translateY(28px)' }}
               >
                 <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">{reason.title}</h3>
                 <p className="text-white/70 leading-relaxed">{reason.description}</p>

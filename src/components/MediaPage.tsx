@@ -103,7 +103,7 @@ const MediaPage = () => {
     <div className="relative">
 
       {/* Hero Section */}
-      <div className="relative overflow-hidden pt-20 pb-8 sm:pt-20 sm:pb-10">
+      <div className="relative overflow-hidden pt-10 pb-8">
         {/* Background blobs */}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
           <div className="absolute top-10 left-10 w-72 h-72 bg-blue-400/10 rounded-full filter blur-3xl animate-pulse" />

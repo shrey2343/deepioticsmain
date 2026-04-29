@@ -181,7 +181,7 @@ const TruckLogistics = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* HERO */}
-      <section className="relative overflow-hidden pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-6 sm:pb-8 md:pb-12 lg:pb-16">
+      <section className="relative overflow-hidden pt-16 sm:pt-16 md:pt-18 lg:pt-20 pb-6 sm:pb-8 md:pb-10 lg:pb-12">
         {/* Video Background */}
         <div className="absolute inset-0 overflow-hidden">
           <video

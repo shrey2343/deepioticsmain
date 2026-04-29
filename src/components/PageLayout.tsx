@@ -12,7 +12,7 @@ const PageLayout = ({ children, title, subtitle, showHero = true }: PageLayoutPr
     <div style={{ background: 'var(--bg-primary)', minHeight: '100vh' }}>
       {showHero && title && (
         <section style={{
-          padding: '120px 24px 80px',
+          padding: '64px 24px 60px',
           background: 'linear-gradient(180deg, rgba(2,13,42,1) 0%, rgba(1,8,28,0.98) 100%)',
           position: 'relative',
           overflow: 'hidden'

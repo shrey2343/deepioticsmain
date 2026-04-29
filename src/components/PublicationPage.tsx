@@ -204,7 +204,7 @@ const PublicationPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[rgba(2,13,42,1)] py-16">
+    <div className="min-h-screen bg-[rgba(2,13,42,1)] pt-12 pb-12">
     <div className="relative">
       {/* Background blobs */}
       <div className="absolute inset-0 pointer-events-none">

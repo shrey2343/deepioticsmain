@@ -457,15 +457,20 @@ const AIBusinessGrowthPage = () => {
   return (
     <div className="min-h-screen bg-[rgba(2,13,42,1)]">
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden pt-24 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 left-20 w-96 h-96 bg-blue-400/8 rounded-full filter blur-3xl animate-pulse" />
           <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple-400/8 rounded-full filter blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
         </div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent" style={{ maxWidth: '1100px', margin: '0 auto 24px', lineHeight: '1.3', paddingBottom: '8px' }}>
-              You Didn't Start Your Business to Spend 4 Hours a Day on Marketing.
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6" style={{ maxWidth: '1100px', margin: '0 auto 24px', lineHeight: '1.3', paddingBottom: '8px' }}>
+               <span style={{
+                background: 'linear-gradient(to right, #60a5fa, #c084fc)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}>You Didn't Start Your Business to Spend 4 Hours a Day on Marketing.</span>
             </h1>
             <p className="text-xl sm:text-2xl text-white/80 max-w-4xl mx-auto mb-6 leading-relaxed">
               But here you are - juggling ads, social media, lead follow-ups, and content - while your actual business waits.

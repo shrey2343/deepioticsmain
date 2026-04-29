@@ -180,7 +180,7 @@ const AISolutionsPage = () => {
     <div style={{ background: 'var(--bg-primary)', minHeight: '100vh' }}>
       {/* Hero Section */}
       <section style={{
-        padding: '120px 24px 80px',
+        padding: '100px 24px 80px',
         background: 'linear-gradient(180deg, rgba(2,13,42,1) 0%, rgba(1,8,28,0.98) 100%)',
         position: 'relative',
         overflow: 'hidden'
@@ -227,7 +227,12 @@ const AISolutionsPage = () => {
             lineHeight: 1.2,
             fontFamily: 'Plus Jakarta Sans, sans-serif'
           }}>
-            The Right AI Solution Exists for Every Problem. Let's Find Yours.
+             <span style={{
+              background: 'linear-gradient(to right, #60a5fa, #c084fc)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>The Right AI Solution Exists for Every Problem.Let's Find Yours.</span>
           </h1>
           <p style={{
             fontSize: 'clamp(16px, 2vw, 20px)',

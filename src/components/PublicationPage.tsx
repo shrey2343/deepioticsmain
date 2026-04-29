@@ -204,7 +204,7 @@ const PublicationPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[rgba(2,13,42,1)] py-20">
+    <div className="min-h-screen bg-[rgba(2,13,42,1)] py-16">
     <div className="relative">
       {/* Background blobs */}
       <div className="absolute inset-0 pointer-events-none">
@@ -217,9 +217,14 @@ const PublicationPage = () => {
         {/* Page Header */}
         <div className="text-center mb-14">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-            Our Research{' '}
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Publications
+            
+            <span style={{
+              background: 'linear-gradient(to right, #60a5fa, #c084fc)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>
+              Our Research Publications
             </span>
           </h1>
           <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto">
@@ -235,15 +240,15 @@ const PublicationPage = () => {
               className="publication-card group bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
               style={{ opacity: 0, transform: 'translateY(28px)' }}
             >
-              {/* Title Panel with Sky Blue Background */}
-              <div className="relative h-56 overflow-hidden flex items-center justify-center bg-sky-400 flex-shrink-0">
+              {/* Title Panel with Navy Blue Background */}
+              <div className="relative h-56 overflow-hidden flex items-center justify-center flex-shrink-0" style={{ background: '#1E1B4B' }}>
                 {/* decorative blobs */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
                 <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full blur-xl" />
                 
                 {/* title */}
                 <div className="relative z-10 px-6 text-center">
-                  <p className="text-gray-900 font-bold text-base leading-snug line-clamp-5">
+                  <p className="text-white font-bold text-base leading-snug line-clamp-5">
                     {pub.title}
                   </p>
                 </div>

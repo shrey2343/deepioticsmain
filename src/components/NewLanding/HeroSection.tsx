@@ -42,7 +42,7 @@ const HeroSection: React.FC = () => {
             <span className="word">Your</span> <span className="word">Trusted</span>
           </span>
           <span className="line">
-            <span className="word hero-accent">AI</span> <span className="word">Partner</span>
+            <span className="word hero-accent">AI</span> <span className="word hero-accent">Partner</span>
           </span>
         </h1>
 

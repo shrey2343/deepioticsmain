@@ -442,8 +442,8 @@ export default function PortfolioPage() {
 
   return (
     <PageLayout 
-      title="Our Portfolio" 
-      subtitle="Innovative AI solutions transforming businesses across industries"
+      title="" 
+      subtitle=""
     >
     <div className="relative">
       {/* Premium Background Elements - keeping original animations */}
@@ -454,15 +454,6 @@ export default function PortfolioPage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight">
-            {/* Our <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Portfolio</span> */}
-          </h1>
-          <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto">
-            {/* Real-world AI solutions delivering measurable results */}
-          </p>
-        </div>
-
         <div className="mb-8 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 rounded-2xl shadow-xl p-6 md:p-10 text-white relative overflow-hidden border border-white/10">
           <div className="absolute inset-0">
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full filter blur-3xl animate-pulse"></div>

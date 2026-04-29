@@ -129,7 +129,7 @@ const BioAILabPage = () => {
       
       {/* Hero Section */}
       <section id="hero" className="s-navy" style={{ 
-        padding: '140px 56px 80px',
+        padding: '100px 56px 80px',
         textAlign: 'center',
         position: 'relative',
         overflow: 'hidden'
@@ -143,16 +143,17 @@ const BioAILabPage = () => {
           <h1 style={{
             fontFamily: 'Plus Jakarta Sans, sans-serif',
             fontSize: 'clamp(48px, 7vw, 96px)',
-            fontWeight: 400,
+            fontWeight: 700,
             lineHeight: 1.1,
-            fontStyle: 'italic',
             marginBottom: '20px',
-            background: 'linear-gradient(to right, #60a5fa, #c084fc)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text'
+            color: '#fff'
           }}>
-            BioAI Lab
+            <span style={{
+              background: 'linear-gradient(to right, #60a5fa, #c084fc)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>BioAI Lab</span>
           </h1>
 
           <p style={{

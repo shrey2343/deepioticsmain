@@ -103,7 +103,7 @@ const MediaPage = () => {
     <div className="relative">
 
       {/* Hero Section */}
-      <div className="relative overflow-hidden pt-20 pb-8 sm:pt-24 sm:pb-10">
+      <div className="relative overflow-hidden pt-20 pb-8 sm:pt-20 sm:pb-10">
         {/* Background blobs */}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
           <div className="absolute top-10 left-10 w-72 h-72 bg-blue-400/10 rounded-full filter blur-3xl animate-pulse" />
@@ -113,9 +113,14 @@ const MediaPage = () => {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
-            Our{' '}
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Media Journey
+            
+            <span style={{
+              background: 'linear-gradient(to right, #60a5fa, #c084fc)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>
+              Our Media Journey
             </span>
           </h1>
           <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed mb-6">

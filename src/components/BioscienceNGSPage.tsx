@@ -64,7 +64,7 @@ const BioscienceNGSPage = () => {
       
       {/* Hero Section */}
       <section id="hero" className="s-navy" style={{ 
-        padding: '140px 56px 80px',
+        padding: '100px 56px 80px',
         textAlign: 'center',
         position: 'relative',
         overflow: 'hidden'
@@ -73,16 +73,20 @@ const BioscienceNGSPage = () => {
           <h1 style={{
             fontFamily: 'Plus Jakarta Sans, sans-serif',
             fontSize: 'clamp(48px, 7vw, 96px)',
-            fontWeight: 400,
+            fontWeight: 700,
             lineHeight: 1.1,
-            fontStyle: 'italic',
             marginBottom: '20px',
             background: 'linear-gradient(to right, #60a5fa, #c084fc)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text'
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
           }}>
-            Transform Your Sequencing Data Into Discoveries
+            Transform Your Sequencing Data <span style={{
+              background: 'linear-gradient(to right, #60a5fa, #c084fc)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>Into Discoveries</span>
           </h1>
 
           <p style={{
@@ -247,7 +251,7 @@ const BioscienceNGSPage = () => {
       <section id="oncology" className="s-white" style={{ padding: '80px 56px' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', textAlign: 'center' }}>
           <span className="eyebrow">Cancer Genomics</span>
-          <h2 className="sec-title">Oncology Genomics & NGS Data Analysis</h2>
+          <h2 className="sec-title" style={{ paddingBottom: '8px' }}>Oncology Genomics & NGS Data Analysis</h2>
           <p className="sec-sub">End-to-end dry-lab oncology NGS solutions for cancer diagnostic labs, hospitals, and precision oncology centers — from raw FASTQ to structured clinical reports.</p>
           
           <div className="services-grid" style={{ marginTop: '56px' }}>

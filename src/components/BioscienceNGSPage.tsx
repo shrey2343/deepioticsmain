@@ -427,11 +427,12 @@ const BioscienceNGSPage = () => {
           <h2 className="cta-h2" style={{ opacity: 1 }}>
             Let's Build Something <em>Extraordinary Together</em>
           </h2>
-          <p className="cta-sub" style={{ opacity: 1 }}>
-            Partner with Deepiotics as your trusted dry-lab backend — and deliver world-class genomic insights to your clients without the operational overhead.
+          <p className="cta-sub" style={{ opacity: 1, maxWidth: '1000px', margin: '0 auto 48px' }}>
+            Partner with Deepiotics as your trusted dry-lab backend — and deliver world-class<br />
+            genomic insights to your clients without the operational overhead.
           </p>
           
-          <div className="cta-contact" style={{ opacity: 1, marginTop: '48px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <div className="cta-contact" style={{ opacity: 1, display: 'flex', flexDirection: 'column', gap: '16px' }}>
             <div><a href="mailto:ayan@deepiotics.com" style={{ color: '#60a5fa', textDecoration: 'none' }}>Email Us: ayan@deepiotics.com</a></div>
             <div><a href="http://www.deepiotics.com" style={{ color: '#60a5fa', textDecoration: 'none' }}>Website: www.deepiotics.com</a></div>
             <div><a href="https://wa.me/919753181862" style={{ color: '#60a5fa', textDecoration: 'none' }}>WhatsApp: +91 9753181862</a></div>

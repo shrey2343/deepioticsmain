@@ -487,7 +487,7 @@ const AIBusinessGrowthPage = () => {
                 onMouseEnter={() => setActiveModule(index)}
                 onMouseLeave={() => setActiveModule(null)}
                 className="module-card group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-blue-400/30 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500"
-                style={{ opacity: 0, transform: 'translateY(28px)' }}
+                style={{ opacity: 0, transform: 'translateY(28px)', display: 'flex', flexDirection: 'column' }}
               >
                 {module.isNew && (
                   <div className="absolute top-4 right-4 bg-gradient-to-r from-green-500 to-teal-500 text-white text-xs font-bold px-3 py-1 rounded-full">
@@ -495,7 +495,7 @@ const AIBusinessGrowthPage = () => {
                   </div>
                 )}
                 <div className={`absolute inset-0 bg-gradient-to-br ${module.color} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-500`}></div>
-                <div className="relative">
+                <div className="relative" style={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                   <div className="flex items-center gap-4 mb-4">
                     <div className="inline-flex items-center justify-center w-14 h-14 bg-blue-400 text-white rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                       <module.icon className="w-7 h-7" />
@@ -503,7 +503,7 @@ const AIBusinessGrowthPage = () => {
                     <h3 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">{module.title}</h3>
                   </div>
                   <p className="text-white/70 leading-relaxed mb-4">{module.description}</p>
-                  <ul className="space-y-2 mb-4">
+                  <ul className="space-y-2 mb-4" style={{ flexGrow: 1 }}>
                     {module.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start space-x-2 text-white/60 text-sm">
                         <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
@@ -515,12 +515,13 @@ const AIBusinessGrowthPage = () => {
                     <a
                       href={module.link}
                       className="flex items-center text-blue-400 font-semibold group-hover:translate-x-2 transition-transform duration-300"
+                      style={{ marginTop: 'auto' }}
                     >
                       <span>Learn More</span>
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </a>
                   ) : (
-                    <div className="flex items-center text-blue-400 font-semibold">
+                    <div className="flex items-center text-blue-400 font-semibold" style={{ marginTop: 'auto' }}>
                       <span>Learn More</span>
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </div>

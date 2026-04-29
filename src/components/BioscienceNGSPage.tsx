@@ -224,13 +224,14 @@ const BioscienceNGSPage = () => {
               <div key={idx} className="svc-card" style={{ 
                 opacity: 1, 
                 transform: 'none',
-                background: 'linear-gradient(135deg, rgba(59,130,246,0.08), rgba(147,51,234,0.05))'
+                background: 'rgba(255,255,255,0.08)',
+                border: '1px solid rgba(255,255,255,0.15)'
               }}>
                 <div className="svc-header">
                   <div className="svc-icon">🧪</div>
-                  <h3 className="svc-title">{item.title}</h3>
+                  <h3 className="svc-title" style={{ color: '#fff' }}>{item.title}</h3>
                 </div>
-                <p className="svc-desc">{item.desc}</p>
+                <p className="svc-desc" style={{ color: 'rgba(255,255,255,0.8)' }}>{item.desc}</p>
               </div>
             ))}
           </div>

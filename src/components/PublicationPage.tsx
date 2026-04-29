@@ -1,4 +1,4 @@
-import { FileText, Calendar, ArrowRight, ExternalLink, Tag } from 'lucide-react';
+import { FileText, ArrowRight, ExternalLink, Tag } from 'lucide-react';
 
 const publications = [
   // 2024
@@ -171,19 +171,6 @@ const publications = [
   },
 ];
 
-const gradients: Record<number, string> = {
-  5:  'from-emerald-800 via-emerald-700 to-teal-800',
-  6:  'from-lime-800 via-green-700 to-emerald-800',
-  7:  'from-pink-800 via-rose-700 to-pink-900',
-  8:  'from-teal-800 via-cyan-700 to-teal-900',
-  9:  'from-pink-900 via-rose-800 to-fuchsia-900',
-  10: 'from-blue-900 via-indigo-800 to-blue-900',
-  11: 'from-rose-800 via-pink-700 to-rose-900',
-  12: 'from-green-800 via-teal-700 to-green-900',
-  13: 'from-fuchsia-900 via-pink-800 to-purple-900',
-  14: 'from-orange-800 via-amber-700 to-orange-900',
-};
-
 const categoryColors: Record<string, string> = {
   'Healthcare AI': 'bg-green-100 text-green-700',
   'Medical Imaging': 'bg-blue-100 text-blue-700',
@@ -226,54 +213,29 @@ const PublicationPage = () => {
           {publications.map((pub) => (
             <div
               key={pub.id}
-              className="group bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+              className="group bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
             >
-              {/* Image / Title Panel */}
-              <div className={`relative h-56 overflow-hidden flex items-center justify-center ${
-                pub.id >= 5
-                  ? `bg-gradient-to-br ${gradients[pub.id]}`
-                  : 'bg-gradient-to-br from-slate-800 to-slate-900'
-              }`}>
-                {pub.id >= 5 ? (
-                  <>
-                    {/* decorative blobs */}
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl" />
-                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full blur-xl" />
-                    {/* title + author */}
-                    <div className="relative z-10 px-5 text-center">
-                      <p className="text-white font-bold text-sm leading-snug line-clamp-4 drop-shadow-lg mb-3">
-                        {pub.title}
-                      </p>
-                      <p className="text-white/70 text-xs font-medium tracking-wide">
-                        — {(pub as any).author}
-                      </p>
-                    </div>
-                  </>
-                ) : (
-                  <img
-                    src={pub.image}
-                    alt={pub.title}
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
-                    onError={(e) => { (e.target as HTMLImageElement).src = '/svg.svg'; }}
-                  />
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+              {/* Title Panel with Sky Blue Background */}
+              <div className="relative h-56 overflow-hidden flex items-center justify-center bg-sky-400 flex-shrink-0">
+                {/* decorative blobs */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full blur-xl" />
+                
+                {/* title */}
+                <div className="relative z-10 px-6 text-center">
+                  <p className="text-gray-900 font-bold text-base leading-snug line-clamp-5">
+                    {pub.title}
+                  </p>
+                </div>
+                
+                <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent" />
                 <span className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold ${categoryColors[pub.category] ?? 'bg-gray-100 text-gray-700'}`}>
                   {pub.category}
                 </span>
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <div className="flex items-center gap-2 text-gray-400 text-sm mb-3">
-                  <Calendar className="w-4 h-4" />
-                  <span>{pub.date}</span>
-                </div>
-
-                <h3 className="text-lg font-bold text-gray-900 mb-3 leading-snug group-hover:text-blue-600 transition-colors">
-                  {pub.title}
-                </h3>
-
+              <div className="p-6 flex flex-col flex-grow">
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
                   {pub.description}
                 </p>
@@ -288,16 +250,18 @@ const PublicationPage = () => {
                   ))}
                 </div>
 
-                {/* CTA */}
-                <a
-                  href={pub.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
-                >
-                  <span>Read Publication</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
+                {/* CTA - pushed to bottom */}
+                <div className="mt-auto">
+                  <a
+                    href={pub.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+                  >
+                    <span>Read Publication</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </div>
               </div>
             </div>
           ))}

@@ -69,37 +69,56 @@ export default function AboutPage() {
       name: 'Ayan Nigam',
       title: 'Founder & Chief Executive Officer',
       bio: 'Ayan founded Deepiotics in 2018 with a vision to make enterprise-grade AI accessible to businesses of every size. With 20+ years of experience across AI strategy, product development, and enterprise transformation, he leads the company\'s direction and its work with Fortune 500 clients worldwide.',
-      linkedin: '#'
+      linkedin: '#',
+      image: '/ayan.jpeg',
+      initials: 'AN',
+      imagePosition: 'center'
     },
     {
       name: 'Dr. Madhu Jain',
       title: 'Head of Research & Data Science',
       bio: "Ph.D. in Data Science, Dr. Jain leads Deepiotics' research function - the engine behind every model, algorithm, and pipeline the company ships. Her work ensures that what we build isn't just technically sound, but genuinely advances the state of the art for each client's use case.",
-      linkedin: '#'
+      linkedin: '#',
+      image: '/madhuji.png',
+      initials: 'MJ',
+      imagePosition: 'center'
     },
     {
       name: 'Rajshri Nigam',
       title: 'Director of Business Development',
       bio: "Rajshri builds and manages Deepiotics' client partnerships across UK, US, and European markets. Her approach is straightforward: understand the business problem first, then find the right solution - not the other way around. Her relationships with clients are built on outcomes, not engagements.",
-      linkedin: '#'
+      linkedin: '#',
+      image: '/rajeshri.png',
+      initials: 'RN',
+      imagePosition: 'center'
     },
     {
       name: 'Narendra Pipliwal',
       title: 'Delivery Head',
       bio: 'Narendra owns the delivery lifecycle at Deepiotics - from project kickoff through production launch and beyond. With an obsessive focus on timeline integrity and quality assurance, he ensures every solution ships exactly as designed, on time, and performs under real-world conditions from day one.',
-      linkedin: '#'
+      linkedin: '#',
+      image: '/Narendra.png',
+      initials: 'NP',
+      imagePosition: 'center'
     },
     {
       name: 'Amol Upadhyay',
       title: 'Head, Genomics & AI Bioinformatics',
       bio: "Amol leads Deepiotics' bioscience division - overseeing end-to-end NGS data analysis, AI-powered genomics pipelines, and bioinformatics solutions for labs, hospitals, and research institutions. His work bridges the gap between computational biology and clinical application, delivering results that are both scientifically rigorous and immediately actionable.",
-      linkedin: '#'
+      linkedin: '#',
+      image: '/amol.jpeg',
+      initials: 'AU',
+      imagePosition: 'center top'
     },
     {
       name: 'Manish Manon',
       title: 'Chief Financial Officer',
       bio: "Manish oversees Deepiotics' financial strategy, planning, and operations - ensuring the company scales sustainably while delivering maximum value at every price point. His financial discipline is what allows Deepiotics to offer enterprise-quality AI without the enterprise price tag.",
-      linkedin: '#'
+      linkedin: '#',
+      image: '/manish1.png',
+      initials: 'MM',
+      imagePosition: 'center',
+      whiteBg: true
     }
   ];
 
@@ -140,8 +159,8 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-[rgba(2,13,42,1)]">
-      {/* Hero Section */}
-      <div className="relative overflow-hidden pt-32 pb-20">
+      {/* Hero Section - Navy */}
+      <div className="relative overflow-hidden pt-32 pb-20" style={{ background: 'rgba(2,13,42,1)' }}>
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 left-20 w-96 h-96 bg-blue-400/8 rounded-full filter blur-3xl animate-pulse" />
           <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple-400/8 rounded-full filter blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
@@ -151,7 +170,12 @@ export default function AboutPage() {
           <div className="text-center">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               We Build AI That Works<br />
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span style={{
+                background: 'linear-gradient(to right, #60a5fa, #c084fc)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}>
                 In the Real World.
               </span>
             </h1>
@@ -165,198 +189,268 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Stats Bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">
-                {stat.number}
+      {/* Stats Bar - White */}
+      <div className="py-16" style={{ background: '#ffffff' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-4xl md:text-5xl font-bold mb-2" style={{
+                  background: 'linear-gradient(to right, #2563eb, #7c3aed)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text'
+                }}>
+                  {stat.number}
+                </div>
+                <div className="text-sm md:text-base" style={{ color: '#64748b' }}>{stat.label}</div>
               </div>
-              <div className="text-white/70 text-sm md:text-base">{stat.label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Who We Are */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/10">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Who We Are</h2>
-          <div className="space-y-4 text-white/80 text-lg leading-relaxed">
-            <p>
-              Deepiotics was founded in 2018 with one belief: that AI shouldn't be a privilege reserved for companies with seven-figure technology budgets. Every business - from a 10-person startup to a global enterprise - deserves intelligent technology that actually moves the needle.
-            </p>
-            <p>
-              We're headquartered in Indore, India, and we work with clients across the UK, US, and European markets. What started as a custom AI development company has grown into something broader: a full-service AI partner covering enterprise automation, business growth, bioscience analytics, and now an education program that's training the next generation of bioinformatics professionals.
-            </p>
-            <p>
-              Our team brings together computational biologists, data scientists, ML engineers, full-stack developers, and business strategists under one roof. That breadth isn't accidental - complex AI problems rarely sit neatly inside a single discipline, and neither do we.
-            </p>
-            <p>
-              What hasn't changed since 2018 is how we work. We start with your business problem, not our product catalogue. We build for production, not for presentations. And we measure our success by the results you see - not the technology we deploy.
-            </p>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Mission & Vision */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-gradient-to-br from-blue-900/40 to-blue-800/20 backdrop-blur-sm rounded-2xl p-8 border border-blue-400/20">
-            <h2 className="text-3xl font-bold text-white mb-4">Our Mission</h2>
-            <p className="text-white/80 text-lg leading-relaxed mb-4">
-              To make advanced AI accessible, practical, and profitable - for businesses of every size, in every industry.
-            </p>
-            <p className="text-white/70 leading-relaxed">
-              We do this by building custom AI solutions that solve real problems, delivering them on time, and standing behind them long after launch. Not with promises - with results.
-            </p>
+      {/* Who We Are - Navy */}
+      <div className="py-20" style={{ background: 'rgba(2,13,42,1)' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/10">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Who We Are</h2>
+            <div className="space-y-4 text-white/80 text-lg leading-relaxed">
+              <p>
+                Deepiotics was founded in 2018 with one belief: that AI shouldn't be a privilege reserved for companies with seven-figure technology budgets. Every business - from a 10-person startup to a global enterprise - deserves intelligent technology that actually moves the needle.
+              </p>
+              <p>
+                We're headquartered in Indore, India, and we work with clients across the UK, US, and European markets. What started as a custom AI development company has grown into something broader: a full-service AI partner covering enterprise automation, business growth, bioscience analytics, and now an education program that's training the next generation of bioinformatics professionals.
+              </p>
+              <p>
+                Our team brings together computational biologists, data scientists, ML engineers, full-stack developers, and business strategists under one roof. That breadth isn't accidental - complex AI problems rarely sit neatly inside a single discipline, and neither do we.
+              </p>
+              <p>
+                What hasn't changed since 2018 is how we work. We start with your business problem, not our product catalogue. We build for production, not for presentations. And we measure our success by the results you see - not the technology we deploy.
+              </p>
+            </div>
           </div>
-          <div className="bg-gradient-to-br from-purple-900/40 to-purple-800/20 backdrop-blur-sm rounded-2xl p-8 border border-purple-400/20">
-            <h2 className="text-3xl font-bold text-white mb-4">Our Vision</h2>
-            <p className="text-white/80 text-lg leading-relaxed mb-4">
-              To be the most trusted AI partner in the world - not the biggest, but the most reliable.
-            </p>
-            <p className="text-white/70 leading-relaxed">
-              Trust is built through transparency, technical depth, and a genuine commitment to the outcome. That's what we're building toward - one client, one solution, one result at a time.
-            </p>
+        </div>
+      </div>
+
+      {/* Mission & Vision - White */}
+      <div className="py-20" style={{ background: '#ffffff' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-2xl p-8 border border-blue-200">
+              <h2 className="text-3xl font-bold mb-4" style={{
+                background: 'linear-gradient(to right, #2563eb, #7c3aed)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}>Our Mission</h2>
+              <p className="text-lg leading-relaxed mb-4" style={{ color: '#1e293b' }}>
+                To make advanced AI accessible, practical, and profitable - for businesses of every size, in every industry.
+              </p>
+              <p className="leading-relaxed" style={{ color: '#475569' }}>
+                We do this by building custom AI solutions that solve real problems, delivering them on time, and standing behind them long after launch. Not with promises - with results.
+              </p>
+            </div>
+            <div className="bg-gradient-to-br from-purple-50 to-purple-100/50 rounded-2xl p-8 border border-purple-200">
+              <h2 className="text-3xl font-bold mb-4" style={{
+                background: 'linear-gradient(to right, #2563eb, #7c3aed)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}>Our Vision</h2>
+              <p className="text-lg leading-relaxed mb-4" style={{ color: '#1e293b' }}>
+                To be the most trusted AI partner in the world - not the biggest, but the most reliable.
+              </p>
+              <p className="leading-relaxed" style={{ color: '#475569' }}>
+                Trust is built through transparency, technical depth, and a genuine commitment to the outcome. That's what we're building toward - one client, one solution, one result at a time.
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* What We Do */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white mb-4">What We Do</h2>
-          <p className="text-xl text-white/70">Five areas. One team. Every engagement built around your specific challenge.</p>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-            <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-blue-400/30 transition-all">
-              <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-              <p className="text-white/70 mb-4 leading-relaxed">{service.description}</p>
-              <a href={service.link} className="text-blue-400 hover:text-blue-300 text-sm font-semibold">
-                Explore {service.title} →
-              </a>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Industries */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white mb-4">Industries We Serve</h2>
-          <p className="text-xl text-white/70">Our solutions are in production across every major sector - and growing.</p>
-        </div>
-        <div className="flex flex-wrap justify-center gap-4">
-          {industries.map((industry, index) => (
-            <span key={index} className="px-6 py-3 bg-white/5 backdrop-blur-sm rounded-full text-white/80 border border-white/10">
-              {industry}
-            </span>
-          ))}
+      {/* What We Do - Navy */}
+      <div className="py-20" style={{ background: 'rgba(2,13,42,1)' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4">What We Do</h2>
+            <p className="text-xl text-white/70">Five areas. One team. Every engagement built around your specific challenge.</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, index) => (
+              <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-blue-400/30 transition-all">
+                <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
+                <p className="text-white/70 mb-4 leading-relaxed">{service.description}</p>
+                <a href={service.link} className="text-blue-400 hover:text-blue-300 text-sm font-semibold">
+                  Explore {service.title} →
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Why Choose Deepiotics */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white mb-4">Why Choose Deepiotics</h2>
-          <p className="text-xl text-white/70">Four things our clients tell us matter most - and why we've built the company around them.</p>
-        </div>
-        <div className="grid md:grid-cols-2 gap-8">
-          {whyChoose.map((item, index) => (
-            <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10">
-              <h3 className="text-2xl font-bold text-white mb-4">{item.title}</h3>
-              <p className="text-white/70 leading-relaxed">{item.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Team */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white mb-4">The Team Behind Deepiotics</h2>
-          <p className="text-xl text-white/70">Six leaders. Dozens of disciplines. One common standard: AI that works in production, not just in pitches.</p>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {team.map((member, index) => (
-            <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-blue-400/30 transition-all">
-              <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
-              <p className="text-blue-400 text-sm mb-4">{member.title}</p>
-              <p className="text-white/70 text-sm leading-relaxed mb-4">{member.bio}</p>
-              <a href={member.linkedin} className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm">
-                <Linkedin className="w-4 h-4" />
-                LinkedIn
-              </a>
-            </div>
-          ))}
+      {/* Industries - White */}
+      <div className="py-20" style={{ background: '#ffffff' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4" style={{
+              background: 'linear-gradient(to right, #2563eb, #7c3aed)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>Industries We Serve</h2>
+            <p className="text-xl" style={{ color: '#64748b' }}>Our solutions are in production across every major sector - and growing.</p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-4">
+            {industries.map((industry, index) => (
+              <span key={index} className="px-6 py-3 bg-blue-50 rounded-full border border-blue-200" style={{ color: '#1e293b' }}>
+                {industry}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* FAQ */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white mb-4">Frequently Asked Questions</h2>
-          <p className="text-xl text-white/70">The questions we get asked most - answered honestly.</p>
+      {/* Why Choose Deepiotics - Navy */}
+      <div className="py-20" style={{ background: 'rgba(2,13,42,1)' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4">Why Choose Deepiotics</h2>
+            <p className="text-xl text-white/70">Four things our clients tell us matter most - and why we've built the company around them.</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {whyChoose.map((item, index) => (
+              <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10">
+                <h3 className="text-2xl font-bold text-white mb-4">{item.title}</h3>
+                <p className="text-white/70 leading-relaxed">{item.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 overflow-hidden">
-              <button
-                onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white/5 transition-all"
-              >
-                <h3 className="text-lg font-semibold text-white pr-4">{faq.question}</h3>
-                <ChevronDown 
-                  className={`w-5 h-5 text-blue-400 flex-shrink-0 transition-transform ${
-                    openFaq === index ? 'rotate-180' : ''
+      </div>
+
+      {/* Team - White */}
+      <div className="py-20" style={{ background: '#ffffff' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4" style={{
+              background: 'linear-gradient(to right, #2563eb, #7c3aed)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>The Team Behind Deepiotics</h2>
+            <p className="text-xl" style={{ color: '#64748b' }}>Six leaders. Dozens of disciplines. One common standard: AI that works in production, not just in pitches.</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {team.map((member, index) => (
+              <div key={index} className="bg-blue-50 rounded-xl p-6 border border-blue-200 hover:border-blue-400 transition-all">
+                <div className="flex flex-col items-center mb-4">
+                  {member.image ? (
+                    <div className="relative w-32 h-32 mb-4">
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-1">
+                        <img 
+                          src={member.image} 
+                          alt={member.name} 
+                          className="w-full h-full rounded-full object-cover border-4 border-white"
+                          style={{ 
+                            objectPosition: member.imagePosition || 'center',
+                            backgroundColor: member.whiteBg ? '#ffffff' : 'transparent'
+                          }}
+                        />
+                      </div>
+                      <div className="absolute bottom-1 right-1 w-7 h-7 bg-green-500 rounded-full flex items-center justify-center border-3 border-white" style={{ borderWidth: '3px' }}>
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                          <path d="M13.3337 4L6.00033 11.3333L2.66699 8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center text-2xl font-bold mb-4" style={{ color: '#2563eb' }}>
+                      {member.initials}
+                    </div>
+                  )}
+                </div>
+                <h3 className="text-xl font-bold mb-2 text-center" style={{ color: '#1e293b' }}>{member.name}</h3>
+                <p className="text-sm mb-4 text-center" style={{ color: '#2563eb' }}>{member.title}</p>
+                <p className="text-sm leading-relaxed mb-4" style={{ color: '#475569' }}>{member.bio}</p>
+                <a href={member.linkedin} className="inline-flex items-center gap-2 text-sm" style={{ color: '#2563eb' }}>
+                  <Linkedin className="w-4 h-4" />
+                  LinkedIn
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ - Navy */}
+      <div className="py-20" style={{ background: 'rgba(2,13,42,1)' }}>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4">Frequently Asked Questions</h2>
+            <p className="text-xl text-white/70">The questions we get asked most - answered honestly.</p>
+          </div>
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 overflow-hidden">
+                <button
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white/5 transition-all"
+                >
+                  <h3 className="text-lg font-semibold text-white pr-4">{faq.question}</h3>
+                  <ChevronDown 
+                    className={`w-5 h-5 text-blue-400 flex-shrink-0 transition-transform ${
+                      openFaq === index ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+                <div 
+                  className={`overflow-hidden transition-all duration-300 ${
+                    openFaq === index ? 'max-h-96' : 'max-h-0'
                   }`}
-                />
-              </button>
-              <div 
-                className={`overflow-hidden transition-all duration-300 ${
-                  openFaq === index ? 'max-h-96' : 'max-h-0'
-                }`}
-              >
-                <div className="px-6 pb-4">
-                  <p className="text-white/70 leading-relaxed">{faq.answer}</p>
+                >
+                  <div className="px-6 pb-4">
+                    <p className="text-white/70 leading-relaxed">{faq.answer}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Final CTA */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="bg-gradient-to-br from-blue-900/40 to-purple-900/40 backdrop-blur-sm rounded-2xl p-12 border border-white/10 text-center">
-          <h2 className="text-4xl font-bold text-white mb-4">
-            Ready to See What AI<br />Can Do for Your Business?
-          </h2>
-          <p className="text-xl text-white/80 mb-8">
-            One conversation is all it takes. Tell us your challenge - we'll tell you exactly how we'd approach it.
-          </p>
-          <a
-            href="https://tidycal.com/team/deepiotics-team/call"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-lg font-semibold rounded-xl hover:shadow-2xl hover:shadow-blue-500/50 transition-all"
-          >
-            Schedule Your Free Consultation
-          </a>
-          <p className="text-white/60 mt-6 text-sm">
-            No commitment. Straight answers. A recommendation you can act on immediately.
-          </p>
-          <div className="mt-8 pt-8 border-t border-white/10 space-y-2">
-            <div className="flex items-center justify-center gap-2 text-white/70">
-              <Mail className="w-4 h-4" />
-              <a href="mailto:contact@deepiotics.com" className="hover:text-blue-400">contact@deepiotics.com</a>
-            </div>
-            <div className="flex items-center justify-center gap-2 text-white/70">
-              <MapPin className="w-4 h-4" />
-              <span>204, Atulya IT Park, Indore, MP 452016, India</span>
+      {/* Final CTA - White */}
+      <div className="py-20" style={{ background: '#ffffff' }}>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-12 border border-blue-200 text-center">
+            <h2 className="text-4xl font-bold mb-4" style={{ color: '#1e293b' }}>
+              Ready to See What AI<br />Can Do for Your Business?
+            </h2>
+            <p className="text-xl mb-8" style={{ color: '#475569' }}>
+              One conversation is all it takes. Tell us your challenge - we'll tell you exactly how we'd approach it.
+            </p>
+            <a
+              href="https://tidycal.com/team/deepiotics-team/call"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-4 text-white text-lg font-semibold rounded-xl hover:shadow-2xl transition-all"
+              style={{ background: 'linear-gradient(to right, #2563eb, #9333ea)' }}
+            >
+              Schedule Your Free Consultation
+            </a>
+            <p className="mt-6 text-sm" style={{ color: '#64748b' }}>
+              No commitment. Straight answers. A recommendation you can act on immediately.
+            </p>
+            <div className="mt-8 pt-8 border-t space-y-2" style={{ borderColor: '#e2e8f0' }}>
+              <div className="flex items-center justify-center gap-2" style={{ color: '#64748b' }}>
+                <Mail className="w-4 h-4" />
+                <a href="mailto:contact@deepiotics.com" className="hover:text-blue-600" style={{ color: '#64748b' }}>contact@deepiotics.com</a>
+              </div>
+              <div className="flex items-center justify-center gap-2" style={{ color: '#64748b' }}>
+                <MapPin className="w-4 h-4" />
+                <span>204, Atulya IT Park, Indore, MP 452016, India</span>
+              </div>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChevronDown, Linkedin, Mail, MapPin } from 'lucide-react';
+import { ChevronDown, Mail, MapPin } from 'lucide-react';
 
 export default function AboutPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -373,11 +373,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-center" style={{ color: '#1e293b' }}>{member.name}</h3>
                 <p className="text-sm mb-4 text-center" style={{ color: '#2563eb' }}>{member.title}</p>
-                <p className="text-sm leading-relaxed mb-4" style={{ color: '#475569' }}>{member.bio}</p>
-                <a href={member.linkedin} className="inline-flex items-center gap-2 text-sm" style={{ color: '#2563eb' }}>
-                  <Linkedin className="w-4 h-4" />
-                  LinkedIn
-                </a>
+                <p className="text-sm leading-relaxed" style={{ color: '#475569' }}>{member.bio}</p>
               </div>
             ))}
           </div>

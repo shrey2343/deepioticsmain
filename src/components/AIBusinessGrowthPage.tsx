@@ -117,6 +117,147 @@ const AIBusinessGrowthPage = () => {
     }
   ];
 
+  const [activeCategory, setActiveCategory] = useState(0);
+
+  const categories = [
+    {
+      id: 'strategy',
+      title: 'AI Brand Strategy',
+      subtitle: 'Strategic planning for AI-powered growth',
+      services: [
+        'One focused session to map your growth gaps',
+        'Custom AI tool selection for your business type',
+        'Your complete growth roadmap to execute immediately',
+        'Competitive analysis and market positioning'
+      ]
+    },
+    {
+      id: 'website',
+      title: 'Website Revamp',
+      subtitle: 'Transform your website into a lead machine',
+      services: [
+        'Mobile-first, fast-loading, conversion-optimised design',
+        'SEO-structured copy that ranks and reads',
+        'Built to capture leads, not just look good',
+        'Integrated with analytics and tracking'
+      ]
+    },
+    {
+      id: 'chatbot',
+      title: 'AI Chatbot',
+      subtitle: '24/7 lead capture and qualification',
+      services: [
+        'Answers FAQs, qualifies leads, books calls - automatically',
+        'Runs 24/7 without supervision',
+        'Integrated with your CRM and calendar',
+        'Natural conversation flow with smart responses'
+      ]
+    },
+    {
+      id: 'social',
+      title: 'Social Media',
+      subtitle: 'Automated content creation and posting',
+      services: [
+        'Weekly content - posts, videos, reels - generated and scheduled',
+        'Consistent brand voice across every platform',
+        'Engagement monitored and responded to for you',
+        'Performance analytics and optimization'
+      ]
+    },
+    {
+      id: 'meta-ads',
+      title: 'Meta Ads',
+      subtitle: 'Facebook & Instagram advertising',
+      services: [
+        'AI-crafted creatives and copy tested for performance',
+        'Audience targeting refined by real-time data',
+        'Continuous optimisation - campaigns that improve over time',
+        'Detailed ROI tracking and reporting'
+      ]
+    },
+    {
+      id: 'google-ads',
+      title: 'Google Ads',
+      subtitle: 'Capture high-intent search traffic',
+      services: [
+        'High-intent keyword targeting built by AI',
+        'Ad copy written and tested for your specific market',
+        'Budget managed for maximum return, minimum waste',
+        'Conversion tracking and optimization'
+      ]
+    },
+    {
+      id: 'linkedin',
+      title: 'LinkedIn Lead Gen',
+      subtitle: 'B2B lead generation on LinkedIn',
+      services: [
+        'Profile optimised to attract the right clients',
+        'AI content strategy that builds authority in your niche',
+        'Smart outreach that opens conversations without being pushy',
+        'Connection management and follow-up automation'
+      ]
+    },
+    {
+      id: 'voice',
+      title: 'AI Voice Agent',
+      subtitle: 'Never miss a call again',
+      services: [
+        'Answers calls, qualifies leads, books appointments - 24/7',
+        'Sounds natural - not robotic',
+        'Fully integrated with your calendar and CRM',
+        'Call recording and transcription'
+      ]
+    },
+    {
+      id: 'analytics',
+      title: 'Analytics Setup',
+      subtitle: 'Track what matters',
+      services: [
+        'Microsoft Clarity, Hotjar, and Google Analytics 4 - configured properly',
+        'Conversion tracking from ad click to closed deal',
+        'Weekly reports in plain English - no jargon, just insight',
+        'Custom dashboards for your business metrics'
+      ]
+    },
+    {
+      id: 'lead-magnet',
+      title: 'Lead Magnets',
+      subtitle: 'Turn visitors into subscribers',
+      services: [
+        'Strategy + design + copywriting for your lead magnet',
+        'eBooks, checklists, templates - built to attract your ideal client',
+        'Automated delivery and nurture sequence set up for you',
+        'Landing page design and optimization'
+      ]
+    },
+    {
+      id: 'marketing-agent',
+      title: 'AI Marketing Agent',
+      subtitle: 'Your 24/7 marketing manager',
+      services: [
+        'Autonomous content creation across social, email, and web',
+        'Campaign management - launch, test, and optimise without manual input',
+        'Real-time performance analysis with automatic strategy adjustment',
+        'Integrated with your existing tools and platforms',
+        'Weekly performance summaries - in plain English'
+      ],
+      isNew: true
+    },
+    {
+      id: 'sales-agent',
+      title: 'AI Sales Agent',
+      subtitle: 'Close deals while you sleep',
+      services: [
+        'Instant lead qualification - responds to enquiries in under 60 seconds',
+        'Automated multi-touch follow-up via email, SMS, and WhatsApp',
+        'Objection handling trained on your specific product or service',
+        'Meeting booking directly into your calendar - no back-and-forth',
+        'Full pipeline reporting - know exactly where every lead stands'
+      ],
+      isNew: true
+    }
+  ];
+
   const modules = [
     {
       icon: Target,
@@ -465,7 +606,7 @@ const AIBusinessGrowthPage = () => {
         </div>
       </section>
 
-      {/* Service Modules Section */}
+      {/* Service Modules Section - Horizontal Tabs */}
       <section id="modules" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -475,63 +616,83 @@ const AIBusinessGrowthPage = () => {
                 AI-Powered Growth Stack
               </span>
             </h2>
-            <p className="text-xl text-white/80 max-w-4xl mx-auto">
+            <p className="text-xl text-white/80 max-w-4xl mx-auto mb-12">
               Pick the modules that match your goals - or let us design your complete system. Every service is plug-and-play, done-for-you, and built around results.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 modules-grid">
-            {modules.map((module, index) => (
-              <div
-                key={index}
-                onMouseEnter={() => setActiveModule(index)}
-                onMouseLeave={() => setActiveModule(null)}
-                className="module-card group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-blue-400/30 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500"
-                style={{ opacity: 0, transform: 'translateY(28px)', display: 'flex', flexDirection: 'column' }}
-              >
-                {module.isNew && (
-                  <div className="absolute top-4 right-4 bg-gradient-to-r from-green-500 to-teal-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                    NEW
-                  </div>
-                )}
-                <div className={`absolute inset-0 bg-gradient-to-br ${module.color} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-500`}></div>
-                <div className="relative" style={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="inline-flex items-center justify-center w-14 h-14 bg-blue-400 text-white rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                      <module.icon className="w-7 h-7" />
+          {/* Horizontal Scrollable Tabs */}
+          <div className="mb-12">
+            <div className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory" style={{ scrollbarWidth: 'thin', scrollbarColor: 'rgba(59,130,246,0.5) rgba(255,255,255,0.1)' }}>
+              {categories.map((category, index) => {
+                const isActive = activeCategory === index;
+                return (
+                  <button
+                    key={category.id}
+                    onClick={() => setActiveCategory(index)}
+                    className="relative flex-shrink-0 snap-start"
+                  >
+                    <div className={`relative px-6 py-4 rounded-xl transition-all duration-300 whitespace-nowrap min-w-[200px] ${
+                      isActive
+                        ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg scale-105"
+                        : "bg-white/10 text-white/70 border border-white/20 hover:bg-white/20 hover:border-blue-400/50"
+                    }`}>
+                      <div className="flex items-center gap-2">
+                        <span className={`font-bold text-xs ${isActive ? 'text-white' : 'text-white/50'}`}>
+                          {String(index + 1).padStart(2, '0')}
+                        </span>
+                        <span className="font-semibold text-sm">{category.title}</span>
+                        {category.isNew && (
+                          <span className="ml-2 px-2 py-0.5 bg-green-500 text-white text-[10px] font-bold rounded-full">
+                            NEW
+                          </span>
+                        )}
+                      </div>
                     </div>
-                    <h3 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">{module.title}</h3>
-                  </div>
-                  <p className="text-white/70 leading-relaxed mb-4">{module.description}</p>
-                  <ul className="space-y-2 mb-4" style={{ flexGrow: 1 }}>
-                    {module.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start space-x-2 text-white/60 text-sm">
-                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  {module.link ? (
-                    <a
-                      href={module.link}
-                      className="flex items-center text-blue-400 font-semibold group-hover:translate-x-2 transition-transform duration-300"
-                      style={{ marginTop: 'auto' }}
-                    >
-                      <span>Learn More</span>
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </a>
-                  ) : (
-                    <div className="flex items-center text-blue-400 font-semibold" style={{ marginTop: 'auto' }}>
-                      <span>Learn More</span>
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </div>
-                  )}
-                </div>
-              </div>
-            ))}
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
-          <div className="bg-gradient-to-r from-purple-900/40 to-pink-900/40 backdrop-blur-sm rounded-3xl p-8 sm:p-12 text-center border border-white/10">
+          {/* Service Description */}
+          <div className="relative">
+            <div className="relative bg-white/5 backdrop-blur-sm p-8 md:p-12 rounded-3xl shadow-2xl border-2 border-white/10 overflow-hidden">
+              <div className="relative z-10">
+                <div className="mb-8">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+                    {categories[activeCategory].title}
+                  </h2>
+                  <p className="text-blue-400 font-semibold text-lg">
+                    {categories[activeCategory].subtitle}
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+                  {categories[activeCategory].services.map((service, index) => (
+                    <div key={index} className="flex items-start gap-3 group">
+                      <div className="mt-1 flex items-center justify-center w-6 h-6 rounded-full border-2 border-blue-400 bg-transparent group-hover:bg-blue-400 transition-all duration-300 flex-shrink-0">
+                        <CheckCircle className="w-4 h-4 text-blue-400 group-hover:text-white transition-colors duration-300" />
+                      </div>
+                      <span className="text-[15px] leading-relaxed text-white/80 group-hover:text-white transition-colors duration-300 font-medium">
+                        {service}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Learn More Button */}
+                <div className="mt-10 flex justify-center">
+                  <button className="group relative px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 hover:scale-105">
+                    <span>Learn More</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-purple-900/40 to-pink-900/40 backdrop-blur-sm rounded-3xl p-8 sm:p-12 text-center border border-white/10 mt-12">
             <h3 className="text-2xl sm:text-3xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Don't Know Where to Start?
             </h3>

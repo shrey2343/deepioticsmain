@@ -98,10 +98,7 @@ const PainPointsSection: React.FC = () => {
         <div className="pain-grid">
           {painPoints.map((point, index) => (
             <div key={index} className="pain-card">
-              <div className="pain-header-row">
-                <div className="pain-num">{point.num}</div>
-                <h3 className="pain-title">{point.title}</h3>
-              </div>
+              <h3 className="pain-title">{point.title}</h3>
               <p className="pain-body">{point.body}</p>
               <ul className="pain-bullets">
                 {point.bullets.map((bullet, i) => (

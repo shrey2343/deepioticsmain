@@ -784,12 +784,14 @@ h1.hero-h1 {
   color: rgba(255,255,255,0.8);
   line-height: 1.72;
   margin-bottom: 22px;
+  text-align: left;
 }
 
 .pain-bullets {
   list-style: none;
   margin-bottom: 26px;
   flex-grow: 1;
+  text-align: left;
 }
 
 .pain-bullets li {
@@ -799,6 +801,7 @@ h1.hero-h1 {
   display: flex;
   align-items: center;
   gap: 9px;
+  text-align: left;
 }
 
 .pain-bullets li::before {
